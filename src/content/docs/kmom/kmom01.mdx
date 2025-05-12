@@ -1,0 +1,188 @@
+---
+title: "Kmom01: Kom igång med Python" 
+description: Första kmomet.
+---
+
+import { YouTube } from 'astro-embed';
+import { Steps } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+
+:::danger
+Denna del är under arbete och inte klar.
+:::
+
+Det första vi skall göra är att skaffa oss en utvecklingsmiljö och kika i kurslitteraturen. Python fungerar på många miljöer och i olika varianter.
+
+Vi börjar skriva de första enkla programmen för att komma underfund med hur Python kan användas och hur programmeringsspråket fungerar i grunden.
+
+Så här kan det se ut när du är klar med kmom01 uppgiften Plane.
+
+<YouTube
+    id="7qifosdyfe8" 
+/>
+
+
+
+
+**Hade varit trevligt med sätt att markera extra material (lästips), alternativt material och annat som inte är obligatoriskt. och ikoner för läsa, göra, titta.**
+
+**länkarna till rubrikerna till höger funkar inte.**
+** fixa så vissa länkar öppnas i ny tab **
+
+
+{/* <details>
+<summary><h2>Måndag</h2></summary> */}
+## Intro till programmering
+
+Vi börjar med att kika på vad programmering är och hur det fungerar. Vi kommer att jobba med Python som är ett av de mest populära programmeringsspråken idag. Python används inom många områden, allt från webbutveckling till datavetenskap och maskininlärning.
+{/* <Steps> */}
+
+### Att göra
+Som en generell introduktion till programming och vissa av de tekniker och konstruktioner vi går igenom, kolla på följande video från Harvards CS50 kurs.
+<YouTube
+    id="qDbsiVWA2Ag" 
+/>
+
+
+
+## Intro till Python
+<Badge text="Hur datorn funkar" variant="tip" />
+<Badge text="input" variant="tip" />
+<Badge text="output" variant="tip" />
+<Badge text="datatyper" variant="tip" />
+<Badge text="värden" variant="tip" />
+<Badge text="if-satser" variant="tip" />
+<Badge text="villkor" variant="tip" />
+
+Efter att ha kollat på videon ovan har du fått en allmän orientering om programmering och vad det handlar om. Nu är det dags att börja med Python.
+
+I kursen kommer vi använda boken [Python for Everybody: Exploring data in Python3](laromaterial/böcker/).
+
+Boken kommer inte passa allas lärandestil eller så förklaras sakerna inte på det sättet du att du förstår det. Det är helt okej. Det finns många andra resurser och böcker som du kan använda för att lära dig Python. Det är OK att använda andra resurser och böcker. Det viktiga är att du hittar något som passar dig och din lärande stil. 
+
+:::tip
+När du läser boken så är det viktigt att ha en terminal öppen och köra koden i boken parallellt. Det är ett bra sätt att lära sig och förstå hur Python fungerar. Att **endast** läsa boken utan att köra koden är inte tillräckligt. Det är viktigt att du kör koden och testar den själva så du förstår den.
+:::
+
+
+En viktig del av programmering är att läsa dokumentation. Du kommer att behöva läsa dokumentation för att förstå hur olika funktioner och moduler fungerar. Det är en viktig del av programmering och något du kommer att göra mycket av i framtiden.
+
+[Pythons dokumentation](https://docs.python.org/3/reference/index.html) är tyvärr rätt rörig som nybörjare. De två viktigaste delarna är: 
+    * [Python Standard Library](https://docs.python.org/3/library/index.html) som beskriver de olika modulerna och deras funktioner.
+    * [Python Language Reference](https://docs.python.org/3/reference/index.html) som beskriver språket och dess syntax.
+
+
+### Att göra
+
+
+#### Instuderingsfrågor
+
+Här finns ett antal instuderingsfrågor som hjälper dig att finna information på egen hand för att träna på de koncept som är relevanta för detta kmom.
+
+<details>
+<summary>Instuderingsfrågor om HTML</summary>
+
+1. Vad står HTML för?
+
+</details>
+
+<details>
+<summary>Instuderingsfrågor om CSS</summary>
+
+1. Vad står CSS för?
+
+</details>
+
+<details>
+<summary>Instuderingsfrågor om JavaScript</summary>
+
+1. Ge en kort historik över programmeringsspråket JavaScript.
+
+</details>
+
+#### Instruktioner
+
+<Steps>
+1. Läs och jobba igenom följande kapitel i boken (alternativt kolla på videorna):
+    * Ch1 Why should you learn to write programs?
+    * Ch2 Variables, expressions and statements
+    * Ch3 Conditional execution
+    :::tip
+    Det räcker inte med att bara läsa. Du är klar med boken när du förstår vad som står i den och kan köra koden själv. Utforska och experimentera med koden. Gör övningarna i boken. Testa ändra saker och se vad som händer. Det är så du lär dig.
+    :::
+
+    Exempel på alternativt material om boken inte var tillräcklig:
+    - Jobba igenom artikeln "[Introduktion till variabler och datatyper](laromaterial/övning/introduktion-variabler-datatyper)"
+    - Jobba igenom artikeln/övningen "[Jämförelseoperatorer och booleska värden](laromaterial/övning/booleans-och-jamforelseoperatorer)"
+
+
+2. För att bekanta dig med Pythons dokumentation, kika i [Python Standard Library](https://docs.python.org/3/library/index.html). **Spendera inte mer än 20 minuter på detta.**
+    - Läs om [Built-in Functions](https://docs.python.org/3/library/functions.html) och [Built-in Constants](https://docs.python.org/3/library/constants.html). Läs **inte** igenom alla funktioner utan kolla på de som verkar intressanta och relevanta för det du jobbar med T.ex. `input()`, `len()`, `bool()`, `int()` och `isinstance()`. Det är bra att ha en översikt över vad som finns i språket och vad som går att göra.
+    - Läs också om datatypen [Text Sequence Type — str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+
+3. **Labb 1? En enkelt labb som bara kollar att det har koll på konstruktionerna från boken. Jätte simpel**
+
+1. Gör laborationen "[Python med värden och variabler](uppgift/python-med-varden-och-variabler)" för att träna på grunderna i Python. Spara alla filer under `me/kmom01/lab1`.
+
+4. Svara på följande enkät om hur du tycker att kursen är upplagd och vad som kan förbättras. Det är viktigt för oss att få feedback så vi kan förbättra kursen. **Lägg in länk till enkäten här.**
+
+</Steps>
+
+
+{/* </details> */}
+
+<details>
+<summary><h2>Onsdag</h2></summary>
+
+</details>
+
+{/* <details>
+<summary><h2>Torsdag och fredag</h2></summary> */}
+
+
+<Steps>
+
+1. Kom igång och gör ditt första program i Python tillsammans med artikeln "[Kom igång med ditt första program i Python](kunskap/kom-igang-med-ditt-forsta-program-i-python-v2)". De exempelprogram du gör kan du spara i ditt kursrepo under `me/kmom01/hello`.
+**gör om denna så handlar och köra python i filer och utvecklingsmiljön.**
+
+1. [Hur ber man om hjälp med kod i chatten?](coachen/hur_fraga_hjalp).
+
+1. Läs om hur du kan använda [dbwebb test](dbwebb-cli/python) för att rätta din kod.
+
+1. Git
+
+1. "ett anspråkslöst förslag: spela in en eller några korta videos där ni går igenom hur man ska läsa och tolka olika felutskrifter från testkörningarna (och kanske olika sätt att felsöka baserat på det). Det känns som att minst 25% av alla frågor skulle kunna besvaras med hänvisning till en sån video"
+
+</Steps>
+
+
+## Uppgifter
+
+Följande uppgifter skall utföras och resultatet skall redovisas.
+
+
+1. Gör uppgiften "[Ditt första Python-skript](uppgift/ditt-forsta-python-skript-v2)" för att visa att du har koll på grunderna. Spara alla filer under `me/kmom01/plane`.
+
+
+
+{/* </details> */}
+
+
+
+
+
+
+
+### Lästips
+
+- Det finns en sida med [användbara länkar](./../lankar), som kan vara bra att ha under kursensgång.
+
+
+
+
+## Lämna in
+
+För att kunna lämna in på Canvas måste ni får alla rätt på quizzet `Fusk policy. Måste få alla rätt, oändlig med försök`. Kolla sen länken nedanför för att se hur ni lämnar in era uppgifter.
+
+Läs [Lämna in och redovisa uppgift](laromaterial/instruktion/redovisa) för att ta reda på hur ni lämna in era uppgifter när ni är klara.

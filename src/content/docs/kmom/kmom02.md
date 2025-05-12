@@ -29,7 +29,9 @@ _(2-4 studietimmar)_
 
 Här kan du på egen hand studera och förbereda dig inför övningar och uppgifter.
 
+1. Skumma igenom [How to write beautiful python code with PEP 8](https://realpython.com/python-pep8/) för att få ett hum om regler vi följer när vi skriver Python kod. Läs t.o.m. "Programming recommendations". **Tips** skriv en sammanfattning av de viktigaste reglerna.
 
+1. Hur man löser valideringsfelet "line-to-long" med [radbrytning i Python](coachen/radbrytning-i-python).
 
 
 ### Föreläsning
