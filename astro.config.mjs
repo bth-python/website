@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom'
+import embeds from 'astro-embed/integration';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
 		remarkPlugins: [remarkReadingTime],
 	},
 	integrations: [
+		embeds(),
 		starlight({
 			plugins: [
 				starlightImageZoom(),
@@ -33,10 +35,10 @@ export default defineConfig({
 			},
 			head: [
 				{
-				  tag: 'base',
-				  attrs: {
-					href: '/website/'
-				  }
+					tag: 'base',
+					attrs: {
+						href: '/website/'
+					}
 				}
 			],
 			sidebar: [
