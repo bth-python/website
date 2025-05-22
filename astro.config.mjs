@@ -35,9 +35,16 @@ export default defineConfig({
 			},
 			head: [
 				{
+					tag: 'script',
+					attrs: {
+						src: '/website/js/OpenDetailsFromHash.js',
+						defer: true,
+					},
+				},
+				{
 					tag: 'base',
 					attrs: {
-						href: '/website/'
+						href: ''
 					}
 				}
 			],
