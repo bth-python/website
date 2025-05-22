@@ -21,8 +21,6 @@ _En stylad webbplats när övningen är klar._
 
 Lycka till när du nu kastar dig in i en underbar värld av CSS konstruktioner.
 
-
-
 ## Läs & Studera
 
 _(2-4 studietimmar)_
@@ -33,22 +31,17 @@ Här kan du på egen hand studera och förbereda dig inför övningar och uppgif
 
 1. Hur man löser valideringsfelet "line-to-long" med [radbrytning i Python](coachen/radbrytning-i-python).
 
-
 ### Föreläsning
 
 Titta på följande inspelade föreläsningar. Föreläsningarna kan innehålla tips om läsanvisningar.
 
 1. XXX
 
-
-
 ### Litteratur
 
 Studera litteratur och resurser enligt följande.
 
 1. XXX
-
-
 
 ### Video för orientering
 
@@ -57,8 +50,6 @@ Titta på följande videor/filmer. Filmerna är tänkta att ge dig en allmän or
 * XXX
 
 Videorna ovan finner du även i spellistan "Kursen webtec: Om webbteknologier HTML, CSS och JavaScript sat att bygga webbplatser och webbtjänster".
-
-
 
 ### Instuderingsfrågor
 
@@ -85,15 +76,11 @@ Här finns ett antal instuderingsfrågor som hjälper dig att finna information 
 
 </details>
 
-
-
 ## Övningar & Uppgifter
 
 _(8-12 studietimmar)_
 
 Övningar är träning inför uppgifterna, det är ofta klokt att jobba igenom övningarna då de förbereder dig inför uppgifterna. Uppgifter skall utföras och redovisas.
-
-
 
 ### Övningar
 
@@ -103,7 +90,7 @@ Jobba igenom övningarna, de förbereder dig inför uppgifterna.
 
 1. (läromaterial för att komma igång inför lab 2 i js)
 
-
+1. [Hur ber man om hjälp med kod i chatten?](coachen/hur_fraga_hjalp).
 
 ### Uppgifter
 
@@ -112,8 +99,6 @@ Följande uppgifter skall utföras och resultatet skall redovisas.
 1. Utför laborationen "Lab 2: XXX".
 
 1. Gör uppgiften "Styla din rapportsida till webtec-kursen".
-
-
 
 ## Resultat & Redovisning
 
@@ -127,4 +112,3 @@ Se till att följande frågor besvaras i din redovisningstext.
 * Försök reflektera över vilka eventuella svårigheter som finns för en nybörjare att komma igång med CSS.
 * Är du nöjd med utseendet på din webbplats eller är det sakr du hade velat ändra på?
 * Vilken är din TIL för detta kmom?
-
