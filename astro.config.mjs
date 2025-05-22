@@ -28,10 +28,10 @@ export default defineConfig({
 				'./src/styles/dbwebb.css',
 			],
 			editLink: {
-				baseUrl: 'https://github.com/webtec-2024/website/tree/main',
+				baseUrl: 'https://github.com/dbwebb-python-bth/website/tree/main',
 			},
 			social: {
-				github: 'https://github.com/webtec-2024/website',
+				github: 'https://github.com/dbwebb-python-bth/website',
 			},
 			head: [
 				{
