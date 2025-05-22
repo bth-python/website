@@ -1,3 +1,21 @@
+html {
+	scroll-behavior: smooth;
+}
+
+details>summary>h1,
+details>summary>h2,
+details>summary>h3,
+details>summary>h4,
+details>summary>h5,
+details>summary>h6 {
+	display: inline-block;
+}
+
+.sl-markdown-content summary:not(:where(.not-content *))::before {
+	/* details>summary::before vill använda denna, men den funkar inte*/
+	vertical-align: baseline;
+}
+
 /* Dark mode colors. */
 :root {
 	--sl-color-accent-low: #072d00;
@@ -27,8 +45,4 @@
 	--sl-color-gray-6: #eaf0e8;
 	--sl-color-gray-7: #f4f7f3;
 	--sl-color-black: #ffffff;
-}
-
-html {
-	scroll-behavior: smooth;
 }
