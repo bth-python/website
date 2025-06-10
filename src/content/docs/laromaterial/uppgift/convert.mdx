@@ -56,6 +56,7 @@ ls
 3. Gör ett `input()` anrop för att få värdet som ska omvandlas.
     - Om användaren skriver in ett värde som inte går att omvandla till `float` så ska programmet skriva ut ett felmeddelande och avsluta.
         - Felmeddelandet måste innehålla texten `Invalid value`.
+        - Avsluta programmet med `exit()`.
         ```python
         Hello and welcome to the unit converter!
         Enter value to convert: 80
@@ -71,7 +72,7 @@ ls
         P: Price, before --> after discount and tax
         S: Speed, km/h --> mph
         P
-        The final price of 100.0 after 10kr discount and 20% tax is: 108.0kr
+        The final price of 100.0 after 10 kr discount and 20% tax is: 108.0 kr
         ```
     - Om användaren skriver `S` så ska programmet omvandla hastigheten.
         ```python
@@ -85,6 +86,7 @@ ls
         ```
     - Om användaren skriver något annat så ska programmet skriva ut ett felmeddelande och avsluta.
         - Felmeddelandet måste innehålla texten `Invalid converter`.
+        - Avsluta programmet med `exit()`.
         ```python
         Hello and welcome to the unit converter!
         Enter value to convert: 80
@@ -95,7 +97,7 @@ ls
         Invalid converter, please enter P or S.
         ```
 
-5. Skriva ut orginal värdet och det omvandlade värdet, avrundat till två decimaler.
+5. Skriva ut original värdet och det omvandlade värdet, avrundat till två decimaler. **Obs!** det måste vara ett **mellanslag** direkt efter originalvärdet och det omvandlade värdet i utskriften.
 
 7. [Kör testerna](dbwebb-cli/python) och validera koden för att kolla att du är godkänd.
 
