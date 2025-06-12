@@ -42,11 +42,9 @@ Varje kursmoment har en instruktionen som omfattar det som skall göras inom ram
 
 Ett kursmoment omfattar cirka 20 studietimmar inklusive läsning, arbete med övningar och uppgifter, felsökning, problemlösning, redovisning och eftertanke.
 
-Läs igenom hela instruktionen för kursmomentet innan du börjar jobba. Om möjligt – planera och prioritera var du vill lägga tiden.
 
 
-
-## Förebered inför kmom01
+## Förbered inför kmom01
 
 Du behöver utföra följande steg innan du kan börja jobba med det första kmomet.
 
@@ -61,10 +59,11 @@ Se till att du har kursens labbmiljö installerad.
 
 1. Jobba igenom "[Installera kursens labbmiljö](./laromaterial/labbmiljo)" för att komma igång med din labb- och utvecklingsmiljö för kursen.
 
+När du är klar med labbmiljön ska du ha följande installerat, webbläsare, texteditor, git, terminal och UV.
 
 
 ### Kursrepo
 
 I ditt kursrepo kommer du att spara allt det arbete du gör i kursen och du kommer använda det för att redovisa ditt arbete.
 
-1. Jobba igenom "[Kom igång med kursrepo](./laromaterial/kursrepo)" för att klona kursrepot och lära dig grunderna i hur du jobbar med ett kursrepo.
+1. Jobba igenom "[Kom igång med kursrepo](./laromaterial/instruktion/kursrepo)" för att klona kursrepot och lära dig grunderna i hur du jobbar med ett kursrepo.

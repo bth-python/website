@@ -1,6 +1,7 @@
 ---
 title: "Lämna in och redovisa" 
-description: No description.
+description: Hur man lämnar in och redovisar ett kmom.
+order: 120
 ---
 
 Som ett sista steg i varje kursmoment skall ni lämna in veckans uppgifter. Gör så här.
