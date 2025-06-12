@@ -1,0 +1,109 @@
+---
+title: "UV och Python"
+description: Programmeringsmiljö för Python.
+order: 160
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+
+[UV](https://docs.astral.sh/uv) är en modern exekveringsmiljö för Python som erbjuder flera fördelar jämfört med traditionella verktyg som pip och venv. Genom att använda UV får vi snabbare installation av paket, bättre hantering av beroenden och en mer förutsägbar miljö för våra Python-projekt. UV är byggt för att vara kompatibelt med befintliga Python-verktyg, men ger samtidigt förbättrad prestanda och säkerhet. Detta gör det enklare att arbeta i team, reproducera miljöer och undvika vanliga problem med paketkonflikter.
+
+## Installera UV
+
+För att [installera UV](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer), kör följande kommando i din terminal:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+För att verifiera att UV är korrekt installerat, exekvera:
+
+```bash
+uv --version
+```
+Om installationen lyckades bör du se UV:s versionsnummer. Om du får ett felmeddelande, kontrollera att du har curl installerat och att du har internetuppkoppling.
+
+
+
+### Shell automatisering
+UV kan automatiskt konfigurera ditt skal för att använda UV:s funktioner. Detta kommando lägger till nödvändiga inställningar i din skalprofil, vilket gör att UV fungerar smidigare i din terminal.
+
+<details>
+<summary>Instruktioner för Linux/Windows (bash)</summary>
+Exekvera följande i terminalen:
+```bash
+echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrc
+source ~/.bashrc
+```
+</details>
+
+
+<details>
+<summary>Instruktioner för Mac (zsh)</summary>
+Exekvera följande i terminalen:
+```bash
+echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
+source ~/.zshrc
+```
+</details>
+
+<details>
+<summary>Instruktioner övriga</summary>
+
+Kolla på UV webbsida om de stödjer din terminal. [UV Shell autocompletion](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_3_3).
+</details>
+
+## Välj python version
+
+I kursen ska vi använda UV för att exekvera vår python kod. Vi måste bestämma vilken version av python som ska användas.
+
+<Steps>
+1. ```bash
+    uv python install 3.13
+    ```
+
+1. ```bash
+    uv python pin 3.13
+    ```
+</Steps>
+
+
+
+## Verifiera att Python fungerar
+
+Kolla nu att rätt version används med följande kommando:
+```bash
+uv run python -V
+```
+Den borde skriva ut `Python 3.13.x` där `x` är en annan siffra.
+
+
+Du kan också köra node interaktivt och evaluera Python rad för rad. Programmet visar att den är redo för inmatning med prompten `>`. Vi använder `$` för att markera att det som kommer efter är ett kommando.
+
+```python title="Starta python interaktivt"
+$ uv run python
+> print("Hej")
+Hej
+> exit()
+```
+
+Du kan också låta python köra python-program som finns i filer.
+
+```bash title="Exekvera python från en fil"
+$ echo "print('Hej')" > hello.py
+$ uv run hello.py
+Hej
+```
+
+Om `Hej` skrevs ut som det ska kan du ta bort filen med kommandot `rm hello.py`.
+
+
+## Läs mer
+
+Du kan läsa mer om [UV på webbplatsen](https://docs.astral.sh/uv).
+
+
+## Avslutningsvis
+
+Bra, nu har du en fungerande installation av UV och Python.
