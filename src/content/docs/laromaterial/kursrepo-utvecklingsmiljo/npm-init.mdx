@@ -1,0 +1,72 @@
+---
+title: "Skapa ett uv projekt" 
+description: Vi skapar ett projekt av kursrepot via kommandot npm init.
+author: mos
+revision:
+    "2025-06-25": "(A, mos) Första utkastet."
+sidebar:
+    order: 0040
+---
+
+import Figure from '@components/CustomFigure.astro';
+import YouTube from '@components/YouTube.astro';
+
+När man jobbar i projekt som har att göra med programmeringsspråket Python så kan man använda `uv` som ett sätt att hantera projektet och installera verktyg och extra kodmoduler och hjälpverktyg vid behov. För att det skall fungera så behöver man initiera repot som ett uv projekt via kommandot `uv init`. Då skapas följande filer:
+- `.python-version` - en fil som innehåller vilken version av Python som skall användas i projektet.
+- `hello.py` - en exempel-fil med python kod.
+- `pyproject.toml` - en fil som innehåller inställningar för projektet och eventuella beroenden (dependencies).
+- `uv.lock` - en fil som innehåller alla extra verktyg/moduler/paket vi har installerat i projektet med `uv add` och vilken version de har.
+- `.venv` - en katalog som innehåller en virtuell miljö för Python, där alla moduler installeras lokalt för projektet. Den ska inte vara en del av repot och därför har vi lagt till den i `.gitignore`. Den katalogen kan alltid återskapas utifrån informationen i `uv.lock` via kommandot `uv sync`.
+
+
+
+## Initiera som uv projekt
+
+Vi börjar med kommandot `uv init` för att initiera projektet.
+
+```bash title="Initiera projektet med uv init."
+# Just init the project
+uv init
+```
+
+Det kan se ut så här om du gör detta i vscode och terminalen. PS om termnialen inte är öppen så kan du öppna den med `Ctrl + ö` (Windows) eller `Cmd + ö` (Mac).
+
+import uvinit1 from '@assets/kursrepo-utvecklingsmiljo/uvinit1.png';
+
+<Figure 
+    src={uvinit1}
+    caption="Filen pyproject.toml m.m. är skapad i ditt repo."
+/>
+
+För att skapa en virtuell miljö och installera de verktyg som behövs i den, så kör vi kommandot `uv sync`. Det kommer att skapa en katalog `.venv` där alla verktyg och moduler installeras lokalt för projektet.
+
+```bash title="Installera verktyg och moduler i den virtuella miljön"
+uv sync
+```
+import uvinit2 from '@assets/kursrepo-utvecklingsmiljo/uvinit2.png';
+
+<Figure 
+    src={uvinit2}
+    caption="uv.lock och .venv är skapad i ditt repo."
+/>
+Testa exekvera `hello.py` för att se att allt fungerar som det skall.
+
+```bash title="Exekvera hello.py"
+uv run hello.py 
+```
+
+import uvinit3 from '@assets/kursrepo-utvecklingsmiljo/uvinit3.png';
+
+<Figure 
+    src={uvinit3}
+    caption="Exekvera hello.py."
+/>
+
+Nu när allt funkar ska vi radera `hello.py`. Vi ska skapa andra filer och kataloger senare.
+
+```bash title="Radera hello.py"
+rm hello.py
+```
+## Lägg till filen i ditt repo och pusha
+
+Avsluta med att lägga till filerna `.python-version`, `pyproject.toml` och `uv.lock` som en del av ditt repo och pusha dem. Dubbelkolla att den finns på GitHub innan du är helt klar.
