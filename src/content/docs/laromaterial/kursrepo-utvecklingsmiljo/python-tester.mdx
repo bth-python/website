@@ -1,0 +1,81 @@
+---
+title: "Installera python-tester" 
+description: Vi installerar testverktyget python-tester.
+author: aar
+revision:
+    "2025-07-19": "(A, aar) Första utkastet."
+sidebar:
+    order: 0070
+---
+
+En viktig del av att skriva kod är att testa koden. Vi vill inte behöva göra det manuellt utan vi skriver kod som testar vår andra kod. I denna kurs kommer vi inte lära oss skriva tester, däremot finns det redan färdiga tester för de olika uppgifter du ska utföra i kursen. Med de testerna kan du och vi enkelt kolla om din kod uppfyller den funktionalitet som ska finnas i din kod.
+
+Python har ett inbyggt verktyg för att skriva och exekvera tester, det heter [unittest](https://docs.python.org/3/library/unittest.html). För att det ska bli enklare för dig att förstå utskriften av testerna som finns har vi byggt om unittest så att det blir enklare att läsa. Vi kallar det för [python-tester](https://pypi.org/project/python-tester/) och det är ett verktyg som vi kommer använda i kursen.
+
+
+
+## Installera python-tester
+
+Installer verktyget med `uv`
+
+```console title="Installera python-tester med uv."
+uv add "python-tester>=3"
+```
+
+Gör nu som när du installerade Ruff och kolla med `git status` vilka filer som har uppdaterats och lägg till dem i en commit och pusha till GitHub.
+
+
+
+## Ladda ner testfiler
+
+Använd Task för att ladda ner testerna.
+
+```console title="Ladda ner tester med Task"
+uv run task download-tests
+```
+
+Om du står med terminalen i roten av kursrepot kan du använda kommandot `ls` för att se att katalogen `tests/` har skapats. Om du har VSCode öppen så kan du se att katalogen `tests/` har skapats där också och du kan se att den innehåller flera kataloger och filer. Du kan också använda `git status` för att se att det har skapats en katalog och flera filer.
+
+Gör en commit och pusha katalogen.
+
+
+
+
+## Kör python-tester
+
+Du kör verktyget med `uv run tester`.
+
+Du kan kolla vilka extra flaggor som finns tillgängliga med följande kommando:
+
+```console title="Hjälp för python-tester."
+uv run tester --help
+```
+
+Då får du upp en mängd som visar vilka flaggor som finns tillgängliga. Flera av dem är inte relevanta för dig som student. De du behöver känns till är:
+
+```
+-h, --help            show this help message and exit
+-f, --failslow        Don't stop executing tests on the first error or failure. Execute all tests.
+-t, --tags TAGS       Run only tests with specific tags
+                    USAGE: -t=tag1 || -t=tag1,tag2
+-s, --showtags        Show what tags are available for the tests. Won't run any tests!
+-e, --extra           Includes tests for extra assignments
+```
+
+Du behöver inte förstå dem nu utan vi kommer kolla mer på det längre fram.
+
+Om du var uppmärksam när du läste hjälp utskriften så såg du att det finns ett `REQUIRED positional argument`. Det innebär att du måste ange ett argument när du kör verktyget. Argumentet är en katalog där testerna finns.
+
+Än så länge har du inte skrivit någon kod du kan köra testerna på men vi testar för att se att allt funkar än så länge.
+
+### Kör tester för en uppgift
+
+Senare i kursen kommer du ha en till katalog som heter `src`, i den katalogen kommer katalogen `kmom01` finnas och i den katalogen kommer ännu en katalog finnas som heter `converter`. Den katalogen kommer innehålla koden du skriver för att lösa uppgiften. När du har skrivt den koden vill du köra testerna som finns för den uppgiften. De testerna finns i katalogen `tests/kmom01/converter`.
+
+Noter att det är samma katalogstruktur under `src` och `tests`, båda innehåller `kmom01/converter`. Nu låtsas vi att du har skrivit kod i `src/kmom01/converter` och du vill kolla om koden är korrekt.
+
+För att köra testerna som är för den uppgiften måste vi skicka med sökvägen från där du står i terminalen till där testerna finns. Om du står i roten av kursrepot så är sökvägen `tests/kmom01/converter`.
+
+```console title="Kör tester för converter uppgiften."
+uv run tester tests/kmom01/converter
+```
