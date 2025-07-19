@@ -1,0 +1,68 @@
+---
+title: "Installera Task" 
+description: Vi installerar byggverktyget Task 
+author: aar
+revision:
+    "2025-07-19": "(A, aar) Första utkastet."
+sidebar:
+    order: 0060
+---
+
+
+Task är ett byggverktyg och "task runner". Det är ett verktyg som förenklar processen att köra olika kommandon i terminalen. Det är ett verktyg som kan hjälpa oss att automatisera uppgifter som vi annars skulle behöva skriva in manuellt varje gång. Du kan läsa mer på dess [webbplats](https://taskfile.dev/).
+
+vi ska främst använda det för att förenkla att ladda ner olika filer i kursen.
+
+## Installera Task
+
+Det finns många olika sätt att installera Task. Det enklaste är att använda `uv` som vi redan har installerat. Du kan se [Task på PyPi's webbplats](https://pypi.org/project/task/).
+
+```console title="Installera Task med uv."
+uv add "go-task-bin>=3.44"
+```
+
+Gör nu som när du installerade Ruff och kolla med `git status` vilka filer som har uppdaterats och lägg till dem i en commit och pusha till GitHub.
+
+
+
+## Hämta Taskfile
+
+Nu ska du ladda ner en Taskfile som innehåller de kommandon som vi ska använda i kursen. Det är en fil som heter `Taskfile.yml`.
+
+```console title="Ladda ner Taskfile."	
+curl -L -o Taskfile.yml https://raw.githubusercontent.com/bth-python/python-abcd25/refs/heads/main/Taskfile.yml
+```
+
+Gör en commit och pusha filen.
+
+
+
+## Kör task
+
+Du kan kolla vilka kommandon som finns med följande kommando.
+
+```console title="Lista kommandon i Taskfile."
+uv run task --list
+```
+
+`uv run task` är kommandot för att köra Task och `--list` är en flagga som listar alla kommandon som finns i Taskfile.
+
+När jag skriver denna artikel finns följande kommandon tillgängliga:
+
+```
+task: Available tasks for this project:
+* download-lab:               Download a lab. Run with 'uv run task download-lab -- lab_XX', replace XX with the lab number.
+* download-ruff-config:       Downloads the ruff configuration file from the artifact repository
+* download-taskfile:          Downloads the Taskfile from the artifact repository
+* download-tests:             Replaces files in tests/ with files from the artifact repository, https://github.com/bth-python/python-abcd25
+```
+
+När du kör kommandot kan det se annorlunda ut men det borde vara något liknande.
+
+Du kan testa ladda ner konfigurationsfilen för Ruff igen. Ändra först något i filen `ruff.toml` och kör sedan följande kommando för att se att du har fått ner en ny fil.
+
+```console title="Ladda ner ruff.toml."
+uv run task download-ruff-config
+```
+
+Öppna `ruff.toml` och se att din ändring inte längre är kvar.
