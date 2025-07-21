@@ -43,15 +43,15 @@ Gör en commit och pusha katalogen.
 
 ## Kör python-tester
 
-Du kör verktyget med `uv run tester`.
+Verktyget körs med `uv run tester`.
 
-Du kan kolla vilka extra flaggor som finns tillgängliga med följande kommando:
+Du kan se vilka extra flaggor som finns tillgängliga med följande kommando:
 
 ```console title="Hjälp för python-tester."
 uv run tester --help
 ```
 
-Då får du upp en mängd som visar vilka flaggor som finns tillgängliga. Flera av dem är inte relevanta för dig som student. De du behöver känns till är:
+Då ska få upp följande alternativ.
 
 ```
 -h, --help            show this help message and exit
@@ -62,20 +62,32 @@ Då får du upp en mängd som visar vilka flaggor som finns tillgängliga. Flera
 -e, --extra           Includes tests for extra assignments
 ```
 
-Du behöver inte förstå dem nu utan vi kommer kolla mer på det längre fram.
+Du behöver inte förstå dem nu, vi kommer kolla mer på det längre fram.
 
 Om du var uppmärksam när du läste hjälp utskriften så såg du att det finns ett `REQUIRED positional argument`. Det innebär att du måste ange ett argument när du kör verktyget. Argumentet är en katalog där testerna finns.
 
-Än så länge har du inte skrivit någon kod du kan köra testerna på men vi testar för att se att allt funkar än så länge.
+Än så länge har du inte skrivit någon kod som testerna kan testa men vi försöker köra verktyget för att se att allt funkar än så länge.
 
 ### Kör tester för en uppgift
 
-Senare i kursen kommer du ha en till katalog som heter `src`, i den katalogen kommer katalogen `kmom01` finnas och i den katalogen kommer ännu en katalog finnas som heter `converter`. Den katalogen kommer innehålla koden du skriver för att lösa uppgiften. När du har skrivt den koden vill du köra testerna som finns för den uppgiften. De testerna finns i katalogen `tests/kmom01/converter`.
+Senare i kursen kommer du ha en till katalog som heter `src`, i den katalogen kommer katalogen `kmom01` finnas och i den katalogen kommer ännu en katalog finnas som heter `converter`. Den katalogen kommer innehålla koden du skriver för att lösa uppgiften. När du har skrivit den koden vill du köra testerna som finns för den uppgiften. De testerna finns i katalogen `tests/kmom01/converter`.
 
 Noter att det är samma katalogstruktur under `src` och `tests`, båda innehåller `kmom01/converter`. Nu låtsas vi att du har skrivit kod i `src/kmom01/converter` och du vill kolla om koden är korrekt.
 
-För att köra testerna som är för den uppgiften måste vi skicka med sökvägen från där du står i terminalen till där testerna finns. Om du står i roten av kursrepot så är sökvägen `tests/kmom01/converter`.
+För att köra testerna för den uppgiften måste vi skicka med sökvägen från där du står i terminalen till där testerna finns. Om du står i roten av kursrepot så är sökvägen `tests/kmom01/converter`.
 
 ```console title="Kör tester för converter uppgiften."
 uv run tester tests/kmom01/converter
 ```
+
+Du ska få up en lång felutskrift som avslutas med:
+
+```
+*********
+Katalogen som ska innehålla din kod saknas.
+Kontrollera att du har katalogen /home/zeldah/dbwebb-kurser/python-abcd25/src/kmom01/convert.
+Om du har den och felet kvarstår, kontakta kursansvarig med ovanstående felmeddelande!
+*********
+```
+
+Om du får det så är allt korrekt installerat och du kan gå vidare till nästa uppgift.
