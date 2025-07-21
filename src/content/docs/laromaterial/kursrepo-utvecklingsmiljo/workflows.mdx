@@ -1,0 +1,28 @@
+---
+title: "Ladda ner Workflow för GitHub" 
+description: Vi laddar ner en fil som används för att rätta din kod vid inlämning.
+author: aar
+revision:
+    "2025-07-21": "(A, aar) Första utkastet."
+sidebar:
+    order: 0080
+---
+
+import Figure from '@components/CustomFigure.astro';
+import YouTube from '@components/YouTube.astro';
+
+[GitHub Actions](https://github.com/features/actions) är ett verktyg som används för att automatisera arbetsflöden i GitHub. Det kan användas för att köra tester, bygga och distribuera kod, och mycket mer. I den här kursen kommer vi att använda GitHub Actions för att rätta din kod vid inlämning. Du behöver inte lära dig något om det i kursen. Det är bara en fil som måste finnas i ditt repo för att rättningen ska fungera.
+
+
+
+## Ladda ner workflow-filen
+
+För att ladda ner workflow-filen som används för att rätta din kod, använd `uv` och Task. Denna fil kommer att placeras i katalogen `.github/workflows/` i ditt kursrepo.
+
+```console title="Ladda ner workflow-filen"
+uv run task download-workflow
+```
+
+Nu har du fått katalogen `.github/workflows/` i ditt kursrepo. I den mappen finns filen `examiner.yml`. 
+
+Gör en commit och pusha katalogen.
