@@ -1,0 +1,128 @@
+---
+title: "Installera Extensions i VSCode" 
+description: Vi installerar bra att ha extensions i VSCode för att förbättra vår utvecklar upplevelse.
+author: aar
+revision:
+    "2025-07-22": "(A, aar) Första utkastet."
+sidebar:
+    order: 0080
+---
+
+import Figure from '@components/CustomFigure.astro';
+
+Extensions i VSCode är tillägg som förbättrar din utvecklingsupplevelse. Det finns många olika extensions som kan hjälpa dig att skriva bättre kod, hitta buggar och mycket mer. I den här guiden kommer vi att installera några extensions som vi rekommenderar för Python-utveckling.
+
+
+
+## Ladda ner file med rekommenderade extensions
+Vi har skapat en fil som innehåller rekommenderade extensions för Python-utveckling.
+Du kan ladda ner den med följande kommando.
+
+```console title="Ladda ner rekommenderade extension."
+uv run task download-extensions
+```
+
+Nu har du laddat ner en fil som heter `extensions.json` i mappen `.vscode` i ditt projekt. Denna fil innehåller rekommenderade extensions för Python-utveckling. De har inte installerats utan finns bara tillgängliga som rekommendationer som du kan välja att installera eller inte. Filen innehåller också lista med extensions som vi inte vill ha i ditt projekt, så kallade "unwanted extensions". De är främst olika extensions som använder AI för att generera kod, vilket vi inte hör hemma i denna kurs.
+
+
+## Stäng av GitHub Copilot
+
+GitHub Copilot är Microsofts egna AI- verktyg som ger förslag på kod medan du skriver. Det är ett verktyg som vi inte vill använda i den här kursen. Det är inte tillåtet att använda AI-verktyg för att generera kod i den här kursen.
+
+Klicka på Copilot-ikonen uppe till höger i VSCode och välj "Disable Copilot" för att stänga av GitHub Copilot.
+
+import extensions_copilot from '@assets/kursrepo-utvecklingsmiljo/extensions_copilot.png';
+
+<Figure 
+    src={extensions_copilot}
+    caption="Stäng av Copilot."
+/>
+
+
+## Installera rekommenderade extensions
+
+Klicka på "Extensions" ikonen för att få upp en lista med de vi rekommenderar.
+
+import extensions from '@assets/kursrepo-utvecklingsmiljo/extensions.png';
+
+<Figure 
+    src={extensions}
+    caption="Gå till extensions."
+/>
+
+Nu kan du se en lista med "Recommendations". Skrolla igenom listan och installera dem. De flesta behöver vi inte konfigurera utan det är bara att installera dem.
+
+Ibland när man installerar ett extension kommer det upp en fråga om man litar på de som har skapat ett extension. Vi kan aldrig vara helt säkra på att det är ofarlig kod vi installerar. Vi har valt att lita på de som skapat dessa extensions.
+
+### Python och Pylance
+
+Gör att vi kan exekvera Python filer i VSCode, felsöka dem enklare och mycket mer.
+
+### Ruff
+
+Visar fel i koden medan du skriver den. Vi har tidigare installer och konfigurerat Ruff utanför VSCode. Med detta extension kan vi direkt se när vi skriver felaktig kod enligt de regler vi har satt upp.
+
+### Unwanted Extensions
+
+Om du installera ett extension som vi har på vår lista som vi inte rekommenderar kommer detta extension varna dig om det.
+
+### Better Comments
+
+Sätter färg på kommentarer i din kod. Om du läser deras egna text om vad den gör förklarar och visar den ganska bra. Det hjälper dig skriva anteckningar i kommentarer.
+
+### Indent-rainbow
+
+I Python är indenteringar jätteviktigt. Som nybörjare kan det vara svårt att se skillnad på hur många indenteringar man har gjort på en rad. Sätter olika färger för att visualisera hur många indentations som har gjorts.
+
+### Code spell checker och Swedish - Code spell checker
+
+Gör att vi kan få hjälp med rättstavning. Code spell checker har bara stöd för engelska. För att få stöd för engelska behöver du installera det separat.
+
+Du måste också aktivera den på svenska efter att du har installerat den. Klicka på `F1` på tangentbordet och skriv sen "Enable swedish". Klicka på det alternativet som dyker upp.
+
+import extensions_swedish from '@assets/kursrepo-utvecklingsmiljo/extensions_swedish.png';
+
+<Figure 
+    src={extensions_swedish}
+    caption="Aktivera svensk rättstavning."
+/>
+
+Om du vill har hjälp med rättstavning på fler språk kan du söka på `<Språk> - code spell check` så finns det säker för språket du letar efter. Ersätt `<språk>` med språker du letar efter.
+
+
+### Peacock
+
+Nu när du studerar kommer du läsa minst två kurser samtidigt, om du har tur ska du koda i båda kursern, och ibland har du ett hobby projekt igång också. Om du har flera VSCode fönster igång samtidigt och hoppar mellan olika projekt då kan det vara svårt att hålla koll på vilket fönster som tillhör vilket projekt. Detta extension kan hjälpa dig få koll. Det ändrar färgen på VSCode baserat på vilket projekt du har öppnat VSCode i.
+
+Om du inte vill ändra färgen för de olika projekten kan du skippa att installera detta extension. Om du vill ha det så finns det en del i inställningar man kan ändra. Jag tänkte visa vilka jag har.
+
+När du laddade ner filen med rekommenderade extensions fick du också med filen settings.json. Den innehåller ett exempel på färgval för denna kurs. Det kommer aktiveras när du installerar detta extension.
+
+Installera extension, tryck sen på `ctrl+,` eller `cmd+,` för MacOs. Sök på `peacock` och välj `Extensions -> Peacock`.
+
+
+import extensions_peacock1 from '@assets/kursrepo-utvecklingsmiljo/extensions_peacock1.png';
+
+<Figure 
+    src={extensions_peacock1}
+    caption="Inställningar för Peacock."
+/>
+
+
+Nu har du en lång lista med olika inställning för att påverkar vilka delar av VSCode som ändrar färg. Jag föredrar att bara ändra färgen på ramen till vänster (den vita pilen).
+
+Gå igenom listan med inställning och testa klicka i och ur checkboxes för att avgöra var du vill ha färg. Jag har bara den översta i klickad, "Affect Activity Bar". Jag brukar också klicka i den sista inställningen "Surprise me on startup". Varje gång man öppnar vscode i en ny katalog och det inte finns en settings fil med färger så kommer peacock skapa det och slumpa fram en färg. Då kan man enkelt gå in i settings filen och ändra färgen.
+
+
+import extensions_peacock2 from '@assets/kursrepo-utvecklingsmiljo/extensions_peacock2.png';
+
+<Figure 
+    src={extensions_peacock2}
+    caption="Här kan du se hur jag har det och alla filer jag har skapat i kursrepot än så länge."
+/>
+
+## Avslutningsvis
+
+Gör commit och push för `.vscode` katalogen.
+
+Det finns en uppsjö med flera extensions som kan göra allt möjligt. Men ni är bara i början av er resa som utvecklare. Så här långt behöver ni inte mycket mer än det vi har gått igenom här.
