@@ -8,7 +8,7 @@ import starlightAutoSidebar from 'starlight-auto-sidebar'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://webtec-2024.github.io/website/',
+	site: 'https://bth-python.github.io/website/',
 	base: '/website',
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
@@ -18,9 +18,9 @@ export default defineConfig({
 		starlight({
 			plugins: [
 				starlightImageZoom(),
-				starlightAutoSidebar(),
+				starlightAutoSidebar(), // https://starlight-auto-sidebar.netlify.app/metadata/#label
 			],
-			title: 'Kursen webtec',
+			title: 'Kursen Python',
 			favicon: 'favicon.png',
 			logo: {
 				//src: './src/assets/leaf_256x256.png',
