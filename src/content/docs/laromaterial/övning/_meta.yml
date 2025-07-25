@@ -1,0 +1,4 @@
+# Display this directory first in the sidebar group.
+label: Övning
+order: 2
+collapsed: true

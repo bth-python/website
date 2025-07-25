@@ -4,6 +4,7 @@ import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom'
 import embeds from 'astro-embed/integration';
+import starlightAutoSidebar from 'starlight-auto-sidebar'
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +18,7 @@ export default defineConfig({
 		starlight({
 			plugins: [
 				starlightImageZoom(),
+				starlightAutoSidebar(),
 			],
 			title: 'Kursen webtec',
 			favicon: 'favicon.png',

@@ -1,0 +1,4 @@
+# Display this directory first in the sidebar group.
+label: Kursrepo utvecklingsmiljö
+order: 8
+collapsed: true

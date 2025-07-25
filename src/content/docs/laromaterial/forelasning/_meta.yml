@@ -1,0 +1,4 @@
+# Display this directory first in the sidebar group.
+label: Förläsning
+order: 5
+collapsed: true

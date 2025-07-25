@@ -1,0 +1,4 @@
+# Display this directory first in the sidebar group.
+label: Böcker
+order: 9
+collapsed: true
