@@ -1,5 +1,5 @@
 ---
-title: "Måste jag skaffa kurslitteraturen" 
+title: "Måste jag skaffa kurslitteraturen ⚠️"
 description: No description.
 ---
 

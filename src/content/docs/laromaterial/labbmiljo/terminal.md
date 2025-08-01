@@ -1,8 +1,8 @@
 ---
-title: "Terminal" 
+title: "Terminal ⚠️"
 description: No description.
 sidebar:
-    order: 150
+  order: 150
 ---
 
 Du behöver ha tillgång till en terminal där du kan köra Unix-kommandon. På Unix/Linux och Mac har du alltid en terminal, men på Windows behöver du installera en Unix-terminal i form av WSL/Bash/Ubuntu.
@@ -15,9 +15,6 @@ För att installera vår labbmiljö kommer vi att använda en mix av pakethanter
 
 Här är guider för hur du kommer igång med terminalen och installation av labbmiljön, för respektive operativsystem.
 
-* Windows: [Installera Bash i Windows med WSL och Ubuntu](kunskap/installera-bash-i-windows-med-wsl-och-ubuntu)
-* Mac OS: [Terminalen och pakethantering med Brew på Mac OS](kunskap/terminalen-och-pakethantering-med-brew-pa-mac-os)
-* Unix/Linux: [Terminalen och pakethantering i Unix/Linux](kunskap/terminalen-och-pakethantering-i-unix-linux)
-
-
-
+- Windows: [Installera Bash i Windows med WSL och Ubuntu](kunskap/installera-bash-i-windows-med-wsl-och-ubuntu)
+- Mac OS: [Terminalen och pakethantering med Brew på Mac OS](kunskap/terminalen-och-pakethantering-med-brew-pa-mac-os)
+- Unix/Linux: [Terminalen och pakethantering i Unix/Linux](kunskap/terminalen-och-pakethantering-i-unix-linux)

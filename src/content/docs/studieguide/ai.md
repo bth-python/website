@@ -1,5 +1,5 @@
 ---
-title: "Att använda AI i studier och lärande" 
+title: "Att använda AI i studier och lärande ⚠️"
 description: No description.
 ---
 

@@ -3,21 +3,14 @@ title: Versioner av kursen
 description: Historiska versioner av kurs och kursmaterial.
 ---
 
-Om du påbörjat den äldre version av kursen så skall du också slutföra denna versionen av kursen eller göra om den nya kursen från start. Alternativt rådgör du med den som är kursansvarig.
+Om du påbörjat den äldre version av kursen så skall du också slutföra denna versionen av kursen (eller göra om den nya kursen från start). Alternativt rådgör du med den som är kursansvarig.
 
-Från och med hösten 2025 finner du kursens webbplats på [XXX](...).
+Mellan höstterminen 2023 och 2024 finns kursmaterialet i [python (v5) här](http://dbwebb.se/kurser/python-v5).
 
-För tillfället från och med höstterminen 2022 fram till och med höstterminen 2024 så [finns kursmaterialet till webtec (v2) här](http://dbwebb.se/kurser/webtec-v2).
+Mellan höstterminen 2021 och 2022 finns kursmaterialet i [python (v4) här](http://dbwebb.se/kurser/python-v4).
 
-För tillfället under höstterminen 2021 så [finns kursmaterialet till webtec (v1) här](http://dbwebb.se/kurser/webtec-v1).
+Höstterminen 2020 finns kursmaterialet i [python (v3) här](http://dbwebb.se/kurser/python-v3).
 
-Tidigare kursomgångar gick kursen under smeknamnet htmlphp.
+Mellan höstterminen 2018 och 2019 finns kursmaterialet i [python (v2) här](http://dbwebb.se/kurser/python-v2).
 
-För tillfällen under höstterminen 2020 så [finns kursmaterialet till htmlphp (v4) här](http://dbwebb.se/kurser/htmlphp-v4).
-
-För tillfällen från höstterminen 2018 till och med höstterminen 2019 så [finns kursmaterialet till htmlphp (v3) här](http://dbwebb.se/kurser/htmlphp-v3).
-
-För tillfällen från höstterminen 2015 till och med höstterminen 2017 så [finns kursmaterialet till htmlphp (v2) här](http://dbwebb.se/kurser/htmlphp-v2).
-
-För tillfällen fram till och med vårterminen 2015, så [finns kursmaterialet till den kursen i htmlphp (v1)](http://dbwebb.se/kurser/arkiv/htmlphp-v1).
-
+Om du gick kursen tidigare, fram till och med höstterminen 2017, så finns kursmaterialet i [python (v1)](http://dbwebb.se/kurser/python-v1).

@@ -1,15 +1,13 @@
 ---
-title: Texteditor vscode
+title: Texteditor vscode ⚠️
 description: Utvecklingsverktyg Visual Studio Code för att skriva koden i.
 sidebar:
-    order: 145
+  order: 145
 ---
 
 Visual Studio Code är en editor som du kan använda som utvecklingsverktyg när du programmerar och redigerar textfiler. Här är en kort guide till hur du installerar Visual Studio Code och hur du konfigurerar de vanligaste inställningarna.
 
 Visual Studio Code finns till flera operativsystem, går under en fri licens (MIT) och utvecklas primärt utav Microsoft men finns även som [öppen källkod på GitHub](https://github.com/microsoft/vscode).
-
-
 
 ## Installera
 
@@ -24,8 +22,6 @@ På Windows får man frågan under installationen om man vill lägga till "Open 
 När du startar upp Visual Studio Code för första gången får du en trevlig välkomsskärm.
 
 [FIGURE src=/image/vscode/welcome_screen.png?w=w2 caption="Visual Studio Code hälsar dig välkommen."]
-
-
 
 ## Testa din editor
 
@@ -56,8 +52,6 @@ Titta nere i högra hörnet av Visual Studio Code, så ser du att editorn hålle
 
 Nu har du koll på grunderna.
 
-
-
 ## Grundinställningar
 
 Visual Studio Code har inställningar som kan ändras, öppna dem via `ctrl ,` eller `cmd ,` (Mac). Du kan också öppna fönstret för inställningar via menyvalet `File -> Preferences -> Settings` eller `Code -> Preferences -> Settings` (Mac).
@@ -66,13 +60,11 @@ Visual Studio Code har inställningar som kan ändras, öppna dem via `ctrl ,` e
 
 Du behöver nu dubbelkolla att Visual Studio Code har ett antal nödvändiga inställningar.
 
-* UTF-8 NOBOM
-* Soft tabs, tab längd 4 mellanslag
-* Radslut Unix style
+- UTF-8 NOBOM
+- Soft tabs, tab längd 4 mellanslag
+- Radslut Unix style
 
-
-
-### Använd UTF-8 NOBOM 
+### Använd UTF-8 NOBOM
 
 Under "Text Editor" och "Files" finns en inställning som heter "Encoding". Du kan också använda sökrutan längst upp och söka på `encoding`.
 
@@ -80,9 +72,7 @@ Standardinställningen är att filerna sparas i formatet UTF-8 utan byte order m
 
 [FIGURE src=/image/vscode/encoding.png caption="Encoding skall vara UTF-8 NOBOM (UTF-8)"]
 
-
-
-### Använd soft tabs, tab-längd 4 
+### Använd soft tabs, tab-längd 4
 
 :::caution
 Använd en `.editor` file istället, eller låt det komma som en del av utvecklingsmiljön.
@@ -93,7 +83,7 @@ Som standard använder Visual Studio Code "Soft Tabs". Vi låter det vara så.
 Soft tabs betyder att en tab ersätts med ett motsvarande antal mellanslag. Det gör att det blir enklare att flytta filer mellan olika editorer och användare som kan ha olika inställningar.
 
 Leta efter "Tab Size" och sätt den till 4 mellanslag (den bör vara det som standard).
- 
+
 [FIGURE src=/image/vscode/tabsize.png caption="Använd 4 mellanslag för att ersätta en tab."]
 
 Olika kodstandarder kan ha olika rekommendationer om storleken på en soft tab. De vanliga inställningarna är 2 eller 4 mellanslag. I kurserna använder vi 4.
@@ -102,9 +92,7 @@ Vi kan också ändra detta smidigt fil-för-fil, genom att klicka på "Spaces: 4
 
 [FIGURE src=/image/vscode/tabsize_menu.png caption="Tab Size menu"]
 
-
-
-### Radslut enligt Unix-style 
+### Radslut enligt Unix-style
 
 Vi vill använda radslut enligt Unix-style (`\n`), också kallad LF. Det blir enklast så, för en webbprogrammerare.
 
@@ -118,17 +106,13 @@ För att ändra filens radslut så klicka på (i detta fallet) CRLF och byt till
 
 Förutom Windows style radbrytning LF + CR (`\n\r`) så kan du även komma i kontakt med äldre Mac style CR (`\r`).
 
-Vi kör alltid på LF för att undvika problem när vi flyttar filer mellan olika datorer. I vissa fall kan det bli problem när man använder andra typer av radslut. 
+Vi kör alltid på LF för att undvika problem när vi flyttar filer mellan olika datorer. I vissa fall kan det bli problem när man använder andra typer av radslut.
 
-
-
-### Radslut nya filer enligt LF 
+### Radslut nya filer enligt LF
 
 För att underlätta att alla nya filer du skapar verkligen har LF som radslut så kan vi gå in i inställningarna och söka på "eol" (end-of-line). Ursprungligen står det auto, men vi vill ha det som `\n` (LF).
 
 [FIGURE src=image/vscode/eol.png?w=w2 caption="Alltid default radslut till LF."]
-
-
 
 ## Installera tillägg
 
@@ -140,18 +124,10 @@ Ute till höger har vi en meny som ser ut som byggklossar där vi kan se vilka t
 
 Allt eftersom du blir varm i kläderna så är det en bra idé att se vilka tillägg som finns som kan underlätta din vardag som programmerare. Men till att börja med så nöjer vi oss med att konstatera att det finns möjligheter att anpassa sin editor.
 
-
-
 ## Konfigurationsfiler
 
 Visual Studio Code sparar sina konfigurationsfiler som `.json`. Beroende på vilket system du sitter på ligger dessa filer på olika ställen, men det kan vara bra att veta att de finns. Det är ett mer avancerat sätt att arbeta med inställningar, för oss duger det grafiska gränssnittet i editorn.
 
-
-
 ## Avslutningsvis
 
-En editor är ett oerhört viktigt arbetsverktyg för en webbprogrammerare. Oavsett vilken du väljer så finns det alltid olika sätt att anpassa editorn till ditt behov. Om du investerar tid i att lära dig din editor så kan du spara en hel del tid i ditt utvecklingsarbete. 
-
-
-
-
+En editor är ett oerhört viktigt arbetsverktyg för en webbprogrammerare. Oavsett vilken du väljer så finns det alltid olika sätt att anpassa editorn till ditt behov. Om du investerar tid i att lära dig din editor så kan du spara en hel del tid i ditt utvecklingsarbete.

@@ -1,30 +1,23 @@
 ---
-title: Git 
+title: Git ⚠️
 description: Installera versionshanteringsverktyget Git.
 sidebar:
-    order: 160
+  order: 160
 ---
 
 Versionshanteringverktyget Git används som ett utvecklingsverktyg i kursen. Git är ett versionshanteringssystem som utvecklades i samband med arbetet med Linux-kärnan. Git har nu det blivit ett alltmer populärt verktyg för att hantera kod.
 
 Här är beskrivs hur du installerar Git på din egen maskin.
 
-
-
-Installera {#install}
---------------------------------------
+## Installera {#install}
 
 Välj din miljö och installera Git.
-
-
 
 ### Installera på Windows (WSL/Bash)
 
 Git finns förinstallerat när du använder WSL med Bash/Ubuntu för Windows.
 
-
-
-### Installera på Mac OS 
+### Installera på Mac OS
 
 På vissa versioner av Mac OS så finns Git redan installerat som en del av systemet. Men om du har en nyare version av Mac OS som Ventura så installerar du git.
 
@@ -34,8 +27,7 @@ brew install git
 
 Om inte testet av Git funkar, så starta om ditt terminalfönster och testa igen.
 
-
-### Installera på Linux/Unix 
+### Installera på Linux/Unix
 
 På Ubuntu och Debian Linux kan du installera med pakethanteraren.
 
@@ -43,10 +35,7 @@ På Ubuntu och Debian Linux kan du installera med pakethanteraren.
 apt install git
 ```
 
-
-
-Testa installationen 
---------------------------------------
+## Testa installationen
 
 Testa att installationen finns på plats genom att följande kommando i en terminal.
 
@@ -57,18 +46,13 @@ git
 
 Du kommer se vilken version du har installerat och du får en hjälptext som visar detaljer om hur kommanot fungerar.
 
-
-
 ## Konfigurera din miljö
 
 :::caution
 Visa hur man konfigurerar Git med sin egen användare och mailadress.
 :::
 
-
-
-Avslutningsvis 
---------------------------------------
+## Avslutningsvis
 
 Git finns till flera operativsystem, går under en fri licens och utvecklas som [öppen källkod på GitHub](https://github.com/git).
 
@@ -81,7 +65,3 @@ Om du ändå vill lära dig mer om Git så finns här ett par förslag.
 På webbplatsen för Git finns det en webbaserad övning om 15 minuter som [hjälper dig att komma igång med grunderna för Git](http://try.github.com/).
 
 Här finns en artikel som visar hur du kan [komma igång med Git tillsammans med webbtjänsten GitHub](kunskap/kom-igang-med-git-och-github).
-
-
-
-
