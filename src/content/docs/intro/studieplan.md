@@ -1,8 +1,8 @@
 ---
-title: Studieplanering och schema
+title: Studieplanering och schema ⚠️
 description: Detaljer om schema, rekommenderad studieplanering och lektionsplan.
 sidebar:
-    order: 130
+  order: 130
 ---
 
 :::danger
@@ -18,4 +18,3 @@ På Canvas finns datum för inlämningsuppgifter. Ett rättningsfönster pågår
 Kursen har en [lektionsplan](webtec/lektionsplan) som visar när det är lärarledda tillfällen för undervisning/handledning på campus/distans.
 
 Kursen har bokade tillfällen i BTHs schemabokningsprogram, "schemat", som säger när en fysisk sal är bokad på campus. Det finns en länk till det aktuella schemat, via lektionsplanen.
-
