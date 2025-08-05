@@ -9,7 +9,7 @@ import starlightAutoSidebar from 'starlight-auto-sidebar'
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://bth-python.github.io/website/',
-	base: '/',
+	base: '/website',
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 	},
