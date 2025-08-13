@@ -14,10 +14,6 @@ import YouTube from '@components/YouTube.astro';
 
 Nu skall du skapa kursens git repo, lokalt i din terminal under katalogen `dbwebb-kurser`, och koppla det till den plats för repot som du nyligen skapade på GitHub.
 
-:::note
-På bilderna i denna artikel står det `webtec` som kursnamn. Ignorera det och låtsas som att det står `python`, vilket det ska göra för er.
-:::
-
 ## Gå till katalogen dbwebb-kurser
 
 Börja med att gå till din arbetskatalog för kurserna, den som du döpte till `dbwebb-kurser`.
@@ -101,6 +97,8 @@ git checkout -b bth/submit/kmom06
 git checkout main
 git checkout -b bth/submit/kmom10
 git checkout main
+git checkout -b bth/submit/test-gitconfig
+git checkout main
 ```
 
 Här visas bilder från när kommandona körs, del för del.
@@ -114,7 +112,7 @@ import repo2 from '@assets/kursrepo/repo2.png';
     caption="Nu är repot skapar och du har flyttat in i den katalogen där repot finns."
 />
 
-Du kan använda kommandot `pwd` och `ls` för att kontrollera vilken katalog du är i och vad den innehåller. Använder du `la -la` får får du detaljer om filer och kataloger och det visas även dolda kataloger som börjar med en punkt `.`.
+Du kan använda kommandot `pwd` och `ls` för att kontrollera vilken katalog du är i och vad den innehåller. Använder du `ls -la` får får du detaljer om filer och kataloger och det visas även dolda kataloger som börjar med en punkt `.`.
 
 Därefter skapar vi main-branchen. 
 
@@ -136,7 +134,7 @@ import repo4 from '@assets/kursrepo/repo4.png';
     caption="Nu är tre tomma submit-branches skapade."
 />
 
-Du kan kontrollera att ditt repo nu innehåller 4 branches med kommandot `git branch`, med det kommandot ser du också vilken branch du befinner dig i för närvarande.
+Du kan kontrollera att ditt repo nu innehåller 4 branches med kommandot `git --no-pager branch`, med det kommandot ser du också vilken branch du befinner dig i för närvarande.
 
 Du kan också använda kommandot `git status` för att se om du gjort några lokala ändringar i ditt git repo, ändringar som ännu inte är committade.
 
@@ -175,6 +173,7 @@ git push -u origin main
 git push origin bth/submit/kmom03
 git push origin bth/submit/kmom06
 git push origin bth/submit/kmom10
+git push origin bth/submit/test-gitconfig
 ```
 
 Så här kan det se ut om man kör varje kommando för sig. Dock visas bara de två första `git push` då resterande push ger liknande utskrift.

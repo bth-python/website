@@ -13,7 +13,7 @@ import YouTube from '@components/YouTube.astro';
 
 När man jobbar i projekt som har att göra med programmeringsspråket Python så kan man använda `uv` som ett sätt att hantera projektet och installera verktyg och extra kodmoduler och hjälpverktyg vid behov. För att det skall fungera så behöver man initiera repot som ett uv projekt via kommandot `uv init`. Då skapas följande filer:
 - `.python-version` - en fil som innehåller vilken version av Python som skall användas i projektet.
-- `hello.py` - en exempel-fil med python kod.
+- `main.py` - en exempel-fil med python kod.
 - `pyproject.toml` - en fil som innehåller inställningar för projektet och eventuella beroenden (dependencies).
 - `uv.lock` - en fil som innehåller alla extra verktyg/moduler/paket vi har installerat i projektet med `uv add` och vilken version de har.
 - `.venv` - en katalog som innehåller en virtuell miljö för Python, där alla moduler installeras lokalt för projektet. Den ska inte vara en del av repot och därför har vi lagt till den i `.gitignore`. Den katalogen kan alltid återskapas utifrån informationen i `uv.lock` via kommandot `uv sync`.
@@ -49,23 +49,23 @@ import uvinit2 from '@assets/kursrepo-utvecklingsmiljo/uvinit2.png';
     src={uvinit2}
     caption="uv.lock och .venv är skapad i ditt repo."
 />
-Testa exekvera `hello.py` för att se att allt fungerar som det skall.
+Testa exekvera `main.py` för att se att allt fungerar som det skall.
 
-```bash title="Exekvera hello.py"
-uv run hello.py 
+```bash title="Exekvera main.py"
+uv run main.py 
 ```
 
 import uvinit3 from '@assets/kursrepo-utvecklingsmiljo/uvinit3.png';
 
 <Figure 
     src={uvinit3}
-    caption="Exekvera hello.py."
+    caption="Exekvera main.py."
 />
 
-Nu när allt funkar ska vi radera `hello.py`. Vi ska skapa andra filer och kataloger senare.
+Nu när allt funkar ska vi radera `main.py`. Vi ska skapa andra filer och kataloger senare.
 
-```bash title="Radera hello.py"
-rm hello.py
+```bash title="Radera main.py"
+rm main.py
 ```
 ## Lägg till filen i ditt repo och pusha
 

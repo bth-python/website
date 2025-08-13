@@ -15,10 +15,6 @@ import YouTube from '@components/YouTube.astro';
 
 Ditt kursrepo är ett git repo och de filer du skapar behöver du också lägga till i git repot via de kommandon som git erbjuder.
 
-:::note
-På bilderna i denna artikel står det `webtec` som kursnamn. Ignorera det och låtsas som att det står `python`, vilket det ska göra för er.
-:::
-
 ## git status
 
 Börja med att kontrollera status för ditt repo med kommandot `git status`.
@@ -152,7 +148,8 @@ För varje commit du gör till ett git repo så sparas det i en git commit histo
 Kör följande kommando för att se hur en commit-historik kan presenteras.
 
 ```console title="Kommando för att visa commit-historik för ett git repo."
-git log
+git log 
+# Tryck på "q" för att avsluta utskriften.
 ```
 
 Så här kan det till exempel se ut. Din egen utskrift kan se annorlunda ut, beroende av hur din egen historik ser ut.
@@ -168,6 +165,7 @@ Man kan förändra utskriften från kommandot genom att skicka argument till kom
 
 ```console title="En annorlunda formatterad utskrift av git commit historiken."
 git log --oneline --graph --decorate
+# Tryck på "q" för att avsluta utskriften.
 ```
 
 Det kan se ut så här.
@@ -188,15 +186,6 @@ git config --global alias.lg "log --oneline --graph --decorate"
 # Execute the git alias
 git lg
 ```
-
-Det kan se ut så här när du först skapar aliaset och därefter använder det.
-
-import git8 from '@assets/kursrepo-utvecklingsmiljo/git8.png';
-
-<Figure 
-    src={git8}
-    caption="Skapa ett git alias och använda det."
-/>
 
 Nu räcker det alltså om du i fortsättningen skriver `git lg` för att se den formatterade varianten av git commit historik.
 

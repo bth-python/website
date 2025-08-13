@@ -22,9 +22,6 @@ EditorConfig är en konfigurationsmöjlighet för din texteditor där du kan gö
 
 Nu skall vi skapa en egen konfigurationsfil `.editorconfig` som passar denna kursen. Vi skall placera filen i kursrepot och lägga till den som en del i repot med gits kommandon för add, commit. Därefter gör vi push så att alla ändringar hamnar på GitHub.
 
-:::note
-På bilderna i denna artikel står det `webtec` som kursnamn. Ignorera det och låtsas som att det står `python`, vilket det ska göra för er.
-:::
 
 ### Öppna vscode från nuvarande katalog
 
@@ -41,6 +38,14 @@ import edit1 from '@assets/kursrepo-utvecklingsmiljo/edit1.png';
     caption="Öppna vscode via terminal med nuvarande katalog som arbetskatalog."
 />
 
+Det kan vara så att du får upp en fråga om du litar på filerna som fills i katalogen. Det är helt okej att svara ja på den frågan.
+
+import edit12 from '@assets/kursrepo-utvecklingsmiljo/edit12.png';
+
+<Figure 
+    src={edit12}
+    caption="Öppna vscode via terminal med nuvarande katalog som arbetskatalog."
+/>
 
 När du öppnat vscode så öppnar du även en terminal via menyvalet "Terminal -> New Terminal".
 
@@ -104,6 +109,10 @@ indent_size = 2
 
 # 4 space indentation
 [*.py]
+indent_style = space
+indent_size = 4
+
+[{Taskfile.yml}]
 indent_style = space
 indent_size = 4
 ```

@@ -12,8 +12,6 @@ sidebar:
 
 En förutsättning för att du skall kunna jobba genom denna guiden är att du har ett studentkonto på BTH och du har fått tillgång till kursens organisation på GitHub. Om du inte har löst det så finns det instruktioner på kursens hemsida på Canvas som du kan följa.
 
-
-
 ## Guidens innehåll
 
 I denna kursen använder du versionshanteringssystemet Git och webbplatsen GitHub för att jobba med alla övningar och uppgifter i kursen. För att det skall fungera smidigt så behöver du skapa den miljön och denna guiden hjälper dig med det.
@@ -28,5 +26,4 @@ I denna guiden får du hjälp med:
 
 1. Visa hur du kan authenticera dig mot GitHub med ssh-nycklar.
 
-
-I kursen kommer vi att referera till dit git repo som ditt "kursrepo".
+I kursen kommer vi att referera till ditt git repo som ditt "kursrepo".
