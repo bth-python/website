@@ -15,6 +15,6 @@ Kursen har en [rekommenderad studieplan](https://docs.google.com/spreadsheets/d/
 
 På Canvas finns datum för inlämningsuppgifter. Ett rättningsfönster pågår normalt sett 15 arbetsdagar efter inlämningsdatum på uppgiften. Inlämningsdatumen på Canvas är ett par dagar senare än vad som visas i den rekommenderade studieplanen, det är för att ge dig lite slack/utrymme för att själv planera dina studier.
 
-Kursen har en [lektionsplan](webtec/lektionsplan) som visar när det är lärarledda tillfällen för undervisning/handledning på campus/distans.
+Kursen har en [lektionsplan](https://docs.google.com/spreadsheets/d/1ujKlHuPr7Ec1Iz4WmKONKfAzixk1hWHT7IWYFZ7b35c/edit?gid=1091059811#gid=1091059811) som visar när det är lärarledda tillfällen för undervisning/handledning på campus/distans.
 
 Kursen har bokade tillfällen i BTHs schemabokningsprogram, "schemat", som säger när en fysisk sal är bokad på campus. Det finns en länk till det aktuella schemat, via lektionsplanen.

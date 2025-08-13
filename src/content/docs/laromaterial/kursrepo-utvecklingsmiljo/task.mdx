@@ -51,10 +51,13 @@ När jag skriver denna artikel finns följande kommandon tillgängliga:
 
 ```
 task: Available tasks for this project:
+* check-have-files:           Checks that repo contain all needed files.
+* download-extensions:        Download file with recommended extensions.
 * download-lab:               Download a lab. Run with 'uv run task download-lab -- lab_XX', replace XX with the lab number.
 * download-ruff-config:       Downloads the ruff configuration file from the artifact repository
 * download-taskfile:          Downloads the Taskfile from the artifact repository
 * download-tests:             Replaces files in tests/ with files from the artifact repository, https://github.com/bth-python/python-abcd25
+* download-workflow:          Download workflows file that checks code at pull request.
 ```
 
 När du kör kommandot kan det se annorlunda ut men det borde vara något liknande.
