@@ -1,0 +1,270 @@
+---
+title: "Windows: Terminal och pakethantering"
+description: Installera en bash terminal på Windows med WSL och Ubuntu.
+sidebar:
+    order: 152
+---
+
+import Figure from '@components/CustomFigure.astro';
+import YouTube from '@components/YouTube.astro';
+
+Om du vill komma igång med terminalen på din Windows-dator så gör du så här.
+
+Du behöver vara Administratör på din dator, annars kan du få bekymmer med rättigheter.
+
+
+
+## Terminal
+
+På Windows finns både Cmd och PowerShell som två windows-baserade terminaler. Men vi skall installera en terminal i WSL (Windows Subsystem for Linux) som baseras på Ubuntu som är ett Linux-system. Det kommer att ge oss en bash-terminal som vi kan jobba i.
+
+
+
+### Förbered/installera WSL
+
+Det finns en fullständig [dokumentation för hur man installerar wsl på sin dator](https://learn.microsoft.com/en-us/windows/wsl/install), använd den som referens om något går snett.
+
+Har du en nyare dator brukar det gå bra. Då får du också WSL version 2 vilket vi vill ha.
+
+Börja med att öppna en ny PowerShell terminal som administratör.
+
+1. Tryck Windows-tangenten, skriv "powershell" i sökfönstret.
+1. Högerklicka på "Windows Powershell" och välj "Kör som Administratör".
+
+import terminal6 from '@assets/labbmiljö/terminal/terminal6.png';
+
+<Figure 
+    src={terminal6}
+    caption="Så här kan du öppna PowerShell som admin."
+/>
+
+Det kan se ut så här när du startat PowerShell som administratör.
+
+import terminal7 from '@assets/labbmiljö/terminal/terminal7.png';
+
+<Figure 
+    src={terminal7}
+    caption="En terminal är öppnad."
+/>
+
+Nu kan du installera wsl med följande kommando.
+
+```bash title="Installera wsl."
+wsl.exe --install
+```
+
+När kommandot är klart kan du behöva start om din dator.
+
+När du är klar finns wsl installerat och du kan se vilka subsystem som du har tillgängligt med följande kommando.
+
+```bash title="Visa vilka distributioner av subsystem som finns."
+wsl.exe --list
+```
+
+Normalt är det en variant av Ubuntu som är default och den installeras automatiskt.
+
+
+
+## Öppna terminalen med Ubuntu
+
+Du kan nu öppna applikationen "Terminal" i vilken du kan köra olika typer av terminaler i Windows-miljön.
+
+Börja med att starta ett terminal-fönster, det är troligen terminalen PowerShell som startar per default.
+
+import terminal8 from '@assets/labbmiljö/terminal/terminal8.png';
+
+<Figure 
+    src={terminal8}
+    caption="En terminal är öppnad."
+/>
+
+Därefter kan du öppna en ny Ubuntu terminal i en ny flik via drop-down menyn.
+
+import terminal9 from '@assets/labbmiljö/terminal/terminal9.png';
+
+<Figure 
+    src={terminal9}
+    caption="Öppna Ubuntu som en terminal."
+/>
+
+Första gången som du öppnar din Ubuntu-terminal så behöver du ange en användare och ett lösenord som gäller i terminalen. Detta är din specifika användare inuti Ubuntu och har inget att göra med din Windows-användare. Välj ett kort användarnamn och ett kort lösenord så blir det smidigt att använda. Använd inte mellanslag eller svenska tecken i användarnamnet.
+
+När du sedan använder terminalen så kommer du se ditt användarnamn i prompten. Prompten är den rad som visar att terminalen är redo så att du kan skriva in ett nytt kommando.
+
+Du kan även öppna ett terminalfönster med Ubuntu via Windows-meny och skriva "ubuntu" eller genom `Windows + R` och skriva ubuntu i sökfältet.
+
+Det ser ut ungefär så här när din terminal är startad. Min användare heter "mos" och det syns i prompten.
+
+import terminal10 from '@assets/labbmiljö/terminal/terminal10.png';
+
+<Figure 
+    src={terminal10}
+    caption="En terminal är öppnad."
+/>
+
+Skriv följande kommando i terminalen för att se vilka filer och kataloger som ligger i den katalogen där du står.
+
+```bash title="Kommandon för att visa vilken katalog jag står i och vilka filer som där finns."
+pwd
+ls -la
+```
+
+
+
+## Pakethantering
+
+Du har redan en pakethanterare tillgänglig, det är en vital del av ett Linux-system. Pakethanteraren heter `apt` och det första man brukar göra är att se till att pakethanteraren har en uppdaterad databas med alla paket som finns.
+
+```bash title="Uppdatera pakethanterare och uppgradera alla installerade paket."
+sudo apt update
+sudo apt upgrade -y
+```
+
+Lösenordet du behöver ange är det du skapade för din användare.
+
+Nu kan du prova att installera paketet `cowsay`.
+
+```bash title="Installera paketet cowsay."
+sudo apt install cowsay
+```
+
+När det är klart kan du köra programmet.
+
+```bash title="Kör programmet cowsay."
+cowsay "Nu är jag på gång med terminalen!"
+```
+
+Det kan se ut så här.
+
+import terminal11 from '@assets/labbmiljö/terminal/terminal11.png';
+
+<Figure 
+    src={terminal11}
+    caption="Kommandot cowsay är installerat och kan nu köras som ett program."
+/>
+
+
+
+## Installera paket till din labbmiljö
+
+Som en del av din labbmiljö behöver du installera följande program via din pakethanterare.
+
+```bash title="Installera program som en del av din labbmiljö."
+sudo apt install curl tree
+```
+
+Kommandot `curl` är ett sätt att göra en webb-förfrågan via terminalen.
+
+Kommandot `tree` är likt `ls` men visar en trädliknande struktur för dina filer och kataloger.
+
+
+
+## Öppna filväljaren och texteditorn
+
+När du är i terminalen kan du öppna vissa Windows-applikationer som till exempel filväljaren och texteditorn. Det kan vara ett bra hjälpmedel att öppna dem i den katalogen där man står för tillfället.
+
+Du kan även komma åt ditt filsystem i windows, inifrån terminalen.
+
+
+
+### Öppna filväljaren inifrån terminalen
+
+Du kan öppna explorer, filväljaren, inuti terminalen genom att skriva följande kommando.
+
+```bash title="Öppna filväljaren inifrån terminalen mot nuvarande katalog."
+explorer.exe .
+```
+
+Punkten anger vilken katalog du vill öppna och punkten representerar den katalog du för tillfället står i.
+
+På detta viset kan du använda en windowsapplikation för att navigera i filträdet inuti wsl.
+
+Om du i explorer inte ser filändelser eller dolda filer och kataloger i din Explorer så kan du behöva konfigurera det via "Options -> View" och klicka i enligt följande.
+
+* Klicka i
+    * Display the full path in the title bar
+    * Show hidden files, folders and drives
+* Klicka bort
+    * Hide extensions for known filetypes
+
+Via explorer kan du enkelt kopiera filer och kataloger mellan filstrukturen i Windows och filstrukturen i WSL.
+
+
+
+### Öppna vscode inifrån terminalen
+
+Du kan öppna texteditorn vscode inuti terminalen genom att skriva följande kommando.
+
+```bash title="Installera program som en del av din labbmiljö."
+code .
+```
+
+Punkten anger att du öppnar texteditorn med nuvarande katalog som arbetskatalog.
+
+På detta viset kan du använda din texteditor för att hantera de filer som ligger inuti terminalen.
+
+
+
+### Var finns Windows hemma-katalog?
+
+Din ubuntu-terminal är ett eget system med ett eget filsystem, ett subsystem inuti Windows. Därav namnet “Windows Subsystem for Linux (WSL)”.
+
+Du kan komma åt ditt vanliga Windows filsystem, din `C:` och på det sättet dela filer mellan Linux och Windows. Du hittar dina Windows-filsystem under katalogen `/mnt`.
+
+
+```bash title="Se var filerna under Windows finns, via ubuntu-terminalen."
+cd /mnt
+ls -l
+```
+
+För att flytta till din hemmakatalog under ubuntu-terminalen skriver du bara `cd` utan argument.
+
+```bash title="Gå till din hemmakatalog igen."
+cd
+pwd
+ls -l
+```
+
+
+
+## Problem och felsökning
+
+Här finns hjälp att få till vanliga problem vid installationen av wsl.
+
+
+
+## Leta efter felkoden
+
+Om du får en felkod vid installationen så böjrar du med att leta om det finns en vanlig lösning på ditt problem. Öppna länken "[Troubleshooting Windows Subsystem for Linux: Installation issues](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting#installation-issues)" och sök efter din felkod.
+
+
+
+### Min användare är root
+
+Om din användare är rott så har du troligen missat att skapa en ny användare, det gör man första gången som terminalen startar upp ett nytt subsystem.
+
+För att lösa det problemet så är det enklast att ta bort ditt subsystem och installera det på nytt.
+
+Börja med att se namnet på det subsystemet du vill ta bort med `wsl --list --verbose`.
+
+Du kan stänga av systemet med `wsl --terminate Ubuntu` (om det är aktivt och startat), förutsatt att ditt subsystem heter "Ubuntu".
+
+Ta sedan bort det med `wsl --terminate Ubuntu`.
+
+Nu kan du åter installera systemet med `wsl --install --distribution Ubuntu`. Glöm inte att ange användare och lösenord.
+
+
+
+### Installera fler subsystem
+
+Du kan lista fler subsystem som är möjliga att installera.
+
+```bash title="Lista subsystem som kan installeras."
+wsl --list --online
+```
+
+Vill du installera ett av dem så gör du det så här.
+
+```bash title="Installera ett subsystem."
+wsl --install --distribution <Distro name>
+```

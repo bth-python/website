@@ -1,0 +1,124 @@
+---
+title: "Mac: Terminal och pakethantering"
+description: Kom igång med terminalen och pakethantering med Brew på din Mac.
+sidebar:
+    order: 154
+---
+
+import Figure from '@components/CustomFigure.astro';
+import YouTube from '@components/YouTube.astro';
+
+Om du vill komma igång med terminalen på din Mac-dator så gör du så här.
+
+
+
+## Terminal
+
+Terminalen är en vanlig applikation på din Mac och den följer alltid med. Du kan starta den genom att trycka `Command (⌘) + Mellanslag` och därefter skriva "Terminal" i rutan som kommer upp.
+
+Det ser ut ungefär så här när din terminal är startad. Utseendet kan skifta mellan versioner av ditt operativsystem och beroende av vilka inställningar du gjort för terminalen.
+
+På min Mac ser det ut så här.
+
+import terminal4 from '@assets/labbmiljö/terminal/terminal4.png';
+
+<Figure 
+    src={terminal4}
+    caption="En terminal är öppnad."
+/>
+
+Det som visas i terminalen är en "prompt", den kan du anpassa om du vill. Den visar att terminalen är redo så att du kan skriva in ett kommando.
+
+Skriv följande kommando i terminalen för att se vilka filer och kataloger som ligger i den katalogen där du står.
+
+```bash title="Kommandon för att visa vilken katalog jag står i och vilka filer som där finns."
+pwd
+ls -la
+```
+
+
+
+## Pakethantering med Brew
+
+Ett Unix-system har normalt en pakethanterare som gör det enkelt att installera diverse program via kommandoraden. Mac saknar dock en generell pakethanterare och vi kommer därför att installera det separat. 
+
+Ett av alternativen för pakethantering på Mac är [Homebrew](https://brew.sh/) och den väljer vi. Installera pakethanteraren via instruktionen som finns på dess hemsida.
+
+När du är klar kan du köra kommandot för att verifiera att din installation är uppdaterad.
+
+```bash title="Uppdatera pakethanterarens databas."
+brew update
+```
+
+Nu kan du prova att installera paketet `cowsay`.
+
+```bash title="Installera paketet cowsay."
+brew install cowsay
+```
+
+När det är klart kan du köra programmet.
+
+```bash title="Kör programmet cowsay."
+cowsay Nu är jag på gång med terminalen!
+```
+
+Det kan se ut så här.
+
+import terminal5 from '@assets/labbmiljö/terminal/terminal5.png';
+
+<Figure 
+    src={terminal5}
+    caption="Kommandot cowsay är installerat och kan nu köras som ett program."
+/>
+
+
+
+## Installera paket till din labbmiljö
+
+Som en del av din labbmiljö behöver du installera följande program via din pakethanterare.
+
+```bash title="Installera program som en del av din labbmiljö."
+brew install curl tree
+```
+
+Kommandot `curl` är ett sätt att göra en webb-förfrågan via terminalen.
+
+Kommandot `tree` är likt `ls` men visar en trädliknande struktur för dina filer och kataloger.
+
+
+
+## Öppna filväljaren och texteditorn
+
+När du är i terminalen kan du öppna vissa Windows-applikationer som till exempel filväljaren och texteditorn. Det kan vara ett bra hjälpmedel att öppna dem i den katalogen där man står för tillfället.
+
+Du kan även komma åt ditt filsystem i windows, inifrån terminalen.
+
+
+
+### Öppna filväljaren inifrån terminalen
+
+Du kan öppna filväljaren inuti terminalen genom att skriva följande kommando.
+
+```bash title="Öppna filväljaren inifrån terminalen mot nuvarande katalog."
+open .
+```
+
+Punkten anger vilken katalog du vill öppna och punkten representerar den katalog du för tillfället står i.
+
+På detta viset kan du använda filväljaren för att navigera i filträdet utifrån den katalog du arbetar i inuti terminalen.
+
+
+
+### Öppna vscode inifrån terminalen
+
+Du kan öppna texteditorn vscode inuti terminalen genom att skriva följande kommando.
+
+```bash title="Installera program som en del av din labbmiljö."
+code .
+```
+
+Punkten anger att du öppnar texteditorn med nuvarande katalog som arbetskatalog.
+
+På detta viset kan du enkelt öppna texteditorn mot den katalog där du vill jobba.
+
+Om det inte fungerar så kan du behöva installera en plugin via vscode, först. Det gör du genom att öppna vscode och trycka `shift cmd P` och söka efter "Shell Command: Install 'code' command in PATH". Välj det kommandot och kör det. Därefter startar du om terminalen och försöker att öppna vscode igen med `code .`.

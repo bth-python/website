@@ -1,0 +1,61 @@
+---
+title: Git
+description: Installera versionshanteringsverktyget Git.
+sidebar:
+  order: 160
+---
+
+import Figure from '@components/CustomFigure.astro';
+import YouTube from '@components/YouTube.astro';
+
+Versionshanteringverktyget Git används som ett utvecklingsverktyg i kursen. Git är ett versionshanteringssystem som utvecklades i samband med arbetet med Linux-kärnan. Git har nu det blivit ett alltmer populärt verktyg för att versionshantera kod.
+
+Här är beskrivs hur du installerar Git.
+
+## Installera med pakethanteraren
+
+Du installerar git med din pakethanterare.
+
+Om du är på Windows WSL eller Linux gör du så här.
+
+```bash title="Installera git med din pakethanterare på Windows/Linux."
+sudo apt install git
+```
+
+Om du är på Mac gör du så här.
+
+```bash title="Installera git med din pakethanterare på Mac."
+brew install git
+```
+
+## Testa installationen
+
+Testa att installationen finns på plats genom att följande kommando i en terminal.
+
+```bash title="Verifiera att git fungerar."
+git --version
+git
+```
+
+Du kommer se vilken version du har installerat och du får en hjälptext som visar detaljer om hur kommanot fungerar.
+
+## Konfigurera din miljö
+
+Du behöver nu konfigurera din miljö för att berätta vem du är som jobbar med git.
+
+```bash title="Konfigurera git med ditt namn och epost."
+git config --global user.name "Ditt Namn"
+git config --global user.email "din@epost.com"
+```
+
+Du kan visa alla inställningar med följande kommando.
+
+```bash title="Visa vilka inställningar du har."
+git config --list
+```
+
+## Avslutningsvis
+
+Git finns till flera operativsystem, går under en fri licens och utvecklas som [öppen källkod på GitHub](https://github.com/git).
+
+Denna artikel visar enbart hur du installerar Git eftersom det är en del av labbmiljön som används till kurserna. Att lära sig använda Git är en annan sak, men det tar vi en annan dag.

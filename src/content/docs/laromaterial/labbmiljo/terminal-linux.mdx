@@ -1,0 +1,84 @@
+---
+title: "Linux: Terminal och pakethantering"
+description: Kom igång med terminalen och pakethantering på Linux.
+sidebar:
+    order: 156
+---
+
+import Figure from '@components/CustomFigure.astro';
+import YouTube from '@components/YouTube.astro';
+
+Om du vill komma igång med terminalen på din Linux-dator så gör du så här.
+
+
+
+## Terminal
+
+Det finns så gott som alltid en terminal på din Linux-dator så börja med att öppna den. Troligen har du redan använt den om du kör på en Linux-dator.
+
+Det ser ut ungefär så här när din terminal är startad. Utseendet kan skifta mellan versioner av ditt operativsystem och beroende av vilka inställningar du gjort för terminalen.
+
+För egen del sitter jag på en Ubuntu och där ser terminalen ut så här.
+
+import terminal2 from '@assets/labbmiljö/terminal/terminal2.png';
+
+<Figure 
+    src={terminal2}
+    caption="En terminal är öppnad."
+/>
+
+Det som visas i terminalen är en "prompt", den kan du anpassa om du vill. Den visar att terminalen är redo så att du kan skriva in ett kommando.
+
+Skriv följande kommando i terminalen för att se vilka filer och kataloger som ligger i den katalogen där du står.
+
+```bash title="Kommandon för att visa vilken katalog jag står i och vilka filer som där finns."
+pwd
+ls -la
+```
+
+
+
+## Pakethantering
+
+Du har redan en pakethanterare tillgänglig, det är en vital del av ditt Linux-system. På min Ubuntu heter pakethanteraren `apt` och det första man brukar göra är att se till att pakethanteraren har en uppdaterad databas med alla paket som finns.
+
+```bash title="Uppdatera pakethanterare och uppgradera alla installerade paket."
+sudo apt update
+sudo apt upgrade -y
+```
+
+Nu kan du prova att installera paketet `cowsay`.
+
+```bash title="Installera paketet cowsay."
+sudo apt install cowsay
+```
+
+När det är klart kan du köra programmet.
+
+```bash title="Kör programmet cowsay."
+cowsay "Nu är jag på gång med terminalen!"
+```
+
+Det kan se ut så här.
+
+import terminal3 from '@assets/labbmiljö/terminal/terminal3.png';
+
+<Figure 
+    src={terminal3}
+    caption="Kommandot cowsay är installerat och kan nu köras som ett program."
+/>
+
+
+
+## Installera paket till din labbmiljö
+
+Som en del av din labbmiljö behöver du installera följande program via din pakethanterare.
+
+```bash title="Installera program som en del av din labbmiljö."
+sudo apt install curl tree
+```
+
+Kommandot `curl` är ett sätt att göra en webb-förfrågan via terminalen.
+
+Kommandot `tree` är likt `ls` men visar en trädliknande struktur för dina filer och kataloger.
+
