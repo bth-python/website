@@ -1,8 +1,9 @@
 ---
-title: "Avslutningsvis utvecklingsmiljö" 
+title: "Avslutning och verifiering" 
 description: Nu är vi klara och har installerat alla delar i utvecklingsmiljön, så här långt.
-author: mos
+author: aar
 revision:
+    "2025-08-14": "(B, aar) Lagt till verifiering av koppling till Canvas."
     "2025-06-26": "(A, mos) Första utkastet."
 sidebar:
     order: 9999
@@ -14,7 +15,18 @@ import YouTube from '@components/YouTube.astro';
 
 Då är vi klara med att installera den delen av utvecklingsmiljön som hjälper dig att komma igång med kursens första kmom.
 
-Så här ser det ut när jag tittar på mitt repo i vscode och verifierar mitt repo med `git status` och tittar på commit-historiken med `git lg`.
+## Verifiera filerna
+
+Så här ser det ut när jag tittar på mitt repo i vscode och verifierar mitt repo med `uv run task check-have-files`.
+
+import test1 from '@assets/kursrepo-utvecklingsmiljo/test1.png';
+
+<Figure 
+    src={test1}
+    caption="Kursrepot innehåller alla konfigurationsfiler."
+/>
+
+Du kan också kolla på din commit-historiken med `git lg` att du har commits med all kod.
 
 import avslutning1 from '@assets/kursrepo-utvecklingsmiljo/avslutning1.png';
 
@@ -23,7 +35,7 @@ import avslutning1 from '@assets/kursrepo-utvecklingsmiljo/avslutning1.png';
     caption="Kursrepot innehåller nu utvecklingsverktyg och en struktur som vi kan jobba i."
 />
 
-Om du läser commit-historiken noggrannt så kan du se att main-branchen "ligger före" de andra brancherna med alla de commits som vi gjort när vi installerade utvecklingsmiljön. 
+Om du läser commit-historiken noggrant så kan du se att main-branchen "ligger före" de andra brancherna med alla de commits som vi gjort när vi installerade utvecklingsmiljön. 
 
 Om jag öppnar upp repot på GitHub så kan det se ut så här.
 
@@ -43,4 +55,75 @@ import avslutning3 from '@assets/kursrepo-utvecklingsmiljo/avslutning3.png';
     caption="Historiken över dina commits kan du ven se via GitHub."
 />
 
-Som sagt, nu är du redo att påbörja kmom01.
+## Verifiera kopplingen till Canvas
+
+Nu när vi har installerat utvecklingsmiljön så kan vi också verifiera att den är kopplad till Canvas.
+
+Gå till ditt repo på GitHub och klicka på `Pull request` följt av `New Pull Request`.
+
+import test2 from '@assets/kursrepo-utvecklingsmiljo/test2.png';
+
+<Figure 
+    src={test2}
+    caption="Ska ny Pull request."
+/>
+
+Alla filer du har skapat finns bara på `main` branchen. Med Pull request kan vi kopiera den koden till en annan branch. Nu ska du välja vilken branch du ska kopiera den till.
+
+Välj branch `bth/submit/test-gitconfig`.
+
+import test3 from '@assets/kursrepo-utvecklingsmiljo/test3.png';
+
+<Figure 
+    src={test3}
+    caption="Välj test-gifconfig branch."
+/>
+
+Nu kan du se alla de commits och dess data som ska flyttas till `bth/submit/test-gitconfig` branchen. Klicka på `Create pull request`.
+
+import test4 from '@assets/kursrepo-utvecklingsmiljo/test4.png';
+
+<Figure 
+    src={test4}
+    caption="Skapa PR."
+/>
+
+Ge din PR en titel och klicka sen igen på `Create pull request`.
+
+import test5 from '@assets/kursrepo-utvecklingsmiljo/test5.png';
+
+<Figure 
+    src={test5}
+    caption="Välj en titel och skapa PR."
+/>
+
+Nu har din PR skapats. Skrolla ner på sidan så borde du se något som bilden nedanför. Du kanske behöver ladda om sidan för att det ska synas. Efter några sekunder eller någon minut (det varierar hur lång tid det tar) ska det stå `All checks have passed`. Om det inte gör det har något gått fel. Det är svårt att säga vad av allt som kan gått fel. Du kan klicka på den knappen och tas till fel utskriften, du kan försöka tolka det för se vad som gått fel, annars kontakta en lärare för hjälp.
+
+import test6 from '@assets/kursrepo-utvecklingsmiljo/test6.png';
+
+<Figure 
+    src={test6}
+    caption="Kolla att testerna har passerat."
+/>
+
+Om allt har gått bra ska du automatiskt ha fått ett betyg på uppgiften `Test gitconfig` i Canvas. Gå till Canvas sidan för kursen och kolla om du har fått ett betyg och en kommentar på den uppgiften.
+
+import test7 from '@assets/kursrepo-utvecklingsmiljo/test7.png';
+
+<Figure 
+    src={test7}
+    caption="Kolla att du har G och kommentar på Canvas.."
+/>
+
+Om du inte har fått betyg `G` och en kommentar har något gått fel, kontakta en lärare.
+
+Avsluta med att gå tillbaka till din pull request och avsluta den. Klicka på `Close pull request`.
+
+import test8 from '@assets/kursrepo-utvecklingsmiljo/test8.png';
+
+<Figure 
+    src={test8}
+    caption="Stäng PR på GitHub."
+/>
+
+Bra jobbat! Nu är du redo för kmom01.
