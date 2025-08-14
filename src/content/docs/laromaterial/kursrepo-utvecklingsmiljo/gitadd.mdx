@@ -67,7 +67,7 @@ Nu är filen en del av repot, men ändringarna är ännu inte committade.
 
 ## git commit
 
-För att spara ändringarna till git repot så kör vi kommandot `git commit` och samtidigt anger vi ett committ-meddelande om vad ändringen innebär. Dessa meddleande blir en del av repots committ-historik som berättar en historia om hur repot har utvecklats och förändrats.
+För att spara ändringarna till git repot så kör vi kommandot `git commit` och samtidigt anger vi ett commit-meddelande om vad ändringen innebär. Dessa meddleande blir en del av repots commit-historik som berättar en historia om hur repot har utvecklats och förändrats.
 
 ```console title="Spara (samtliga) ändringarna i repot med git commit."
 git commit -m "Add the file .editorconfig with default settings for the course"
@@ -84,7 +84,7 @@ import git3 from '@assets/kursrepo-utvecklingsmiljo/git3.png';
     caption="Nu är ändringarna committade till git repot."
 />
 
-Du kan nu utläsa från `git status` att din lokala branch är ett steg före din remote origin/main som innebär att din lokala kopia har en mer ändring än den version av repot som ligger på GitHub.
+Du kan nu utläsa från `git status` att din lokala branch är ett steg före din remote origin/main som innebär att din lokala kopia har en ändring mer än den version av repot som ligger på GitHub.
 
 När du committar bör det vara commits som du kan beskriva i ett enkelt och tydligt meddelande. Om det blir svårt att skriva ett kort meddelande om din commit så innehåller den troligen för mycket saker. Men så här i början är det viktigare att göra många commits än att skriva perfekta meddelanden till commit-historiken, det kommer med träningen.
 
@@ -95,7 +95,7 @@ Här är ett par korta regler när det kommer till commit-meddelanden.
 
 ## git push
 
-För att ladda upp ändringarna till GitHub, din remote, så använder du kommandot `git push`. Då kommer samtliga lokala ändringar at tladdas upp till din remote (GitHUb) så att både din remote och din lokala version är "i synk" och har samma innehåll och samma commit-historik.
+För att ladda upp ändringarna till GitHub, din remote, så använder du kommandot `git push`. Då kommer samtliga lokala ändringar att laddas upp till din remote (GitHUb) så att både din remote och din lokala version är "i synk" och har samma innehåll och samma commit-historik.
 
 Kör nu kommandot `git push`.
 
