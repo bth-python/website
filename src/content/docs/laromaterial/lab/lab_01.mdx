@@ -1,0 +1,109 @@
+---
+title: Lab 01
+revision:
+  "2025-08-15": "(A, aar) First version."
+---
+
+import Figure from '@components/CustomFigure.astro';
+
+# Grunderna i programmering och if-satser
+
+I denna övningen får du träna på att programmera med grunderna i programmeringsspråket Python med siffor, boolean, strängar och några inbyggda metoder.
+
+## Förutsättning
+
+Du har jobbat igenom materialet i kmom01.
+
+## Förberedelser
+
+Förbered dig så här för övningen. Börja att öppna din terminal och gå till ditt kursrepo.
+
+```
+cd dbwebb-kurser/python-abcd25
+```
+
+Nu behöver du skapa mappen för `lab_01` i `kmom01` katalogen.
+
+```
+mkdir src/kmom01/lab_01
+cd src/kmom01/lab_01
+```
+
+Nu skall vi hämta labb filerna från nätet som behövs för att komma igång med labben. Skriv följande kommandon.
+
+```
+uv run task download-lab -- lab_01
+```
+
+import lab1 from '@assets/lab/lab1.png';
+
+<Figure 
+    src={lab1}
+    caption="Hämta lab_01 filerna"
+/>
+
+Nu kan du öppna din vscode utifrån denna katalogen.
+
+```
+code .
+```
+
+Tittar runt i filerna som finns i labben och försök förstå hur de händer ihop.
+
+
+<details>
+<summary>Hur filerna hänger ihop</summary>
+
+- `answer.py` - Övningsuppgifterna som du ska implementera. Du **ska** skriva din kod i denna filen.
+- `dbw.py` - Koden som räknar ut svaren på uppgifterna. Du ska inte ändra i denna filen.
+- `lab.py` - Koden kopplar ihop dina lösningar i `answer.py` med de rätta svaren och `dbw.py`. Du ska inte ändra i denna filen.
+
+</details>
+
+Exekvera labben och se att den fungerar.
+
+```
+uv run lab.py
+```
+import lab2 from '@assets/lab/lab2.png';
+
+<Figure 
+    src={lab2}
+    caption="Exekvera labben"
+/>
+
+
+## Första övningsuppgiften
+
+I den första övningsuppgiften skall du implementera följande funktion.
+
+```py
+def hello():
+    """
+    Returns the string "Hello world".
+
+    Returns:
+        str: "Hello world".
+    """
+    # TODO: Write your code here
+
+```
+
+När du är klar med din implementation så kan du ladda om din webbsida och se om det blev grönt.
+
+<details>
+<summary>Lösningsförslag</summary>
+
+```py
+def hello():
+    """
+    Returns the string "Hello world".
+
+    Returns:
+        str: "Hello world".
+    """
+    return "Hello world"
+
+```
+
+</details>
