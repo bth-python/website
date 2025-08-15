@@ -19,13 +19,13 @@ Här publiceras även större meddelanden rörande kursen.
 
 En stor del av kursmaterialet finns tillgängligt via kurssidan på den öppna webbplatsen för kursen.
 
-- [https://bth-python.github.io/website/](https://bth-python.github.io/website/)
+- [Kursmaterial](https://bth-python.github.io/website/)
 
 ## Kursrepo GitHub
 
 Kursmaterial och inlämningar sker delvis via Git-repon och GitHub. Kursen har en organisation på GitHub.
 
-- [https://github.com/bth-python/](https://github.com/bth-python/)
+- [Kurs organisation på GitHub](https://github.com/bth-python/)
 
 ## Kurschatt via Discord
 
