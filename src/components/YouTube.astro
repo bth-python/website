@@ -1,37 +1,36 @@
 ---
 // Component Script (JavaScript)
-import { YouTube as YouTubeOrig } from 'astro-embed';
+import { YouTube as YouTubeOrig } from "astro-embed";
 
 // Access passed-in component props, like `<X title="Hello, World" />`
 interface Props {
-  caption?: string
-  className?: string
-  id: string
+  caption?: string;
+  className?: string;
+  id: string;
 }
-const { caption, className, id, ...props } = Astro.props
+const { caption, className, id, ...props } = Astro.props;
 ---
 
 <!-- Component Template (HTML + JS Expressions) -->
-
 <figure class={className}>
   <YouTubeOrig id={id} />
   <figcaption>Video. {caption}</figcaption>
 </figure>
 
 <style>
-figure {
-  /*display: inline-block;
+  figure {
+    /*display: inline-block;
   margin: 0; */
-  /* padding: 0.5em; */
-  /* border: 1px solid #ccc; */
-  margin-bottom: 1em;
-}
-figcaption {
-  caption-side: bottom;
-  font-style: italic;
-  text-align: left;
-}
-/*
+    /* padding: 0.5em; */
+    /* border: 1px solid #ccc; */
+    margin-bottom: 1em;
+  }
+  figcaption {
+    caption-side: bottom;
+    font-style: italic;
+    text-align: left;
+  }
+  /*
 img {
   max-width: 100%;
 }

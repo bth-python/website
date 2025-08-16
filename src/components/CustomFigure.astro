@@ -1,61 +1,66 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 const { src, alt, caption, width = 800, height = 400 } = Astro.props;
 ---
 
 <figure id="imageFigure" style="display: inline-block; cursor: pointer;">
-  <Image 
+  <Image
     src={src}
-    alt={alt || 'Image description'}
+    alt={alt || "Image description"}
     width={width}
     height={height}
     loading="lazy"
   />
-  {caption && <figcaption>{caption}</figcaption>}
+  {caption && <figcaption>Bild: {caption}</figcaption>}
 </figure>
 
 <div id="imageModal" style="display:none;">
-  <span id="closeModal" style="position: absolute; top: 20px; right: 20px; font-size: 30px; cursor: pointer;">&times;</span>
+  <span
+    id="closeModal"
+    style="position: absolute; top: 20px; right: 20px; font-size: 30px; cursor: pointer;"
+    >&times;</span
+  >
   <img id="modalImage" style="width: 100%; max-width: 100%;" />
-  <div id="caption" style="text-align: center; color: white; padding: 10px;"></div>
+  <div id="caption" style="text-align: center; color: white; padding: 10px;">
+  </div>
 </div>
 
 <script>
-window.addEventListener('load', function() {
-  const figure = document.getElementById("imageFigure");
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage") as HTMLImageElement;
-  const captionText = document.getElementById("caption") as HTMLElement;
+  window.addEventListener("load", function () {
+    const figure = document.getElementById("imageFigure");
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage") as HTMLImageElement;
+    const captionText = document.getElementById("caption") as HTMLElement;
 
-  if (figure && modal && modalImg && captionText) {
-    figure.addEventListener("click", function(event: MouseEvent) {
-      const clickedImg = event.target as HTMLImageElement;
+    if (figure && modal && modalImg && captionText) {
+      figure.addEventListener("click", function (event: MouseEvent) {
+        const clickedImg = event.target as HTMLImageElement;
 
-      if (clickedImg && modalImg) {
-        modal.style.display = "block";
-        modalImg.src = clickedImg.src;
+        if (clickedImg && modalImg) {
+          modal.style.display = "block";
+          modalImg.src = clickedImg.src;
 
-        const caption = clickedImg.nextElementSibling;
-        if (caption && caption.nodeName === 'FIGCAPTION') {
-          captionText.innerHTML = caption.innerHTML;
+          const caption = clickedImg.nextElementSibling;
+          if (caption && caption.nodeName === "FIGCAPTION") {
+            captionText.innerHTML = caption.innerHTML;
+          }
         }
-      }
-    });
+      });
 
-    const closeModalButton = document.getElementById("closeModal");
-    if (closeModalButton) {
-      closeModalButton.addEventListener("click", function() {
-        modal.style.display = "none";
+      const closeModalButton = document.getElementById("closeModal");
+      if (closeModalButton) {
+        closeModalButton.addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+      }
+
+      window.addEventListener("click", function (event: MouseEvent) {
+        if (event.target === modalImg || event.target === modal) {
+          modal.style.display = "none";
+        }
       });
     }
-
-    window.addEventListener("click", function(event: MouseEvent) {
-      if (event.target === modalImg || event.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-  }
-});
+  });
 </script>
 
 <style>
@@ -87,4 +92,36 @@ window.addEventListener('load', function() {
     color: white;
     margin-top: 20px;
   }
+
+  figure {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 1em;
+  }
+  img {
+    max-width: 100%;
+  }
+  figcaption {
+    caption-side: bottom;
+    font-style: italic;
+    text-align: left;
+  }
+  .right {
+    float: right;
+    margin-left: 1em;
+  }
+  .left {
+    float: left;
+    margin-right: 1em;
+  }
+  /*
+.border {
+  border: 1px solid #999;
+  padding: .5em;
+  border-radius: 10px;
+}
+.shadow {
+  box-shadow: 0.5rem 0.5rem #eee;
+}
+  */
 </style>
