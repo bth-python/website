@@ -59,3 +59,7 @@ I ditt kursrepo kommer du att spara allt det arbete du gör i kursen och du komm
 I ditt kursrepo behöver du ha en utvecklingsmiljö som passar till kursen, du får hjälp att skapa det i följande guide.
 
 1. Jobba igenom "[Utvecklingsmiljö i ditt kursrepo](../laromaterial/kursrepo-utvecklingsmiljo)" för att installera den utvecklingsmiljö som krävs för kursen samt lära dig grunderna i hur du jobbar med ett kursrepo.
+
+### Fusk policy
+
+Läs igenom [Fusk, AI och medvetet vilseledande](../studieguide/fusk) för att veta vad som är tillåtet i kursen och svara sen på Canvas quizet `Fusk policy. Måste få alla rätt, oändlig med försök`. Dina uppgifter kommer inte rättas före du har gjort klart quizet.
