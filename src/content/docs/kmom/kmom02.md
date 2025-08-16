@@ -1,5 +1,5 @@
 ---
-title: "Kmom02: Styla en webbplats" 
+title: "Kmom02: XXX"
 description: No description.
 ---
 
@@ -47,7 +47,7 @@ Studera litteratur och resurser enligt följande.
 
 Titta på följande videor/filmer. Filmerna är tänkta att ge dig en allmän orientering i det område som behandlas i kursmomentet.
 
-* XXX
+- XXX
 
 Videorna ovan finner du även i spellistan "Kursen webtec: Om webbteknologier HTML, CSS och JavaScript sat att bygga webbplatser och webbtjänster".
 
@@ -108,7 +108,7 @@ Läs [instruktionen om hur du skall redovisa]().
 
 Se till att följande frågor besvaras i din redovisningstext.
 
-* Berätta om din upplevelse att jobba med styling och CSS, hur kändes det?
-* Försök reflektera över vilka eventuella svårigheter som finns för en nybörjare att komma igång med CSS.
-* Är du nöjd med utseendet på din webbplats eller är det sakr du hade velat ändra på?
-* Vilken är din TIL för detta kmom?
+- Berätta om din upplevelse att jobba med styling och CSS, hur kändes det?
+- Försök reflektera över vilka eventuella svårigheter som finns för en nybörjare att komma igång med CSS.
+- Är du nöjd med utseendet på din webbplats eller är det sakr du hade velat ändra på?
+- Vilken är din TIL för detta kmom?

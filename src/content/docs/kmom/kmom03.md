@@ -1,5 +1,5 @@
 ---
-title: "Kmom03: Responsiv webbplats" 
+title: "Kmom03: XXX"
 description: No description.
 ---
 
@@ -11,16 +11,11 @@ Mer HTML, CSS och JavaScript med fokus på en responsiv webbplats.
 
 _(Detta är instruktionen för kursmomentet och omfattar det som skall göras inom ramen för kursmomentet. Momentet omfattar cirka 20 studietimmar inklusive läsning, arbete med övningar och uppgifter, felsökning, problemlösning, redovisning och eftertanke. Läs igenom hela kursmomentet innan du börjar jobba. Om möjligt – planera och prioritera var du vill lägga tiden.)_
 
-
-
 ## Läs & Studera
 
 _(2-4 studietimmar)_
 
 Här kan du på egen hand studera och förbereda dig inför övningar och uppgifter.
-
-
-
 
 ### Föreläsning
 
@@ -28,25 +23,19 @@ Titta på följande inspelade föreläsningar. Föreläsningarna kan innehålla 
 
 1. XXX
 
-
-
 ### Litteratur
 
 Studera litteratur och resurser enligt följande.
 
 1. XXX
 
-
-
 ### Video för orientering
 
 Titta på följande videor/filmer. Filmerna är tänkta att ge dig en allmän orientering i det område som behandlas i kursmomentet.
 
-* XXX
+- XXX
 
 Videorna ovan finner du även i spellistan "Kursen webtec: Om webbteknologier HTML, CSS och JavaScript sat att bygga webbplatser och webbtjänster".
-
-
 
 ### Instuderingsfrågor
 
@@ -73,15 +62,11 @@ Här finns ett antal instuderingsfrågor som hjälper dig att finna information 
 
 </details>
 
-
-
 ## Övningar & Uppgifter
 
 _(8-12 studietimmar)_
 
 Övningar är träning inför uppgifterna, det är ofta klokt att jobba igenom övningarna då de förbereder dig inför uppgifterna. Uppgifter skall utföras och redovisas.
-
-
 
 ### Övningar
 
@@ -91,8 +76,6 @@ Jobba igenom övningarna, de förbereder dig inför uppgifterna.
 
 1. (läromaterial för att komma igång inför lab 3 i js)
 
-
-
 ### Uppgifter
 
 Följande uppgifter skall utföras och resultatet skall redovisas.
@@ -100,8 +83,6 @@ Följande uppgifter skall utföras och resultatet skall redovisas.
 1. Utför laborationen "Lab 3: XXX".
 
 1. Gör uppgiften "Bygg en responsiv webbplats".
-
-
 
 ## Resultat & Redovisning
 
@@ -111,5 +92,4 @@ Läs [instruktionen om hur du skall redovisa]().
 
 Se till att följande frågor besvaras i din redovisningstext.
 
-* Vilken är din TIL för detta kmom?
-
+- Vilken är din TIL för detta kmom?
