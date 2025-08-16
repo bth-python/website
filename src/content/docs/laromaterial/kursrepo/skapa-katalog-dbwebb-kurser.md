@@ -1,11 +1,11 @@
 ---
-title: "Skapa katalogen dbwebb-kurser" 
+title: "Skapa katalogen dbwebb-kurser"
 description: Skapa ditt kursrepo för kursen, ett git repo som du kommer att jobba med genom hela kursen.
 author: mos
 revision:
-    "2025-06-24": "(A, mos) Första utkastet."
+  "2025-06-24": "(A, mos) Första utkastet."
 sidebar:
-    order: 0010
+  order: 0020
 ---
 
 Börja med att skapa en katalog i ditt filsystem som heter `dbwebb-kurser`. Tanken är att du kan spara allt ditt kursmaterial, från alla kurser, under denna katalog.
@@ -28,7 +28,7 @@ cd dbwebb-kurser
 # Kontrollera vilken katalog du står i
 pwd
 
-# Katalogen bör normalt vara tom, men du kan dubbelkolla 
+# Katalogen bör normalt vara tom, men du kan dubbelkolla
 ls -l
 ```
 
