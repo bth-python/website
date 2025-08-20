@@ -1,0 +1,133 @@
+---
+title: "Resultat och redovisning" 
+description: No description.
+---
+
+Som ett sista steg i varje kursmoment skall du redovisa. Gör så här.
+
+
+
+## Skriv redovisningstext
+
+Du skriver din redovisningstext i din `README.md` fil i kursrepot.
+
+I din redovisningstext beskriver du dina reflektioner från kursmomentet, vad som gick bra och om något var mer utmanande. Reflektera över svårigheter, problem, lösningar, erfarenheter, lärdomar, resultatet, etc.
+
+Besvara de specifika frågor som finns för varje uppgift och kursmoment.
+
+Skriv ett stycke om totalt 15-20 meningar för varje kursmoment. Försök väva in frågorna i löpande text.
+
+Kan du koppla och jämföra (reflektera) dina lärdomar från nuvarande kursmoment mot andra kursmoment, kurser eller andra lärdomar du har sedan tidigare? Sånt gillar lärare.
+
+{/*
+Läs gärna hur du kan skriva [en bra redovisningstext](kurser/faq/att-skriva-en-bra-redovisningstext).
+*/}
+
+
+
+## Tagga och pusha ditt repo
+
+Lägg till en tagg till ditt repo och pusha sedan både taggen och ditt repo.
+
+Du kan använda följande versioner för dina taggar.
+
+| Version | Kmom   |
+|---------|--------|
+| 1.0.0   | kmom01 |
+| 2.0.0   | kmom02 |
+| 3.0.0   | kmom03 |
+| 4.0.0   | kmom04 |
+| 5.0.0   | kmom05 |
+| 6.0.0   | kmom06 |
+| 7.0.0   | kmom10 |
+
+Tagga ditt repo så här.
+
+```bash title="Lägg till en tagg på ditt repo med versionsnummer."
+git tag -a 1.0.0 -m "Ready with kmom01"
+```
+
+Om du gör ändringar så taggar du din nya inlämning med ett högre versionsnummer, till exempel 1.0.1 eller 1.1.0, du kan själv bestämma vilken version som känns lämplig.
+
+Nu kan du pusha både tagg och repo till GitHub.
+
+```bash title="Pusha repo inklusive taggar."
+git push
+git push --tags
+```
+
+I framtiden kommer du (troligen) att använda versionsnummer enligt något som heter "[Semantic versioning](https://semver.org/)", kika gärna på hur det fungerar.
+
+Som ett sista steg i din inlämning så kan du kontrollera att GitHub verkligen innehåller den allra senaste versionen av din kod.
+
+
+
+## Återkoppling och bedömning
+
+Det sker ingen betygsättning, bedömning eller återkoppling när du är klar och lämnar in kmom01 och kmom02. 
+
+**När du lämnar in kmom03** kontrolleras att du uppfyller kraven i kmom01, kmom02 och kmom03. Du får betyget G när du är godkänd och du får Ux om det är något som saknas eller behöver uppdateras.
+
+Det sker ingen betygsättning, bedömning eller återkoppling när du är klar och lämnar in kmom04 och kmom05. 
+
+**När du lämnar in kmom06** kontrolleras att du uppfyller kraven i kmom04, kmom05 och kmom06. Du får betyget G när du är godkänd och du får Ux om det är något som saknas eller behöver uppdateras.
+
+**När du lämnar in kmom10** rättas den och samtidigt kontrolleras att du har godkänt på inlämningen för kmom03 och kmom06. Därefter får du ditt godkända betyg A-E eller Fx för komplettering eller F för underkänt. Betyget på kmom10 blir också ditt slutbetyg på kursen.
+
+
+
+## Pull request (PR) för kmom03, kmom06, kmom10
+
+I samband med att du lämnar in kmom03, kmom06 och kmom10 skall du även göra en pull request (PR) på GitHub för att visa att du gör din inlämning.
+
+Gör så här.
+
+:::danger
+Beskriv hur studenten gör en inlämning via en PR.
+:::
+
+Läraren kommer att titta på din inlämning och betygsätta den.
+
+
+
+
+Testa din inlämning
+---------------------------------------
+
+Du kan själv testköra rättningsprocessen via följande kommando.
+
+```bash
+# Om du står i rooten av ditt kursrepo.
+uv run tester tests/kmom01
+uv run ruff check src/kmom01
+```
+
+Byt ut kmom01 mot det kursmoment du vill inspektera.
+
+Den som rättar och kontrollerar din inlämning utgår från ovan kommando.
+
+Du kan själv provköra och se samma resultat som rättaren ser. Det är en mycket god idé att alltid testköra sin inlämning på samma sätt som rättaren gör. Du sparar tid genom att själv upptäcka eventuella slarvfel.
+
+
+
+{/*
+Lämna in på Canvas 
+---------------------------------------
+
+Lämna in en länk till din rapport-sida på Canvas. Länken innehåller din studentakronym och på det viset hittar rättaren din inlämning.
+
+Det är bra om du också kopierar in din redovisningstext in i Canvas, det kan vara bra att ha som backup om något händer.
+
+Läraren kommer snabbt kolla igenom din redovisningstext och uppgifterna. Betyg är G (godkänd) eller U/komplettera (komplettera → gör om → gör bättre). Bedömningen baseras på din redovisningstext samt att du har fullgjort kursmomentets uppgifter.
+*/}
+
+
+
+{/*
+Feedback och frågor 
+---------------------------------------
+
+[Vilken feedback kan jag förvänta mig](kurser/faq/vilken-feedback-far-man-pa-inlamningarna)?
+
+Ställ dina frågor och funderingar i de kanaler som erbjuds i kursen. Se till att du får dina frågor besvarade. Fråga igen om något är oklart. Se till att din fråga alltid blir besvarad.
+*/}
