@@ -1,5 +1,5 @@
 ---
-title: Bedömning och betygsättning ⚠️
+title: Bedömning och betygsättning
 description: Hur sätts kursens betyg.
 sidebar:
   order: 150
@@ -35,15 +35,15 @@ Redovisningstexterna är välskrivna, kompletta och ger en god bild av att stude
 
 Poängfördelningen är uppdelad för projektet 60% och för övriga delar i kursen på 40%.
 
-### Kursmoment & Redovisningstexter
+### Kursmoment
 
-Följande tabell används vid bedömning av genomförda kursmoment och redovisningstexterna. Underlaget är din kompletta me-sida.
+Följande tabell används vid bedömning av genomförda kursmoment.
 
-| Bedömningspunkt                                                                                                                                                                                                                     | Poäng | Din poäng |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | --------- |
-| Kursmomenten är utförda enligt instruktion och redovisningstexterna är kompletta.                                                                                                                                                   | 30    |           |
-| Kursmomenten är mycket väl utförda och har det lilla extra. Redovisningstexterna är mycket välskrivna, insiktsfulla och visar på en mycket god förmåga att reflektera över kursmomenten, dess innehåll och studentens eget lärande. | 10    |           |
-| TOTALT                                                                                                                                                                                                                              | 40    |           |
+| Bedömningspunkt                                                                                                                              | Poäng   | Din poäng |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- |
+| Kursmomenten är utförda enligt instruktion och är kompletta.                                                                                 | 30      |           |
+| Kursmomenten är mycket väl utförda och resultatet håller en hög nivå. Denna del används endast om ett betyg står och väger mellan två betyg. | 10      |           |
+| TOTALT                                                                                                                                       | 30 (40) |           |
 
 ### Projektarbete
 
@@ -59,20 +59,9 @@ Följande tabell används vid bedömning av projektet.
 | Krav 6 är implementerat och fungerar felfritt. | 10    |           |
 | TOTALT                                         | 60    |           |
 
-Ett alternativ som används i bland annat Vlinux:
-
-| Bedömningspunkt                                | Poäng | Din poäng |
-| ---------------------------------------------- | ----- | --------- |
-| Krav 1 är implementerat och fungerar felfritt. | 10    |           |
-| Krav 2 är implementerat och fungerar felfritt. | 10    |           |
-| Krav 3 är implementerat och fungerar felfritt. | 10    |           |
-| Krav 4 är implementerat och fungerar felfritt. | 10    |           |
-| Krav 5 är implementerat och fungerar felfritt. | 20    |           |
-| TOTALT                                         | 60    |           |
-
 ### Slutbetyg
 
-Ditt slutbetyg redovisas i tabellen nedan.
+Följande tabell visar hur slutbetyget räknas fram baserat på antalet poäng.
 
 | A-F, ECTS | U, G, UX | U, G, VG | U, 3-5 | Definition                                             | Poäng nivå | Ditt betyg |
 | --------- | -------- | -------- | ------ | ------------------------------------------------------ | ---------- | ---------- |
