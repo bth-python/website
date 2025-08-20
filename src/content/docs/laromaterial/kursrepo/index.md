@@ -22,10 +22,12 @@ I denna guiden får du hjälp med:
 
 1. Skapa en katalogstruktur där du kan jobba med kursens material.
 
-1. Skapa en katalog och ett Git repo där du sparar allt ditt material.
-
-1. Koppla ditt git repo till den GitHub organisation som finns för kursen.
+1. Skapa ett Git repo på GitHub.
 
 1. Visa hur du kan authenticera dig mot GitHub med ssh-nycklar.
+
+1. Skapa en katalog och ett Git repo där du sparar allt ditt material.
+
+1. Koppla ditt git repo till Canvas för inlämningar.
 
 I kursen kommer vi att referera till ditt git repo som ditt "kursrepo".
