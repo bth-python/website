@@ -5,10 +5,6 @@ sidebar:
   order: 150
 ---
 
-:::danger
-Bestäm hur slutbetyget sätts och hur poängen räknas ihop. Bort med referenser till +10 för redovisningstexten.
-:::
-
 Här är de riktlinjer som används vid betygsättning. Detta dokument är också en mall som blir ett underlag till varje student så att de kan se grunderna för sitt betyg.
 
 ## Grunder för betygsättning
