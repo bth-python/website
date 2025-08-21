@@ -1,34 +1,66 @@
-# Markdown Demo
+## Kursen Python
+
+
+**Introduktion till kursen**
+
+
+Andreas Arnesson
 
 
 
-## External 1.1
 
-Content 1.1
+## Agenda
+<hr style="color:green">
 
-Note: This will only appear in the speaker notes window.
-
-
-## External 1.2
-
-Content 1.2
+* Kursformalia
+* Innehåll
+* Labbmiljö
 
 
 
-## External 2
 
-Content 2.1
+## Hitta kursmaterialet
+<hr style="color:green">
 
-
-
-## External 3.1
-
-Content 3.1
+* Gå in på [canvas.bth.se](https://canvas.bth.se) och klicka på länkar
+* Gå till [bth-python.github.io/website/](https://bth-python.github.io/website/)
 
 
-## External 3.2
 
-Content 3.2
+
+
+## Översikt av kursen
+<hr style="color:green">
+
+* [bth-python.github.io/website/intro](https://bth-python.github.io/website/intro)
+
+Läs igenom artiklarna under "introduktion" så har du koll. Det är din innehållsförteckning av kursen.
+
+
+
+
+## Kursnamn och kod
+<hr style="color:green">
+
+* Programmering och Problemlösning i Python
+* DV1670
+* 7.5hp
+* Datavetenskap/Programvaruteknik
+
+
+
+
+## Kursplan
+<hr style="color:green">
+
+* Kursplanen är ett formellt styrdokument till kursen som bla beskriver detaljer, förkunskaper, syfte, innehåll, mål och litteratur.
+
+* Låt oss kika på en del information som går att läsa i kursplanen.
+
+<p class="footnote">Kursplan: https://edu.bth.se/utbildning/utb_kursplaner.asp?KKurskod=PA1439</p>
+
+
+
 
 
 ## External 3.3 (Image)
