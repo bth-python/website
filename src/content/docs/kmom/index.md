@@ -1,11 +1,7 @@
 ---
-title: "Kom igång ⚠️"
+title: "Kom igång"
 description: Hur du förbereder dig för att påbörja det första kursmomentet.
 ---
-
-:::danger
-Denna del är ännu inte påbörjad eller genomgången.
-:::
 
 Utför följande instruktioner för att förbereda dig inför kursen.
 
@@ -27,7 +23,7 @@ Här är en föreläsning som "pratar" dig igenom kursens upplägg och kursplan.
 
 ## Upplägget (tisdag)
 
-- [Introduktion till Canvas och länkar](../laromaterial/forelasning/canvas-introduktion)
+- [Introduktion till Canvas och länkar](../laromaterial/forelasning/canvasintroduktion)
 
 
 ## Förbered inför kmom01 (onsdag)
