@@ -84,6 +84,10 @@ Det finns dock flera acceptabla användningsområden för AI i programmatiska up
 - När den hittar något du har missat, gör en mental eller skriftlig **anteckning** så att du kan hitta dessa fall själv nästa gång.
 - Brainstorma nya idéer för appar.
 
+:::note
+Här kan ni läsa om hur er ni använder er hjärna vid användning av AI kontra inte använda AI. [Your Brain on ChatGPT](https://www.brainonllm.com/).
+:::
+
 ## Misstanke om medveten vilseledning
 
 När vi uppmärksammar misstanke om medveten vilseledning så gör vi en egen undersökning och försöker se omfattning samt om vi kan styrka misstanken. Om vi finner misstanken styrkt så resulterar det i ett informationsmejl till studenten och en anmälan till disciplinnämnden.
