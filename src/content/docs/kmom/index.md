@@ -21,12 +21,9 @@ Vissa kursmoment kan spänna över flera veckor, till exempel så brukar det avs
 
 ## Kursintro
 
-Här är en video som "pratar" dig igenom kursens upplägg och delar av innehållet i detta dokumentet.
+Här är en föreläsning som "pratar" dig igenom kursens upplägg och kursplan.
 
-<YouTube
-    id="K7F5IVgK1bg"
-    caption="Kursintroduktion till kursen webtec med Mikael."
-/>
+- [Formell kursintroduktion](../laromaterial/forelasning/kursintroduktion)
 
 ## Upplägget
 
