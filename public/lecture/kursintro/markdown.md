@@ -288,4 +288,4 @@ Läs igenom artiklarna under "introduktion" så har du koll. Det är din innehå
 
 Börja jobba nu?
 
-Installer labbmiljö och sätt upp kursrepot.
+Installer labbmiljö, skapa kursrepot och sätt upp utvecklingsmiljö.
