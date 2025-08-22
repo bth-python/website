@@ -103,7 +103,7 @@ Läs igenom artiklarna under "introduktion" så har du koll. Det är din innehå
 
     "Utveckla en lösning i Python, utifrån en specifikation, samt dokumentera och skriftligt kunna presentera denna lösning."
 
-    "Ha god praktisk förmåga att hantera"
+    "Ha god praktisk förmåga att hantera de verktyg och utvecklingsmiljöer som används vid utveckling och felsökningar med Python."
 
 
 
