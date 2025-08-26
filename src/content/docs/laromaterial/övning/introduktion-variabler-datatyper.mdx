@@ -1,5 +1,5 @@
 ---
-title: Introduktion till variabler och datatyper
+title: "Introduktion till variabler och datatyper"
 description: Lär dig om värden och datatyper i Python. Vi går igenom heltal, decimaltal, strängar och booleska värden. Vi skriver ett program som tar emot inmatning från användaren.
 ---
 
@@ -17,7 +17,7 @@ import var8Image from '@assets/img/ovning/variable-memory8.png';
 
 I denna artikel ska vi lära oss vad värden och variabler är i programmering. Vi ska titta på hur man skriver ut information till terminalen och hur man kan mata in information till programmet från terminalen. När du har jobbat igenom artikeln har du gjort ett program som tar emot ett namn och en ålder från användaren. Åldern används bland annat till att räkna ut födelseår. Namn, ålder och födelseår skrivs ut i terminalen som en del av en hälsning. Vi kommer gå igenom hur man skriver kod i en fil och kör den koden från terminalen.
 
-Du kan hitta koden för detta exempel på [Github](https://github.com/dbwebb-se/python/tree/master/example/greeting) och i `example/greeting`.
+Du kan hitta koden för detta exempel på [Github](https://github.com/dbwebb-se/python/tree/master/example/greeting).
 
 
 
@@ -47,7 +47,7 @@ Inom programmering används värden, t.ex. heltalet 4 (Integer) eller en sträng
 
 Vi kan använda oss av heltal, även kallat _Integer_ på engelska (förkortas med __int__), för att bland annat att göra [matematiska operationer](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex).
 
-Följande kod är exekverad i Python-interpretatorn, du startar interpretatorn genom att skriva `python3` i din terminal. När du läser nedanstående kodexempel rekommenderar vi att du själv har en interpretator öppen och kodar med. För att lämna Python-interpretatorn trycker du `ctrl + d` eller skriver `exit()`.
+Följande kod är exekverad i Python-interpretatorn, du startar interpretatorn genom att skriva `uv run python` i din terminal. När du läser nedanstående kodexempel rekommenderar vi att du själv har en interpretator öppen och kodar med. För att lämna Python-interpretatorn trycker du `ctrl + d` eller skriver `exit()`.
 
 ```python
 >>> 4 + 4
@@ -230,9 +230,13 @@ Programmet vi ska skapa har ett syfte: att skriva ut en hälsning. Vilken kod be
 
 Gå till kurskatalogen i din terminal och skapa en ny fil som heter "greeting.py". Öppna sedan filen med VSCode. Vi använder kommandot `touch` för att skapa filen.
 
+
+:::tip
+Vi använder `$` för att visa att det är ett terminalkommando. Skriv **inte** med `$` när du skriver kommandot i terminalen.
+:::
 ```bash
 # Gå till ditt kursrepo python
-$ cd me/kmom01/hello
+$ cd src/kmom01/practice
 $ touch greeting.py
 $ code .
 ```
@@ -249,7 +253,7 @@ I koden använder vi oss av den inbyggda funktionen `print()`. `print()` tar emo
 Starta exekvering av programmet med kommandot:
 
 ```bash
-$ python3 greeting.py
+$ uv run greeting.py
 ```
 
 Då börde du få följande utskrift.
@@ -264,7 +268,7 @@ I nästa version av programmet ska vi göra så att användaren som startar prog
 
 ## Variabler
 
-Variabler används för att lagra värden som vi kan referera till och manipulera. Fördelen med variabler är att vi kan ge dem förklarande namn, så det är lätt att veta vad de gör när man läser koden, och vi kan återanvända och ändra värdet genom att använda variabeln. Vi leker lite i python3 interpretatorn i terminalen. Tänk alltid på att använda förklarande variabelnamn.
+Variabler används för att lagra värden som vi kan referera till och manipulera. Fördelen med variabler är att vi kan ge dem förklarande namn, så det är lätt att veta vad de gör när man läser koden, och vi kan återanvända och ändra värdet genom att använda variabeln. Vi leker lite i python interpretatorn i terminalen. Tänk alltid på att använda förklarande variabelnamn.
 
 ```python
 >>> an_integer = 23
@@ -446,7 +450,7 @@ print("Hej Jack Black, du är 48 år gammal.") # Skriver ut ett sträng värde
 Du kan testa köra programmet igen för att se att kommentaren inte har påverkat programmet.
 
 ```bash
-$ python3 greeting.py
+$ uv run greeting.py
 Hej Jack Black, du är 48 år gammal.
 ```
 
@@ -492,7 +496,7 @@ print("Hej Jack Black, du är 48 år gammal.") # Skriver ut ett sträng värde
 Testa starta ditt program.
 
 ```bash
-$ python3 greeting.py
+$ uv run greeting.py
 Skriv något, klicka sen enter: skriver något igen
 Hej Jack Black, du är 48 år gammal.
 ```
@@ -518,7 +522,7 @@ Nu skapar vi variabeln `name` och tilldelar den värdet av vad `input()` returne
 
 
 ```bash
-$ python3 greeting.py
+$ uv run greeting.py
 Skriv ett namn, klicka sen enter: Jack Black
 Jack Black
 ```
@@ -544,7 +548,7 @@ greeting = "test" + 24 # Testar konkaternera en sträng med ett heltal bara för
 Vi skapar variabeln `greeting` och tilldelar den värdet av vad som finns till höger om "=" tecknet. Vi har ett uttryck till höger som resulterar i ett nytt strängvärde som tilldelas till variabeln `greeting`. Exekvera koden och se vad som händer. Vad tror du kommer hända när sista raden exekveras?
 
 ```bash
-$ python3 greeting.py
+$ uv run greeting.py
 Skriv ett namn, klicka sen enter: Jack Black
 Hej Jack Black, du är 48 år gammal.
 Traceback (most recent call last):
@@ -577,7 +581,7 @@ print(greeting) # Skriver ut ett sträng värde
 Vårt program frågar nu efter ett namn följt av en ålder. Vi sparar namnet och åldern i två variabler, båda av typen sträng. Variablerna används för att skapa en ny sträng som sparas i variabeln `greeting`. Vi avslutar med att skriva ut innehållet av `greeting` till terminalen.
 
 ```bash
-$ python3 greeting.py
+$ uv run greeting.py
 Skriv ett namn, klicka sen enter: Bo Burnham
 Skriv en ålder, klicka sen enter: 27
 Hej Bo Burnham, du är 27 år gammal.
@@ -623,7 +627,7 @@ print(greeting)
 Läs igenom koden noggrant så du förstår vad som händer och starta sen programmet.
 
 ```bash
-$ python3 greeting.py
+$ uv run greeting.py
 Skriv ett namn, klicka sen enter: Bo Burnham
 Skriv en ålder, klicka sen enter: 27
 Traceback (most recent call last):
@@ -653,7 +657,7 @@ print(greeting)
 Nu räknar vi ut `year_born` med `year` (2018) minus `age` (inmatat värde). Kan du se nästa fel?
 
 ```bash
-$ python3 greeting.py
+$ uv run greeting.py
 Skriv ett namn, klicka sen enter: Bo Burnham
 Skriv en ålder, klicka sen enter: 27
 Traceback (most recent call last):
@@ -713,7 +717,7 @@ print(greeting)
 Nu borde vi vara färdiga med programmet, det tar namn och ålder som input, räknar ut födelseåret och skriver ut en hälsning med namn, ålder och födelseår. Testa köra programmet och kolla så det fungerar.
 
 ```bash
-$ python3 greeting.py
+$ uv run greeting.py
 Skriv ett namn, klicka sen enter: Bo Burnham
 Skriv en ålder, klicka sen enter: 27
 Hej Bo Burnham, du är 27 år gammal och föddes år 1991
