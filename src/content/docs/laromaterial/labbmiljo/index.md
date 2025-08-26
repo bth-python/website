@@ -5,6 +5,9 @@ sidebar:
   order: 100
 ---
 
+<YouTube id="b2T_x16RNKo" />
+
+
 Labbmiljön bygger främst på verktyg som är fria och ofta erbjuds i form av öppen källkod.
 
 När val sker så försöker vi finna verktyg som finns på de vanligaste operativsystemen vilka är Windows, Mac och Linux.
