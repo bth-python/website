@@ -203,6 +203,8 @@ Punkten anger att du öppnar texteditorn med nuvarande katalog som arbetskatalog
 
 På detta viset kan du använda din texteditor för att hantera de filer som ligger inuti terminalen.
 
+PS. Om du får upp en ruta ruta där det står att du använder `WSL 1` och de rekomenderar att du ska uppgradera till 2 istället, följ instruktionerna [Uppgradera wsl 1 till wsl 2](#upgradera-wsl-1-till-wsl-2).
+
 
 
 ### Var finns Windows hemma-katalog?
@@ -252,6 +254,32 @@ Du kan stänga av systemet med `wsl --terminate Ubuntu` (om det är aktivt och s
 Ta sedan bort det med `wsl --unregister Ubuntu`.
 
 Nu kan du åter installera systemet med `wsl --install --distribution Ubuntu`. Glöm inte att ange användare och lösenord.
+
+
+
+### Upgradera wsl 1 till wsl 2
+
+Först behöver du radera ut ditt nuvarande subsystem. Stäng ner vscode och ubuntu terminalen. Starta `cmd` eller `powershell`. Exekver:
+
+```bash title="Ta bort ditt nuvarande subsystem."
+wsl --terminate Ubuntu
+wsl --unregister Ubuntu
+```
+
+Därefter kan du uppgradera wsl 1 till wsl 2 med följande kommando.
+
+```bash title="Uppgradera wsl 1 till wsl 2."
+wsl --set-default-version 2
+wsl --install --distribution Ubuntu
+```
+
+När du kör sista kommandot ska du igen ange användare och lösenord. När det är klart kan du köra kommandot:
+
+```bash title="Kontrollera att du har wsl version 2."
+wsl.exe --list --verbose
+```
+
+Om det står version 2 så är du klar.
 
 
 
