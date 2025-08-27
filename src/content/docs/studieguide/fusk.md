@@ -80,9 +80,8 @@ ChatGPT ger följande svar på frågan "Hur ska programmeringsstudenter använda
 Det finns dock flera acceptabla användningsområden för AI i programmatiska uppgifter, inklusive:
 
 - Generera korta dokumentationssträngar och typanvisningar.
-- Hitta exempel och förklaringar för syntaktiska former (t.ex. hur man använder for-loopar; hur man tilldelar variabler direkt från en array eller ett objekt; hur man konstruerar en list comprehension; hur man avlägsnar en optional, och så vidare). Be AI:n om hur man gör, **inte din slutliga kod**.
+- Hitta exempel och förklaringar för syntaktiska former (t.ex. hur man använder for-loopar; hur man tilldelar variabler direkt från en array eller ett objekt; hur man avlägsnar en optional, och så vidare). Be AI:n om hur man gör, **inte din kod**.
 - Tolkar felmeddelanden, eftersom dessa kan vara ganska kryptiska!
-- Generera enhetstester för edge cases.
 - När den hittar något du har missat, gör en mental eller skriftlig **anteckning** så att du kan hitta dessa fall själv nästa gång.
 - Brainstorma nya idéer för appar.
 
