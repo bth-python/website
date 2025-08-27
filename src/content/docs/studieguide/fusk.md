@@ -1,6 +1,8 @@
 ---
 title: "Fusk, AI och medvetet vilseledande"
 description: No description.
+sidebar:
+    order: 0001
 ---
 
 Vi tycker att interaktioner mellan klasskamrater och andra är positivt och förbättrar studenters lärande. Det finns dock en gräns mellan att be om hjälp från någon annan och att lämna in någon annans arbete. Därför har vi en policy som hjälper er studenter att veta när ni börjar passera den gränsen.
@@ -106,7 +108,7 @@ Du kan läsa om [vilka som sitter i disciplinnämnden](https://www.bth.se/om-bth
 
 Här följer svar på en del vanliga frågor rörande disciplinnämndens arbete.
 
-###Vad händer med examinationen... {#vad}
+### Vad händer med examinationen... {#vad}
 
 **...om en student fälls i disciplinnämnden?**
 

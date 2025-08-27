@@ -1,6 +1,8 @@
 ---
 title: "3-veckors upprop"
 description: No description.
+sidebar:
+    order: 0004
 ---
 
 Efter tre veckors halvtidsstudier görs ett 3-veckors upprop för att kontrollera att du är aktiv i kursen. Du visar att du är aktiv genom att lämna in redovisningarna för kursmomenten.
