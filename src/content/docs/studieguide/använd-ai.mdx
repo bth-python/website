@@ -1,0 +1,162 @@
+---
+title: "Använda AI som stöd i dina studier" 
+description: No description.
+sidebar:
+    order: 0006
+---
+
+Som student i den här kursen har du tillgång till **AI** som ett verktyg för att utveckla din förståelse och ditt lärande. Det kan fungera både som en idégenerator och som ett bollplank när du arbetar med programmeringsuppgifter.
+
+## Komma på övningsuppgifter
+
+Om du vill öva mer på ett visst moment kan du be AI att skapa förslag på övningsuppgifter.
+
+Exempel:
+* *”Ge mig tre övningsuppgifter i Python där jag får öva på input, output och strängofrmatering”*
+* *”Kan du skapa en uppgift där jag tränar på att typkonvertera i Python?”*
+* *”Kan du skapa en uppgift där jag tränar på felsöka python kod med if-satser?”*
+* *”Kan du skapa en uppgift där jag tränar på logisk tänkande?”*
+* *”Kan du skapa en uppgift där jag tränar på problemlösning?”*
+* *”Kom på en övningsuppgift som visar på många olika användsnigsfall och edge cases med if-satser i python”*
+
+På det sättet kan du själv anpassa svårighetsgrad och område efter vad du behöver träna på.
+
+## Använda AI som bollplank och bli bättre
+
+När du fastnar i en uppgift eller inte förstår varför din kod inte fungerar kan du använda AI som en diskussionspartner.
+
+* Klistra in din kod och **beskriv vad du försökt göra**.
+* Förklara **vilket felmeddelande eller problem du får**.
+* Be AI att förklara steg för steg vad som händer i koden.
+
+Det är ofta mer lärorikt att be om en förklaring än att bara be om en färdig lösning.
+
+:::note
+**Viktigt:** du måste alltid själv förstå och kunna förklara koden efter förklaringen. Att bara läsa svaret och sen gå vidare är oftast inte tillräckligt.
+:::
+
+### Använd AI för att få en uppgift som utmanar dig och din kunskap
+
+När du har fått förklaringen av AI, kan du be AI att skapa en liknande uppgift som testar din förståelse. På det sättet kan du själv se om du verkligen har förstått konceptet.
+
+* *”Kan du komma på en ny övningsuppgift där jag behöver hantera en liknande situation?”*
+
+
+### Exempel dialog med AI
+
+*Studenten*
+
+> "Jag försöker skriva ett program som räknar ut summan av en lista, men jag får fel. Här är min kod:"
+>    ```python
+>    numbers = [1, 2, 3, 4, 5]
+>    sum = 0
+>    for i in range(numbers):
+>        sum += i
+>    print(sum)
+>    ```
+> "Vad betyder felmeddelandet jag får, `TypeError: 'list' object cannot be interpreted as an integer`?"
+
+*AI*
+
+> Bra fråga! 👍 Låt oss bryta ner det:
+> 
+> Din kod:
+> ```python
+> numbers = [1, 2, 3, 4, 5]
+> sum = 0
+> for i in range(numbers):
+>     sum += i
+> print(sum)
+> ```
+>
+> Felmeddelande:
+>
+> ```
+> TypeError: 'list' object cannot be interpreted as an integer
+> ```
+> 
+> ### Vad betyder det?
+> 
+> * `range(...)` förväntar sig ett **heltal** som anger hur många steg det ska gå.
+>   Exempel: `range(5)` → `0, 1, 2, 3, 4`.
+> * Men du skickar in en **lista** (`numbers`) istället för ett heltal.
+> * Python säger därför: *"Jag kan inte tolka en lista som ett heltal"* → därav felmeddelandet.
+>
+> ### Hur rättar man det?
+>
+> Du behöver iterera **över listans element**, inte använda den som ett tal:
+> 
+> ```python
+> numbers = [1, 2, 3, 4, 5]
+> total = 0
+> 
+> for i in numbers:   # här loopar du direkt över värdena i listan
+>     total += i
+>
+> print(total)  # Output: 15
+> ```
+>
+> Eller, om du vill använda index:
+>
+> ```python
+> for i in range(len(numbers)):
+>     total += numbers[i]
+> ```
+>
+> ---
+>
+> 💡 Kort sagt: felet betyder att du försöker använda en lista där Python egentligen förväntar sig ett heltal.
+
+
+**Nu vill du använda AI för att testa din förståelse.**
+
+*Studenten*
+> "Kan du komma på en ny övningsuppgift där jag behöver hantera en liknande situation?"
+
+*AI*
+> Javisst! Här är en övningsuppgift som är konstruerad för att påminna om samma typ av misstag, där man riskerar att använda `range()` felaktigt med en lista:
+>
+> ---
+>
+> ## Övningsuppgift: Hitta det längsta ordet
+>
+> Skriv ett program som:
+>
+> 1. Ber användaren mata in en rad med ord (separerade med mellanslag).
+> 2. Lägger alla ord i en lista.
+> 3. Loopa igenom listan och hitta det ord som är längst.
+> 4. Skriv ut både det längsta ordet och dess längd.
+>
+> ### Exempel på körning
+>
+> ```
+> Mata in ord: katt hund elefant björn
+> Det längsta ordet är "elefant" med längd 7.
+> ```
+>
+> ### Ledtråd
+>
+> * Ett vanligt misstag är att skriva något i stil med:
+>
+> ```python
+> words = input("Mata in ord: ").split()
+> longest = ""
+>
+> for i in range(words):  # här blir det samma typ av fel som tidigare!
+>     if len(i) > len(longest):
+>         longest = i
+> ```
+>
+> 👉 Här får du samma typ av `TypeError`, eftersom `range()` inte kan användas på en lista.
+>
+> ### Din uppgift
+>
+> * Rätta till koden så att den **itererar korrekt över elementen i listan** (inte försöker behandla listan som ett heltal).
+>
+> ---
+>
+> Vill du att jag även gör ett **facit med korrekt lösning** till uppgiften, eller vill du bara ha problembeskrivningen så du kan prova själv först?
+
+
+## Viktigt att tänka på
+AI är ett hjälpmedel, inte en ersättning för eget tänkande. Använd AI för att testa idéer, utmana dig själv och utöka din kunskap. **Inte** för att generera färdig kod åt dig.
