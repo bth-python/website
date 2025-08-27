@@ -1,0 +1,164 @@
+---
+title: "Introduktion till villkor"
+description: Lär dig om villkor, hur vi kan få koden att göra olika saker baserat på data.
+sidebar:
+  order: 0141
+---
+
+import { YouTube } from 'astro-embed';
+
+import Figure from '@components/CustomFigure.astro';
+
+
+Vi har nu bra koll på variabler och datatyper i python. Vi känner till stränger, heltal, flyttal och boolska värden (sant eller falskt). Vi ska i denna övning titta på hur data flödar igenom våra program. Vi kommer titta på villkors-satsen `if`
+
+Vi rekommenderar att du kodar med i denna övning så du själv får känna på hur det är att skriva Python-kod.
+
+## Ordlista
+
+
+
+
+
+
+## Villkor
+Ofta vill vi ta reda på om våra variabler uppfyller vissa krav. Det kan vara om en heltalsvariabel är större än 10 eller om en strängvariabel är lika med en annan sträng. För att undersöka om våra variabler uppfyller dessa krav kan vi använda oss av en `if`-sats. Låt oss titta på hur en `if`-sats ser ut i Python.
+
+```python
+number_of_apples = 13
+
+if number_of_apples > 10:
+    print("Du har mer än 10 äpplen")
+
+# skriver ut: Du har mer än 10 äpplen
+```
+
+I kodexemplet ovan definierar vi först en variabel `number_of_apples` och sätter den lika med heltalet 13. Vi gör sedan en jämförelse mellan vår variabel `number_of_apples` och heltalet 10. Om vi läser ut raden, där vi gör jämförelsen, blir det ungefär "om antalet äpplen är större än 10 skriver vi ut 'Du har mer än 10 äpplen'".
+
+Som vi ser ovan är raden som skriver ut 'Du har mer än 10 äpplen' inflyttat ett snäpp. Detta kallas för indentering. I Python används indentering som ett sätt att avgränsa det som hör till `if`-satsen. I exemplet nedan ser vi hur vi kan 'avsluta' if-satsen genom att flytta ut koden längst till vänster.
+
+```python
+number_of_apples = 13
+
+if number_of_apples > 10:
+    print("Du har mer än 10 äpplen")
+
+print("Nu är vi klara med if-satsen")
+
+# skriver ut:
+# Du har mer än 10 äpplen
+# Nu är vi klara med if-satsen
+```
+
+### If-else
+
+I kodexemplet ovan skrivs det inte ut nått från if-satsen om vi har 10 eller färre äpplen, men det vore ju trevligt om vårt program även skrev ut ett meddelande till de med få äpplen. Så låt oss äta 4 äpplen och titta på nedanstående exempel.
+
+```python
+number_of_apples = 9
+
+if number_of_apples > 10:
+    print("Du har mer än 10 äpplen")
+else:
+    print("Du har nog varit hungrig och ätit upp dina äpplen")
+
+print("Nu är vi klara med if-satsen")
+
+# skriver ut:
+# Du har nog varit hungrig och ätit upp dina äpplen
+# Nu är vi klara med if-satsen
+```
+### elif
+Om vi läser upp ovanstående exempel blir det ungefär: "om antalet äpplen är större än 10 skriver vi ut "Du har mer än 10 äpplen", annars skriver vi ut 'Du har nog varit hungrig och ätit upp dina äpplen'". Om vi istället vill kolla att antalet äpplen ligger inom ett intervall kan vi använda ytterligare ett villkor i vår `if`-sats. Detta gör vi genom att använda konstruktionen `elif`.
+
+```python
+number_of_apples = 9
+
+if number_of_apples > 10:
+    print("Du har mer än 10 äpplen")
+elif 5 < number_of_apples <= 10:
+    print("Du blev snabbt mätt och åt bara upp några av dina äpplen")
+else:
+    print("Du har nog varit hungrig och ätit upp dina äpplen")
+
+print("Nu är vi klara med if-satsen")
+
+# skriver ut:
+# Du blev snabbt mätt och åt bara upp några av dina äpplen
+# Nu är vi klara med if-satsen
+```
+
+Notera `5 < number_of_apples <= 10`, i många andra programmeringsspråk funkar inte det. Då behöver man istället använda `and`, `number_of_apples > 5  and number_of_apples <= 10`
+
+### Nästlade if-satser
+
+Vi har även möjligheten att kombinera villkor för att få ett mer avancerat flöde i våra program. Om vi nu också vill kolla vilken sorts frukt vi har kan det se ut på följande sätt.
+
+```python
+type_of_fruit = "päron"
+number_of_fruits = 13
+
+if number_of_fruits > 10:
+    if type_of_fruit == "äpple":
+        print("Du har mer än 10 äpplen")
+    else:
+        print("Du har mer än 10 frukter")
+
+    print("Nu är vi klara med den inre if-satsen")
+
+print("Nu är vi klara med den yttre if-satsen")
+
+# skriver ut:
+# Du har mer än 10 frukter
+# Nu är vi klara med den inre if-satsen
+# Nu är vi klara med den yttre if-satsen
+```
+
+## Visualisera flödet
+
+Vi har nu tittat på hur en `if`-sats kan se ut i python och hur det kan styra flödet av data i våra program. Ett sätt att få en överblick över flödet är att rita så kallade flödesdiagram (flow charts). Det enklaste sättet är att rita på ett blankt papper och det ger en bra möjlighet för att tänka över det problem, som vi löser med Python-kod. Ett exempel på flödesdiagram för ett kodexempel syns nedan.
+
+```python
+number_of_apples = 9
+
+if number_of_apples > 10:
+    print("Du har mer än 10 äpplen")
+else:
+    print("Du har nog varit hungrig och ätit upp dina äpplen")
+
+print("Nu är vi klara med if-satsen")
+
+# skriver ut:
+# Du har nog varit hungrig och ätit upp dina äpplen
+# Nu är vi klara med if-satsen
+```
+
+import flowIf from '@assets/img/ovning/flow-if.png';
+
+<Figure
+    src={flowIf}
+    caption="Flödesdiagram för en if-sats."
+    class="right"
+/>
+
+[FIGURE src=image/python/flow-if.png caption="Flödesdiagram för en if-sats."]
+
+Ytterligare ett bra sätt att förstå hur en if-sats exekveras är att använda vi rekommenderade i kmom01. Nedan finns exemplet i visualiseringsverktyget.
+
+<iframe width="727" style="height: 500px !important" frameborder="1" src="https://pythontutor.com/iframe-embed.html#code=number_of_apples%20%3D%209%0A%0Aif%20number_of_apples%20%3E%2010%3A%0A%20%20%20%20print%28%22Du%20har%20mer%20%C3%A4n%2010%20%C3%A4pplen%22%29%0Aelse%3A%0A%20%20%20%20print%28%22Du%20har%20nog%20varit%20hungrig%20och%20%C3%A4tit%20upp%20dina%20%C3%A4pplen%22%29%0A%0Aprint%28%22Nu%20%C3%A4r%20vi%20klara%20med%20if-satsen%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<a href="https://www.pythontutor.com/visualize.html#code=number_of_apples%20%3D%209%0A%0Aif%20number_of_apples%20%3E%2010%3A%0A%20%20%20%20print%28%22Du%20har%20mer%20%C3%A4n%2010%20%C3%A4pplen%22%29%0Aelse%3A%0A%20%20%20%20print%28%22Du%20har%20nog%20varit%20hungrig%20och%20%C3%A4tit%20upp%20dina%20%C3%A4pplen%22%29%0A%0Aprint%28%22Nu%20%C3%A4r%20vi%20klara%20med%20if-satsen%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">Exemplet i fullskärm</a>.
+
+<YouTube
+    id="LfzF3frs3AY" 
+    title="Andreas visar hur if-else exekveras."
+/>
+
+
+
+
+Avslutningsvis
+--------------------------------------
+Vi har i denna övning tittat på konstruktioner i python som låter oss styra flödet av data i våra program. Vi använder `if` för att jämföra värden och beroende på utfallet av jämförelsen körs olika delar av programmet. Konstruktionen `if` finns i de flesta programmeringsspråk och fungerar på liknande sätt.
+
+Alla kodexempel från denna övningen finns på [GitHub](https://github.com/dbwebb-se/python/tree/master/example/flow).

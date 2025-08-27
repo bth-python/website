@@ -1,11 +1,14 @@
 ---
 title: "Introduktion till variabler och datatyper"
 description: Lär dig om värden och datatyper i Python. Vi går igenom heltal, decimaltal, strängar och booleska värden. Vi skriver ett program som tar emot inmatning från användaren.
+sidebar:
+  order: 0110
 ---
 
 import { YouTube } from 'astro-embed';
 
-import { Image } from 'astro:assets'
+import Figure from '@components/CustomFigure.astro';
+
 import var1Image from '@assets/img/ovning/variable-memory1.png';
 import var2Image from '@assets/img/ovning/variable-memory2.png';
 import var3Image from '@assets/img/ovning/variable-memory3.png';
@@ -50,7 +53,7 @@ Vi kan använda oss av heltal, även kallat _Integer_ på engelska (förkortas m
 Följande kod är exekverad i Python-interpretatorn, du startar interpretatorn genom att skriva `uv run python` i din terminal. När du läser nedanstående kodexempel rekommenderar vi att du själv har en interpretator öppen och kodar med. För att lämna Python-interpretatorn trycker du `ctrl + d` eller skriver `exit()`.
 
 ```python
->>> 4 + 4
+>>> 4 + 4 # >>> betyder att vi skriver in detta i interpretatorn. Raden under är utskriften från interpretatorn.
 8
 >>> 0 * 8
 0
@@ -278,9 +281,9 @@ Variabler används för att lagra värden som vi kan referera till och manipuler
 <class 'int'>
 ```
 
-<Image
+<Figure
     src={var1Image}
-    alt="an_integer refererar till värdet 23 i minnet."
+    caption="an_integer refererar till värdet 23 i minnet."
     class="right"
 />
 
@@ -296,9 +299,9 @@ Jag börjar med att tilldela heltalet 23 till variabeln `an_integer`. Precis som
 ```
 </div>
 
-<Image
+<Figure
     src={var2Image}
-    alt="Flera variabler refererar till värden i minnet."
+    caption="Flera variabler refererar till värden i minnet."
     class="right"
 />
 
@@ -313,9 +316,9 @@ False
 'en sträng'
 ```
 
-<Image
+<Figure
     src={var3Image}
-    alt="Flera variabler refererar till värden i minnet."
+    caption="Flera variabler refererar till värden i minnet."
     class="right"
 />
 
@@ -331,9 +334,9 @@ Precis som med värden kan vi med variabler utföra matematiska operationer i oc
 9.14
 ```
 
-<Image
+<Figure
     src={var8Image}
-    alt="Flera variabler refererar till värden i minnet."
+    caption="Flera variabler refererar till värden i minnet."
     class="right"
 />
 
@@ -514,9 +517,9 @@ print(name) # Skriver ut ett sträng värde
 
 Nu skapar vi variabeln `name` och tilldelar den värdet av vad `input()` returnerar.
 
-<Image
+<Figure
     src={var4Image}
-    alt="variabeln 'name' har värdet av det vi matade in till input()."
+    caption="variabeln 'name' har värdet av det vi matade in till input()."
     class="right"
 />
 
@@ -557,9 +560,9 @@ Traceback (most recent call last):
 TypeError: Can\'t convert \'int\' object to str implicitly
 ```
 
-<Image
+<Figure
     src={var5Image}
-    alt="Variablerna 'name' och 'greeting' har värden i minnet."
+    caption="Variablerna 'name' och 'greeting' har värden i minnet."
     class="right"
 />
 
@@ -587,9 +590,9 @@ Skriv en ålder, klicka sen enter: 27
 Hej Bo Burnham, du är 27 år gammal.
 ```
 
-<Image
+<Figure
     src={var6Image}
-    alt="Variablerna 'name' och 'greeting' har värden i minnet."
+    caption="Variablerna 'name' och 'greeting' har värden i minnet."
     class="right"
 />
 
@@ -723,9 +726,9 @@ Skriv en ålder, klicka sen enter: 27
 Hej Bo Burnham, du är 27 år gammal och föddes år 1991
 ```
 
-<Image
+<Figure
     src={var7Image}
-    alt="Variabler refererar till värden i minnet."
+    caption="Variabler refererar till värden i minnet."
     class="right"
 />
 
