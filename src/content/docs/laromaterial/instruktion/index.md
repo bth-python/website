@@ -1,12 +1,7 @@
 ---
 title: "Om instruktioner" 
 description: No description.
-order: 100
+order: 000
 ---
 
 Berätta kort om syftet med instruktioner och hur de fungerar.
-
-
-
-
-

@@ -1,0 +1,106 @@
+---
+title: "Radbrytning i Python"
+description: Lär dig lösa valideringsfelet line-to-long i Python.
+---
+
+import Figure from '@components/CustomFigure.astro';
+
+
+En av alla regler vi kolla med Ruff är att koden inte ska vara för lång. [Pep8](https://www.python.org/dev/peps/pep-0008/#maximum-line-length) rekommenderar att rader inte ska vara längre än 79 tecken. Nu för tiden tycker många att 79 tecken är för få, därför ha vi ökat det till 100 tecken i denna kursen.
+
+Ganska ofta kommer du stöta på rader som är längre än 100 tecken. Då kommer Ruff att ge dig varningen `Line to long` och du måste dela upp raden i flera rader.
+
+
+## Line to long
+
+Följande kodrad är 109 tecken lång, vilket är för långt.
+
+```python
+a_long_variable_name_with_along_calculation = 2222222222222222222222222222222+444444444444444444444444444444
+```
+
+Om vi kör Ruff på koden får vi följande felmeddelande.
+
+import ltlImage from '@assets/img/instruktion/line-to-long.png';
+
+<Figure
+    src={ltlImage}
+    caption="Line to long fel från Ruff"
+/>
+
+Det finns två sätt att dela upp rader, *implied line continuation inside brackets and braces* och *backslash*, `\`. [Pep8](https://www.python.org/dev/peps/pep-0008/#maximum-line-length) rekommenderar att använda parenteser.
+
+## Parenteser 
+
+Ett par exempel där vi använder parenteser för att dela upp rader.
+
+###  Matematiska operationer
+Vi flyttar beräkningen inom parenteser och gör radbrytningen efter likamedtecknet.
+
+```python
+a_long_variable_name_with_along_calculation = (
+    2222222222222222222222222222222 + 444444444444444444444444444444
+)
+```
+
+Om vi har flera operationer på samma rad kan vi göra extra indentation, så kallad *hanging indentation*, för att det lättare ska gå att urskilja vilka rader som är uppdelade. Det går att läsa mer om det i [pep8](https://www.python.org/dev/peps/pep-0008/#indentation).
+
+```python
+income = (gross_wages
+          + taxable_interest
+          + (dividends - qualified_dividends)
+          - ira_deduction
+          - student_loan_interest)
+```
+
+### Långa strängar
+
+Ett annat vanligt tillfälle när man får line to long är när man har en lång text sträng.
+
+```python
+long_string = ("The Wheel of Time turns, and ages come and pass, leaving memories that become legend."
+               " Legends fade to myth, and even myth is long forgotten when the Age that gave it birth comes again."
+               " In one Age, called the third age by some, an Age yet to come, an age long pass,"
+               " a wind rose in the Mountains of Mist.")
+```
+
+Vi behöver inte kommatecken mellan varje sträng, Python konkatenerar automatiskt alla raderna.
+
+### Funktionsanrop och villkor
+
+```python
+foo = long_function_name(var_one, var_two,
+                         var_three, var_four)
+
+if (x == 10
+        or x > 0
+        or x < 100):
+    print(True)
+```
+
+
+
+## Backslash
+
+Vi kollar även på hur det ser ut med backslash. Om man använder backslash är det viktigt att det inte är något space efter backslashet.
+
+```python
+if x == 10 \
+        or x > 0 \
+        or x < 100:
+    print(True)
+
+income = gross_wages \
+          + taxable_interest \
+          + (dividends - qualified_dividends) \
+          - ira_deduction \
+          - student_loan_interest
+```
+
+Även om det generellt är rekommenderat att använda parenteser finns det tillfällen man behöver använda backslash. T.ex. flera `with` och `assert` uttryck, då fungerar inte parenteser för uppdelning.
+
+```python
+with open('/path/to/some/file/you/want/to/read') as file_1, \
+     open('/path/to/some/file/being/written', 'w') as file_2:
+    file_2.write(file_1.read())
+```
