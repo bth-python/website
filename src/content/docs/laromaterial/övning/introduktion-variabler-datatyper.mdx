@@ -616,12 +616,12 @@ I vår kod behövs ett heltalsvärde för vilket år det är nu, räkna ut föde
 Jag tar bort kommentarerna på gammal kod för att det ska bli luftigare i koden och lättare för dig att läsa den nya.
 
 ```python
-year = 2018 # Hårdkodat värde för vilket år det är
+year = 2025 # Hårdkodat värde för vilket år det är
 
 name = input("Skriv ett namn, klicka sen enter: ")
 age = input("Skriv en ålder, klicka sen enter: ")
 
-year_born = year - age # Födelseår räknas ut. (2018 - inmatat värde)
+year_born = year - age # Födelseår räknas ut. (2025 - inmatat värde)
 
 greeting = "Hej " + name + ", du är " + age + " år gammal och föddes år " + year_born
 print(greeting)
@@ -635,18 +635,18 @@ Skriv ett namn, klicka sen enter: Bo Burnham
 Skriv en ålder, klicka sen enter: 27
 Traceback (most recent call last):
   File "greeting.py", line 11, in <module>
-    year_born = year - age # Födelseår räknas ut. (2018 - inmatat värde)
+    year_born = year - age # Födelseår räknas ut. (2025 - inmatat värde)
 TypeError: unsupported operand type(s) for -: 'int' and 'str'
 ```
 
-Var du beredd på felet? Jag skrev tidigare att allt `input()` returnerar är av typen sträng och vi har sett att vi inte kan blanda strängar och heltal i operationer. Därför får vi ett TypeError fel på rad 11 i `greeting.py` när vi försöker göra `2018 - "27"`.
+Var du beredd på felet? Jag skrev tidigare att allt `input()` returnerar är av typen sträng och vi har sett att vi inte kan blanda strängar och heltal i operationer. Därför får vi ett TypeError fel på rad 11 i `greeting.py` när vi försöker göra `2025 - "27"`.
 
 ### Typkonvertering
 
 För att kunna använda värdet ålder vi får från `input()` behöver vi ändra dess typ från sträng till heltal. Vi har redan gjort detta med boolean värden. Då använde vi funktionen `bool()`, nu ska vi använda funktionen `int()`. `int()` tar emot ett argument, ett värde, och returnerar det värdet med typen heltal.
 
 ```python
-year = 2018 # Hårdkodat värde för vilket år det är
+year = 2025 # Hårdkodat värde för vilket år det är
 
 name = input("Skriv ett namn, klicka sen enter: ")
 age = input("Skriv en ålder, klicka sen enter: ")
@@ -657,7 +657,7 @@ greeting = "Hej " + name + ", du är " + age + " år gammal och föddes år " + 
 print(greeting)
 ```
 
-Nu räknar vi ut `year_born` med `year` (2018) minus `age` (inmatat värde). Kan du se nästa fel?
+Nu räknar vi ut `year_born` med `year` (2025) minus `age` (inmatat värde). Kan du se nästa fel?
 
 ```bash
 $ uv run greeting.py
@@ -706,7 +706,7 @@ Nedanför förklarar jag de olika sätten. Tänk på operations prioriteringarna
 Jag väljer att använda version 3 i min kod.
 
 ```python
-year = 2018 # Hårdkodat värde för vilket år det är
+year = 2025 # Hårdkodat värde för vilket år det är
 
 name = input("Skriv ett namn, klicka sen enter: ")
 age = input("Skriv en ålder, klicka sen enter: ")
