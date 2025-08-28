@@ -9,9 +9,7 @@ I denna uppgift ska du skriva ett program som omvandlar ett numeriskt värde ber
 
 ## Förkunskaper
 
-Du har jobbat allt material i "[kmom01](kmom/kmom01)".
-
-Du har även läst om [dbwebb test](dbwebb-cli/python) och förstår hur du kan rätta uppgiften när du är klar med den.
+Du har jobbat allt material i "[kmom01](/website/kmom/kmom01)".
 
 
 
@@ -32,22 +30,19 @@ Sedan skall programmet fråga vilket värde användaren vill konvertera till:
 
 Avsluta med att skriva ut det omvandlade värdet med två decimaler.
 
-Exempel på hur det kan se ut när man kör progrmmet:
 
-[ASCIINEMA src=416115]
-
-Det är viktigt att ditt program följer instruktionerna i kraven annars kommer inte testerna fungera och då rättas inte er inlämning.
+Det är viktigt att ditt program följer instruktionerna i kraven annars kommer inte testerna fungera och då rättas inte din inlämning.
 
 
 
 ## Krav
 
-1. Om du vill kan du kopiera exempel programmet `hello.py` och utgå från det. Spara ditt resultat i filen `me/kmom01/convert/convert.py`.
+1. Skriv din kod i filen `src/kmom01/convert/convert.py`.
 
 ```bash
 # Ställ dig i roten av kurskatalogen python
-cp -i example/hello/hello.py me/kmom01/convert/convert.py
-cd me/kmom01/convert
+touch src/kmom01/convert/convert.py
+cd src/kmom01/convert
 ls
 ```
 
@@ -99,18 +94,30 @@ ls
 
 5. Skriva ut original värdet och det omvandlade värdet, avrundat till två decimaler. **Obs!** det måste vara ett **mellanslag** direkt efter originalvärdet och det omvandlade värdet i utskriften.
 
-7. [Kör testerna](dbwebb-cli/python) och validera koden för att kolla att du är godkänd.
+7. Koden ska validera med Ruff.
 
-8. Ladda upp och publicera uppgiften genom att göra följande kommandon i kurskatalogen i terminalen.
+    ```bash
+    # Kommandot funkar oavsett var du står i ditt repo
+    uv run ruff check
+    ```
 
-```bash
-# Ställ dig i roten av kurskatalogen python
-dbwebb test convert
-dbwebb publish convert
-```
+1. Testerna som finns ska passera.
 
-Rätta eventuella fel som dyker upp och publicera igen. När det ser grönt ut så är du klar.
+    ```bash
+    # om du står i katalogen src/kmom01/convert i ditt repo
+    uv run tester ../../../tests/kmom01/convert/
+    # om du står i root katalogen i ditt repo
+    uv run tester tests/kmom01/convert/
+    ```
 
+
+1. Ladda upp din kod till ditt repo på GitHub. Gör flera små commits när du jobbar med uppgiften!
+
+    ```bash
+    git add src/kmom01/convert/convert.py
+    git commit -m "Klart med uppgiften convert"
+    git push
+    ```
 
 
 ## Extrauppgift
@@ -121,12 +128,7 @@ Rätta eventuella fel som dyker upp och publicera igen. När det ser grönt ut s
     - Du får inte använda bas felet `Exception` utan du får bara använda `ValueError` och `TypeError`.
 
 
+## Övrigt
+Här finns övriga saker som är bra att tänka på.
 
-## Tips från coachen
-
-- [Hur ber man om hjälp med kod i chatten?](coachen/hur_fraga_hjalp), där förklaras hur ni ber om hjälp på bästa sättet så ni ska få svar så snabbt som möjligt.
-
-- [Exempel och förklaringar av valideringsfel](https://github.com/dbwebb-se/python/issues/46).
-
-- En sida med [användbara länkar](./lankar), som kan vara bra att ha under kursensgång.
-
+- Gör många och små commits i ditt git repo, du kan ha ungefär 5-10 commits för en sådan här uppgift.
