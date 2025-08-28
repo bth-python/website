@@ -1,0 +1,69 @@
+---
+title: "Testning, validering och jobba med kursrepot"
+description: Lär dig hur du kan jobba med kursrepot, testa och validera din kod.
+sidebar:
+  order: 0111
+---
+
+import { YouTube } from 'astro-embed';
+
+import Figure from '@components/CustomFigure.astro';
+
+I kursen använder vi många verktyg och det kan vara förvirrande me hur de fungerar och hur du ska jobba med en uppgift i kursen. I denna övning kommer jag visa dig hur du börjar jobba med en uppgift, hur du ska tänka och lösa den. Vi kommer också gå igenom hur du kan testa din lösning och validera den.
+
+## Förberedelse
+
+När du ska jobba med kursen behöver du börja med att öppna terminalen och flytta dig till katalogen med ditt kursrepo.
+
+```bash
+cd dbwebb-kurser/python-<din akronym>
+code .
+```
+
+Det är också bra att säkerställa att du har de senaste testerna. Vi hittar hela tiden fel i våra tester och uppdaterar dem. Så där alltid bra att kolla om det finns uppdateringar.
+
+```bash
+uv run task download-tests
+```
+
+Nu är du redo att skriva kod.
+
+
+## En övningsuppgift
+
+Vi behöver ett exempel att jobba med. 
+
+Skriv ett program som:
+
+1. Frågar användaren efter summan på en restaurangnota.
+1. Frågar användaren hur många personer som ska dela på notan.
+1. Räknar ut hur mycket varje person ska betala.
+1. Skriver ut svaret med hjälp av en f-string och avrunda till två decimaler.
+    1. Svaret måste innehålla `<summan> kr`, tex `212.5 kr`.
+
+Exempel på exekvering:
+
+```bash
+Vad är summan på notan? 850
+Hur många personer delar på notan? 4
+Varje person ska betala 212.5 kr
+```
+
+### Extrauppgift
+
+Koden kan inte hantera om användaren matar in antal personer som är mindre än 1. Lägg till en kontroll så att programmet inte kraschar om användaren matar in 0 eller ett negativt tal.
+
+Använd dig av `exit(1)` för att avsluta programmet om antalet personer är mindre än 1.
+
+Exempel på exekvering:
+
+```bash
+Vad är summan på notan? 100
+Hur många personer delar på notan? 0
+Varning! Antal personer måste vara minst 1.
+```
+
+
+## Jobba med uppgiften
+
+lägg till youtube video
