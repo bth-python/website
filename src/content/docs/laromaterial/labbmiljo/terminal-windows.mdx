@@ -14,6 +14,12 @@ Du behöver vara Administratör på din dator, annars kan du få bekymmer med r�
 
 
 
+## Förutsättning
+
+Denna artikel förutsätter att du har senaste versionen av Windows och att den är uppdaterad. Om du har en äldre version av Windows kan det kräva anpassningar.
+
+
+
 ## Terminal
 
 På Windows finns både Cmd och PowerShell som två windows-baserade terminaler. Men vi skall installera en terminal i WSL (Windows Subsystem for Linux) som baseras på Ubuntu som är ett Linux-system. Det kommer att ge oss en bash-terminal som vi kan jobba i.
@@ -31,7 +37,7 @@ Börja med att öppna en ny PowerShell terminal som administratör.
 1. Tryck Windows-tangenten, skriv "powershell" i sökfönstret.
 1. Högerklicka på "Windows Powershell" och välj "Kör som Administratör".
 
-import terminal6 from '@assets/labbmiljö/terminal/terminal6.png';
+import terminal6 from '@assets/terminal/terminal6.png';
 
 <Figure 
     src={terminal6}
@@ -40,7 +46,7 @@ import terminal6 from '@assets/labbmiljö/terminal/terminal6.png';
 
 Det kan se ut så här när du startat PowerShell som administratör.
 
-import terminal7 from '@assets/labbmiljö/terminal/terminal7.png';
+import terminal7 from '@assets/terminal/terminal7.png';
 
 <Figure 
     src={terminal7}
@@ -71,7 +77,7 @@ Du kan nu öppna applikationen "Terminal" i vilken du kan köra olika typer av t
 
 Börja med att starta ett terminal-fönster, det är troligen terminalen PowerShell som startar per default.
 
-import terminal8 from '@assets/labbmiljö/terminal/terminal8.png';
+import terminal8 from '@assets/terminal/terminal8.png';
 
 <Figure 
     src={terminal8}
@@ -80,12 +86,16 @@ import terminal8 from '@assets/labbmiljö/terminal/terminal8.png';
 
 Därefter kan du öppna en ny Ubuntu terminal i en ny flik via drop-down menyn.
 
-import terminal9 from '@assets/labbmiljö/terminal/terminal9.png';
+import terminal9 from '@assets/terminal/terminal9.png';
 
 <Figure 
     src={terminal9}
     caption="Öppna Ubuntu som en terminal."
 />
+
+:::note
+Om du inte har applikationen "Terminal" så kan du öppna "ubuntu" direkt via Windows meny eller genom `Windows + R` och skriva ubuntu i sökfältet.
+:::
 
 Första gången som du öppnar din Ubuntu-terminal så behöver du ange en användare och ett lösenord som gäller i terminalen. Detta är din specifika användare inuti Ubuntu och har inget att göra med din Windows-användare. Välj ett kort användarnamn och ett kort lösenord så blir det smidigt att använda. Använd inte mellanslag eller svenska tecken i användarnamnet.
 
@@ -95,7 +105,7 @@ Du kan även öppna ett terminalfönster med Ubuntu via Windows-meny och skriva 
 
 Det ser ut ungefär så här när din terminal är startad. Min användare heter "mos" och det syns i prompten.
 
-import terminal10 from '@assets/labbmiljö/terminal/terminal10.png';
+import terminal10 from '@assets/terminal/terminal10.png';
 
 <Figure 
     src={terminal10}
@@ -136,7 +146,7 @@ cowsay "Nu är jag på gång med terminalen!"
 
 Det kan se ut så här.
 
-import terminal11 from '@assets/labbmiljö/terminal/terminal11.png';
+import terminal11 from '@assets/terminal/terminal11.png';
 
 <Figure 
     src={terminal11}
@@ -203,8 +213,6 @@ Punkten anger att du öppnar texteditorn med nuvarande katalog som arbetskatalog
 
 På detta viset kan du använda din texteditor för att hantera de filer som ligger inuti terminalen.
 
-PS. Om du får upp en ruta ruta där det står att du använder `WSL 1` och de rekomenderar att du ska uppgradera till 2 istället, följ instruktionerna [Uppgradera wsl 1 till wsl 2](#upgradera-wsl-1-till-wsl-2).
-
 
 
 ### Var finns Windows hemma-katalog?
@@ -254,6 +262,14 @@ Du kan stänga av systemet med `wsl --terminate Ubuntu` (om det är aktivt och s
 Ta sedan bort det med `wsl --unregister Ubuntu`.
 
 Nu kan du åter installera systemet med `wsl --install --distribution Ubuntu`. Glöm inte att ange användare och lösenord.
+
+
+
+### Error : 0x80370102 - Enable virtualization i BIOS
+
+WSL bygger på virtualizering och den tekniken är inte aktiverad på alla datorer.
+
+Lösningen är att gå in i BIOS och aktivera virtualizering. [Microsoft har en bra guide på hur man gör](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1).
 
 
 
