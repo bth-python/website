@@ -17,20 +17,20 @@ body:
     validations:
       required: true
   - type: textarea
-    id: what-error
-    attributes:
-      label: Describe what the error is?
-      description: If it is an error with example code or instructions, also tell us what you error you got when executing?
-      placeholder: Type here to answer
-    validations:
-      required: true
-  - type: textarea
     id: copied-text
     attributes:
       render: bash
       label: The marked text
       description: You should not need to edit this if you used the report button.
       placeholder: Text
+    validations:
+      required: true
+  - type: textarea
+    id: what-error
+    attributes:
+      label: Describe what the error is?
+      description: If it is an error with example code or instructions, also tell us what you error you got when executing?
+      placeholder: Type here to answer
     validations:
       required: true
   - type: markdown
