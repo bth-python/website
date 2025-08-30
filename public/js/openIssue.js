@@ -60,15 +60,15 @@ function openIssue(title, link, text, labels, githubLink){
 function setLeftOpenMenuBtn(openMenuBtn) {
     const main = document.getElementsByTagName('main')[0];
     main.getBoundingClientRect();
-    openMenuBtn.style.left = `${window.innerWidth > 650 ? main.getBoundingClientRect().right + 5 : window.innerWidth - 35}px`;
+    openMenuBtn.style.left = `${window.innerWidth > 1152 ? main.getBoundingClientRect().right + 10 : window.innerWidth - 40}px`;
 
 }
 
 function setPosMenu(menu, openMenuBtn) {
     const rect = openMenuBtn.getBoundingClientRect();
-    if (window.innerWidth <= 650) {
+    if (window.innerWidth <= 1155) {
         menu.style.top = `${rect.bottom - 190}px`;
-        menu.style.left = `${rect.right - 180}px`;
+        menu.style.left = `${rect.right - 200}px`;
     } else {
         menu.style.top = `${rect.bottom - 190}px`;
         menu.style.left = `${rect.left + 5}px`;
@@ -105,20 +105,19 @@ function createOpenButton() {
             border-radius: 12px;
             height: 150px;
             width: 200px;
-            padding: 1.5rem;
             box-shadow: 0 8px 20px rgba(0,0,0,.2);
             position: relative;
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            padding-right: 20px;
+            padding-right: 15px;
             padding-top: 5px;
-            padding-left: 20px;
+            padding-left: 15px;
         ">
             <button style="
                 position: absolute;
-                top: -5px;
-                right: 5px;
+                top: -8px;
+                right: 0px;
                 background: none;
                 border: medium;
                 font-size: 1.25rem;
@@ -142,8 +141,6 @@ function createOpenButton() {
     menu.style.cssText = `
         inset: 0;
         display: none;
-        justify-content: center;
-        align-items: center;
         display: none;
         position: fixed;
         width: 200px;
