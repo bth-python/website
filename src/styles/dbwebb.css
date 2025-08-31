@@ -2,17 +2,19 @@ html {
 	scroll-behavior: smooth;
 }
 
-details>summary>h1,
-details>summary>h2,
-details>summary>h3,
-details>summary>h4,
-details>summary>h5,
-details>summary>h6 {
+
+details>summary>.sl-heading-wrapper,
+details>summary>.sl-heading-wrapper,
+details>summary>.sl-heading-wrapper,
+details>summary>.sl-heading-wrapper,
+details>summary>.sl-heading-wrapper,
+details>summary>.sl-heading-wrapper {
 	display: inline-block;
 }
 
 .sl-markdown-content summary:not(:where(.not-content *))::before {
-	/* details>summary::before vill använda denna, men den funkar inte*/
+	/* details>summary::before vill använda denna, men den funkar inte
+	*/
 	vertical-align: baseline;
 }
 
