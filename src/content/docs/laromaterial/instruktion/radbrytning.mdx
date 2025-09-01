@@ -8,7 +8,7 @@ import Figure from '@components/CustomFigure.astro';
 
 En av alla regler vi kolla med Ruff är att koden inte ska vara för lång. [Pep8](https://www.python.org/dev/peps/pep-0008/#maximum-line-length) rekommenderar att rader inte ska vara längre än 79 tecken. Nu för tiden tycker många att 79 tecken är för få, därför ha vi ökat det till 100 tecken i denna kursen.
 
-Ganska ofta kommer du stöta på rader som är längre än 100 tecken. Då kommer Ruff att ge dig varningen `Line to long` och du måste dela upp raden i flera rader.
+Ganska ofta kommer du stöta på rader som är längre än 100 tecken. Då kommer Ruff att ge dig varningen `Line too long` och du måste dela upp raden i flera rader.
 
 
 ## Line to long
@@ -21,11 +21,11 @@ a_long_variable_name_with_along_calculation = 2222222222222222222222222222222+44
 
 Om vi kör Ruff på koden får vi följande felmeddelande.
 
-import ltlImage from '@assets/img/instruktion/line-to-long.png';
+import ltlImage from '@assets/img/instruktion/line-too-long.png';
 
 <Figure
     src={ltlImage}
-    caption="Line to long fel från Ruff"
+    caption="Line too long fel från Ruff"
 />
 
 Det finns två sätt att dela upp rader, *implied line continuation inside brackets and braces* och *backslash*, `\`. [Pep8](https://www.python.org/dev/peps/pep-0008/#maximum-line-length) rekommenderar att använda parenteser.
@@ -55,7 +55,7 @@ income = (gross_wages
 
 ### Långa strängar
 
-Ett annat vanligt tillfälle när man får line to long är när man har en lång text sträng.
+Ett annat vanligt tillfälle när man får line too long är när man har en lång text sträng.
 
 ```python
 long_string = ("The Wheel of Time turns, and ages come and pass, leaving memories that become legend."
