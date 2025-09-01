@@ -3,6 +3,12 @@ html {
 }
 
 
+.inline-icon {
+	display: inline;
+	margin: 0px;
+}
+
+
 details>summary>.sl-heading-wrapper,
 details>summary>.sl-heading-wrapper,
 details>summary>.sl-heading-wrapper,

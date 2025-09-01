@@ -1,0 +1,105 @@
+---
+title: "kmom01 vecka 1"
+description: ""
+sidebar:
+  order: 0110
+---
+
+import { YouTube } from 'astro-embed';
+import Figure from '@components/CustomFigure.astro';
+import { Icon } from '@astrojs/starlight/components';
+
+Detta seminarium tar upp följande områden: in- och utmatning, variabler, datatyper, typkonvertering och problemlösning.
+
+## Förberedelser
+
+Läs [Om seminarier](../).
+
+## Teori
+
+### Variabler och värden
+1. Vad är en variabel och vad händer när variabelns namn förekommer i koden?
+1. Kan du förklara skillnaden mellan en variabel och värdet den innehåller?
+1. Vilken av följande rader är giltiga i Python? Varför är övriga in giltiga?
+    ```python
+    x + y = 2
+    x\*x = 2
+    2 = x
+    xy = 2
+    ```
+1. Vad avgör vilket namn du får ge en variabel i Python?
+1. Varför är det viktigt att förstå vilken datatyp en variabel har?
+1. Vad är skillnaden mellan en int, en float och en str? Ge exempel.
+
+### Hur kod funkar
+1. Vad händer om du försöker använda `input()` utan att spara svaret i en variabel?
+1. Vad är skillnaden mellan `print("Hej")` och att bara skriva `"Hej"` i en fil med Python kod?
+    ```python
+    print("Hej")
+    ```
+    vs.
+    ```python
+    "Hej"
+    ```
+1. <Icon name="magnifier" class="inline-icon" label="Search for answer" /> Hur kan du kolla vilken datatyp en variabel har?
+ 
+
+### <Icon name="open-book" class="inline-icon" label="Interpret code" /> Tolka kod
+
+1. Varför kommer följande kod att krascha om användaren skriver in värdet `5`?
+    - Vad behöver ni göra för att få programmet att inte krascha?
+    - Med er lösning, vad händer om användaren skriver in värdet `"test"`?
+    - Extrauppgift: Vilka valideringsfel finns i koden?
+    ```python
+    value =input("Enter a number: ")
+    sum = value + 10
+    print(f"The sum is {sum}!")
+    ```
+
+1. Om du kör följande kod, vilka värden skrivs ut?
+    ```python
+    usa_gold = 46
+    uk_gold = 27
+    romania_gold = 1
+    total_gold = usa_gold + uk_gold + romania_gold
+    print(total_gold)
+    romania_gold += 1
+    print(total_gold)
+    ```
+
+1. Vilket värde innehåller variabeln "u" efter att följande kod har exekverats?
+    ```python
+    once = "umbr"
+    repeat = "ella"
+    u = once + (repeat+" ")\*4
+    ```
+
+
+## <Icon name="seti:python" class="inline-icon" label="Write code" /> Praktisk uppgift
+
+Ett program ska beräkna tiden det tar för en löpare att genomföra ett lopp (till exempel Göteborgsvarvet). Först ska starttiden för löparen matas in genom att timme, minut och sekund matas in. Därefter matas sluttiden in på samma sätt, det vill säga timme, minut och sekund. Slutligen beräknas den tid löparen behövde för att genomföra loppet.
+
+Exempel på körning:
+```bash
+Ange starttid: 
+Timme: 10
+Minut: 13
+Sekund: 20
+
+Ange sluttid:
+Timme: 12
+Minut: 6
+Sekund: 43
+
+Resultattiden är 1 tim 53 min 23 sek.
+```
+
+Börja med att planera er lösning, vilken kod behövs och vilka datatyper er data kommer ha i de olika stegen.
+
+- Går det att identifiera delproblem som kan lösas för att testa tidigt?
+  - Vilka delproblem i så fall?
+  - Hur kan du testa dessa?
+- Ge förslag på lämpliga variabler och vilken datatyp de ska innehålla
+- Vilken/Vilka språkkonstruktion/er behövs?
+- Vad börjar du med?
+- Formulera en lösning i pseudo-kod
