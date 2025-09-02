@@ -11,6 +11,7 @@ sidebar:
 
 import Figure from '@components/CustomFigure.astro';
 import YouTube from '@components/YouTube.astro';
+import { Steps } from '@astrojs/starlight/components';
 
 
 Då är vi klara med att installera den delen av utvecklingsmiljön som hjälper dig att komma igång med kursens första kmom.
@@ -127,3 +128,111 @@ import test8 from '@assets/kursrepo-utvecklingsmiljo/test8.png';
 />
 
 Bra jobbat, nu är du klar med utvecklingsmiljön.
+
+
+
+## Vanliga fel
+
+### There isn’t anything to compare.
+
+När du ska skapa en PR mot bth/submit/test-gitconfig får du inte skapa den för att `bth/submit/test-gitconfig and main are entirely different commit histories.`.
+
+import errorImage from '@assets/kursrepo-utvecklingsmiljo/end-pr-error.png';
+
+<Figure 
+    src={errorImage}
+    caption="Går inte att skapa PR."
+/>
+
+Något gick fel i början när du skapade repot. Snabbaste lösningen är att radera ditt repo och skapa ett nytt.
+#### Radera repot
+
+Gå till `Settings` och skrolla längst ner.
+
+import errorImage2 from '@assets/kursrepo-utvecklingsmiljo/end-pr-error2.png';
+
+<Figure 
+    src={errorImage2}
+    caption="Gå till settings"
+/>
+
+import errorImage3 from '@assets/kursrepo-utvecklingsmiljo/end-pr-error3.png';
+
+<Figure 
+    src={errorImage3}
+    caption="Klicka radera."
+/>
+
+Klicka vidare på knapparna tills du kommer till att bekräfta raderingen. Följ instruktionerna och skriv in repots namn, klicka sen radera.
+
+import errorImage4 from '@assets/kursrepo-utvecklingsmiljo/end-pr-error4.png';
+
+<Figure 
+    src={errorImage4}
+    caption="Klicka radera."
+/>
+
+#### Skapa nytt repo
+
+Du behöver inte göra om alla steg under "Kursrepo", gör bara de som finns länkade här.
+
+import errorImage5 from '@assets/kursrepo-utvecklingsmiljo/end-pr-error5.png';
+
+
+<Steps>
+1. [Skapa kursrepo på GitHub](../../kursrepo/skapa-github-repo)
+1.  Innan du kan skapa det lokalt behöver du döpa om det du har lokalt.
+    - Öppna terminalen och exekvera följande:
+        ```bash title="Döp om ditt repo"
+        cd
+        cd dbwebb-kurser
+        # Change abcd25 to your own student acronym
+        REPO=python-abcd25
+        ```
+        Så här ser det ut för mig. GLÖM INTE att byta ut `abcd25` mot din akronym.
+        <Figure 
+            src={errorImage5}
+            caption="Så här kan det se ut"
+        />
+1. Skapa nu ditt repo lokalt, jobba igenom artikel "Skapa git repo" men börja där denna länken tar dig, [Initiera ditt git repo med branches
+](../../kursrepo/skapa-git-repo/#initiera-ditt-git-repo-med-branches). Du behöver inte göra stegen ovanför det.
+1. Jobba igenom [Lägg till Canvas student ID i repo](../../kursrepo/lagg-till-studentid/).
+</Steps>
+
+Nu har du ett tomt repo. Istället för att jobba igenom hela utvecklingsmiljön kan du kopiera filerna från ditt gamla repo.
+
+import errorImage6 from '@assets/kursrepo-utvecklingsmiljo/end-pr-error6.png';
+
+#### Kopiera filer till det nya repot
+
+<Steps>
+1. I samma terminal som du har gjort övriga kommandon kör följande för att kopiera filerna till ditt nya repo.
+    ```bash
+    cd
+    cd dbwebb-kurser
+    rsync -av --exclude='.git' python-old/ $REPO/
+    ls $REPO/
+    ```
+    När du kör `rsync` kommandot kommer du få en lång utskrift efter du har kört sista kommandot. Jag har inte med det på min bild för att kunna visa allt.
+    <Figure 
+        src={errorImage6}
+        caption="Så här kan det se ut"
+        />
+1. Flytta in i repot och ladda upp filerna till GitHub.
+    ```bash
+    cd $REPO
+    git add .
+    git commit -m 'Skapade om repot, kunde inte skapa en PR.'
+    git push
+    ```
+1. I webbläsaren, gå till ditt repo på GitHub, ladda om sidan och kolla att dina filer är där. Om alla filer finns där kan du radera det gamla repot i terminalen.
+1. Radera python-old
+    ```bash
+    cd dbwebb-kurser
+    rm -rf python-old
+    ```
+</Steps>
+
+#### Försök skapa en PR
+
+Nu, om allt har gått bra ska du kunna skapa en PR. Jobba igenom denna artikel igen [från början](#_top)!
