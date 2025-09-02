@@ -28,7 +28,7 @@ Sedan skall programmet fråga vilket värde användaren vill konvertera till:
 
 1 kilometer är 0.62137 [miles](http://en.wikipedia.org/wiki/Miles).
 
-Avsluta med att skriva ut det omvandlade värdet med två decimaler.
+Avsluta med att skriva ut det omvandlade värdet med max två decimaler.
 
 
 Det är viktigt att ditt program följer instruktionerna i kraven annars kommer inte testerna fungera och då rättas inte din inlämning.
@@ -39,7 +39,7 @@ Det är viktigt att ditt program följer instruktionerna i kraven annars kommer 
 
 Lösningar som använder konstruktionerna list/dict comprehension eller lambda funktioner godkänns inte i denna kurs.
 
-Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går igenom i kursen. Funktioner får användas först i kmom03 och listor får användas först i kmom04.
+Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går igenom i kursen. Egenskapade funktioner får användas först i kmom03 och listor får användas först i kmom04.
 
 1. Skriv din kod i filen `src/kmom01/convert/convert.py`.
 
@@ -53,7 +53,7 @@ ls
 2. `convert.py` skall innehålla kod för att omvandla två värden, som beskrivs i texten ovanför, hastighet och pris. 
 
 3. Gör ett `input()` anrop för att få värdet som ska omvandlas.
-    - Om användaren skriver in ett värde som inte går att omvandla till `float` så ska programmet skriva ut ett felmeddelande och avsluta.
+    - Om användaren skriver in ett värde som inte är endast siffror så ska programmet skriva ut ett felmeddelande och avsluta.
         - Felmeddelandet måste innehålla texten `Invalid value`.
         - Avsluta programmet med `exit()`.
         ```python
@@ -61,6 +61,7 @@ ls
         Enter value to convert: A
         Invalid value, please enter a number.
         ```
+    - Om det är endast siffror, omvandla det till ett heltal, `int`.
 
 4. Gör ett `input()` anrop för att ta reda på vilket typ av omvandling som ska göras.
     - Om användaren skriver `P` så ska programmet omvandla priset.
@@ -96,7 +97,7 @@ ls
         Invalid converter, please enter P or S.
         ```
 
-5. Skriva ut original värdet och det omvandlade värdet, avrundat till två decimaler. **Obs!** det måste vara ett **mellanslag** direkt efter originalvärdet och det omvandlade värdet i utskriften.
+5. Skriva ut original värdet och det omvandlade värdet, avrundat till max två decimaler. **Obs!** det måste vara ett **mellanslag** direkt efter originalvärdet och det omvandlade värdet i utskriften.
 
 7. Koden ska validera med Ruff.
 
@@ -127,6 +128,7 @@ ls
 ## Extrauppgift
 
 - Tillåt små bokstäver i menyvalet (p eller s fungerar lika bra som P och S).
+- Stöd att användaren skriver in decimaltal.
 
 - Använd try-except för att hantera felaktig inmatning (t.ex. om användaren skriver in bokstäver i stället för ett tal).
     - Du får inte använda bas felet `Exception` utan du får bara använda `ValueError` och `TypeError`.
