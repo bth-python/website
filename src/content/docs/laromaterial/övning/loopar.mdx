@@ -16,9 +16,10 @@ Vi rekommenderar att du kodar med i denna övning så du själv får känna på 
 
 ## Ordlista
 
-- iteration; repetion av kodrader
-
-
+- iteration; repetion av kodrader, ofta med en loop.
+- **loop**  - strukturerad upprepning av kod, till exempel med `for` eller `while`.
+- ** break** - avbryter en loop i förtid.
+- **continue** - hoppar över resten av iterationen och går vidare till nästa varv i loopen.
 
 
 ## For-loop
@@ -75,7 +76,7 @@ for letter in "räksmörgås":
         print(letter)
 
 #skriver ut:
-# ä
+# äopen
 # ö
 # å
 ```
@@ -174,12 +175,12 @@ Ex-vis om lösenordet är "&df3#!bj6!" ska den resulterande strängen vara "&:0 
     title="Betty visar hur man hittar specialtecken i lösenord."
 />
 
-While-loop
---------------------------------------
+## While-loop
+
 Vi använde `for`-loopen för att upprepa delar av ett program ett bestämt antal gånger. Om vi inte på förhand vet exakt hur många gånger vi vill upprepa kan vi använda oss av en `while`-loop. Vi måste dock ha ett villkor som är sant så länge vi vill upprepa den specifika delen av programmet. I nedanstående kodexempel loopar vi så länge `number` är mindre än 20 och varje gång vi fortsätter loopen dubblerar vi `number`.
 
 ```python
-number = 2{#while}
+number = 2
 
 while number < 20:
     print(number)
@@ -265,7 +266,7 @@ while True:
 
 
 
-#### Ett simpelt tärningsspel
+### Ett simpelt tärningsspel
 
 Skapa ett litet program som slår två tärningar och skriver ut dess värden, tills användaren säger till programmet att sluta. Du kan använda dig av modulen `random` för att representera tärningarna. Du kan slumpa fram ett värde mellan 1 och 6 på fölajnde sätt.
 
@@ -285,15 +286,14 @@ Gör detta två gången i en loop och skriv ut de slumpade värdena fram tills a
 
 Om du fastnar eller bara vill se en lösning kan du kolla på videon nedanför där Andreas skriver koden för programmet.
 
-[YOUTUBE src=vZh_PPiLvS4 caption="Andreas visar hur man kan skapa ett simpelt tärningsspel."]
 <YouTube
     id="vZh_PPiLvS4"
     title="Andreas visar hur man kan skapa ett simpelt tärningsspel."
 />
 
 
-Avslutningsvis
---------------------------------------
+## Avslutningsvis
+
 Vi har i denna övning tittat på konstruktioner i python som låter oss repetera kod i våra program. Vi kallar repetition av kod för iteration och använder satserna `for`, `while` och `do-while` för iteration.
 
 Alla kodexempel från denna övningen finns på [GitHub](https://github.com/dbwebb-se/python/tree/master/example/flow).
