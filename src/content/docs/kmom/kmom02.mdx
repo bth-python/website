@@ -1,0 +1,175 @@
+---
+title: "Kmom02: Loopar" 
+description: Andra kmomet.
+---
+
+import { YouTube } from 'astro-embed';
+import { Steps } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+
+
+:::danger
+Denna del är under arbete pch inte klar.
+:::
+
+Vi har bekantat oss med värden, datatyper, variabler och hur vi kan styra flödet i vårt program med selektion. Nu är det dags för att titta på hur vi kan upprepa delar av koden. Det kallas iteration och görs med loopar. Till slut är det dags att skriva ditt första lite större program där Marvin skall få lite intelligens när han svarar på frågor.
+
+<!-- <YouTube
+    id="WG5OTNbyj3o"
+    title="Exempel på hur det kan se ut när du är klar med kmom02 uppgiften Marvin."
+/> -->
+
+:::note
+Öppna terminalen och flytta dig till din kursmapp och kör följande kommando för att skapa katalogerna som används i kmom02. Ladda också ner de senaste testerna:
+
+```bash
+cd dbwebb-kurser/python-<akronym> # ersätt <akronym> med din akronym
+uv run task download-taskfile
+uv run task create-src-dirs
+uv run task download-tests
+```
+:::
+
+
+## Förberedelser
+Innan du börjar med kmom01 så behöver du ha jobbat igenom [Kmom01 vecka 1 och vecka 2](../kmom01.mdx).
+<br/>
+
+
+<details>
+<summary>
+## Måndag
+</summary>
+
+:::tip
+När du ska jobba med kursen är det lättast om du öppnar VSCode från terminalen innan du börjar jobba.
+
+```bash
+cd dbwebb-kurser/python-<din akronym>
+code .
+```
+
+Använd `practice` mappen i kmom02 katalogen för att skriva övningskod.
+:::
+
+### Programmeringsregler i python
+
+Skumma igenom [How to write beautiful python code with PEP 8](https://realpython.com/python-pep8/) för att få ett hum om regler vi följer när vi skriver Python kod. Läs t.o.m. "Programming recommendations". **Tips** skriv en sammanfattning av de viktigaste reglerna.
+
+
+#### Att göra
+
+<Steps>
+1. Läs och jobba igenom följande kapitel i boken (alternativt kolla på videorna):
+    * Ch5 Iteration
+    * Ch6 Strings
+
+    :::tip
+    Det räcker inte med att bara läsa. Du är klar med boken när du förstår vad som står i den och kan köra koden själv. Utforska och experimentera med koden. Gör övningarna i boken. Testa ändra saker och se vad som händer. Det är så du lär dig.
+    :::
+
+1. Mer material om loopar. En del repetition från boken och en del nytt.
+    - Jobba igenom artikeln "[Introduktion till loopar](../../laromaterial/övning/loopar)" för att träna på loopar i Python. Python-interpretatorn används för att testa koden. Vill du spara någon del av koden så gör du det under `src/kmom02/practice`.
+
+1.
+
+1. För att bekanta dig med Pythons dokumentation, kika i [Python Standard Library](https://docs.python.org/3/library/index.html). **Spendera inte mer än 60 minuter på detta.**
+    - Läs om [Built-in Functions](https://docs.python.org/3/library/functions.html) och [Built-in Constants](https://docs.python.org/3/library/constants.html). Läs **inte** igenom alla funktioner utan kolla på de som verkar intressanta och relevanta för det du jobbar med T.ex. `input()`, `len()`, `bool()`, `int()` och `isinstance()`. Det är bra att ha en översikt över vad som finns i språket och vad som går att göra.
+    - Läs också om datatypen [Text Sequence Type — str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+
+</Steps>
+
+
+</details>
+<br/>
+
+
+
+
+<details>
+<summary>
+## Onsdag
+</summary>
+Jobba igenom [seminarium kmom01 vecka 1](/website/laromaterial/seminarium/kmom02). Det görs på onsdagens lektion.
+</details>
+<br/>
+
+
+
+
+
+<details>
+<summary>
+## Torsdag och fredag
+</summary>
+
+
+### Att göra
+<Steps>
+
+1. Kolla på [Study Less Study Smart](https://www.youtube.com/watch?v=IlU-zDU6aQ0), 60 min video hur man studerar effektivt. Om ni känner att den är för lång kan ni kolla på [Study Less Study Smart: A 6-Minute Summary](https://www.youtube.com/watch?v=23Xqu0jXlfs).
+
+1. Lär dig jobba i repot och lös en exempel uppgift för att lära dig om tester och validering, "[Testning, validering och jobba med kursrepot](../../laromaterial/övning/jobba-i-kursen)".
+
+1. Hur du hanterar långa rader med kod och valideringsfelet "Line too long".
+    - Jobba igenom artikeln/övningen "[Radbrytning i Python](../../laromaterial/instruktion/radbrytning)"
+
+1. På Canvas, svara på quizzet `kmom01 quiz`. Det är inte obligatoriskt men ett bra sätt för dig att kolla om du har hängt med så här långt.
+</Steps>
+
+### Öva
+
+Nu har du jobbat igenom det förbereda materialet för veckan. Förhoppningsvis har du inte använt upp alla 20h än. Använd resten av tiden till att öva på det du har lärt dig.
+- Utforska själv, experimentera och lek med koden. Gör ett antagande om hur kod/python fungera, skriv en liten kodsnutt för att testa ditt antagande och se om det stämmer.
+- Om du vill använda dig av AI, kan du här läsa om hur du gör det på bästa sätt i kursen.
+    - Läs "[Använda AI som stöd i dina studier](../../studieguide/använd-ai)"
+    - Fundera nu på vad du har svårt att förstå med programmeringen och vill bli bättre på. Använd AI för att generera övningsuppgifter som du kan träna på. När du stöter på problem i din kod eller något du inte förstår, be AI att generera ny uppgift med liknande fel/problem.
+- Använd en webbtjänst för att hitta övningsuppgifter. Om du vill jobba med avancerad programmering på företag som Google, Facebook, Amazon, Microsoft, etc. efter dina studier så är dessa webbtjänster bra att träna på. De har ofta samma typ av uppgifter som du kan få på anställningsintervjuer.
+    - [Exercism](https://exercism.org/tracks/python)
+    - [LeetCode](https://leetcode.com/)
+    - [HackerRank](https://www.hackerrank.com/domains/tutorials/10-days-of-python)
+    - [Codewars](https://www.codewars.com/)
+    - [CheckIO](https://py.checkio.org/)
+
+</details>
+<br/>
+
+
+## Lästips
+
+Inga lästips än så länge.
+
+
+## Uppgifter
+
+Följande uppgifter skall utföras och resultatet skall redovisas.
+
+1. På Canvas, gör quizzet `Fusk policy. Måste få alla rätt, oändlig med försök`.
+
+:::danger
+Lösningar som använder konstruktionerna list/dict comprehension eller lambda funktioner godkänns inte i denna kurs.
+
+Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går igenom i kursen. Egenskapade funktioner får du först använda i kmom03 och listor får användas först i kmom04.
+:::
+1. Gör uppgiften "[Marvin](/website/laromaterial/uppgift/???)" för att visa att du har koll på loopar. Spara alla filer under `src/kmom02/marvin`.
+
+
+
+## Resultat & Redovisning
+Läs [instruktionen om hur du skall redovisa](/website/laromaterial/instruktion/resultat-och-redovisning).
+
+Se till att följande frågor besvaras i din redovisningstext i din rapportsida.
+
+- Hur känns syntaxen i Python?
+- Är det enkelt att se programmets struktur och vad det gör?
+- Har du fått en förståelse för hur loopar och villkor fungerar?
+- Vad är skillnaden på en while-loop och en for-loop?
+- Hur går det med valideringen av uppgifterna?
+- Är du överens med pylint om eventuella felmeddelanden vid valideringen?
+- Hur gick det att utföra uppgifterna, var de enkla eller svåra?
+- Gjorde du någon av extrauppgifterna? Berätta om det arbetet isåfall.
+- Vilken är din TIL för detta kmom?
+
+TIL är en akronym för “Today I Learned” vilket leksamt anspelar på att det finns alltid nya saker att lära sig, varje dag. Man brukar lyfta upp saker man lärt sig och där man kanske hajade till lite extra över dess nyttighet eller enkelhet, eller så var det bara en ny lärdom för dagen som man vill notera.
+

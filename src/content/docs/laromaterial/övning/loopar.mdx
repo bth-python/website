@@ -1,0 +1,298 @@
+---
+title: "Introduktion till loopar"
+description: Lär dig om loopar, hur vi kan få koden att göra olika saker baserat på data.
+sidebar:
+  order: 0210
+---
+
+import { YouTube } from 'astro-embed';
+
+import Figure from '@components/CustomFigure.astro';
+
+
+Vi har nu bra koll på villkors-satsen `if` och nu ska vi titta på iteration. Vi använder konstruktionerna `for` och `while` för att repetera kod.
+
+Vi rekommenderar att du kodar med i denna övning så du själv får känna på hur det är att skriva Python-kod.
+
+## Ordlista
+
+- iteration; repetion av kodrader
+
+
+
+
+## For-loop
+I detta avsnitt ska vi kolla på hur vi kan upprepa delar av koden med hjälp av konstruktionerna `for`, `range` och `in`. En `for`-loop är en konstruktion för att upprepa en del av koden ett bestämt antal gånger. Så vet vi till exempel att vi vill skriva ut en text 10 gånger är `for`-loopen ett perfekt verktyg istället för att manuellt använda `print()` 10 gånger.
+
+```python
+for i in range(10):
+    print(i)
+
+print("Jag är klar med loopen")
+
+# skriver ut:
+# siffrorna 0-9 i följd
+# Jag är klar med loopen
+```
+
+Vi noterar att vi skriver ut siffrorna 0-9 och kanske inte som väntat 1-10. I Python och många andra programmeringsspråk är talföljder och liknande konstruktioner 0-indexerade. Det viktigaste är att vi vet om det och vi kommer senare under kursens gång titta mer på detta. Vi ser även att vi här, precis som med if-satser, använder indentering för att avgränsa det som hör till `for`-loopen.
+
+Vi har alltså nu en konstruktion som upprepar det som finns inuti `for`-loopen ett bestämt antal gånger. Om vi kombinerar detta med det vi lärde oss om `if`-satser kan vi redan nu skapa avancerade flöden i våra program. Om vi anger två siffror till `range()` får vi siffrorna däremellan till svar. Här räknas `number_of_apples`-variabeln upp från 3 till 15 och med hjälp av `if`-satsen skriver vi ut olika meddelanden.
+
+```python
+for number_of_apples in range(3, 15):
+    if number_of_apples > 10:
+        print("Du har mer än 10 äpplen")
+    elif 5 < number_of_apples <= 10:
+        print("Du blev snabbt mätt och åt bara upp några av dina äpplen")
+    else:
+        print("Du har nog varit hungrig och ätit upp dina äpplen")
+```
+
+
+<iframe width="727" height="500" frameborder="1" src="https://pythontutor.com/iframe-embed.html#code=for%20number_of_apples%20in%20range%283,%2015%29%3A%0A%20%20%20%20if%20number_of_apples%20%3E%2010%3A%0A%20%20%20%20%20%20%20%20print%28%22Du%20har%20mer%20%C3%A4n%2010%20%C3%A4pplen%22%29%0A%20%20%20%20elif%20number_of_apples%20%3C%3D%2010%20and%20number_of_apples%20%3E%205%3A%0A%20%20%20%20%20%20%20%20print%28%22Du%20blev%20snabbt%20m%C3%A4tt%20och%20%C3%A5t%20bara%20upp%20n%C3%A5gra%20av%20dina%20%C3%A4pplen%22%29%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22Du%20har%20nog%20varit%20hungrig%20och%20%C3%A4tit%20upp%20dina%20%C3%A4pplen%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<a href="https://www.pythontutor.com/visualize.html#code=for%20number_of_apples%20in%20range%283,%2015%29%3A%0A%20%20%20%20if%20number_of_apples%20%3E%2010%3A%0A%20%20%20%20%20%20%20%20print%28%22Du%20har%20mer%20%C3%A4n%2010%20%C3%A4pplen%22%29%0A%20%20%20%20elif%20number_of_apples%20%3C%3D%2010%20and%20number_of_apples%20%3E%205%3A%0A%20%20%20%20%20%20%20%20print%28%22Du%20blev%20snabbt%20m%C3%A4tt%20och%20%C3%A5t%20bara%20upp%20n%C3%A5gra%20av%20dina%20%C3%A4pplen%22%29%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22Du%20har%20nog%20varit%20hungrig%20och%20%C3%A4tit%20upp%20dina%20%C3%A4pplen%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">Exemplet i fullskärm</a>.
+
+
+
+Om vi bara vill göra något ett bestämt antal gånger utan att bry oss om index `i` kan vi använda oss av `_` istället för `i` enligt nedan. Detta gör att vi inte behöver skapa en variabel som tar plats i minnet på datorn och som förvirrar personer som läser koden.
+
+```python
+for _ in range(5):
+    print("Python är ett spännande programmeringsspråk")
+
+# skriver ut:
+# Python är ett spännande programmeringsspråk 5 gånger
+```
+
+Vi kan även loopa över annat än talföljder och vi kommer senare i kursen lära oss många olika konstruktioner som vi kan loopa över. I nedanstående exempel loopar vi igenom en sträng bokstav för bokstav med hjälp av samma `in` konstruktion som vi använde för talföljderna.
+
+```python
+for letter in "räksmörgås":
+    if letter in "åäö":
+        print(letter)
+
+#skriver ut:
+# ä
+# ö
+# å
+```
+
+Notera att vi använder `in` konstruktionen även i en `if`-sats för att kolla om bokstaven finns i en annan sträng. `in` kan alltså användas på olika sätt tillsammans med både villkor och loopar. Vi kommer under kursens gång tillbaka till `in` flertalet gånger och ser många användningsområden. Så om det känns lite magiskt nu kommer det att sätta sig under kursens gång.
+
+
+För att kolla om ett värde **inte** finns kan vi använda nyckelordet `not` tillsammans med `in`.
+
+```python
+non_letters = ""
+for letter in "räksmörgås":
+    if letter not in "åäö":
+        non_letters += letter
+print(non_letters)
+
+#skriver ut:
+# rksmrgs
+```
+
+<YouTube
+    id="CKvtLiRIK_s"
+    title="Andreas visar hur for-loopar exekveras."
+/>
+
+
+## For-loop med input
+
+Försök själv att skriva ett program som gör följande. Be användaren skriva en ett ord, skapa en ny sträng som innehåller ordet användaren skrev in fast med en punkt efter varje bokstav och skriv sen ut den nya strängen. T.ex. om användaren skriver in "apa" ska programmet skriva ut "a.p.a.".
+
+Om du undrar hur man kan lösa den eller har fastnat kan du kolla på videon där Andreas löser uppgiften.
+
+<YouTube
+    id="huygMa6EbU0"
+    title="Andreas löser problemställningen."
+/>
+
+## For-loop med enumerate
+
+Vi kan med `for`-loopen iterera över en sträng för att få ett tecken i taget.
+
+```python
+result = ""
+string = "Python"
+print("The letters in " + string + " are: ")
+for character in string:
+    result += character + ","    
+print(result)
+
+#ger utskriften P, y, t, h, o, n,
+```
+Ibland vill vi, i samband med att vi itererar över ex-vis en sträng, även hålla ordning på vilken iteration i ordningen det är. För att lösa detta finns funktionen `enumerate()`. Denna funktion lägger till en räknare och ger som resultatet ett sk. uppräkningsbart objekt (eng enumerated object), dvs ett objekt som innehåller två delar ett heltal (räknaren) och elementet (i en sträng blir det ett tecken).
+
+```python
+...
+for counter, element in enumerate(the_string)
+    pass
+
+# counter kommer att ges värdet 0 och räknas upp med 1 för varje iteration
+# element kommer att ges ett tecken i taget med start på det första (som finns på position/index 0)
+```
+
+Fundera över vilken utskrift vi får om vi exekverar
+
+```python
+the_string = "abc"
+result = ""
+for counter, element in enumerate(the_string):
+    result += str(counter) + "," + element + "\n"
+print(result)
+```
+Svaret är:   
+0,a  
+1,b  
+2,c  
+
+Anta att vi har behov av att bestämma och presentera de positioner/index där det finns mellanslag dvs ' ', i en sträng. Då kan vi t.ex lösa detta genom att använda `enumerate()`-funktionen i samband med `for`-loopen.
+
+
+```python
+result = ""
+string = "This is an example of using enumerate"
+for index, character in enumerate(string):
+    if character == ' ':
+        result += str(index) + " "
+print(result)
+
+#ger utskriften 4 7 10 18 21 27 
+```
+
+Lös uppgiften att givet ett inmatat lösenord bestämma vilka positioner/index som det finns något av specialtecknen @, £, $, #, %, &, ?, !, *. Du ska skapa en sträng som innehåller varje special-tecken tillsammans med dess index.   
+Ex-vis om lösenordet är "&df3#!bj6!" ska den resulterande strängen vara "&:0 #:4 !:5 !:9 "
+
+<YouTube
+    id="lyNRsqTACgI"
+    title="Betty visar hur man hittar specialtecken i lösenord."
+/>
+
+While-loop {#while}
+--------------------------------------
+Vi använde `for`-loopen för att upprepa delar av ett program ett bestämt antal gånger. Om vi inte på förhand vet exakt hur många gånger vi vill upprepa kan vi använda oss av en `while`-loop. Vi måste dock ha ett villkor som är sant så länge vi vill upprepa den specifika delen av programmet. I nedanstående kodexempel loopar vi så länge `number` är mindre än 20 och varje gång vi fortsätter loopen dubblerar vi `number`.
+
+```python
+number = 2
+
+while number < 20:
+    print(number)
+    number = number + number
+
+# skriver ut: 2 4 8 16
+```
+
+Det viktiga med en `while`-loop är att vi någon gång avslutar loopen för annars kommer den fortsätta i all oändlighet eller tills datorn stängs av. Vi avslutar loopen genom att ändra så att villkoret är falskt. I exemplet ovan avslutar vi alltså loopen när `number` blir 20 eller större.
+
+`while`-loopar kan även användas för att ta emot indata från användaren. Om vi vill ta emot indata tills användaren skriver in ett specifikt värde kan vi använda `break` när användaren skriver in detta värde.
+
+<YouTube
+    id="auOg4s3pJU8"
+    title="Andreas visar hur while-loopar fungerar."
+/>
+
+Vi har tidigare sett hur vi använder `input` och hur vi konverterar data från en sträng till ett heltal. I `while`-loopen bryter vi mot regeln ovan att vi skulle ha ett villkor som någon gång avslutas. Villkoret `True` blir aldrig falskt och då avslutas while-loopen aldrig, men vi använder konstruktionen `break` för att avsluta. Inne i loopen är det första vi gör att kolla om användaren har skrivit in värdet för avslut (q), om användaren har gjort det avslutar vi programmet. Annars skriver vi ut ett meddelande baserat på de `if`-satser vi har sett tidigare.
+
+```python
+while True:
+    user_input = input("Skriv in antal äpplen (eller q för avslut): ")
+    if user_input == "q":
+        print("Du är nu klar med att äta äpplen.")
+        print("Hej då!")
+        break
+    else:
+        number_of_apples = int(user_input)
+        if number_of_apples > 10:
+            print("Du har mer än 10 äpplen")
+        elif 5 < number_of_apples <= 10:
+            print("Du blev snabbt mätt och åt bara upp några av dina äpplen")
+        else:
+            print("Du har nog varit hungrig och ätit upp dina äpplen")
+```
+
+På rad 8 i koden ovan gör vi om variabeln `user_input` från en sträng till ett heltal med hjälp av `int()`. Då data som finns i variabeln kommer från en användare kan vi inte lita på att variabeln innehåller ett heltal. Om vi skriver in något annat än ett heltal (till exempel bokstaven 'g') får vi följande fel i python.
+
+```bash
+Traceback (most recent call last):
+  File "while.py", line 23, in <module>
+    number_of_apples = int(user_input)
+ValueError: invalid literal for int() with base 10: 'g'
+```
+
+I python finns en konstruktion som kan rädda oss från såna fel. Konstruktionen heter try-except och fungerar så att vi har två delar ungefär som en `if`-sats. En del när allt går som vanligt och en del för när det går åt skogen.
+
+```python
+try:
+    number_of_apples = int(user_input)
+except ValueError:
+    print("Oj! Du skrev inte in en siffra.")
+```
+
+I koden ovan försöker vi omvandla `user_input` till ett heltal, om detta inte går får vi ett `ValueError` som vi såg i felmeddelandet. I `except` skriver vi bara ut att det blev fel och fortsätter. Ett uppdaterat kodexempel med felhantering ses nedan. Notera att vi använder `continue` för att hoppa till nästa upprepning i `while`-loopen. Vi har tidigare sett `break` som avslutar hela loopen, `continue` avslutar bara den nuvarande upprepning och fortsätter sedan med nästa upprepning.
+
+```python
+while True:
+    user_input = input("Skriv in antal äpplen (eller q för avslut): ")
+    if user_input == "q":
+        print("Du är nu klar med att äta äpplen.")
+        print("Hej då!")
+        break
+    else:
+        try:
+            number_of_apples = int(user_input)
+        except ValueError:
+            print("Oj! Du skrev inte in en siffra.")
+            continue
+
+        if number_of_apples > 10:
+            print("Du har mer än 10 äpplen")
+        elif 5 < number_of_apples <= 10:
+            print("Du blev snabbt mätt och åt bara upp några av dina äpplen")
+        else:
+            print("Du har nog varit hungrig och ätit upp dina äpplen")
+```
+
+
+<iframe width="727" height="510" frameborder="1" src="https://pythontutor.com/iframe-embed.html#code=while%20True%3A%0A%20%20%20%20user_input%20%3D%20input%28%22Skriv%20in%20antal%20%C3%A4pplen%20%28eller%20q%20f%C3%B6r%20avslut%29%3A%20%22%29%0A%20%20%20%20if%20user_input%20%3D%3D%20%22q%22%3A%0A%20%20%20%20%20%20%20%20print%28%22Du%20%C3%A4r%20nu%20klar%20med%20att%20%C3%A4ta%20%C3%A4pplen.%22%29%0A%20%20%20%20%20%20%20%20print%28%22Hej%20d%C3%A5!%22%29%0A%20%20%20%20%20%20%20%20break%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20try%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20number_of_apples%20%3D%20int%28user_input%29%0A%20%20%20%20%20%20%20%20except%20ValueError%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Oj!%20Du%20skrev%20inte%20in%20en%20siffra.%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20continue%0A%0A%20%20%20%20%20%20%20%20if%20number_of_apples%20%3E%2010%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Du%20har%20mer%20%C3%A4n%2010%20%C3%A4pplen%22%29%0A%20%20%20%20%20%20%20%20elif%20number_of_apples%20%3C%3D%2010%20and%20number_of_apples%20%3E%205%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Du%20blev%20snabbt%20m%C3%A4tt%20och%20%C3%A5t%20bara%20upp%20n%C3%A5gra%20av%20dina%20%C3%A4pplen%22%29%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Du%20har%20nog%20varit%20hungrig%20och%20%C3%A4tit%20upp%20dina%20%C3%A4pplen%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<a href="https://www.pythontutor.com/visualize.html#code=while%20True%3A%0A%20%20%20%20user_input%20%3D%20input%28%22Skriv%20in%20antal%20%C3%A4pplen%20%28eller%20q%20f%C3%B6r%20avslut%29%3A%20%22%29%0A%20%20%20%20if%20user_input%20%3D%3D%20%22q%22%3A%0A%20%20%20%20%20%20%20%20print%28%22Du%20%C3%A4r%20nu%20klar%20med%20att%20%C3%A4ta%20%C3%A4pplen.%22%29%0A%20%20%20%20%20%20%20%20print%28%22Hej%20d%C3%A5!%22%29%0A%20%20%20%20%20%20%20%20break%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20try%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20number_of_apples%20%3D%20int%28user_input%29%0A%20%20%20%20%20%20%20%20except%20ValueError%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Oj!%20Du%20skrev%20inte%20in%20en%20siffra.%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20continue%0A%0A%20%20%20%20%20%20%20%20if%20number_of_apples%20%3E%2010%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Du%20har%20mer%20%C3%A4n%2010%20%C3%A4pplen%22%29%0A%20%20%20%20%20%20%20%20elif%20number_of_apples%20%3C%3D%2010%20and%20number_of_apples%20%3E%205%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Du%20blev%20snabbt%20m%C3%A4tt%20och%20%C3%A5t%20bara%20upp%20n%C3%A5gra%20av%20dina%20%C3%A4pplen%22%29%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Du%20har%20nog%20varit%20hungrig%20och%20%C3%A4tit%20upp%20dina%20%C3%A4pplen%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">Exemplet i fullskärm</a>.
+
+
+
+#### Ett simpelt tärningsspel {#dice_game}
+
+Skapa ett litet program som slår två tärningar och skriver ut dess värden, tills användaren säger till programmet att sluta. Du kan använda dig av modulen `random` för att representera tärningarna. Du kan slumpa fram ett värde mellan 1 och 6 på fölajnde sätt.
+
+```python
+import random
+
+MIN = 1
+MAX = 6
+
+dice_value1 = random.randint(MIN, MAX)
+print(dice_value1)
+```
+
+Första raden inkluderar färdig kod för att slumpa värden. `random.randint(MIN, MAX)` anropar funktionen `randint` som ligger i random modulen, den returnerar ett slumpmässigttal mellan de två heltalen som skickas in till funktionen. I vårt fall 1 och 6.
+
+Gör detta två gången i en loop och skriv ut de slumpade värdena fram tills användaren indikerar att programmet ska avslutas.
+
+Om du fastnar eller bara vill se en lösning kan du kolla på videon nedanför där Andreas skriver koden för programmet.
+
+[YOUTUBE src=vZh_PPiLvS4 caption="Andreas visar hur man kan skapa ett simpelt tärningsspel."]
+<YouTube
+    id="vZh_PPiLvS4"
+    title="Andreas visar hur man kan skapa ett simpelt tärningsspel."
+/>
+
+
+Avslutningsvis
+--------------------------------------
+Vi har i denna övning tittat på konstruktioner i python som låter oss repetera kod i våra program. Vi kallar repetition av kod för iteration och använder satserna `for`, `while` och `do-while` för iteration.
+
+Alla kodexempel från denna övningen finns på [GitHub](https://github.com/dbwebb-se/python/tree/master/example/flow).
