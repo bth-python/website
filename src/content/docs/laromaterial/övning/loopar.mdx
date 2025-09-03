@@ -22,6 +22,7 @@ Vi rekommenderar att du kodar med i denna övning så du själv får känna på 
 
 
 ## For-loop
+
 I detta avsnitt ska vi kolla på hur vi kan upprepa delar av koden med hjälp av konstruktionerna `for`, `range` och `in`. En `for`-loop är en konstruktion för att upprepa en del av koden ett bestämt antal gånger. Så vet vi till exempel att vi vill skriva ut en text 10 gånger är `for`-loopen ett perfekt verktyg istället för att manuellt använda `print()` 10 gånger.
 
 ```python
@@ -128,7 +129,7 @@ print(result)
 ```
 Ibland vill vi, i samband med att vi itererar över ex-vis en sträng, även hålla ordning på vilken iteration i ordningen det är. För att lösa detta finns funktionen `enumerate()`. Denna funktion lägger till en räknare och ger som resultatet ett sk. uppräkningsbart objekt (eng enumerated object), dvs ett objekt som innehåller två delar ett heltal (räknaren) och elementet (i en sträng blir det ett tecken).
 
-```python
+```python {#while}
 ...
 for counter, element in enumerate(the_string)
     pass
@@ -173,12 +174,12 @@ Ex-vis om lösenordet är "&df3#!bj6!" ska den resulterande strängen vara "&:0 
     title="Betty visar hur man hittar specialtecken i lösenord."
 />
 
-While-loop {#while}
+While-loop
 --------------------------------------
 Vi använde `for`-loopen för att upprepa delar av ett program ett bestämt antal gånger. Om vi inte på förhand vet exakt hur många gånger vi vill upprepa kan vi använda oss av en `while`-loop. Vi måste dock ha ett villkor som är sant så länge vi vill upprepa den specifika delen av programmet. I nedanstående kodexempel loopar vi så länge `number` är mindre än 20 och varje gång vi fortsätter loopen dubblerar vi `number`.
 
 ```python
-number = 2
+number = 2{#while}
 
 while number < 20:
     print(number)
@@ -264,7 +265,7 @@ while True:
 
 
 
-#### Ett simpelt tärningsspel {#dice_game}
+#### Ett simpelt tärningsspel
 
 Skapa ett litet program som slår två tärningar och skriver ut dess värden, tills användaren säger till programmet att sluta. Du kan använda dig av modulen `random` för att representera tärningarna. Du kan slumpa fram ett värde mellan 1 och 6 på fölajnde sätt.
 
