@@ -35,7 +35,7 @@ Det vanligaste felet är syntax errors (ibland parsing errors). Det uppstår nä
 SyntaxError: invalid syntax
 ```
 
-Felet visar oss vilken fil det handlar om (i detta fallet interpretatorn). Den lilla pilen pekar på den tidigaste gången felet upptäcktes på raden och vanligen är den felaktiga koden i delen före pilen. Här handlar det om att if-satsen inte startar med `:`.
+Felet visar oss vilken fil det handlar om (i detta fallet interpretatorn). Den lilla pilen pekar på den tidigaste gången felet upptäcktes på raden och vanligen är den felaktiga koden i delen före pilen. Här handlar det om att if-satsen inte startar med `:` så här `if 100 < 5: print("Nu då...")`.
 
 Syntax fel kan vi inte göra något åt, då de uppstår före vår kod körs och gör att vårt program inte kan starta.
 
@@ -268,4 +268,4 @@ Därför ska vi "alltid" fånga specifika fel, för att vi kan aldrig garantera 
 
 ## Avslutningsvis
 
-Vi har haft fokus på felhantering i Python. 
+Vi har haft fokus på felhantering i Python. Ett exception är ett fel som uppstår under körning av ett program. När ett fel inträffar, "kastas" ett exception, vilket kan hanteras för att undvika att programmet kraschar. Vi använder **try-except** med kod som kan orsaka fel i try-blocket och så tar vi hand om felet eller felen i except-blocket.
