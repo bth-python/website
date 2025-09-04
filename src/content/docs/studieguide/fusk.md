@@ -15,7 +15,7 @@ Essensen av allt arbete som du lämnar in till våra kurser måste vara ditt ege
 
 Om du begår någon handling som inte är rimlig, men du uppmärksammar kursens ledare genom att skicka ett e-postmeddelande till kursansvarig inom 72 timmar, kan vi välja att enbart underkänna din inlämning istället för att göra en anmälan till disciplinnämnden. Förutom i fall av upprepade handlingar.
 
-Nedan följer tumregler som karaktäriserar handlingar som vi anser vara rimliga och orimliga. Om du är osäker på om någon handling är rimlig, utför den inte förrän du har frågat och fått godkänt skriftligen av kursens ledare. Handlingar som anses orimliga av kursen anmäls till disciplinnämnden och relaterade inlämningar betygsätt med underkänt betyg. Vad disciplinnämnden innebär kan du läsa om [längre ner](#namnden).
+Nedan följer tumregler som karaktäriserar handlingar som vi anser vara rimliga och orimliga. Om du är osäker på om någon handling är rimlig, utför den inte förrän du har frågat och fått godkänt skriftligen av kursens ledare. Handlingar som anses orimliga av kursen anmäls till disciplinnämnden och relaterade inlämningar betygsätt med underkänt betyg. Vad disciplinnämnden innebär kan du läsa om [längre ner](#disciplinnämnden).
 
 ### Rimligt
 
