@@ -116,7 +116,7 @@ Ibland vill vi bara visa några få decimaler genom att avrunda decimaltalen. I 
 
 ### Sträng (String)
 
-Textvärden heter [_sträng_](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) på svenska och _string_ på engelska (förkortas med __str__). En sträng är en sekvens av tecken omslutna av enkla (') eller dubbla (") citattecken. Vi vet att `"Hello world"` är en sträng för att den är omsluten av citattecken. En sträng kan inte innehålla samma typ av citattecken som den är omsluten av ochen sträng avslutas så fort ett likadant citattecken påträffas i sekvensen.
+Textvärden heter [_sträng_](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) på svenska och _string_ på engelska (förkortas med __str__). En sträng är en sekvens av tecken omslutna av enkla (') eller dubbla (") citattecken. Vi vet att `"Hello world"` är en sträng för att den är omsluten av citattecken. En sträng kan inte innehålla samma typ av citattecken som den är omsluten av och en sträng avslutas så fort ett likadant citattecken påträffas i sekvensen.
 
 I koden nedan visas vårt första felmeddelande. Felmeddelanden visas när något går fel i vårt program, då avslutas programmet och ett felmeddelande visas. I detta fall får vi ett felmeddelande när vi försöker skriva värdet `"It"s Learning"`, alltså en sträng skapad med `"` som innehåller en `"` som en del av värdet. Kolla på felmeddelandet och se om du förstår vad felet är, jag förklarar felet i texten under koden.
 
@@ -139,7 +139,7 @@ SyntaxError: invalid syntax
 
 Python interpretatorn klarar bara av att exekvera kod som följer dess struktur. När vi skriver `"It"s Learning"` skapar vi en sträng som innehåller tecknen `It`. När den andra `"` påträffas i koden avslutas strängen och då blir de efterföljande tecknen inte en del av strängen. Python interpretatorn klarar inte av att det kommer ett `s` efter en sträng och då stoppas programmet och interpretatorn visar felet som vi ser ovanför, ett så kallat syntaxfel. Syntaxfel betyder att koden inte är korrekt skriven. Vi kan även se att koden är på rad 1 och en "^" som pekar på vart felet är.
 
-Om vi har två strängar som vi vill lägga ihop till en lång kan detta med ett "+" mellan två strängar. Detta kallas att konkatenera strängar, den engelska översättningen är 'concatenate'.
+Om vi har två strängar som vi vill lägga ihop till en lång kan detta göras med ett "+" mellan två strängar. Detta kallas att konkatenera strängar, den engelska översättningen är 'concatenate'.
 
 ```python
 >>> "Hello" + "World!"
