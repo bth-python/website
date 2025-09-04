@@ -3,6 +3,7 @@
  * @author Andreas Arnesson <AndreasArne@GitHub>
  */
 
+
 function getSelectionElement() {
     let selection = null;
 
@@ -15,10 +16,12 @@ function getSelectionElement() {
 
 function findAnchor(element) {
     while (element) {
-        if (element.tagName.startsWith("H")) {
-            const child = element.children[0];
+        if (element.tagName === "DIV") {
+            console.log(element);
+            const child = element.children[1];
 
-            if (child && child.tagName === 'A' && child.classList.contains("header-anchor")) {
+            console.log(child);
+            if (child && child.tagName === 'A' && child.classList.contains("sl-anchor-link")) {
                 return child.href;
             }
         }
@@ -35,25 +38,25 @@ function getGithubLink() {
 
     if (githubElement != undefined)
         return githubElement.href
-    
+
 }
 
 function createIssueForText() {
     const selection = getSelectionElement();
     const text = encodeURIComponent(selection.toString());
-    const link = encodeURIComponent(findAnchor(selection.anchorNode.parentElement));
+    const link = encodeURIComponent(findAnchor(selection.anchorNode.parentElement.previousElementSibling));
     const title = encodeURIComponent(`[Error] in article: ${document.title}`);
     const labels = encodeURIComponent("error in article");
     const githubLink = getGithubLink();
-    
+
     openIssue(title, link, text, labels, githubLink);
 };
 
-function openIssue(title, link, text, labels, githubLink){
+function openIssue(title, link, text, labels, githubLink) {
     let assignees;
 
     let url = `${githubLink}/issues/new?template=article-error.yml&url=${link}&copied-text=${text}&title=${title}&labels=${labels}`; //&assignees=${assignees}`;
-    
+
     window.open(url, '_blank');
 }
 
@@ -98,7 +101,7 @@ function createOpenButton() {
 
     // Create the menu container
     const menu = document.createElement('div');
-    menu.id="popupOverlay";
+    menu.id = "popupOverlay";
     menu.innerHTML = `
         <div class="popup" style="
             background: white;
@@ -172,7 +175,7 @@ function createOpenButton() {
 
 
     textButton.addEventListener('click', () => {
-        
+
         menu.style.display = 'none';
         createIssueForText();
     });
