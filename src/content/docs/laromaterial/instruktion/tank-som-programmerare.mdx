@@ -5,6 +5,8 @@ order: 020
 ---
 
 import { YouTube } from 'astro-embed';
+import Figure from '@components/CustomFigure.astro';
+
 
 Här är en intressant [artikel](https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/) om hur man tänker som en programmerar och hur man blir bättre problemlösare. En av programmerares viktigaste kunskaper är problemlösning, att kunna bryta ner stora komplexa problem. Det räcker inte med att kunna syntaxen för ett programmeringsspråk. Utan man behöver vara duktig på problemlösning för att bli en bra utvecklare.
 
@@ -41,7 +43,10 @@ Innan ni börjar koda, planera er lösning. Ge er hjärna tid att processera pro
 
 I en senare kurs kommer vi gå igenom något som heter UML diagram. Det är ett sätt att planera sin kod genom att rita upp olika typer av diagram.
 
-[FIGURE src=https://upload.wikimedia.org/wikipedia/commons/7/78/Cross-site_scripting_attack_sequence_diagram_-_en.png?w=w3 caption="Ett sekvensdiagram."]
+<Figure
+    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Cross-site_scripting_attack_sequence_diagram_-_en.png?w=w3"
+    caption="Ett sekvensdiagram."
+/>
 
 Vi är dock inte så avancerade att vi använder det än, men det är ett alternativ ni kommer ha i framtiden.
 
@@ -57,7 +62,11 @@ Bryt upp det i delproblem. Delproblemen är lättare att lösa. Börja med probl
 
 När du har löst alla delproblem koppla ihop dem för att lösa det stora problemet.
 
-[FIGURE src=https://www.educative.io/api/edpresso/shot/5327356208087040/image/6475288173084672?w=w3 caption="Divide and conquer. Källa www.educative.io"]
+
+<Figure
+    src="https://www.educative.io/api/edpresso/shot/5327356208087040/image/6475288173084672?w=w3"
+    caption="Divide and conquer. Källa www.educative.io"
+/>
 
 Detta är en av de viktigaste kunskaperna ni behöver lära er.
 
