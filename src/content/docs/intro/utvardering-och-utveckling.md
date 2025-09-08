@@ -65,6 +65,6 @@ I slutet av varje kurstillfälle så sammanställs all feedback i ett dokument o
 
 Lärarteamet försöker hålla kursmaterialet uppdaterat, vilket ibland är är en extra utmaning när det händer mycket inom detta tekniska område.
 
-Men jämna mellanrum, säg 2-4 års intervaller, blir det dax för en större genomsyn av varje kurs, då brukar lärarteamet gå igenom varje kursmoment och göra större uppdateringar. Ibland händer det att en kurs går ur tiden och ersätts med en ny kurs.
+Men jämna mellanrum, säg 2-4 års intervaller, är det dags för en större genomsyn av varje kurs, då brukar lärarteamet gå igenom varje kursmoment och göra större uppdateringar. Ibland händer det att en kurs går ur tiden och ersätts med en ny kurs.
 
 Den stora utmaningen är att hålla en jämn takt med teknikens utveckling i webbprogrammeringens värld och erbjuda bra kurser med pedagogiskt och välskrivet material. Med din feedback blir det jobbet mycket enklare. Tack på förhand.
