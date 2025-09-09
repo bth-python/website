@@ -22,12 +22,12 @@ Läs [Om seminarier](../).
 - jämförelseoperatorer -> comparison operator
 
 
-## Teori
+## <Icon name="open-book" class="inline-icon" label="Interpret code" /> Teori
 
 
 ### Villkor och selektion
 
-- Vad är ett **villkor**?
+- Vad är ett **villkor**? Ge något exempel på ett villkor i vardagligt tal.
 - Ge exempel på några **jämförelseoperatorer** och vad de motsvarar i "vanligt tal"
 - Ge något exempel på ett villkor i vardagligt tal.
 - Vilka av följande alternativ kan representera villkor, givet att `value`, `my_number`, `your_nr` och `answer` är variabler?:
@@ -48,23 +48,23 @@ Läs [Om seminarier](../).
 - Hur kan man skriva för att endast utföra utskriften "Jippie!" om innehållet i variabeln `value` är ett positivt jämnt tal?
 - Hur kan man kolla om en sträng är en del sträng av annan sträng. E.x. "hej" och "hej då", "hej" är en delsträng av "hej då".
 - Varför är det viktigt att tänka på ordningen i en kedja av if/elif/else?
-- Vad innebär det att ett villkor är "sant" eller "falskt" i Python?
-- <Icon name="seti:code-search" class="inline-icon" label="Search for answer" /> Vilka värden i Python tolkas som True respektive False?
 - Vad händer om du glömmer indrag (indentation) efter en if-sats?
+- <Icon name="seti:code-search" class="inline-icon" label="Search for answer" /> Vilka värden i Python tolkas som True respektive False?
 
 
 
-### Tolka kod
+### <Icon name="open-book" class="inline-icon" label="Interpret code" /> Tolka kod
 
-- Vad är fel i python-koden nedan?
+- Vilka fel finns i python-koden nedan?
 
 ```python
 password = input("Password: ")
 if password = "tfr123":
     print("Ok")
 else:
-    print("Wrong password")
+print("Wrong password")
 ```
+
 
 - Kan man få samma resultat som i koden nedan utan att använda `else`? Om inte motivera varför? Om det är möjligt, förklara vilken ändring som behövs?
 
@@ -87,17 +87,17 @@ if x < 7:
         print("You won!")
     else:
         print("You almost made it.")
-    if y > 15:
-        print("You are on the right track.")
-    else:
-        print("Try again.")
+if y > 15:
+    print("You are on the right track.")
+else:
+    print("Try again.")
 ```
 
 - Varför är kod-avsnittet nedan inte korrekt?
 
 ```python ###### vill du att de ska importera random?
 nr = random.randint(-10, 10)
-if nr / 3 < 5 and nr != 0:
+if 3 / nr < 5 and nr != 0:
     print("This is nice!")
 print("Bye")
 
@@ -114,7 +114,7 @@ else:
 ```
 
 
-## Praktiska uppgifter
+## <Icon name="seti:python" class="inline-icon" label="Write code" /> Praktiska uppgifter
 
 - Ett program ska skrivas som avgör om en person får se en specifik film baserat på personens ålder och om personen har målsmans (vuxen) med sig.
     - Om filmen har åldergräns 15 år krävs medföljande målsman i det fall personen är under 15.
@@ -146,15 +146,4 @@ Sorry, you are too young to watch the movie!
     - Vilka delproblem kan identifieras?
     - Formulera en lösning i pseudo-kod
 
-- Skriv ett program som avgör om en inmatad sträng är mellan 5 och 15 tecken lång och innehåller minst en siffra eller exakt 2 av tecknen, '#', '&', '@' och '£'. Om dessa kriterier är uppfyllda ska "OK" skrivas ut och annars ska "NOT OK" skrivas ut.
-
-### Inför inlämningsuppgiften för kmom01
-
-// skippa denna? redan många uppgifter
-
-Hur angriper du uppgiften?
-
-- går det att identifiera delproblem som kan lösas för att testa tidigt?
-    - vilka delproblem i så fall?
-    - hur kan du testa dessa?
-    - vad börjar du med?
+- <Icon name="star" class="inline-icon" label="Search for answer" /> Skriv ett program som avgör om en inmatad sträng är mellan 5 och 15 tecken lång och innehåller minst en siffra eller exakt 2 av tecknen, '#', '&', '@' och '£'. Om dessa kriterier är uppfyllda ska "OK" skrivas ut och annars ska "NOT OK" skrivas ut.
