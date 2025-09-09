@@ -1,0 +1,160 @@
+---
+title: "kmom01 vecka 2"
+description: ""
+sidebar:
+  order: 0110
+---
+
+import { YouTube } from 'astro-embed';
+import Figure from '@components/CustomFigure.astro';
+import { Icon } from '@astrojs/starlight/components';
+
+Detta seminarium tar upp följande områden: Villkor och if-satser.
+
+## Förberedelser
+
+Läs [Om seminarier](../).
+
+
+## Ordlista
+
+- villkor -> condition
+- jämförelseoperatorer -> comparison operator
+
+
+## Teori
+
+
+### Villkor och selektion
+
+- Vad är ett **villkor**?
+- Ge exempel på några **jämförelseoperatorer** och vad de motsvarar i "vanligt tal"
+- Ge något exempel på ett villkor i vardagligt tal.
+- Vilka av följande alternativ kan representera villkor, givet att `value`, `my_number`, `your_nr` och `answer` är variabler?:
+    - `value = 45`
+    - `my_number != your_nr`
+    - `answer == Yes`
+    - `value == "45"`
+    - `answer == True`
+    - `value >= 0`
+- Vad är det för språkkonstruktion som används för att styra vad som ska utföras baserat på om ett villkor är uppfyllt eller ej? Ge exempel.
+- Hur kan man uttrycka "*värdet i value är inte 100*" i python?
+- Hur kan man formulera ett villkor som blir sant om två delvillkor är uppfyllda (t.ex att förnamnet är Lisa och att födelseåret är 2002)?
+- Hur kan man formulera ett villkor som blir sant om minst ett av två villkor är uppfyllt (t.ex att förnamnet är Sven eller att efternamnet är Svensson)?
+- Hur gör man för att negera ett villkor, dvs om villkoret är falskt blir negationen sant, och vice versa?
+- Hur byggs en **if-sats** upp i python, dvs vilken är syntaxen?
+- Hur byggs en **if-else-sats** upp i python, dvs vilken är syntaxen?
+- Vad menas med **nästlade if-satser**?
+- Hur kan man skriva för att endast utföra utskriften "Jippie!" om innehållet i variabeln `value` är ett positivt jämnt tal?
+- Hur kan man kolla om en sträng är en del sträng av annan sträng. E.x. "hej" och "hej då", "hej" är en delsträng av "hej då".
+- Varför är det viktigt att tänka på ordningen i en kedja av if/elif/else?
+- Vad innebär det att ett villkor är "sant" eller "falskt" i Python?
+- <Icon name="seti:code-search" class="inline-icon" label="Search for answer" /> Vilka värden i Python tolkas som True respektive False?
+- Vad händer om du glömmer indrag (indentation) efter en if-sats?
+
+
+
+### Tolka kod
+
+- Vad är fel i python-koden nedan?
+
+```python
+password = input("Password: ")
+if password = "tfr123":
+    print("Ok")
+else:
+    print("Wrong password")
+```
+
+- Kan man få samma resultat som i koden nedan utan att använda `else`? Om inte motivera varför? Om det är möjligt, förklara vilken ändring som behövs?
+
+```python
+temperature = input("What's the temperature outside?")
+if (temperature <= 0):
+    print("Oh no, my water bottle will freeze!")
+else:
+    print("Ok, then I can drink the water from my water bottle!")
+```
+
+- Vad blir det för utskrift från koden nedan om användaren matar in `5` följt av `10`?  
+
+```python
+x = int(input("Guess a number between 1 och 10: "))
+y = int(input("Guess a number between 10 och 20: "))
+
+if x < 7:
+    if y > 15:
+        print("You won!")
+    else:
+        print("You almost made it.")
+    if y > 15:
+        print("You are on the right track.")
+    else:
+        print("Try again.")
+```
+
+- Varför är kod-avsnittet nedan inte korrekt?
+
+```python ###### vill du att de ska importera random?
+nr = random.randint(-10, 10)
+if nr / 3 < 5 and nr != 0:
+    print("This is nice!")
+print("Bye")
+
+```
+
+- Vad skrivs ut och varför?
+
+```python
+y = 1
+if y:
+    print("Sant")
+else:
+    print("Falskt")
+```
+
+
+## Praktiska uppgifter
+
+- Ett program ska skrivas som avgör om en person får se en specifik film baserat på personens ålder och om personen har målsmans (vuxen) med sig.
+    - Om filmen har åldergräns 15 år krävs medföljande målsman i det fall personen är under 15.
+    - För övriga åldergränser krävs det endast att personen uppfyller ålderskravet.
+
+```
+What is the movie's age rating? 15
+How old are you? 14
+Do you have an adult with you? (yes/no) yes
+Welcome, hope you enjoy the movie!
+```
+
+```
+What is the movie's age rating? 15
+How old are you? 12
+Do you have an adult with you? (yes/no) no
+Sorry, you are too young to watch the movie!
+```
+
+```
+What is the movie's age rating? 7
+How old are you? 5
+Sorry, you are too young to watch the movie!
+```
+
+- Tre heltal ska matas in och medelvärdet ska beräknas. De tre talen som matas in och det beräknade medelvärdet ska skrivas ut. Dessutom ska det av de tre inmatade talen som är närmast medelvärdet presenteras. Medelvärdet ska presenteras med 2 decimaler.
+    - Ge förslag på lämpliga variabler och vilken datatyp de ska innehålla
+    - Vilken/Vilka språkkonstruktion/er behövs?
+    - Vilka delproblem kan identifieras?
+    - Formulera en lösning i pseudo-kod
+
+- Skriv ett program som avgör om en inmatad sträng är mellan 5 och 15 tecken lång och innehåller minst en siffra eller exakt 2 av tecknen, '#', '&', '@' och '£'. Om dessa kriterier är uppfyllda ska "OK" skrivas ut och annars ska "NOT OK" skrivas ut.
+
+### Inför inlämningsuppgiften för kmom01
+
+// skippa denna? redan många uppgifter
+
+Hur angriper du uppgiften?
+
+- går det att identifiera delproblem som kan lösas för att testa tidigt?
+    - vilka delproblem i så fall?
+    - hur kan du testa dessa?
+    - vad börjar du med?
