@@ -121,7 +121,7 @@ När vi jobbar med try-except vill vi vara så specifik som möjligt. Så vi lä
 
 I utskriften i exemplet kan vi se att utskriften `print("Vårt heltal", as_an_int)` inte görs. Det är för att koden i `try` avbryts direkt när felet uppstår och då går python vidare till att exekvera koden i `except`. Notera också att den raden ligger inne i `try` blocket även om vi inte förväntar oss att den raden ska lyfta något fel. Men om vi lägger den raden efter try-except koden då kommer programmet krascha för att det inte finns en `as_an_int` variabel. Därför lägger vi även koden, som är beroende av koden som kan lyfta felet, i `try` blocket. 
 
-Att använda try-except för att göra något när ett exceptions uppstår kallas att fånga/catch exceptions. När koden skapar ett/ett exception uppstår exception kallar vi antingen lyfta/raise eller kasta/throw exception.
+Att använda try-except för att göra något när ett exceptions uppstår kallas att fånga/catch exceptions. När koden skapar ett exception uppstår exception kallar vi antingen lyfta/raise eller kasta/throw exception.
 
 Vi kollar också på vad som händer om koden inte lyfter ett fel.
 
