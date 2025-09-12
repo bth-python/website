@@ -9,7 +9,6 @@ Efter tre veckors halvtidsstudier görs ett 3-veckors upprop för att kontroller
 
 > _Syftet med 3-veckors uppropet att avregistrera de studenter som inte är aktiva i kurserna, de som inte har presterat något._
 
-För att klara uppropet så skall du ha lämnat in redovisning av kursmoment 01 och 02 i respektive kurs.
 
 <!--more-->
 
