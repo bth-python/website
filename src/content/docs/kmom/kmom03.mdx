@@ -1,95 +1,144 @@
 ---
-title: "Kmom03: XXX"
-description: No description.
+title: "Kmom03: Funktioner och moduler"
+description: Tredje kursmomentet.
 ---
+
+import { YouTube } from 'astro-embed';
+import { Steps } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
 
 :::danger
 Denna del är under arbete och är inte klar.
 :::
 
-Mer HTML, CSS och JavaScript med fokus på en responsiv webbplats.
+I detta kursmoment ska vi kolla på hur vi kan strukturera koden så den blir mer effektiv och mer lättläst. Du introduceras till funktioner och hur de kan underlätta för att återanvända koden och moduler för att strukturera koden i flera filer. Vi kommer i övningar och uppgifter träna på hur vi skriver funktioner med och utan argument och hur vi skickar tillbaka data från funktioner. Till slut vidareutvecklar vi Marvin så han kan svara på ännu fler frågor.
 
-_(Detta är instruktionen för kursmomentet och omfattar det som skall göras inom ramen för kursmomentet. Momentet omfattar cirka 20 studietimmar inklusive läsning, arbete med övningar och uppgifter, felsökning, problemlösning, redovisning och eftertanke. Läs igenom hela kursmomentet innan du börjar jobba. Om möjligt – planera och prioritera var du vill lägga tiden.)_
+![](/website/img/func-module.png)  
+*Marvin skall nu lära sig lite mer och få en bättre struktur*
 
-## Läs & Studera
+:::note
+Öppna terminalen och flytta dig till din kursmapp och kör följande kommando för att skapa katalogerna som används i kmom03. Ladda också ner de senaste testerna:
 
-_(2-4 studietimmar)_
 
-Här kan du på egen hand studera och förbereda dig inför övningar och uppgifter.
+```bash
+cd dbwebb-kurser/python-<akronym> # ersätt <akronym> med din akronym
+uv run task download-taskfile
+uv run task create-src-dirs
+uv run task download-tests
+```
+:::
 
-### Föreläsning
 
-Titta på följande inspelade föreläsningar. Föreläsningarna kan innehålla tips om läsanvisningar.
+## Förberedelser
+Innan du börjar med kmom03 så behöver du ha jobbat igenom [Kmom02](/website/kmom/kmom02).
+<br/>
 
-1. XXX
 
-### Litteratur
-
-Studera litteratur och resurser enligt följande.
-
-1. XXX
-
-### Video för orientering
-
-Titta på följande videor/filmer. Filmerna är tänkta att ge dig en allmän orientering i det område som behandlas i kursmomentet.
-
-- XXX
-
-Videorna ovan finner du även i spellistan "Kursen webtec: Om webbteknologier HTML, CSS och JavaScript sat att bygga webbplatser och webbtjänster".
-
-### Instuderingsfrågor
-
-Här finns ett antal instuderingsfrågor som hjälper dig att finna information på egen hand för att träna på de koncept som är relevanta för detta kmom.
 
 <details>
-<summary>Instuderingsfrågor om HTML</summary>
+<summary>
+## Måndag
+</summary>
 
-1. Vad står HTML för?
+:::tip
+När du ska jobba med kursen är det lättast om du öppnar VSCode från terminalen innan du börjar jobba.
+
+```bash
+cd dbwebb-kurser/python-<din akronym>
+code .
+```
+
+Använd `practice` mappen i kmom03 katalogen för att skriva övningskod.
+:::
+
+
+#### Att göra
+
+Vi fortsätter att läsa i boken [Python for Everybody: Exploring data in Python3](/website/laromaterial/böcker/).
+
+<Steps>  
+
+1. Läs och jobba igenom följande kapitel i boken (alternativt kolla på videorna):
+    * Ch4 Function
+
+    :::tip
+    Vi påminner om att det inte räcker inte med att bara läsa. Du behöver  experimentera med koden. Gör övningarna i boken. Testa ändra saker och se vad som händer. 
+    :::
+
+1. Titta på de videor som börjar med 3 i videoserien [Lär dig Python](https://www.youtube.com/playlist?list=PLKtP9l5q3ce93pTlN_dnDpsTwGLCXJEpd) som är tätt kopplat till kursmaterialet.
+
+1. Jobba igenom artikeln/övningen [Funktioner, argument och returvärden](../laromaterial/övning/funktioner-argument-och-returvarden) för att träna på hur du skapar funktioner. De exempelprogram du gör kan du spara i ditt kursrepo under `src/kmom03/practice`
+
+2. Jobba igenom övningen [LEGB regeln och scopes i Python](../laromaterial/övning/legb-regeln-och-scopes) som handlar hur python hanterar scope och var variabler är tillgängliga. De exempelprogram du gör kan du spara i ditt kursrepo under `src/kmom03/practice`
+
+3. Jobba igenom artikeln/övningen [Moduler i Python](../laromaterial/övning/moduler-i-python) för att bekanta dig med ett sätt att strukturera koden i Python. De exempelprogram du gör kan du spara i ditt kursrepo under `me/kmom03/functions` då koden bygger på förra övningen.
+
+</Steps>
+
 
 </details>
+<br/>
+
+
 
 <details>
-<summary>Instuderingsfrågor om CSS</summary>
+<summary>
+## Onsdag
+</summary>
 
-1. Vad står CSS för?
+Jobba igenom [seminarium kmom03](/website/laromaterial/seminarium/kmom03). Det görs på onsdagens lektion.
 
 </details>
+<br/>
+
 
 <details>
-<summary>Instuderingsfrågor om JavaScript</summary>
+<summary>
+## Torsdag och fredag
+</summary>
 
-1. Ge en kort historik över programmeringsspråket JavaScript.
+
+### Att göra
+
+<Steps>
+
+1. Gör uppgiften [Python med funktioner och moduler](../laromaterial/uppgift/python-med-funktioner) för att träna på olika typer av funktioner, med och utan argument. 
+
+1. Lös uppgifterna under [Uppgifter](#uppgifter).
+
+</Steps>
 
 </details>
+<br/>
 
-## Övningar & Uppgifter
 
-_(8-12 studietimmar)_
-
-Övningar är träning inför uppgifterna, det är ofta klokt att jobba igenom övningarna då de förbereder dig inför uppgifterna. Uppgifter skall utföras och redovisas.
-
-### Övningar
-
-Jobba igenom övningarna, de förbereder dig inför uppgifterna.
-
-1. Jobba igenom övningen "Bygg en responsiv webbplats med HTML, CSS och JavaScript".
-
-1. (läromaterial för att komma igång inför lab 3 i js)
-
-### Uppgifter
+## Uppgifter
 
 Följande uppgifter skall utföras och resultatet skall redovisas.
 
-1. Utför laborationen "Lab 3: XXX".
+:::danger
+Lösningar som använder konstruktionerna list/dict comprehension eller lambda funktioner godkänns inte i denna kurs.
 
-1. Gör uppgiften "Bygg en responsiv webbplats".
+Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går igenom i kursen. Egenskapade funktioner får du först använda i kmom03 och listor får användas först i kmom04.
+:::
+
+1. Gör uppgiften [Marvin - steg 2](../laromaterial/uppgift/marvin2) för att visa att du har koll på hur man kan strukturera sitt program genom att använda funktioner. Spara alla filer under `src/kmom03/marvin2`.
+
+
+
 
 ## Resultat & Redovisning
+Läs [instruktionen om hur du skall redovisa](/website/laromaterial/instruktion/resultat-och-redovisning).
 
-_(1-2 studietimmar)_
+Se till att följande frågor besvaras i din redovisningstext i din rapportsida.
 
-Läs [instruktionen om hur du skall redovisa]().
-
-Se till att följande frågor besvaras i din redovisningstext.
-
+- ????
+- Hur går det med valideringen av uppgifterna?
+- Hur gick det att utföra uppgifterna, var de enkla eller svåra?
 - Vilken är din TIL för detta kmom?
+
+TIL är en akronym för “Today I Learned” vilket leksamt anspelar på att det finns alltid nya saker att lära sig, varje dag. Man brukar lyfta upp saker man lärt sig och där man kanske hajade till lite extra över dess nyttighet eller enkelhet, eller så var det bara en ny lärdom för dagen som man vill notera.
+
+<!--nedan är gammalt -->
+
