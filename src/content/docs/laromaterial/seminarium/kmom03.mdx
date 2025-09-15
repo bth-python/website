@@ -1,0 +1,114 @@
+---
+title: "kmom02"
+description: "Handlar om loopar"
+sidebar:
+  order: 0210
+---
+
+import { YouTube } from 'astro-embed';
+import Figure from '@components/CustomFigure.astro';
+import { Icon } from '@astrojs/starlight/components';
+
+Detta seminarium tar upp följande områden: funktioner
+
+## Förberedelser
+
+Läs [Om seminarier](../).
+
+## Ordlista
+
+- funktion -> function
+- parameter -> parameter
+- argument -> argument
+- defaultargument -> defaultargument
+- funktionsanrop -> function call
+- lokal variable -> local variable
+
+
+
+## Teori
+
+- Beskriv med egna ord vad en **funktion** (inom programmering) är.  
+- Vad finns det för förfelar med att använda funktioner.  
+- Vad förutom ett namn behöver ingå i en funktion?  
+- Ge exempel på minst två funktioner som du/ni använt hittills och som du/ni inte definierat själv.
+- Vilken är regeln, dvs syntaxen, för hur en funktion måste skrivas i Python?  
+- Vad gäller för namngivning av funktioner i Python?  
+- Vad händer om man ger flera funktioner samma namn i Python?  
+- Vad menas med ett **funktionsanrop** och vad sker vid ett sådant?  
+- Förklara skillnaden på **parameter** och **argument**.  
+- Vad menas med **default-argument** och hur skrivs sådana i Python?  
+- Om en funktion har de 3 parametrarna param1, param2 och param3 (i denna ordning)? Hur många olika möjligheter finns det för att ge defaultargument? Ge exempel på parameterlistor för varje möjlighet. 
+- Vad är en **lokal variabel** i sammanhanget funktion?
+- Kan flera funktioner ha samma namn på sina lokala variabler?
+- Kan en funktion anropa en annan funktion?
+
+
+### Hur kod funkar
+
+Beskriv skillnaden på func01 och func02 nedan och visa hur respektive funktion anropas med målet att texten "I'm a function" ska skrivas ut.    
+```python
+def func01():
+    print("I'm a function")
+```
+```python
+def func02():
+    return "I'm a function"
+```
+
+Vad är det som är fel i func03() resp func04() nedan?  
+
+```python
+def func03():
+    return "I'm a function"
+    str = "Bye"
+    print(str)
+```
+
+```python
+def func04(what):
+print("I'm a function")
+    print(what)
+```
+
+Utgå från kod-avsnittet  
+
+```python
+def func05(start, end = 10):
+    total = 0
+    for i in range(start, end):
+        total += i
+    return total
+
+def func06():
+    first = func05(10, 30)
+    print(f"{first} and {func05(4)}")
+    
+```
+Ange vad som är:
+- anrop
+- lokal variabel
+- parameter
+- argument
+- defaultargument
+
+
+
+### <Icon name="open-book" class="inline-icon" label="Interpret code" /> Tolka kod
+
+Under utveckling... 
+
+
+## <Icon name="seti:python" class="inline-icon" label="Write code" /> Praktisk uppgift
+
+Under utveckling... 
+
+Uppgiften består av två delar. Börja med att planera er lösning, vilken kod behövs och vilka datatyper er data kommer ha i de olika stegen. Efter ni har en plan, skriv koden. Använd frågorna nedanför för att planera koden ni behöver för att lösa uppgiften.
+
+- Går det att identifiera delproblem som kan lösas för att testa tidigt?
+  - Vilka delproblem i så fall?
+  - Hur kan du testa dessa?
+- Ge förslag på lämpliga variabler och vilken datatyp de ska innehålla
+- Vilken/Vilka språkkonstruktion/er behövs?
+- Vad börjar du med?
+- Formulera en lösning i [pseudo-kod](https://sv.wikipedia.org/wiki/Pseudokod)

@@ -1,0 +1,127 @@
+## Teori
+
+- Beskriv med egna ord vad en funktion (inom programmering) är.  
+*En separat körbar del som löser en uppgift*  
+
+- Vad finns det för förfelar med att använda funktioner.  
+*Kan lösa problem som är användbara i flera sammanhang*  
+*Får en bra läsbarhet*
+*Får en bra struktur på programmen*
+
+- Vad förutom ett namn behöver ingå i en funktion?  
+*parameterlista och kropp*  
+
+- Ge exempel på minst två funktioner som du/ni använt hittills och som du/ni inte definierat själv.  
+*print(...)*  
+*input(...)*
+*len(...)*
+
+- Vilken är regeln, dvs syntaxen, för hur en funktion måste skrivas i Python?  
+*def namn(< parameterlista >):*  
+*< en tab > sats*  
+...  
+*< en tab > sats*  
+
+- Vad gäller för namngivning av funktioner i Python?  
+*samma som för variabler, dvs liten bokstav först och _ mellan varje nytt ord*  
+
+- Vad händer om man ger flera funktioner samma namn i Python?  
+*Så snart en ny funktion med samma namn definieras "glöms" den tidigare, ex*  
+```
+def func(a):
+    return a;
+
+func(33)
+
+def func():
+    return "hello"
+
+
+func()
+func(44) <- här blir det fel eftersom func(a) har skrivits över med func()
+```
+
+- Vad menas med ett **funktionsanrop** och vad sker vid ett sådant?  
+*körningen hoppar till den angivna funktionen, parametrarna tilldelas/initieras med argumenten (de resultat evalueringen av dessa ger), och satserna i kroppen exekveras, och eventuellt returneras ett värde. Därefter hoppas körningen till baka till anropet*  
+
+- Förklara skillnaden på **parameter** och **argument**.  
+*parameter är namnen på den variabler som skrivs i parameterlistan*   
+*argument är de värden (via uttryck, variabler, ...) som anges vid anrop*  
+
+- Vad menas med **default-argument** och hur skrivs sådana i Python? Ge exempel  
+*När en parameter ges ett defaultvärde om det vid anropet inte får ett argument*  
+
+- Om en funktion har de 3 parametrarna param1, param2 och param3 (i denna ordning)? Hur många olika möjligheter finns det för att ge defaultargument? Ge exempel på parameterlistor för varje möjlighet.  
+*(param1 = 1, param2 = 2, param3 = 3)*  
+*(param1, param2 = 2, param3 = 3)*  
+*(param1, param2, param3 = 3)*  
+
+- Vad är en **lokal variabel** i sammanhanget funktion?  
+*en variabel som är deklarerad inom en funktion*  
+*dess räckvidd är bara inom funktionen*
+
+- Kan flera funktioner ha samma namn på sina lokala variabler?  
+*ja, eftersom de är lokala inom funktionen och inte kända utanför*
+
+- Kan en funktion anropa en annan funktion?  
+*Ja*
+
+### Hur kod funkar
+
+Beskriv skillnaden på func01 och func02 nedan och visa hur respektive funktion anropas med målet att texten "I'm a function" ska skrivas ut.    
+```python
+def func01():
+    print("I'm a function")
+```
+```python
+def func02():
+    return "I'm a function"
+```
+  
+*func01()*
+
+Vad är det som är fel i func03() resp func04() nedan?  
+
+```python
+def func03():
+    return "I'm a function"
+    str = "Bye"
+    print(str)
+```
+
+```python
+def func04(what):
+print("I'm a function")
+    print(what)
+```
+
+Utgå från kod-avsnittet  
+
+```python
+def func05(start, end = 10):
+    total = 0
+    for i in range(start, end):
+        total += i
+    return total
+
+def func06():
+    first = func05(10, 30)
+    print(f"{first} and {func05(4)}")
+    
+```
+Ange vad som är:
+- anrop
+- lokal variabel
+- parameter
+- argument
+- defaultargument
+
+
+### <Icon name="open-book" class="inline-icon" label="Interpret code" /> Tolka kod
+
+Under utveckling... 
+
+
+## <Icon name="seti:python" class="inline-icon" label="Write code" /> Praktisk uppgift
+
+Under utveckling... 
