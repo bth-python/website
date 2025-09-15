@@ -44,7 +44,7 @@ Du som klarar 3-veckors uppropet har kvar din registrering på kursen och kan, o
 
 _Du ser varför det är viktigt att klara 3-veckors uppropet?_
 
-## Taktik-inlämning
+<!-- ## Taktik-inlämning
 
 _Här pratar vi taktik, inte normalfallet._
 
@@ -54,7 +54,7 @@ Taktik-inlämning kan vara bra om man går flera kurser och behöver lite andrum
 
 Att lämna in en icke-komplett inlämning brukar inte hjälpa dig att klara 3v-uppropet.
 
-_Detta var alltså taktik, inte normalfallet, ta ett eget beslut._
+_Detta var alltså taktik, inte normalfallet, ta ett eget beslut._ -->
 
 ## Hjälp mig tillbaka
 
