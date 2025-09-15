@@ -1,20 +1,11 @@
 ---
-category: python
-author:
-    - moc
-revision:
-  "2020-08-11": (A, moc) Skapad inför V3 HT20.
-...
-Funktioner, argument och returvärden
-==================================
+title: Funktioner, argument och returvärden
+description: "Lär dig om funktioner och dess beståndsdelar"
+---
 
-[FIGURE src=image/python/function.png?w=c5 class="right"]
+{/* [FIGURE src=image/python/function.png?w=c5 class="right"] */}
 
 Vi har i tidigare övningar och uppgifter introducerats till variabler, listor, `if`-satser och loopar. Vi ska i denna övning bekanta oss med ett sätt att dela in kod, som gör det möjligt att återanvända delar av program. Vi ser hur vi skapar funktioner, hur vi kan skicka med data till funktioner och hur funktionerna kan skicka tillbaka resultat.
-
-
-
-<!--more-->
 
 
 
@@ -22,12 +13,12 @@ Vi rekommenderar att du kodar med i denna övning så du själv får känna på 
 
 
 
-Introduktion {#introduktion}
---------------------------------------
+## Introduktion
 
 Funktioner används för att dela upp och kategorisera delar av vår kod som gör det möjligt att återanvända koden på flera ställen i våra program. Funktioner finns i nästan alla programmeringsspråk och är en av de viktigaste verktygen vi har som programmerare. Låt oss se hur en funktion ser ut.
 
 En funktion är kod som ligger i ett *block*. Vi har tidigare sätt block som i `if`-satser, `for` och `while`-loopar. Ett funktionsblock definieras med nyckelordet *def* och tilldelas ett namn som vi kan anropa funktionen med. När vi anropar funktionen exekveras koden som ligger i funktionens block. Låt oss kolla på ett simpelt exempel där vi skriver ut "Hello" från en funktion.
+
 ```python
 def say_hello():
     print("Hello")
@@ -42,8 +33,8 @@ Nu har vi skapat vår första egna funktion och anropat den med funktionsnamnet 
 
 
 
-Funktioner {#funktioner}
---------------------------------------
+## Funktioner
+
 Vi kommer i denna övning utgå ifrån kod utan funktioner och sakta men säkert delar vi upp koden i återanvändbara delar. I exemplen nedan utgår vi från ett problem och bygger vår kod utifrån det samtidigt som vi delar upp och återanvänder vår kod genom att introducera funktioner.
 
 > WaySub har ringt upp dig och vill ha ett sätt att bygga upp en sträng från listor med ingredienser samt recept, så att deras kunder kan kolla upp vad en macka innehåller och även hur de tillagas. De vill att strängen skall ha två delar. Den första skall vara en presentation av vad det är man läser (Recept eller Ingrediens). Den andra delen skall hantera själva listan så att varje steg eller ingrediens separeras med ett `,` förutom det sista som skall vara `och`.
@@ -87,8 +78,8 @@ På första raden använder vi `def` för att tala om för Python att vi vill de
 
 
 
-Argument {#argument}
---------------------------------------
+## Argument
+
 Ovanstående exempel på funktion kommer bara att skriva ut ingredienserna, så än har vi ingen vinst av att skapa funktionen. Men med hjälp av argument till funktionen kan vi använda samma kod för nya recept och ingredienser. Argument är värden som vi skickar in till en funktion. Värderna blir automatiskt till variabler som enbart existerar inuti funktionens kod. I kodexemplet nedan är `ingredients` och `presentation` argument till funktionen. Dessa blir variabler inne i funktionen och bara där.
 
 ```python
@@ -142,8 +133,8 @@ create_sandwich_string(unknown_ingredients)
 
 
 
-Returvärden {#returvarden}
---------------------------------------
+## Returvärden
+
 Det enda vi gör i vår funktion är att skriva ut ett meddelande som enbart finns inne i funktionen. För att resten av vårt program ska kunna ta del av det beräknade värdet måste vi skicka tillbaka det till programmet, eller som det heter inom programmering: returnera. Vi använder oss av konstruktionen `return` för att skicka tillbaka värdet. Här kan vi också passa på att utskriften WaySub har klagat på som inträffar om det bara finns ett steg i receptet.
 
 ```python
@@ -167,8 +158,8 @@ blt_ingredients_string = create_sandwich_string(blt_ingredients, "En BLT innehå
 Notera att vi inte behöver ha en `else`-sats i vår funktion då den kommer till at avbrytas när ett värde har returnerats. Vår nya variabel `blt_ingredients_string` innehåller nu värdet från variabeln `result` inne i funktionen.
 
 
-Formattering för bättre utskrifter {#format}
---------------------------------------
+## Formattering för bättre utskrifter
+
 Vi har ett fungerande program men det finns nästan alltid små detaljer vi kan förbättra. I detta fallet tycker jag att det blir svårt att se hur strängen kommer att se ut, så låt oss titta på ett sätt att få bättre utskrifter från våra program. Vi ska använda Pythons strängformaterare `format`. Vi använder `{}` för de värden vi vill ersätta med beräknade värden. Sen tilldelar vi ett namn så vi kan tilldela rätt värde till den del av strängen vi vill ersätta. Inom parentesen anger vi vilka värden vi vill koppla till formateringsvariablerna `{presentation}`, `{comma_sepearated_elements}` och `{last_element}`.
 
 ```python
@@ -191,8 +182,8 @@ def create_sandwich_string(ingredients, presentation="Prova vår sandwich som in
 
 
 
-Avslutningsvis {#avslutning}
---------------------------------------
+## Avslutningsvis
+
 Funktioner är en av de viktigaste byggstenarna i programmering. Funktioner ger oss möjligheten att kapsla in kod som vi kan återanvända. Vi kan dessutom ge logiska namn åt delar av koden som gör att utomstående mycket lättare kan förstå hur du har tänkt när du skrev programmet.
 
 Alla kodexempel från denna övningen finns i kursrepot för [python-kursen](https://github.com/dbwebb-se/python/tree/master/example/functions/functions_v2.py). Funktionsnamnen har ändrats i kodexemplett då funktioner i samma modul måste ha unika namn.
