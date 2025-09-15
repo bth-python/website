@@ -9,32 +9,88 @@ import { YouTube } from 'astro-embed';
 import Figure from '@components/CustomFigure.astro';
 import { Icon } from '@astrojs/starlight/components';
 
-Detta seminarium tar upp följande områden: loopar och problemlösning.
+Detta seminarium tar upp följande områden: loopar, felhantering och problemlösning.
 
 ## Förberedelser
 
 Läs [Om seminarier](../).
 
-## Teori
+## <Icon name="open-book" class="inline-icon" label="Interpret code" /> Teori
 
-### Iteration
+### Loopar
 
-Under utveckling...
+1. Vad är skillnaden mellan en for-loop och en while-loop i Python?
+
+1. Vad händer om villkoret i en while-loop aldrig blir False?
+
+1. Går det att nästla (lägga en loop inuti en annan loop) i Python? Ge ett exempel och förklara vad som händer.
+
+1. Vad betyder nyckelordet break i en loop, och hur skiljer det sig från continue?
+
+1. Kan en for-loop köras utan att använda range()? Ge ett exempel.
+
+### Felhantering
+
+1. Vad är ett exception i Python, och när uppstår det?
+
+1. Vad är skillnaden mellan try-except och att bara skriva koden utan felhantering? Ge gärna ett exempel.
+
+### Pseudokod
+
+1. Varför använder man pseudokod i programmering?
+
+1. Är pseudokod bunden till ett specifikt programmeringsspråk? Motivera ditt svar.
+
 
 ### Hur kod funkar
 
-Under utveckling... 
+1. Vad är skillnaden mellan range(5) och range(1, 5) i en for-loop?
 
-### <Icon name="open-book" class="inline-icon" label="Interpret code" /> Tolka kod
+1. Är det bra eller dåligt att fånga alla fel med ett generellt except:? Motivera ditt svar.
 
-Under utveckling... 
+## <Icon name="open-book" class="inline-icon" label="Interpret code" /> Tolka kod
+
+1. Vad gör följande kod och vad blir utskriften?  
+    ```python
+    for i in range(2, 10, 2):
+        print(i)
+    ```
+
+2. Vad blir resultatet av koden nedan och varför?  
+    ```python
+    for i in range(2):
+        for j in "hej":
+            print(i, j)
+    ```
+
+4. Vad är syftet med att fånga ett exception som en variabel så här, `e`:  
+    ```python
+    except ValueError as e:
+        print("Fel:", e)
+    ```
+
+5. Titta på nedanstående kod och svara på följande frågor utan att exekvera koden:  
+    - Vad skrivs ut när programmet körs?
+    - Förklara varför loopen slutar.
+    - Vilka värden får **y** under loopens gång?
+    ```python
+    x = 10
+    y = 0
+
+    while x > 0:
+        if x % 2 == 0:
+            y += x
+        else:
+            y -= x
+        x -= 3
+
+    print("Slutvärde av y är:", y)
+    ```
 
 
 ## <Icon name="seti:python" class="inline-icon" label="Write code" /> Praktisk uppgift
 
-Under utveckling... 
-
-Uppgiften består av två delar. Börja med att planera er lösning, vilken kod behövs och vilka datatyper er data kommer ha i de olika stegen. Efter ni har en plan, skriv koden. Använd frågorna nedanför för att planera koden ni behöver för att lösa uppgiften.
+Börja med att planera er lösning, vilken kod behövs och vilka datatyper er data kommer ha i de olika stegen. Efter ni har en plan, skriv koden. Använd frågorna nedanför för att planera koden ni behöver för att lösa uppgiften.
 
 - Går det att identifiera delproblem som kan lösas för att testa tidigt?
   - Vilka delproblem i så fall?
@@ -43,3 +99,60 @@ Uppgiften består av två delar. Börja med att planera er lösning, vilken kod 
 - Vilken/Vilka språkkonstruktion/er behövs?
 - Vad börjar du med?
 - Formulera en lösning i [pseudo-kod](https://sv.wikipedia.org/wiki/Pseudokod)
+- diskutera alternativa lösningar
+
+### Uppgifter
+
+1. Skriv ett program utifrån nedanstående pseudokod:  
+    ```python
+    # Skriv ut en välkomsthälsning med info om antalet gissningar
+    # Slumpa fram ett tal från 0 till och med 100
+    # Repetera så länge talet inte är lika med gissning och antalet gissningar är mindre än 8
+    # Mata in ett tal, felmeddelande om det inte är ett heltal
+        # Om talet är mindre än gissning så 
+            # skriv ut "För lågt!"
+        # Om talet är större än gissning så 
+            # skriv ut "För högt!"
+    # Om antalet gissningar är slut innan talet hittas, så skriv ut "Tyvärr, du fick slut på försök!"
+    # När talet är hittat, skriv ut "Grattis, du gissade rätt <antal försök> försök!"
+    ``` 
+    Resultatet kan se ut så här:    
+
+    ```bash
+    Välkommen till gissa talet! Du har 8 försök!
+    Ange ett tal mellan 0 och 100: 60
+    För lågt
+    Ange ett tal mellan 0 och 100: 99
+    För högt
+    Ange ett tal mellan 0 och 100: 94
+    Grattis, du gissade rätt på 4 försök!
+    ```
+
+    ller så här:  
+
+    ```bash
+    Välkommen till gissa talet! Du har 8 försök!
+    Ange ett tal mellan 0 och 100: 90
+    För högt
+    Ange ett tal mellan 0 och 100: 80
+    För högt
+    ...
+    Ange ett tal mellan 0 och 100: 30
+    För högt
+    Ange ett tal mellan 0 och 100: 20
+    För högt
+    Tyvärr, du fick slut på försök!
+    ```
+
+1. Skriv ett program som tar en sträng och använder enumerate() för att gå igenom strängen. Skriv ut indexet och tecknet om tecknet är en vokal (a, e, i, o, u, y, å, ä, ö). Räkna hur många vokaler det finns totalt och skriv ut.  
+Resultatet kan se ut så här:    
+
+    ```bash
+    Kolla vokaler i en sträng: Python är roligt
+    Index 1: y
+    Index 4: o
+    Index 7: ä
+    Index 11: o
+    Index 13: i
+    Antal vokaler: 5
+    ```
