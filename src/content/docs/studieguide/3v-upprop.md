@@ -5,7 +5,7 @@ sidebar:
     order: 0004
 ---
 
-Efter tre veckors halvtidsstudier görs ett 3-veckors upprop för att kontrollera att du är aktiv i kursen. Du visar att du är aktiv genom att lämna in redovisningarna för kursmomenten.
+Efter tre veckors halvtidsstudier görs ett 3-veckors upprop för att kontrollera att du är aktiv i kursen.
 
 > _Syftet med 3-veckors uppropet att avregistrera de studenter som inte är aktiva i kurserna, de som inte har presterat något._
 
