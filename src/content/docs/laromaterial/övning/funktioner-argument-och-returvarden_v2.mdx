@@ -121,11 +121,11 @@ calculate_energy(andreas_time, "Andreas")
 ```
 
 
-### Fördefinierade värde (default value) {#default}
+### Fördefinierade värde (default value)
 
 Vi har nu kapslat in vår kod för att beräkna energiåtgången. Denna koden kan återanvändas för nya personer som ska värma mat så låt oss titta på ett sådant exempel.
 
-> Emil och Andreas kollegor Mikael och Kenneth köper mat i restaurangen. Men hissen upp till matsalen är långsam så deras mat hinnar kallna innan de är uppe. Båda värmer maten, men bara på 600W i 30 sek.
+> Emil och Andreas kollegor Mikael och Kenneth köper mat i restaurangen. Men hissen upp till matsalen är långsam så deras mat hinner kallna innan de är uppe. Båda värmer maten, men bara på 600W i 30 sek.
 
 Vi måste nu skriva om funktionen lite grann då vi förutom tiden och namnet även vill kunna ta emot effekten som maten ska värmas med. Vi definierar alltså ett nytt argument `effect`. I och med att vi oftast vill värma vår mat på 800W kan vi lägga till ett fördefinierat värde, som argumentet får om man inte anger ett annat värde när man använder funktionen. Det fördefinierade värdet definieras med ett lika-med tecken (`=`) efter argumentet. Vi kan nu använda funktionen med antingen två eller tre argument. Om vi använder två argument får variabeln `effect` värdet 800.
 
