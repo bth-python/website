@@ -2,14 +2,22 @@
 title: Moduler i Python
 ---
 
-[FIGURE src=image/python/lego.jpg?w=c5 class="right"]
+import Figure from '@components/CustomFigure.astro';
+
+
+import lego from '@assets/img/ovning/lego.jpg';
+
+<Figure
+    src={lego}
+    caption="Lego som moduler."
+/>
 
 Funktioner i Python gör så att vi kan återanvända kod och att vi har möjlighet att sätta namn på koden som vi vill använda flera gånger. Ibland vill vi dela upp koden ännu mer för att enkelt kunna återanvända flera funktioner i flera olika program, detta kallas ibland kodbibliotek, i python kallas detta moduler. Vi ska i denna övning titta på hur vi kan skapa en modul och samla funktioner i den som vi importerar i en annan Python-fil.
 
 
 
 
-Vi fortsätter på exemplet från övningen [Funktioner, argument och returvärden](kunskap/funktioner-argument-och-returvarden-v2) så har du inte gjort den övningen rekommenderar vi att du gör den först.
+Vi fortsätter på exemplet från övningen [Funktioner, argument och returvärden](funktioner-argument-och-returvarden) så har du inte gjort den övningen rekommenderar vi att du gör den först.
 
 
 
@@ -17,7 +25,7 @@ Vi fortsätter på exemplet från övningen [Funktioner, argument och returvärd
 
 Moduler skapas oftast av två anledningar. En av anledningarna är att organisera koden, vi samlar funktioner som är relaterade till varandra i en modul. Detta gör att de blir lätt att hitta och jobba med de funktionerna. Den andra anledningen till att skapa moduler är att skapa kodbibliotek. Vi sparar funktioner som vi vill återanvända i andra projekt i en modul. Då slipper vi skapa om funktionerna och istället behöver vi bara importera modulen också har vi tillgång till dem. Den ena anledningen utesluter dock inte den andra.
 
-I slutet av övningen [Funktioner, argument och returvärden](kunskap/funktioner-argument-och-returvarden-v2) ser vår funktion ut på följande sätt.
+I slutet av övningen [Funktioner, argument och returvärden](funktioner-argument-och-returvarden) ser vår funktion ut på följande sätt.
 
 ```python
 # functions_v2.py
@@ -185,4 +193,4 @@ Testa exekvera båda filerna igen och lägg märke till att det inte längre bli
 
 Vi har nu kort introducerat moduler i Python. Moduler är ett sätt att kategorisera och dela upp kod för återanvändning och ett bra arbetssätt när mängden av kod växer eller om du vill använda samma kod i olika projekt. För de som vill veta mer om moduler i Python beskrivs moduler i [Python Tutorial Chapter 6 Modules](https://docs.python.org/3/tutorial/modules.html).
 
-Alla kodexempel från denna övningen finns i kursrepot för [python-kursen](https://github.com/dbwebb-se/python/tree/master/example/functions). Kodexemplet innehåller hela exemplet från tidigare övningar och versioner, men uppdelat i modulen `sandwich.py` och huvudprogrammet finns i `waysub.py`.
+Alla kodexempel från denna övningen finns går att hitta [här](https://github.com/dbwebb-se/python/tree/master/example/functions). Kodexemplet innehåller hela exemplet från tidigare övningar och versioner, men uppdelat i modulen `sandwich.py` och huvudprogrammet finns i `waysub.py`.
