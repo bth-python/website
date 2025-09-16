@@ -16,9 +16,7 @@ Vi har i tidigare övningar och uppgifter introducerats till variabler, matemati
 Vi rekommenderar att du kodar med i denna övning så du själv får känna på hur det är att skriva Python kod.
 
 
-
-Introduktion {#introduktion}
---------------------------------------
+## Introduktion
 
 Funktioner används för att dela upp och kategorisera delar av vår kod som gör det möjligt att återanvända koden på flera ställen i våra program. Funktioner finns i nästan alla programmeringsspråk och är en av de viktigaste verktygen vi har som programmerare. Låt oss se hur en funktion ser ut.
 
@@ -42,8 +40,8 @@ Nedan följer ett större exempel på hur man använder och skapar funktioner.
 
 
 
-Funktioner {#funktioner}
---------------------------------------
+## Funktioner
+
 Vi kommer i denna övning utgå ifrån kod utan funktioner och sakta men säkert delar vi upp koden i återanvändbara delar. I exemplen nedan utgår vi från ett verkligt problem och bygger vår kod utifrån det samtidigt som vi delar upp och återanvänder vår kod genom att introducera funktioner.
 
 > Två kollegor ska äta lunch tillsammans och har båda med lunchlådor. Dansken Emil har med Rød Pølse och Svensken Andreas har med köttbullar med mos. Emil värmer sin mat i microvågsugnen på 800W i 2,5 minuter och Andreas värmer också sin mat på 800W, men i 3,5 minuter. Hur mycket energi går det åt till att värma varje maträtt? Vad kostar det att värma maten med ett kWh pris på 78.04 öre per kWh?
@@ -100,8 +98,8 @@ På första raden använder vi `def` för att tala om för Python att vi vill de
 
 
 
-Argument {#argument}
---------------------------------------
+## Argument
+
 Ovanstående exempel på funktion beräknar bara energiåtgången för Emils tillagning, inte Andreas, så än så länge har vi ingen vinst av att skapa funktionen. Men med hjälp av argument till funktionen kan vi använda samma kod för både Emil och Andreas. Argument är värden som vi skickar in till en funktion. Värdena blir automatiskt till variabler som existerar enbart inuti funktionens kod. I kodexemplet nedan är `time_in_microwave` och `name` argument till funktionen. Dessa blir variabler inne i funktionen och bara där.
 
 ```python
@@ -160,9 +158,8 @@ calculate_energy(kenneth_and_mikael_time, "Kenneth", 600)
 ```
 
 
+## Returvärden
 
-Returvärden {#returvarden}
---------------------------------------
 I vårt ursprungliga exempel använde vi den beräknade energiåtgången till att beräkna kostnaden för att värma maten. Det enda vi gör i vår funktion är att skriva ut ett meddelande och vårt beräknade värde finns enbart inne i funktionen. För att resten av vårt program ska kunna ta del av det beräknade värdet måste vi skicka tillbaka det till programmet, eller som det heter inom programmering: returnera. Vi använder oss av konstruktionen `return` för att skicka tillbaka värdet. Notera att vi har tagit bort argumentet `name` då den inte längre behövs för utskriften.
 
 ```python
@@ -210,8 +207,8 @@ Vi har nu två funktioner som kan återanvändas. Vi skickar in argument både m
 
 
 
-Formattering för bättre utskrifter {#format}
---------------------------------------
+## Formatering för bättre utskrifter
+
 Vi har ett fungerande program men det finns nästan alltid små detaljer vi kan förbättra. I detta fallet tycker jag att utskrifterna blir tråkiga med alla dessa decimaler, så låt oss titta på ett sätt att få bättre utskrifter från våra program i Python. Vi ska använda Pythons strängformaterare `format`. Vi använder `{}` för de värden vi vill ersätta med beräknade värden. Sen tilldelar vi ett namn så vi kan tilldela rätt värde till den del av strängen vi vill ersätta. Inom parentesen anger vi vilka värden vi vill koppla till formateringsvariablerna `{energy}` och `{cost}`.
 
 ```python
@@ -247,9 +244,6 @@ print(nice_string)
 Vi nöjer oss med detta enkla exempel än så länge, men för de som vill läsa på om strängformattering är [pythons dokumentation](https://docs.python.org/3.5/library/string.html#format-string-syntax) ett bra ställe att börja.
 
 
+## Avslutningsvis
 
-Avslutningsvis {#avslutning}
---------------------------------------
 Funktioner är en av de viktigaste byggstenarna i programmering. Funktioner ger oss möjligheten att kapsla in kod som vi kan återanvända. Vi kan dessutom ge logiska namn åt delar av koden som gör att utomstående mycket lättare kan förstå hur du har tänkt när du skrev programmet.
-
-Alla kodexempel från denna övningen finns i kursrepot för [python-kursen](https://github.com/dbwebb-se/python/tree/master/example/functions) och här på [dbwebb](https://dbwebb.se/repo/python/example/functions). Funktions- och argumentnamnen har ändrats i kodexemplen då funktioner i samma modul måste ha unika namn.
