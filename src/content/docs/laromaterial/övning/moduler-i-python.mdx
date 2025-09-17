@@ -17,7 +17,7 @@ Funktioner i Python gör så att vi kan återanvända kod och att vi har möjlig
 
 
 
-Vi fortsätter på exemplet från övningen [Funktioner, argument och returvärden](funktioner-argument-och-returvarden) så har du inte gjort den övningen rekommenderar vi att du gör den först.
+Vi fortsätter på exemplet från övningen [Funktioner, argument och returvärden](../../laromaterial/övning/funktioner-argument-och-returvarden_v2) så har du inte gjort den övningen rekommenderar vi att du gör den först.
 
 
 
@@ -25,167 +25,237 @@ Vi fortsätter på exemplet från övningen [Funktioner, argument och returvärd
 
 Moduler skapas oftast av två anledningar. En av anledningarna är att organisera koden, vi samlar funktioner som är relaterade till varandra i en modul. Detta gör att de blir lätt att hitta och jobba med de funktionerna. Den andra anledningen till att skapa moduler är att skapa kodbibliotek. Vi sparar funktioner som vi vill återanvända i andra projekt i en modul. Då slipper vi skapa om funktionerna och istället behöver vi bara importera modulen också har vi tillgång till dem. Den ena anledningen utesluter dock inte den andra.
 
-I slutet av övningen [Funktioner, argument och returvärden](funktioner-argument-och-returvarden) ser vår funktion ut på följande sätt.
+I slutet av övningen [Funktioner, argument och returvärden](../../laromaterial/övning/funktioner-argument-och-returvarden_v2) ser vår funktion ut på följande sätt.
+
 
 ```python
-# functions_v2.py
-
-def create_sandwich_string(ingredients, presentation="Prova vår sandwich som innehåller"):
+# energy_calculation.py
+def calculate_energy(time_in_microwave, effect=800):
     """
-    Formats ingredience and recipe lists in a representable string.
+    Calculates the energy consumption i kWh
+    Returns the consumption
     """
-    number_of_ingredients = len(ingredients)
-    if number_of_ingredients == 1:
-        return "{} {}.".format(presentation, ingredients[0])
+    energy = effect * time_in_microwave / 1000
+    return energy
 
-    return "{presentation} {comma_sepearated_elements} och {last_element}.".format(
-        presentation=presentation,
-        comma_sepearated_elements=", ".join(ingredients[:-1]),
-        last_element=ingredients[-1]
-    )
+def calculate_cost(energy, price_per_kwh=78.04):
+    """
+    Calculates the cost for a given energy consumption
+    Returns the cost in kr
+    """
+    cost = energy * price_per_kwh / 100
+    return cost
 ```
 
-Nu har vi bara en funktion men vi kommer snart att bygga vidare och då är det skönt att ha en fin struktur redan från första början. Detta gör vi lättast genom att skapa en ny modul. Vi börjar med att skapa en ny fil, jag väljer att döpa den till `sandwich.py` och flyttar endast den ovanstående funktion.
+Dessa två funktioner hänger ihop och har ett sammanhang och som de strukturerade programmerare vi är tänker vi att dessa kan vi ju använda en annan gång. Detta görs lättast i Python genom att skapa en modul. Vi skapar en ny fil `energy_calculation.py` där vi endast lägger ovanstående två funktioner.  
 
-Sedan skapar vi en till fil `waysub.py` där vi skriver själva programmet. Vi har alltså nu våra funktioner i en fil och själva programmet i en annan. För att vi ska kunna använda våra funktioner från filen `sandwich.py` måste vi importera den filen in i `waysub.py`. Detta gör vi genom att använda `import`. Notera att vi skriver `import waysub` utan filändelse och längst upp i filen. Vi har nu tillgång till alla funktioner som är definierade i `sandwich.py`. Vi kommer åt funktionerna genom att skriva modulens namn följt av en punkt `.` och sen funktionens namn, `module_name.function_name()`, detta kallas "dot notation".
+I en annan ny fil `main.py` skriver vi själva programmet. Vi har alltså nu våra funktioner i en fil och själva programmet i en annan. För att vi ska kunna använda våra funktioner från filen `energy_calculation.py` måste vi importera den filen in i `main.py`. Detta gör vi genom att använda `import`. Notera att vi skriver `import energy_calculation` utan filändelse. Vi har nu tillgång till alla funktioner vi har definierat i `energy_calculation.py`. Vi kommer åt funktionerna genom att skriva modulens namn följt av en punkt `.` och sen funktionens namn, `module_name.function_name()`, detta kallas "dot notation".
 
 ```python
-# waysub.py
+# main.py
 
-import sandwich
+import energy_calculation
 
-ingredients = ["ost", "bacon", "sallad", "majonnäs"]
+emil_time = 2.5 / 60
+emil_energy = energy_calculation.calculate_energy(emil_time)
+emil_cost = energy_calculation.calculate_cost(emil_energy)
 
-ingredients_string = sandwich.create_sandwich_string(ingredients, "En BLT innehåller")
-print(ingredients_string)
-# skriver ut:
-# En BLT innehåller ost, bacon, sallad och majonnäs.
+emil_string = "Emil använder {energy:.4f} kWh och detta kostar {cost:.4f} kr".format(
+    energy=emil_energy,
+    cost=emil_cost
+)
+print(emil_string)
+# Emil använder 0.0333 kWh och detta kostar 0.0260 kr
 ```
 
 En modul är egentligen bara en python fil med kod i, så alla filer vi har skapat än så länge har varit moduler. Det vi gör nu är egentligen bara att lära oss hur vi kan importera/använda funktioner från andra filer/moduler.
 
 ## Byta namn på moduler
 
-Av olika anledningar vill man ibland byta namnet på modulen i koden till något annat, t.ex. det kan vara långt eller så linkar den något annat vi använder. Detta kan vi göra genom att använda nyckelordet `as`. Vi kollar på hur det vi gör för att byta namn på "sandwich" till "s".
+Av olika anledningar vill man ibland använda ett annat namn på modulen i koden, t.ex. det kan vara långt eller det linkar något annat. Då kan man använda nyckelordet `as` för att ändra namnet. Vi kollar på hur det vi gör för att byta namn på "energy_calculation" till "ec".
 
 ```python
-# waysub.py
+# main.py
 
-import sandwich as s
+import energy_calculation as ec
 
-ingredients = ["ost", "bacon", "sallad", "majonnäs"]
+emil_time = 2.5 / 60
+emil_energy = ec.calculate_energy(emil_time)
+emil_cost = ec.calculate_cost(emil_energy)
 
-ingredients_string = s.create_sandwich_string(ingredients, "En BLT innehåller")
-print(ingredients_string)
-# skriver ut:
-# En BLT innehåller ost, bacon, sallad och majonnäs.
+emil_string = "Emil använder {energy:.4f} kWh och detta kostar {cost:.4f} kr".format(
+    energy=emil_energy,
+    cost=emil_cost
+)
+print(emil_string)
+# Emil använder 0.0333 kWh och detta kostar 0.0260 kr
 ```
 
-Det är inte svårare än så, lägg bara till `as name` i slutet av era import statement. Då kan vi använda det nya namnet i koden nedanför för att referera till den importerade modulen.
+Det var inte svårare än så, lägg till `as name` i slutet av ditt import statement. Då kan vi använda det nya namnet i koden nedanför för att referera till den importerade modulen.
 
 ## Inbyggda moduler och importera specifika funktioner
 
-Python kommer skeppat med ett antal färdiga moduler som innehåller användbara funktioner. T.ex. modulen [math](https://docs.python.org/3/library/math.html) som innehåller funktioner b.la. för avrundning av tal och mer avancerad aritmetik än addition, subtraktion och division. Modulen [random](https://docs.python.org/3/library/random.html) är också användbar, den innehåller funktioner som b.la. kan slumpa fram tal, vilket är väldigt bra att ha. Dessa moduler kan innehålla väldigt många olika funktioner och ibland vill vi kanske bara komma åt en specifik, då är det bra att man kan importera specifika funktioner så man inte får alla.  
-För att göra det använder man sig av nyckelordet `from` som används genom att specificera modulen vi vill hämta från och sen vilken funktionen vi vill ha (`from module_name import function_name`). Vi kollar på ett exempel där vi importera en funktion för att avrunda tal från "math".
+Python kommer skeppat med ett antal färdiga moduler som innehåller användbara funktioner. T.ex. modulen "math" som innehåller funktioner b.la. för avrundning av tal och mer avancerad aritmetik än plus, minus och delat med. Modulen "random" finns också, den innehåller funktioner som b.la. kan slumpa fram tal, vilket är väldigt bra att ha. Dessa moduler kan innehålla väldigt många olika funktioner och ibland vill vi kanske bara komma åt en specifik, då är det bra att man kan importera specifika funktioner så man inte får alla.  
+För att göra det använder man sig av "from", då specificerar vi modulen vi vill hämta från och sen vilken funktionen vi vill ha, `from module_name import function_name`. Vi kollar på ett exempel där vi importera en funktion för att avrunda tal från "math".
 
 ```python
 from math import floor
 
 print(floor(3.14))
-# skriver ut:
 # 3
 ```
 
-Vi vill nu även ha funktionen för att kunna avrunda tal uppåt och neråt samt kunna få ut potenser. Vi behöver inte skapa en ny rad för detta utan vi kan lägga till varje funktion vi vill ha efter "floor". Vi kan även här byta namn på funktionerna vi importerar, vi testar byter namn på `floor` till "lower".
-
+Vi vill även ha funktionen för att avrunda tal uppåt och potens och upphöjt. Vi behöver inte skapa en ny rad för detta utan vi kan lägga till varje funktion vi vill ha efter "floor". Vi kan även här byta namn på funktionerna vi importerar med "as", vi testar byter namn på "floor" till "lower".
 
 ```python
 from math import floor as lower, ceil, pow
 
 print(lower(3.14))
-# skriver ut: 3
+# 3
 print(ceil(3.14))
-# skriver ut: 4
+# 4
 print(pow(5,2))
-# skriver ut: 25
+# 25
 ```
 
 
 
 ## Exekvera moduler som script
-Som vi vet är en modul egentligen bara en fil med kod. Detta faktum gör att vi kan exekvera den som ett eget program. Vi fortsätter med vårat exempel och lägger till lite kod som vi tänker oss att vi vill använda för att testa att funktionerna fungerar som de ska.
+
+Som nämnts förut är en modul egentligen bara en fil med kod. Detta faktum gör att vi kan exekvera den som ett eget program. Vi fortsätter med energi exemplet och lägger till lite kod som vi tänker oss att vi vill använda för att testa att funktionerna fungerar som de ska.
 
 ```python
-# sandwich.py
-def create_sandwich_string(ingredients, presentation="Prova vår sandwich som innehåller"):
+# energy_calculation.py
+def calculate_energy(time_in_microwave, effect=800):
     """
-    Formats ingredience and recipe lists in a representable string.
+    Calculates the energy consumption i kWh
+    Returns the consumption
     """
-    number_of_ingredients = len(ingredients)
-    if number_of_ingredients == 1:
-        return "{} {}.".format(presentation, ingredients[0])
+    energy = effect * time_in_microwave / 1000
+    return energy
 
-    return "{presentation} {comma_sepearated_elements} och {last_element}.".format(
-        presentation=presentation,
-        comma_sepearated_elements=", ".join(ingredients[:-1]),
-        last_element=ingredients[-1]
-    )
+def calculate_cost(energy, price_per_kwh=78.04):
+    """
+    Calculates the cost for a given energy consumption
+    Returns the cost in kr
+    """
+    cost = energy * price_per_kwh / 100
+    return cost
 
-print("Testar vår nya modul:")
-print(create_sandwich_string(["ost"]) == "Prova vår sandwich som innehåller ost.")
+print("Test av calculate energy:")
+print(calculate_energy(800))
 ```
-
-Vi exekverar filen som vanligt med `python3 sandwich.py` skriver den ut `"Testar vår nya modul:"` och `True`. Detta vill vi inte ska ske när vi importerar modulen. Då vill vi enbart ha tillgång till funktionerna, inte att någon kod ska exekveras. Vi testar att exekvera "waysub.py" för att se vad som skrivs ut.
+Vi exekverar filen som vanligt med `python3 energy_calculation.py` och då skriver den ut `"Test av calculate energy: 640"`. Detta vill vi inte ska ske när vi importerar modulen. Då vill vi enbart ha tillgång till funktionerna, inte att någon kod ska exekveras. Testa exekvera "main.py" för att se vad som skrivs ut.
 
 ```bash
-$python3 waysub.py
-Testar vår nya modul:
-True
-En BLT innehåller ost, bacon, sallad och majonnäs.
+$python3 main.py
+Test av calculate energy:
+640.0
+Emil använder 0.0333 kWh och detta kostar 0.0260 kr
 ```
 
-Nu görs utskriften från "sandwich.py" först i programmet, det är för att koden i modulen exekveras direkt när den importeras. Så där vill vi inte ha det, vi vill fortfarande bara se utskriften "En BLT innehåller...". Som tur är kan vi avgöra i koden om filen/modulen exekveras som ett eget program eller om det importeras som en modul. Om filen importeras får variabeln `__name__` värdet av vad filen heter men om filen exekveras som eget program får variabeln värdet `__main__`. Vi testar att lägga till `print("name: " + __name__)` i slutet av båda filerna och exekvera dem.
+Nu görs utskriften från "energy_calculation.py" först i programmet, det är för att koden i modulen exekveras direkt när den importeras. Så där vill vi inte ha det, vi vill fortfarande bara se "Emil använder..." utskriften. Som tur är kan vi avgöra i koden om filen/modulen exekveras som ett eget program eller om det importeras som en modul. Om filen importeras får variabeln `__name__` värdet av vad filen heter men om filen exekveras som eget program får variabeln värdet `__main__`. Testa att lägga till `print("name: " + __name__)` i slutet av båda filerna och exekvera dem.
 
 ```bash
-$python3 waysub.py
-Testar vår nya modul:
-True
-name: sandwich
-En BLT innehåller ost, bacon, sallad och majonnäs.
+$python3 main.py
+Test av calculate energy:
+640.0
+name: energy_calculation
+Emil använder 0.0333 kWh och detta kostar 0.0260 kr
 name: __main__
 
-$python3 sandwich.py
-Testar vår nya modul:
-True
+$python3 energy_calculation.py
+Test av calculate energy:
+640.0
 name: __main__
 ```
-
-När vi kör "main.py" skrivs "name: sandwich" ut från modulen och "name: __main__" från "main.py". När vi exekverar "sandwich.py" skrivs "name: __main__" ut. Det vi kan göra med denna kunskapen är att lägga till en if-sats i slutet av "sandwich.py" som kollar om `__name__ == "__main__"`. Om det är sant vet vi att filen exekveras som ett eget program och om vi då lägger vår test kod i if-sats blocket kommer den inte exekveras när filen blir importerad.
+När vi kör "main.py" skrivs "name: energy_calculation" ut från modulen och `"name: __main__"` från "main.py". När vi exekverar "energy_calculation.py" skrivs `"name: __main__"` ut. Det vi kan göra med denna kunskapen är att lägga till en if-sats i slutet av "energy_calculation.py" som kollar om `__name__ == "__main__"`. Om det är sant vet vi att filen exekveras som ett eget program och om vi då lägger vår test kod i if-sats blocket kommer den inte exekveras när filen blir importerad.
 
 ```python
-# sandwich.py
-def create_sandwich_string(ingredients, presentation="Prova vår sandwich som innehåller"):
+# energy_calculation.py
+def calculate_energy(time_in_microwave, effect=800):
     """
-    Formats ingredience and recipe lists in a representable string.
+    Calculates the energy consumption i kWh
+    Returns the consumption
     """
-    number_of_ingredients = len(ingredients)
-    if number_of_ingredients == 1:
-        return "{} {}.".format(presentation, ingredients[0])
+    energy = effect * time_in_microwave / 1000
+    return energy
 
-    return "{presentation} {comma_sepearated_elements} och {last_element}.".format(
-        presentation=presentation,
-        comma_sepearated_elements=", ".join(ingredients[:-1]),
-        last_element=ingredients[-1]
-    )
+def calculate_cost(energy, price_per_kwh=78.04):
+    """
+    Calculates the cost for a given energy consumption
+    Returns the cost in kr
+    """
+    cost = energy * price_per_kwh / 100
+    return cost
 
 if __name__ == "__main__":
-    print("Testar vår nya modul:")
-    print(create_sandwich_string(["ost"]) == "Prova vår sandwich som innehåller ost.")
+    print("Test av calculate energy:")
+    print(calculate_energy(800))
     print("name: " + __name__)
 ```
 
-Testa exekvera båda filerna igen och lägg märke till att det inte längre blir några utskrifter från "sandwich.py" när du exekverar "waysub.py".
+Testa exekvera båda filerna igen och lägg märke till att det inte längre blir några utskrifter från "energy_calculation.py" när du exekverar "main.py".
 
+
+
+## if __name__ == "__main__"
+
+I förra stycket pratar vi om att använda `if __name__ == "__main__"` för att testa moduler. Vi kan också använda det för att kontrollera vad som ska ske om ett program blir importerat eller startat. Även i vår "main.py" fil borde vi använda oss av `if __name__ == "__main__"`, det är en bra vana att ha det i alla python filer man skapar.
+
+I "main.py" vill vi använda det för att bestämma vad som sker när vi startar programmet.
+
+
+Koden vi redan har i "main.py" lägger vi i en ny funktion och sen anropar vi den i `if __name__ == "__main__"` blocket.
+
+```python
+# main.py
+
+import energy_calculation as ec
+
+def main():
+    emil_time = 2.5 / 60
+    emil_energy = ec.calculate_energy(emil_time)
+    emil_cost = ec.calculate_cost(emil_energy)
+
+    emil_string = "Emil använder {energy:.4f} kWh och detta kostar {cost:.4f} kr".format(
+        energy=emil_energy,
+        cost=emil_cost
+    )
+    print(emil_string)
+    # Emil använder 0.0333 kWh och detta kostar 0.0260 kr
+
+if __name__ == "__main__":
+    main()
+```
+
+Det här är inte något vi måste göra egentligen men vi tar det som vana att jobba på det sättet. Vi vill undvika att ha "lös" kod, i det globala scopet. Fördelen med den nya strukturen är att vi lätt kan skriva om funktionen så att även den går att återanvända och importeras som module i ett annat program.
+
+Det ända vi behöver göra är att lägga till parametrarna `user` och `time` i funktionen och byta ut `2.5` och `"emil"` med de nya parametrarna. 
+
+```python
+# main.py
+
+import energy_calculation as ec
+
+def main(name, time_minutes):
+    time = time_minutes / 60
+    energy = ec.calculate_energy(time)
+    cost = ec.calculate_cost(energy)
+
+    string = "{name} använder {energy:.4f} kWh och detta kostar {cost:.4f} kr".format(
+        name=name
+        energy=energy,
+        cost=cost
+    )
+    print(string)
+    # Emil använder 0.0333 kWh och detta kostar 0.0260 kr
+
+if __name__ == "__main__":
+    main("emil", 2.5)
+```
+
+Nu fungerar programmet likadant som förut fast det går också att importera det som en modul.
 
 
 
@@ -193,4 +263,3 @@ Testa exekvera båda filerna igen och lägg märke till att det inte längre bli
 
 Vi har nu kort introducerat moduler i Python. Moduler är ett sätt att kategorisera och dela upp kod för återanvändning och ett bra arbetssätt när mängden av kod växer eller om du vill använda samma kod i olika projekt. För de som vill veta mer om moduler i Python beskrivs moduler i [Python Tutorial Chapter 6 Modules](https://docs.python.org/3/tutorial/modules.html).
 
-Alla kodexempel från denna övningen finns går att hitta [här](https://github.com/dbwebb-se/python/tree/master/example/functions). Kodexemplet innehåller hela exemplet från tidigare övningar och versioner, men uppdelat i modulen `sandwich.py` och huvudprogrammet finns i `waysub.py`.
