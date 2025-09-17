@@ -145,20 +145,6 @@ Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går ig
 
 
 
-1. Menyval **9** - `find_all_indexes`: Hitta alla index. Marvin ska be om två strängar, där den andra strängen är en del-sträng av den första. Funktionen ska returnera en kommaseparerad sträng med  alla indexplatser där den andra strängen finns med i den första. Det ska inte vara ett kommatecken på slutet av strängen. Om strängen som skickas in som andra argument inte finns i första argumentet ska funktionen returnera en tom sträng.
-
-    Använd sträng funktionen funktionen [index()](https://docs.python.org/3/library/stdtypes.html#str.index) för att hitta indexplatser, notera att `index()` returnerar bara ett index åt gången, så även om en sträng finns med på två ställen returneras bara den första. För att komma runt detta och hitta alla index behöver ni anropa `index()` flera gånger och skicka med ett extra argument, `start`. `start` markera vilken index position funktionen ska börja leta från. Notera också att `index` funktionen lyfter ett `ValueError` om en söksträngen inte finns. Ni ska använda er av try-except i er funktion för att förhindra programmet från att krascha när det inträffar.
-
-    Exempel:
-
-    ```python
-
-    input: "axaaczaa44aa4", "a"     output: "0,2,3,6,7,10,11"
-    input: "axaaczaa33aa3", "aa"    output: "2,6,10"
-    input: "axaaczaa55aa5", "y"     output: ""
-    ```
-
-
 1. Koden ska validera med Ruff.
 
     ```bash
@@ -222,6 +208,21 @@ För att inkludera dina extrauppgifter i testerna behöver du skicka med option 
     ```
 
     Eftersom tre siffror slumpas fram (med kravet på udda/jämnt beroende på kön för tredje siffran) kommer ni inte få samma sista som i exemplet. Men om ni använder det i menyval 5 ska det vara ett giltigt personnummer
+
+
+
+1. Menyval **B3** - `find_all_indexes`: Hitta alla index. Marvin ska be om två strängar, där den andra strängen är en del-sträng av den första. Funktionen ska returnera en kommaseparerad sträng med  alla indexplatser där den andra strängen finns med i den första. Det ska inte vara ett kommatecken på slutet av strängen. Om strängen som skickas in som andra argument inte finns i första argumentet ska funktionen returnera en tom sträng.
+
+    Använd sträng funktionen funktionen [index()](https://docs.python.org/3/library/stdtypes.html#str.index) för att hitta indexplatser, notera att `index()` returnerar bara ett index åt gången, så även om en sträng finns med på två ställen returneras bara den första. För att komma runt detta och hitta alla index behöver ni anropa `index()` flera gånger och skicka med ett extra argument, `start`. `start` markera vilken index position funktionen ska börja leta från. Notera också att `index` funktionen lyfter ett `ValueError` om en söksträngen inte finns. Ni ska använda er av try-except i er funktion för att förhindra programmet från att krascha när det inträffar.
+
+    Exempel:
+
+    ```python
+
+    input: "axaaczaa44aa4", "a"     output: "0,2,3,6,7,10,11"
+    input: "axaaczaa33aa3", "aa"    output: "2,6,10"
+    input: "axaaczaa55aa5", "y"     output: ""
+    ```
 
 
 
