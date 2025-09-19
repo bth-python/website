@@ -2,16 +2,12 @@
 title: "Gör en PR (kmom03)" 
 description: Instruktion om hur du gör en pull request (PR) för att lämna in kmom03.
 sidebar:
-    order: 0035
+    order: 035
     # hidden: true
 ---
 
 import Figure from '@components/CustomFigure.astro';
 import YouTube from '@components/YouTube.astro';
-
-:::danger
-Denna del är under arbete och är inte klar.
-:::
 
 Följ denna instruktionen för att göra en pull request (PR) för att lämna in uppgiften i kmom03.
 
@@ -114,11 +110,9 @@ Nu skall du fylla i detaljer om din PR (se de gröna runda markeringarna i bilde
 
 Som **titel** skriver du "Inlämning av kmom03"
 
-I **beskrivningen** lägger du till länken till din webbplats på GitHub Pages.
+Som **assignees** lägger du in dig själv. Lägg **inte** mig eller någon anna lärare.
 
-Som **assignees** lägger du in dig själv.
-
-Som **label** lägger du in "submitted".
+Som **label** lägger du in "Submitted".
 
 Nu kan du lägga till din PR genom att klicka knappen "Create pull request".
 
@@ -136,6 +130,42 @@ import pr6 from '@assets/pr/pr6.png';
 />
 
 
+### Tester
+
+Vänta ett par minuter, skrolla sen ner för att se att testerna har godkänts.
+
+import pr7 from '@assets/pr/pr7.png';
+
+<Figure 
+    src={pr7}
+    caption="Lyckat resultat från testerna."
+/>
+
+
+På bilden ovanför kan du se hur det ser ut när allt är OK. Testerna har lyckats och din inlämning är registrerad i Canvas. På din Canvas ska du har fått betyg `PG` på kmom03 inlämningen.
+
+
+
+### Något gick fel
+
+Om något gick fel med tester eller validering får du betyg `Ux` på Canvas och det ser ut som nedanför i din PR.
+
+import pr_fail from '@assets/pr/pr_fail.png';
+
+<Figure 
+    src={pr_fail}
+    caption="Lyckat resultat från testerna."
+/>
+
+Nu behöver du kolla vad som gick fel, fixa felet och ladda upp koden igen. Klicka på länken med ett rött kryss framför sig. Då kommer du vidare till att se vad som gick fel.
+
+Om felet är din kod ska länken ta dig till utskrift från antingen `tester` eller `ruff`. Då kan du själv se vad som är fel och fixa det. Om du får något annat konstigt fel du inte förstår, kolla om felet finns med nedanför i [Vanliga fel](#vanliga-fel) annars kontakta en lärare och be om hjälp.
+
+:::tip
+Vi rättar inte inlämningar med betyg Ux. Se till att du fixar felet och laddar upp den nya koden till GitHub. Då kommer alla tester köras igen. Kolla att du har fått PG. Om du får Ux igen behöver du kolla felet igen och lösa det. Osv.
+:::
+
+
 
 ## Feedback och bedömning
 
@@ -146,3 +176,26 @@ När den är godkänd kommer din PR att få label "approved" och du kommer ocks�
 Det är reviewern som mergar och stänger din PR när den är godkänd.
 
 När allt är klart kommer betyget att finnas i kurstillfället i Canvas och det kommer att överföras till Ladok.
+
+
+## Vanlig fel
+
+### Cannot index array with string "attempt"
+
+import pr_fail_id from '@assets/pr/pr_fail_id.png';
+
+<Figure 
+    src={pr_fail_id}
+    caption="Misslyckade tester."
+/>
+
+Något är felaktigt med `STUDENT_CANVAS_ID`. När du fixade labbmiljön skulle du skapa variabeln `STUDENT_CANVAS_ID` i ditt repo. Antingen har du gett den fel värde, gett variabeln fel namn eller skapat den som en secret istället för variabel. [Lägg till Canvas student ID i repo](/website/laromaterial/kursrepo/lagg-till-studentid/).
+
+När du har fixat variabeln, skrolla längs upp och tryck på knappen `Re-run all jobs`.
+
+import pr_re_run from '@assets/pr/pr_re_run.png';
+
+<Figure 
+    src={pr_re_run}
+    caption="Lyckat resultat från testerna."
+/>
