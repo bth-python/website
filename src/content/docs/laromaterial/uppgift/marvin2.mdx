@@ -90,7 +90,7 @@ Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går ig
 
 1. Skapa filen `marvin2.py`. Koden för de nya menyvalen nedanför ska du skriva i `marvin2.py`. Importera filen i `main.py`.
 
-1. För alla **nya** menyval ska dina `input` anrop **ligga i "main.py"** filen och du ska skicka dem som argument till de specifika menyvals funktionerna. Varje input anrop för ett menyval motsvarar ett argument till funktionen. Funktionerna ska också returnera resultatet så att utskriften görs i `main.py`. Exempel:
+1. För alla **nya** menyval ska dina `input` anrop **ligga i "main.py"** filen och du ska skicka dem som argument till de specifika menyvalsfunktionerna. Varje input-anrop för ett menyval motsvarar ett argument till funktionen. Funktionerna ska också returnera resultatet så att utskriften görs i `main.py`. Exempel:
 
     ```python
     #main.py
@@ -191,7 +191,7 @@ För att inkludera dina extrauppgifter i testerna behöver du skicka med option 
     input: "rom"        output: "No match"
     ```
 
-* Menyval **b2** - `ssn extended`: I Sverige finns det två juridiska kön, kvinna och man, som registreras för varje individ vid födsel. Det påverkar den näst sista siffran i ens personnummer. Marvin ska kunna generera de 4 sista siffrorna i ett personnummer där tredje siffran i den avslutande delen av personnumret (NNXN) ska anpassas efter könet på personen. Siffran ska fortfarande slumpas men med tilläggskravet att om det är en kvinna ska den tredje siffra vara jämn och om det är en man ska den istället vara udda.  
+* Menyval **b2** - `ssn_extended`: I Sverige finns det två juridiska kön, kvinna och man, som registreras för varje individ vid födsel. Det påverkar den näst sista siffran i ens personnummer. Marvin ska kunna generera de 4 sista siffrorna i ett personnummer där tredje siffran i den avslutande delen av personnumret (NNXN) ska anpassas efter könet på personen. Siffran ska fortfarande slumpas men med tilläggskravet att om det är en kvinna ska den tredje siffra vara jämn och om det är en man ska den istället vara udda.  
 Ändra parameterlistan till `create_ssn` så att det förutom födelsedatum (som är första parametern) även har en andra parameter för kön med default-argumentet `None`. Denna parameter har värdet `"M"` eller `"m"` om födelsedatumet tillhör en man och `"K"` eller `"k"` om det tillhör en kvinna. Observera att all inmatning sker i main.
 
 
