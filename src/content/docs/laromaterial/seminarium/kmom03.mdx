@@ -1,0 +1,151 @@
+---
+title: "kmom03"
+description: "Handlar om funktioner"
+sidebar:
+    order: 0310
+---
+
+import { Icon } from '@astrojs/starlight/components';
+
+Detta seminarium tar upp följande områden: funktioner
+
+
+## Förberedelser
+
+Läs [Om seminarier](../).
+
+## <Icon name="open-book" class="inline-icon" label="Interpret code" /> Teori
+
+1. Beskriv med egna ord vad en **funktion** (inom programmering) är.  
+1. Vad finns det för fördelar med att använda funktioner.  
+1. Vad förutom ett namn behöver ingå i en funktion?  
+1. Ge exempel på minst två funktioner som du/ni använt hittills och som du/ni inte definierat själv.
+1. Vilken är regeln, dvs syntaxen, för hur en funktion måste skrivas i Python?  
+1. Vad gäller för namngivning av funktioner i Python?  
+1. Vad händer om man ger flera funktioner samma namn i Python?  
+1. Vad menas med ett **funktionsanrop** och vad sker vid ett sådant?  
+1. Förklara skillnaden på **parameter** och **argument**.  
+1. Vad menas med **default-argument** och hur skrivs sådana i Python?  
+1. Om en funktion har de 3 parametrarna param1, param2 och param3 (i denna ordning)? Hur många olika möjligheter finns det för att ge defaultargument? Ge exempel på parameterlistor för varje möjlighet. 
+1. Vad är en **lokal variabel** i sammanhanget funktion?
+1. Kan flera funktioner ha samma namn på sina lokala variabler?
+1. Kan en funktion anropa en annan funktion?
+
+
+### Hur kod funkar
+
+1. Beskriv skillnaden på func01 och func02 nedan och visa hur respektive funktion anropas med målet att texten "I'm a function" ska skrivas ut.    
+    ```python
+    def func01():
+        print("I'm a function")
+    ```
+    ```python
+    def func02():
+        return "I'm a function"
+    ```
+
+1. Vad är det som är fel i func03() resp func04() nedan?  
+
+    ```python
+    def func03():
+        return "I'm a function"
+        str = "Bye"
+        print(str)
+    ```
+
+    ```python
+    def func04(what):
+    print("I'm a function")
+        print(what)
+    ```
+
+1. Utgå från kod-avsnittet  
+
+    ```python
+    def func05(start, end = 10):
+        total = 0
+        for i in range(start, end):
+            total += i
+        return total
+
+    def func06():
+        first = func05(10, 30)
+        print(f"{first} and {func05(4)}")
+        
+    ```
+    Ange vad som är:
+    - anrop
+    - lokal variabel
+    - parameter
+    - argument
+    - defaultargument
+
+
+
+### <Icon name="open-book" class="inline-icon" label="Interpret code" /> Tolka kod
+
+1. Anta kod-avsnittet nedan  
+
+    ```python
+    def func07(value):
+        value += 4
+
+    nr = 10
+    func07(nr)
+    print(nr)
+    ```
+    Vad blir det för utskrift?  
+
+1. Anta kod-avsnittet nedan  
+
+    ```python
+    def func08(phrase):
+        phrase += "!"
+        return phrase
+
+    string = "Python is fun"
+    print(func08(string))
+    print(string)
+    ```
+    Vad blir det för utskrift?  
+
+1. Anta kod-avsnittet nedan
+
+    ```python
+    def func09(param):
+        result = "Number"
+        if type(param) == str:
+            result = "Text"
+        elif type(param) == bool:
+            result = "Boolean"
+        return result
+
+    result = func09(44)
+    print(result)
+    result = func09("True")
+    print(result)
+    ```
+    Vad blir det för utskrift?
+
+
+## <Icon name="seti:python" class="inline-icon" label="Write code" /> Praktisk uppgift
+
+Börja med att planera er lösning och försök identifiera delproblem som kan testas tidigt. Använd gärna pseudokod för att formulera lösningar för de delproblem som identifierats och fundera över om det finns alternativ lösningarna. Vilka fördelar och/eller nackdelar kan de ha i så fall?
+
+1. Skriv funktioner enligt  
+    - *average* som tar emot tre tal, beräknar och returnerar medelvärdet av dessa.
+    - *nr_of_100_bills* som tar emot ett heltal motsvarande en summa pengar och returnerar antalet 100-lappar denna kan växlas till. Ex-vis ger argumentet 765 returen 7
+    - *all_odd_numbers* som tar emot tal som representerar ett startvärde respektive ett slutvärde och som returnerar en sträng innehållande alla udda heltal mellan start- och slutvärdet. De udda talen ska vara separerade med komma. Exempelvis resulterar startvärdet 2 och slutvärdet 11 i att strängen "3, 5, 7, 9, 11, " returneras.
+    - *is_leap_year* som tar emot ett årtal och returnerar sant eller falskt beroende på om årtalen motsvarar ett skottår eller ej. Ett skottår är årtal som är jämnt delbara med 400 eller jämnt delbart med 4 men inte med 100. Exempel på skottår är 1996, 2000, 2024. Exempel på år som inte är skottår är 1900 och 2023.
+
+1. Gör en funktion namngiven *menu* som presenterar menyn  
+
+        1. Beräkna medelvärdet av 3 heltal
+        2. Beräkna antalet 100-lappar för en penga-summa
+        3. Presentera alla udda heltal inom ett intervall
+        4. Avgör om ett år är ett skottår eller ej.
+        0. Avsluta  
+
+    och låter användaren mata in sitt val, vilket returneras.
+
+1. Använd alla funktioner från uppgift 8. och 9. och gör ett program som presenterar menyn (från uppgift 9) och låter användaren mata in sitt val vilket hanteras av funktioner från uppgift 8. Användaren ska kunna göra nya val tills dess att hen väljer menyval 0. 
