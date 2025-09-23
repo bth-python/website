@@ -102,7 +102,7 @@ Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går ig
 
     {/* Börja menyval på 7 */}
 
-1. Menyval **7** - `create_ssn`: Skapa de fyra sista siffrorna till ett födelsedatum. Skapa ett nytt menyval där Marvin ber om en sträng som innehåller ett födelse datum, t.ex. `"910813"`. Din funktion ska skap de fyra sista siffrorna till det, `"910813-NNNN"`. För att skapa dem, använda [random modulen](https://docs.python.org/3.8/library/random.html) och slumpa fram de tre första siffrorna. Använd sen Luhnalgoritmen för att räkna ut den fjärde. Den funkar nästa på samma sätt som i menyval 5. 
+1. Menyval **7** - `create_ssn`: Skapa de fyra sista siffrorna till ett födelsedatum. Skapa ett nytt menyval där Marvin ber om en sträng som innehåller ett födelse datum, t.ex. `"910813"`. Din funktion ska skapa de fyra sista siffrorna till det, `"910813-NNNN"`. För att skapa dem, använda [random modulen](https://docs.python.org/3.8/library/random.html) och slumpa fram de tre första siffrorna. Använd sen Luhnalgoritmen för att räkna ut den fjärde. Den funkar nästa på samma sätt som i menyval 5. 
 
     Algoritmen funkar på så sätt att varannan siffra multipliceras med 2 och 1, med start på första siffran i personnumret. Om något tal vid multiplikationen blir större än 9 ersätts det talet med dess siffersumma. Därefter summeras alla tal och här skiljer sig funktionen från menyval 5. Sista siffran erhålls genom att summan subtraheras från närmaste högre tiotal. Exempel med `811218-987`:
 
@@ -118,7 +118,7 @@ Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går ig
 
     För att subtrahera från närmsta tiotal kan man använda [modulo operatorn](https://sv.wikipedia.org/wiki/Modul%C3%A4r_aritmetik), `%`.
 
-    Som du läst finns det funktionalitet som är samma mellan menyval 5 och 7. Därför ska du skapa en ny funktion som används i koden för menyval 5 och 7. Skapa `create_ssn` som tar emot födelsedatumet och skapar tre siffror. Skapa sen `calculate_luhna_sum` som tar emot en sträng med födelsedatumet och de tre siffrorna, utan `-`, `"811218987"`. Funktionen ska räkna ut summan och returnera den, `44`. I `create_ssn` använd summan och räkna ut sist siffran och returnera hela personnumret, med `-`, `811218-9876`.
+    Som du läst finns det funktionalitet som är samma mellan menyval 5 och 7. Därför ska du skapa en ny funktion som används i koden för menyval 5 och 7. Skapa `create_ssn` som tar emot födelsedatumet och skapar tre siffror. Skapa sen `calculate_luhna_sum` som tar emot en sträng med födelsedatumet och de tre siffrorna, utan `-`, `"811218987"`. Funktionen ska räkna ut summan och returnera den, `44`. I `create_ssn` använd summan och räkna ut sista siffran och returnera hela personnumret, med `-`, `811218-9876`.
 
     Uppdatera sen koden för menyval 5 så att du använder `calculate_luhna_sum` i den koden också, för att räkna ut summan som ska kollas om den är delbar med 10. Koll om talet är delbart med 10 i menyval 5 funktionen, inte i `calculate_luhna_sum`. Genom att återanvända funktioner på flera ställen kan vi få mer [DYR kod](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
