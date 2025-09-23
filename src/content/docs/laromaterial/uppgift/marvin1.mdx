@@ -159,7 +159,7 @@ För att inkludera dina extrauppgifter i testerna behöver du skicka med `-e` el
     input: 555, 10              output: "-1 times"
     ```
 
-* Menyval **a3**: Slå ihop namn, gör ett menyval där Marvin tar emot två namn, du kan räkna med att båda namnen bara innehåller små bokstäver. Slå ihop namnen till ett, ex. "brad" och "angelina" blir "brangelina". I det första namnet hitta ska du hitta första vokalen och spara alla konsonanter framför den, ex. "brad" blir "br" och "ben" blir "b". I det andra namnet ta bort alla konsonanter från början till första vokalen, ex. "brad" blir "ad", "angelina blir "angelina" och "sheldon" blir "eldon". Konkatenera sen den sparade delen från det första namnet med den sparade delen från det andra namnet. Vokalerna är `"a e i o u y"`, vi räknar inte med `"å ä ö"`. Exempel:
+* Menyval **a3**: Slå ihop namn, gör ett menyval där Marvin tar emot två namn, du kan räkna med att båda namnen bara innehåller små bokstäver. Slå ihop namnen till ett, ex. "brad" och "angelina" blir "brangelina". I det första namnet ska du hitta första vokalen och spara alla konsonanter framför den, ex. "brad" blir "br" och "ben" blir "b". I det andra namnet ta bort alla konsonanter från början till första vokalen, ex. "brad" blir "ad", "angelina blir "angelina" och "sheldon" blir "eldon". Konkatenera sen den sparade delen från det första namnet med den sparade delen från det andra namnet. Vokalerna är `"a e i o u y"`, vi räknar inte med `"å ä ö"`. Exempel:
     ```python
     input: "brad", "angelina"   output: "brangelina"
     input: "sheldon", "amy"     output: "shamy"
