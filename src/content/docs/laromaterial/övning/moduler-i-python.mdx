@@ -60,10 +60,7 @@ emil_time = 2.5 / 60
 emil_energy = energy_calculation.calculate_energy(emil_time)
 emil_cost = energy_calculation.calculate_cost(emil_energy)
 
-emil_string = "Emil använder {energy:.4f} kWh och detta kostar {cost:.4f} kr".format(
-    energy=emil_energy,
-    cost=emil_cost
-)
+emil_string = f"Emil använder {emil_energy:.4f} kWh och detta kostar {emil_cost:.4f} kr"
 print(emil_string)
 # Emil använder 0.0333 kWh och detta kostar 0.0260 kr
 ```
@@ -83,10 +80,8 @@ emil_time = 2.5 / 60
 emil_energy = ec.calculate_energy(emil_time)
 emil_cost = ec.calculate_cost(emil_energy)
 
-emil_string = "Emil använder {energy:.4f} kWh och detta kostar {cost:.4f} kr".format(
-    energy=emil_energy,
-    cost=emil_cost
-)
+emil_string = f"Emil använder {emil_energy:.4f} kWh och detta kostar {emil_cost:.4f} kr"
+
 print(emil_string)
 # Emil använder 0.0333 kWh och detta kostar 0.0260 kr
 ```
@@ -218,10 +213,8 @@ def main():
     emil_energy = ec.calculate_energy(emil_time)
     emil_cost = ec.calculate_cost(emil_energy)
 
-    emil_string = "Emil använder {energy:.4f} kWh och detta kostar {cost:.4f} kr".format(
-        energy=emil_energy,
-        cost=emil_cost
-    )
+    emil_string = f"Emil använder {emil_energy:.4f} kWh och detta kostar {emil_cost:.4f} kr"
+
     print(emil_string)
     # Emil använder 0.0333 kWh och detta kostar 0.0260 kr
 
@@ -243,11 +236,7 @@ def main(name, time_minutes):
     energy = ec.calculate_energy(time)
     cost = ec.calculate_cost(energy)
 
-    string = "{name} använder {energy:.4f} kWh och detta kostar {cost:.4f} kr".format(
-        name=name
-        energy=energy,
-        cost=cost
-    )
+    string = f"{name} använder {energy:.4f} kWh och detta kostar {cost:.4f} kr"
     print(string)
     # Emil använder 0.0333 kWh och detta kostar 0.0260 kr
 
