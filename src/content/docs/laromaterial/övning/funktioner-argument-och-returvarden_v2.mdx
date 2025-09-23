@@ -207,39 +207,31 @@ Vi har nu två funktioner som kan återanvändas. Vi skickar in argument både m
 
 ## Formatering för bättre utskrifter
 
-Vi har ett fungerande program men det finns nästan alltid små detaljer vi kan förbättra. I detta fallet tycker jag att utskrifterna blir tråkiga med alla dessa decimaler, så låt oss titta på ett sätt att få bättre utskrifter från våra program i Python. Vi ska använda Pythons strängformaterare `format`. Vi använder `{}` för de värden vi vill ersätta med beräknade värden. Sen tilldelar vi ett namn så vi kan tilldela rätt värde till den del av strängen vi vill ersätta. Inom parentesen anger vi vilka värden vi vill koppla till formateringsvariablerna `{energy}` och `{cost}`.
+Vi har ett fungerande program men det finns nästan alltid små detaljer vi kan förbättra. I detta fallet tycker jag att utskrifterna blir tråkiga med alla dessa decimaler, så låt oss titta på ett sätt att få bättre utskrifter från våra program i Python. Vi ska använda f-strängar (*formatted string literal*). Vi skriver f innan själva strängen som omsluts av "" och använder `{}` för de värden vi vill ersätta med de vi har beräknat. Inom `{}` anger vi vilka värden vi vill visa som i detta fall motsvaras av innehåller i variabler, men det kan även vara t.ex beräkningar som resulterar i ett resultat.
 
 ```python
 emil_time = 2.5 / 60
 emil_energy = calculate_energy(emil_time)
 emil_cost = calculate_cost(emil_energy)
 
-nice_string = "Emil använder {energy} kWh och detta kostar {cost} kr".format(
-    energy=emil_energy,
-    cost=emil_cost
-)
+nice_string = f"Emil använder {emil_energy} kWh och detta kostar {emil_cost} kr"
 # skriver ut:
 # Emil använder 0.033333333333333326 kWh och detta kostar 0.02601333333333333 kr
 ```
 
-Vi har nu kopplat `emil_energy` till `{energy}` och `emil_cost` till `{cost}` i strängen. Vi har dock fortfarande en ful utskrift så vi använder ett formateringsargument. Vi vill ha 4 decimaler efter punkten i våra flyttal så vi använder formateringen: `:.4f`. Formateringsargument läggs efter värdet med ett kolon. För decimaltal kan vi ange att vi vill ha ett visst antal decimaler, detta görs med `.` följd av antalet decimaler och ett f för float.
+Vi har dock fortfarande en ful utskrift så vi använder ett formateringsargument. Vi vill ha 4 decimaler efter punkten i våra flyttal så vi använder formateringen: `:.4f`. Formateringsargument läggs efter värdet med ett kolon. För decimaltal kan vi ange att vi vill ha ett visst antal decimaler, detta görs med `.` följd av antalet decimaler och ett f för float.
 
 ```python
 emil_time = 2.5 / 60
 emil_energy = calculate_energy(emil_time)
 emil_cost = calculate_cost(emil_energy)
 
-nice_string = "Emil använder {energy:.4f} kWh och detta kostar {cost:.4f} kr".format(
-                energy=emil_energy,
-                cost=emil_cost
-)
+nice_string = f"Emil använder {emil_energy:.4f} kWh och detta kostar {emil_cost:.4f} kr"
 
 print(nice_string)
 # skriver ut:
 # Emil använder 0.0333 kWh och detta kostar 0.0260 kr
 ```
-
-Vi nöjer oss med detta enkla exempel än så länge, men för de som vill läsa på om strängformattering är [pythons dokumentation](https://docs.python.org/3.5/library/string.html#format-string-syntax) ett bra ställe att börja.
 
 
 ## Avslutningsvis
