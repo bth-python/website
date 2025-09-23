@@ -160,7 +160,7 @@ for number in range(1, 101):
     if number % 3 != 0 and number % 5 != 0:
         print(number)
 ```
-När vi testar att köra programmet kommer vi att se att alla utskrifter kommer på ny rad. Vi har alltså en del finjustering göra. Att få en utskrift att inte avslutas med radbrytning i Python kan vi fixa med `print(..., end = "")`, dvs 
+När vi testar att köra programmet kommer vi att se att alla utskrifter kommer på ny rad. Vi har alltså en del finjustering att göra. Att få en utskrift att inte avslutas med radbrytning i Python kan vi fixa med `print(..., end = "")`, dvs 
 
 ```python
 for number in range(1, 101):
@@ -173,7 +173,7 @@ for number in range(1, 101):
 ```
 Vi testar igen och upptäcker nu att allt hamnar på samma rad, dvs 12Fizz4BuzzFizz78FizzBuzz ....
 
-Vi behöver tillföra ett komma och mellanslag, dvs strängen ", " efter varje utskrift. Eftersom alla utskrifter (avsett om det är "Fizz", "Buzz" eller number) ska avslutas med ", "placerar vi detta efter alla selektioner, dvs för varje iteration.
+Vi behöver tillföra ett komma och mellanslag, dvs strängen ", " efter varje utskrift. Eftersom alla utskrifter (oavsett om det är "Fizz", "Buzz" eller number) ska avslutas med ", "placerar vi detta efter alla selektioner, dvs för varje iteration.
 
 ```python
 for number in range(1, 101):
@@ -183,12 +183,12 @@ for number in range(1, 101):
         print("Buzz", end="")
     if number % 3 != 0 and number % 5 != 0:
         print(number, end="")
-    print(", ")
+    print(end=", ")
 ```
 
 Nu blir resultatet det förväntade!
 
-Det finns ofta mer än en lösning på ett programmeringsproblem. För juts denna uppgiften kan man t.ex undersöka delbarhet med både 3 och 5, dvs delbarhet med 15 som ett selektionsalternativ. 
+Det finns ofta mer än en lösning på ett programmeringsproblem. För just denna uppgiften kan man t.ex undersöka delbarhet med både 3 och 5, dvs delbarhet med 15 som ett selektionsalternativ. 
 
 ```
 for number from 1 until 100
