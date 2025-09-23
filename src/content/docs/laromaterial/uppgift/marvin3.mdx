@@ -1,10 +1,130 @@
 ---
 title: "Marvin - steg 3"
-description: En uppgift som handlar om att göra en chatbot som heter Marvin som löser olika uppgifter.
+description: En uppgift som handlar om att göra en chatbot som heter Marvin som löser olika uppgifter med listor.
 sidebar:
   order: 0410
 ---
 
-:::danger
-Denna del är under arbete och är inte klar.
-:::
+import { YouTube } from 'astro-embed';
+
+Programmering och problemlösning i Python. Jobba vidare med Marvin och implementera ny funktionalitet som använder listor.
+
+## Förkunskaper
+
+Du har jobbat allt material i "[kmom04](/website/kmom/kmom04)" och gjort klart [Marvin - steg 2](../marvin2).
+
+
+
+
+## Introduktion
+
+Du skall bygga en ryggsäck till Marvin med hjälp av **listor**.
+
+Du skall kommunicera med Marvin via text och inte via ett menyval.
+
+Se hur det kan se ut när uppgiften är klar:
+
+<YouTube
+    id="EQ3Ownyvz7A"
+    title="Tips för att komma igång med Marvin3."
+/>
+
+
+## Krav
+
+Lösningar som använder konstruktionerna list/dict comprehension eller lambda funktioner godkänns inte i denna kurs.
+
+Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går igenom i kursen.
+
+1. Kopiera din Marvin från föregående kursmoment och utgå från den koden.
+
+    ```bash
+    # Flytta till kurskatalogen
+    cd src
+    cp -ri kmom03/marvin2/* kmom04/marvin3/
+    cd kmom04/marvin3
+    ```
+
+1. Skapa en ny fil `inventory.py` där du lägger **alla nya** funktioner för inventory kommandona. Importera inventory.py i main.py. Skapa en lista i main.py som ska fungera som en ryggsäck.
+
+1. Lär Marvin att hantera listor. Skapa funktionen `pick` som tar emot tre argument, den första skall vara ryggsäcken, den andra skall vara saken man skall plocka upp och den tredje skall vara en optionell parameter som säger vilken position (index) saken skall lägga sig i (som en string). Funktionen ska lägga till saken i listan, om position skickas med ska saken tryckas in på den platsen (du ska inte ersätta det som redan ligger på den platsen, de sakerna ska flyttas ett index åt höger). Om position inte skickas med ska saken läggas till sist i ryggsäcken. Funktionen skall returnera den uppdaterade ryggsäcken.
+
+   I `main.py` skall du lägga till stöd för kommandot **"inv pick"** enligt tabellen nedan. Om allt gick bra skall du skriva ut ett passande meddelande som innehåller **vad som lades till** i ryggsäcken och på **vilken position** om ett index är givet. Meddelandet skall skivas ut i funktionen och inte main programmet.
+
+    - Tags: `pick`
+
+1. Skapa funktionen `inventory` som tar emot ett argument, ryggsäcken. Funktionen skall inte returnera någonting. Den skall skriva ut ett meddelande som innehåller hur **antalet** saker som befinner sig i ryggsäcken och **alla saker** som ligger där inne. I `main.py` lägger du till stöd för kommandot **inv** som exekverar funktionen.
+    - Tags: `inv`
+
+1. Skapa funktionen `drop` som skall kasta bort en sak från ryggsäcken. Den skall ta emot två argument, första är ryggsäcken och den andra är saken som skall slängas. Funktionen skall returnera den uppdaterade ryggsäcken. I `main.py` skall du lägga till stöd för kommandot **"inv drop"** enligt tabellen nedan. Om allt gick bra skall du skriva ut ett passande meddelande som innehåller **saken som kastades**. Meddelandet skall skivas ut i funktionen och inte main programmet.
+    - Tags: `drop`
+
+1. Skapa funktionen `swap` som skall ta emot tre argument, den första är ryggsäcken, den andra och tredje är själva sakerna som skall byta plats. Funktionen skall returnera den uppdaterade ryggsäcken. I `main.py` skall du lägga till stöd för kommandot **"inv swap"** enligt tabellen nedan. Om allt gick bra skall du skriva ut ett passande meddelande som innehåller **sakerna som bytte plats**. Meddelandet skall skivas ut i funktionen och inte main programmet.
+    - Tags: `swap`
+
+1. Felhantering. Lägg till felhantering för kommandona **"inv drop"**, **"inv swap"** och **"inv pick"** som ändrar utskriften. Om en sak man vill kasta eller byta plats på inte finns i ryggsäcken skall du skriva ett passande felmeddelande som innehåller ordet **"Error"** **och** saken som inte existerar i ryggsäcken. **Tips** Använd dig av `try-except`. 
+
+    Om man anger ett för högt index i pick kommandot skall den inte plocka upp något. Du skall istället skriva ut ett passande meddelande som innehåller ordet "Error" **och** den givna positionen.
+
+    När ett av dessa fel uppstår skall funktionerna returnera den originella ryggsäcken.
+
+    - Tags: `error`
+
+
+1. Koden ska validera med Ruff.
+
+    ```bash
+    # Kommandot funkar oavsett var du står i ditt repo
+    uv run ruff check
+    ```
+
+1. Testerna som finns ska passera.
+
+
+1. Ladda upp din kod till ditt repo på GitHub. Gör flera små commits när du jobbar med uppgiften!
+
+
+Rätta eventuella fel som dyker upp och ladda upp igen. När det ser grönt ut så är du klar.
+
+
+Följande kommandon skall fungera. Notera att Marvin ska kunna plocka upp vad som helst. Nedan visas `flower`, `book` och `0` **enbart som exempel**, `bag` motsvarar Marvins ryggsäck.
+
+    | Kommando               | Vad händer                                                                  | Kallar på                     | Listans innehåll efter |
+    |------------------------|:----------------------------------------------------------------------------|-------------------------------|------------------------|
+    | inv                    | Marvin skall skriva ut hur många saker om finns i listan samt skriva ut dem | `inventory(bag)`              | []                     |
+    | inv pick flower        | Plocka upp en "flower" och lägg den på slutet av listan                     | `pick(bag, "flower")`         | ["flower"]             |
+    | inv pick book 0        | Plocka upp en "book" och på index "0"                                       | `pick(bag, "book", 0)`        | ["book", "flower"]     |
+    | inv swap flower book   | Byter plats på "flower" och "book"                                          | `swap(bag, "flower", "book")` | ["flower", "book"]     |
+    | inv drop flower        | Kasta bort "flower"                                                         | `drop(bag, "flower")`         | ["book"]               |
+
+
+
+## Extrauppgift
+
+
+- Utöka menyval **inv** med stöd för en sekvens. Utöver att fungera som tidigare ska det också gå att skriva `inv <start> <stop>`, där `<start>` och `<stop>` är heltal. Ändra `inventory(bag)` så du kan skicka med start och stop, `inventory(bag, start, stop)`. I funktionen använd dig av slice på din lista för att hämta ut alla element från start till stop. Om man inte skickar med start och stop ska `inv` fungera som vanligt.
+
+    ```python
+    # med inventory ["ko", "lo", "apa"]
+    input: "inv 1 3"        output: "lo, apa"
+
+    input: "inv -1 3"       output: "apa"
+    ```
+
+    - Tags: `inv`, `range`
+
+
+- Utöka menyval **pick** med stöd för en sekvens. Utöver att fungera som tidigare ska det också gå att skriva `inv pick <sak>,<sak>,<sak> <position>`, där sekvensen med saker är ord med komma i mellan och `<position>` är heltal. Ändra `pick(bag, what, where)` så du kan kan ta emot en sträng med flera saker. Precis som med vanliga `pick` så ska `position` vara optionellt. Om man inte skickar med en position ska alla saker läggas till sist i ryggsäcken. Om man skickar med position ska de läggas in på det index, utan att ta bort sakerna som redan finns där. `pick` ska fortfarande funka som vanlig om man inte skicka en en sträng med kommatecken i.
+
+    ```python
+    # med inventory ["ko", "lo", "apa"]
+    input: "inv pick mus,tjur"        returnerar: ["ko", "lo", "apa", "mus", "tjur"]
+
+    input: "inv pick mus,tjur 1"       returnerar: ["ko", "mus", "tjur", "lo", "apa"]
+    ```
+
+    - Tags: `pick`
+
+
+
+
