@@ -12,7 +12,7 @@ import Figure from '@components/CustomFigure.astro';
 
 Fizz Buzz är en lek som syftar till att lära barn division. Deltagarna räknar i tur och ordning från 1 och uppåt. När en deltagare hamnar på ett tal jämnt  delbart med 3 ska hen istället säga "Fizz". Om det är ett tal jämnt delbart med 5 ska hen säga "Buzz". Är talet jämnt delbart med både 3 och 5 ska hen säga "FizzBuzz". 
 
-Ex: 1, 2, Fizz, 4, Buzz, 6, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, 17, Fizz, 19, Buzz, ..... 
+Ex: 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, 17, Fizz, 19, Buzz, ..... 
 
 Om en deltagare tvekar eller missar att ersätta ett tal med "Fizz", "Buzz" eller "FizzBuzz" är hen ute ur leken.
 
@@ -49,7 +49,7 @@ Vi löser de delproblem som tidigare identifierats
         ...
 
 ```
-I Python kan vi ska heltal inom 1 och 100 genom:
+I Python kan vi generera varje heltal från och med 1 till och med 100 genom:
 
 ```python
     for i in range(0,101):
@@ -59,14 +59,14 @@ I Python kan vi ska heltal inom 1 och 100 genom:
 
 2. **Att ta reda på om ett heltal är jämnt delbart med ett annat heltal**  
         Ett heltal delar ett annat heltal om resten vid division blir 0. Ex-vis delar 5 talet 20 eftersom 5 går exakt 4 gånger i 20, dvs 20 = 5 x 4. Däremot delar 5 inte talet 17 eftersom det 5 går 3 gånger i 17 (5 x 3 = 15) och det blir 2 över. Att bestämma resten vid heltalsdivision kallas att utföra modulus-beräkning.  
-        Ex: 5 mod 17 blir 3 och 5 mod 20 blir 0, dvs x mod y blir 0 om y går jämnt upp i x
+        Ex: 17 mod 5 blir 2 och 20 mod 5 blir 0, dvs x mod y blir 0 om y går jämnt upp i x
 
 ```
     number mod 3 blir 0 om number är jämnt delbart med 3
     number mod 5 blir 0 om number är jämnt delbart med 5
 
 ```
-I Phyton skrivs detta: 
+I Python skrivs detta: 
 
 ```python
     number % 3 == 0
@@ -160,7 +160,7 @@ for number in range(1, 101):
     if number % 3 != 0 and number % 5 != 0:
         print(number)
 ```
-När vi testar att köra programmet kommer vi att se att alla utskrifter kommer på ny rad. Vi har alltså en del finjustering göra. Att få en utskrift att inte avslutas med radbrytning i Python kan vi fixa med `print(..., end = "")`, dvs 
+När vi testar att köra programmet kommer vi att se att alla utskrifter kommer på ny rad. Vi har alltså en del finjustering att göra. Att få en utskrift att inte avslutas med radbrytning i Python kan vi fixa med `print(..., end = "")`, dvs 
 
 ```python
 for number in range(1, 101):
@@ -173,7 +173,7 @@ for number in range(1, 101):
 ```
 Vi testar igen och upptäcker nu att allt hamnar på samma rad, dvs 12Fizz4BuzzFizz78FizzBuzz ....
 
-Vi behöver tillföra ett komma och mellanslag, dvs strängen ", " efter varje utskrift. Eftersom alla utskrifter (avsett om det är "Fizz", "Buzz" eller number) ska avslutas med ", "placerar vi detta efter alla selektioner, dvs för varje iteration.
+Vi behöver tillföra ett komma och mellanslag, dvs strängen ", " efter varje utskrift. Eftersom alla utskrifter (oavsett om det är "Fizz", "Buzz" eller number) ska avslutas med ", "placerar vi detta efter alla selektioner, dvs för varje iteration.
 
 ```python
 for number in range(1, 101):
@@ -183,12 +183,12 @@ for number in range(1, 101):
         print("Buzz", end="")
     if number % 3 != 0 and number % 5 != 0:
         print(number, end="")
-    print(", ")
+    print(end=", ")
 ```
 
 Nu blir resultatet det förväntade!
 
-Det finns ofta mer än en lösning på ett programmeringsproblem. För juts denna uppgiften kan man t.ex undersöka delbarhet med både 3 och 5, dvs delbarhet med 15 som ett selektionsalternativ. 
+Det finns ofta mer än en lösning på ett programmeringsproblem. För just denna uppgiften kan man t.ex undersöka delbarhet med både 3 och 5, dvs delbarhet med 15 som ett selektionsalternativ. 
 
 ```
 for number from 1 until 100
