@@ -30,19 +30,198 @@ Läs [Om seminarier](../).
 
 ### Listor
 
-Under utveckling...
 
+1. Vad är en lista i Python och hur definieras den?
 
-### Hur kod funkar
+1. Vad menas med att listor i Python är "nollindexerade"?
 
-Under utveckling...
+1. Vad är skillnaden mellan ett element och ett index i en lista? Ge exempel.
+
+1. Vad händer om man försöker nå ett index som är större än listans längd?
+
+1. Kan en lista i Python innehålla olika datatyper (t.ex. både heltal och strängar)?
+
+1. Vad är skillnaden mellan metoderna append(), extend(), and insert()? Ge ett exempel ett exempel för varje.
+
+1. Vad innebär det att listor i Python är mutable (föränderliga)? Hur skiljer det sig mot strängar?
+
+1. Är det möjligt att ha listor inuti listor (nästlade listor), och hur kan man nå ett element i en sådan struktur?
+
+1. Vad är skillnaden mellan `list_b = list_a` och `list_b = list_a.copy()`?
 
 
 ### <Icon name="open-book" class="inline-icon" label="Interpret code" /> Tolka kod
 
-Under utveckling... 
+
+1. Vad returnerar funktionen len() när den används på listan i exemplet nedan? Och vad innehåller listan?  
+    ```python
+    throwing_events = ["hammer", "discus", "weight"]
+    throwing_events.insert(1, "shotput")
+    throwing_events.append("longjump")
+    throwing_events.insert(3, "javelin")
+    throwing_events.remove("longjump")
+    print(len(throwing_events))
+    ```
+
+1. Vad gör list slicing? Vad skrivs ut här?  
+    ```python
+    my_list = [ 1, "hej", "på", "dig", 100]
+    print(my_list[1:4])
+    print(my_list[:-2])
+    ```
+
+
+1. Vad skrivs ut med följande kod?
+
+    ```python
+    def curve_grades(grades, bonus):
+        for i in range(len(grades)):
+            grades[i] = min(grades[i] + bonus, 100)
+
+
+
+    grades = [72, 85, 90, 99]
+    print("Before:", grades)
+
+    curve_grades(grades, 5)
+
+    print("After: ", grades)
+    ```
+
+1. Om vi har följande kod, vad kommer att skrivas ut då och varför?
+
+    ```python
+    def add_item(item, container=[]):
+        container.append(item)
+        return container
+
+    print(add_item("apple"))
+    print(add_item("banana"))
+
+    ```
+
+
+1. Varför skriver följande kod ut `[[1, 0, 0], [1, 0, 0], [1, 0, 0]]`?
+
+    ```python
+    matrix = [[0]*3] * 3
+    matrix[0][0] = 1
+    print(matrix)
+    ```
+
 
 
 ## <Icon name="seti:python" class="inline-icon" label="Write code" /> Praktisk uppgift
 
-Under utveckling... 
+Börja med att planera er lösning, vilken kod behövs och vilka datatyper er data kommer ha i de olika stegen. Efter ni har en plan, skriv koden. Skriv gärna pseudokod innan kodning. Vilka alternativa lösningar finns?
+
+
+### Uppgifter
+
+1. Uppdatera klasslistan.  
+    - Anna, Bo, Carla, David och Sara går i klassen.
+    - Lägg till de nya studenterna Alexander och Alve sist i klasslistan.
+    - Carla vill byta klass och slutar i klassen.
+    - Den student som lades till sist i listan ångrar sig och slutar i klassen. Vilken metod använder du?
+    - Hur många studenter är det i klassen nu?
+    - Sortera listan i bokstavordning och skriv ut den.
+
+
+1. Skapa spelet tre i rad (tic-tac-toe). Nedanför finns kod för att hjälpa er komma igång. Fyll i de tre funktionerna `print_board`, `check_winner` och `is_full` med kod så att koden i `tic-tac-toe()` fungerar.
+
+    ```python
+    # Tic-Tac-Toe game
+
+    def create_board():
+        """
+        Create a 3x3 grid, representing a tic-tac-toe game, initialized with spaces
+        Returns:
+            list: Game board.
+        """
+        board = []
+        i = 0
+        while i < 3:
+            row = []
+            j = 0
+            while j < 3:
+                row.append(" ")
+                j += 1
+            board.append(row)
+            i += 1
+        return board
+
+    def print_board(board):
+        """
+        Print current game board.
+
+        Arguments:
+            board (list): Game board.
+        """
+
+
+    def check_winner(board, player):
+        """
+        Check if a player has won.
+        A player wins if their symbol has been placed three times in a row.
+        A player can win horizontally, vertically and diagonally.
+
+        Arguments:
+            board (list): Game board.
+            player (str): Player symbol.
+        Returns:
+            bool: If player has won.
+        """
+
+
+    def is_full(board):
+        """
+        Return True if the board is full. Otherwise False.
+
+        Arguments:
+            board (list): Game board.
+
+        Returns:
+            bool: If board is full.
+        """
+
+
+    def tic_tac_toe():
+        board = create_board()
+        current_player = "X"
+
+        while True:
+            print_board(board)
+            try:
+                row = int(input(f"Player {current_player}, enter row (0-2): "))
+                col = int(input(f"Player {current_player}, enter col (0-2): "))
+            except ValueError:
+                print("Invalid input. Enter numbers 0-2.")
+                continue
+
+            if not (0 <= row <= 2 and 0 <= col <= 2):
+                print("Coordinates out of range.")
+                continue
+
+            if board[row][col] != " ":
+                print("Cell already taken. Choose another.")
+                continue
+
+            board[row][col] = current_player
+
+            if check_winner(board, current_player):
+                print_board(board)
+                print(f"Player {current_player} wins!")
+                break
+
+            if is_full(board):
+                print_board(board)
+                print("It's a tie!")
+                break
+
+            # Switch player
+            current_player = "O" if current_player == "X" else "X"
+
+    if __name__ == "__main__":
+        tic_tac_toe()
+
+    ```
