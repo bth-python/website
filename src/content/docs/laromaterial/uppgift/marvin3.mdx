@@ -49,7 +49,7 @@ Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går ig
 
 1. Lär Marvin att hantera listor. Skapa funktionen `pick` som tar emot tre argument, den första skall vara ryggsäcken, den andra skall vara saken man skall plocka upp och den tredje skall vara en optionell parameter som säger vilken position (index) saken skall lägga sig i (som en string). Funktionen ska lägga till saken i listan, om position skickas med ska saken tryckas in på den platsen (du ska inte ersätta det som redan ligger på den platsen, de sakerna ska flyttas ett index åt höger). Om position inte skickas med ska saken läggas till sist i ryggsäcken. Funktionen skall returnera den uppdaterade ryggsäcken.
 
-   I `main.py` skall du lägga till stöd för kommandot **"inv pick"** enligt tabellen nedan. Om allt gick bra skall du skriva ut ett passande meddelande som innehåller **vad som lades till** i ryggsäcken och på **vilken position** som ett index är givet. Meddelandet skall skivas ut i funktionen och inte main programmet.
+   I `main.py` skall du lägga till stöd för kommandot **"inv pick"** enligt tabellen nedan. Om allt gick bra skall du skriva ut ett passande meddelande som innehåller **vad som lades till** i ryggsäcken och på **vilken position** om ett index är givet. Meddelandet skall skivas ut i funktionen och inte main programmet.
 
     - Tags: `pick`
 
@@ -93,7 +93,7 @@ Följande kommandon skall fungera. Notera att Marvin ska kunna plocka upp vad so
     |------------------------|:----------------------------------------------------------------------------|-------------------------------|------------------------|
     | inv                    | Marvin skall skriva ut hur många saker om finns i listan samt skriva ut dem | `inventory(bag)`              | []                     |
     | inv pick flower        | Plocka upp en "flower" och lägg den på slutet av listan                     | `pick(bag, "flower")`         | ["flower"]             |
-    | inv pick book 0        | Plocka upp en "book" och på index "0"                                       | `pick(bag, "book", 0)`        | ["book", "flower"]     |
+    | inv pick book 0        | Plocka upp en "book" och den lägg på index "0"                              | `pick(bag, "book", 0)`        | ["book", "flower"]     |
     | inv swap flower book   | Byter plats på "flower" och "book"                                          | `swap(bag, "flower", "book")` | ["flower", "book"]     |
     | inv drop flower        | Kasta bort "flower"                                                         | `drop(bag, "flower")`         | ["book"]               |
 
