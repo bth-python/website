@@ -17,7 +17,7 @@ Om du missar en deadline så kan du inte räkna med att det blir rättat. Men de
 
 I samband med att din inlämning bedöms så körs ett antal automatiserade tester som kontrollerar att din inlämning uppfyller alla krav i de kmom som inlämningen omfattar.
 
-`uv run tester` och `uv run ruff` körs på alla de kmom som ingår i inlämningen. Du kan läsa om vad som händer efter testerna körs här [Tester](../gor-en-pr-for-kmom03/#tester). Inlämningar med betyg `Ux` rättas inte. Lärarna rättar bara inlämningar med `PG`.
+`uv run tester` och `uv run ruff` körs på alla de kmom som ingår i inlämningen. Du kan läsa om vad som händer efter testerna körs här [Tester](../gor-en-pr-for-kmom03/#tester). Inlämningar med betyg `TUx` rättas inte. Lärarna rättar bara inlämningar med `PG`.
 
 ## Bedömning allmänt
 
@@ -41,7 +41,7 @@ Vanligtvis gäller att du får en möjlighet att komplettera, om det inte lyckas
 
 ### Underkänd U / F
 
-Om din inlämning bedöms saknr delar, eller inte uppfylla alla kraven, och komplettering känns inte som ett alternativ, då sätter läraren betyget U (kmom03, kmom06) eller F (kmom10) vilket ger din inlämning ett underkänt betyg.
+Om din inlämning bedöms saknar delar, eller inte uppfylla alla kraven, och komplettering känns inte som ett alternativ, då sätter läraren betyget U (kmom03, kmom06) eller F (kmom10) vilket ger din inlämning ett underkänt betyg.
 
 Då får då möjlighet att göra en ny inlämning till nästa ordinarie inlämningstillfälle.
 
