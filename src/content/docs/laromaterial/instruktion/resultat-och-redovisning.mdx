@@ -4,18 +4,25 @@ description: No description.
 sidebar:
     order: 001
 ---
-
+import Figure from '@components/CustomFigure.astro';
 import { YouTube } from 'astro-embed';
 
 Som ett sista steg i varje kursmoment skall du redovisa. Gör så här.
 
 
 <YouTube
-    id="1rOg_XYc9QI"
+    id="qz82kX5peHs"
     title="Andreas visar hur du lämnar in ett kursmoment."
 />
 
 PS! För kmom03, kmom06 och kmom10 skall du även göra en pull request (PR) på GitHub. Läs mer om det längst ner på sidan.
+
+
+## Kör tester
+
+Dubbelkolla att din kod passerar testerna och validerar. Använd `uv run tester` och `uv run ruff check`. Om du har några fel, fixa dem före du fortsätter.
+
+
 
 ## Skriv redovisningstext
 
@@ -68,8 +75,48 @@ git push --tags
 
 I framtiden kommer du (troligen) att använda versionsnummer enligt något som heter "[Semantic versioning](https://semver.org/)", kika gärna på hur det fungerar.
 
-Som ett sista steg i din inlämning så kan du kontrollera att GitHub verkligen innehåller den allra senaste versionen av din kod.
+Som ett sista steg i din inlämning så kan du kontrollera att GitHub verkligen innehåller den allra senaste versionen av din kod och att testerna passerar.
 
+### Kolla att testerna passerar på GitHub
+
+När du laddade upp din tag till GitHub började den automatiskt köra testerna och validera din kod. Gå till ditt repo i webbläsaren och klicka på `Actions` fliken.
+
+
+import wf1 from '@assets/img/instruktion/click_action.png';
+
+<Figure 
+    src={wf1}
+    caption="Gå till Actions fliken"
+/>
+
+Nu kan du se kommentaren på din senaste commit och tag numret du satte.
+
+Beroende på hur snabb du var på att gå till denna fliken kommer du ha olika symboler före commit meddelande. På bilden nedanför är det en gul prick. Det byter att testerna körs nu och resultatet är inte klart. Om den är grön med en bock betyder det att testerna är klara och allt är korrekt. Om den är röd med ett kryss betyder det att något gick fel.
+
+import wf2 from '@assets/img/instruktion/click_workflow.png';
+
+<Figure 
+    src={wf2}
+    caption="Gå till Actions fliken"
+/>
+
+Oavsett vilken symbol det är kan du klicka på. Då kommer du till följande bild som visa en översikt av vad som har gjorts. Om det ser ut som på bilden nedanför och det är grönt, då är du klar och kan jobba vidare med kursen.
+
+import wf3 from '@assets/img/instruktion/workflow_success.png';
+
+<Figure 
+    src={wf3}
+    caption="Gå till Actions fliken"
+/>
+
+Om det inte är grönt utan rött istället som på bilden nedanför, hoppa vidare till [Actions testerna blir fel](#actions-testerna-blir-fel).
+
+import wf4 from '@assets/img/instruktion/workflow_fail.png';
+
+<Figure 
+    src={wf4}
+    caption="Gå till Actions fliken"
+/>
 
 
 ## Återkoppling och bedömning
@@ -94,6 +141,18 @@ I samband med att du lämnar in kmom03, kmom06 och kmom10 skall du även göra e
 
 Läraren kommer att titta på din inlämning och betygsätta den.
 
+## Vanliga fel
+
+### Actions testerna blir fel
+
+Din kod klarar inte av testerna eller koden validerar inte. Klicka på steget som är rött, då kommer du vidare till vad som har gått fel.
+
+- Läs igenom loggen.
+- Uppdatera din kod lokalt.
+- Kör `tester` och `ruff` för att kolla att din lösning har funkat.
+- Skapa en ny commit.
+- Skapa en ny tag och ladda upp till GitHub som visas under [Tagga och pusha ditt repo](#tagga-och-pusha-ditt-repo). PS. nu ska du inte använda samma tagnummer som förut. Öka siffran som det beskrivs i texten. T.ex. om du fixar ett fel på din kmom01 inlämning öka till `v1.0.1`. Om du behöver göra en till fix efter detta, öka siffran till `v1.0.2`.
+- Nu kan du följa [Kolla att testerna passerar på GitHub](#kolla-att-testerna-passerar-på-GitHub) igen.
 
 
 {/* 
