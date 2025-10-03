@@ -19,18 +19,23 @@ Detta är en guide till lärare vilka steg som skall göras för att rätta en i
 
 ## Se vilka PR som är gjorda mot en branch en viss datum
 
-[Gå till sökfältet i GitHub för organisationen och visa alla PR](https://github.com/search?q=org%3Abth-webtec+is%3Apr&type=pullrequests).
+:::danger
+Använd inte github för att hitta vad som ska rättas, kollar i canvas och omdöme fliken. Rätta de med PG.
+I kmom06 kan vi använda sökfliken i github.
+:::
+
+[Gå till sökfältet i GitHub för organisationen och visa alla PR](https://github.com/search?q=org%3Abth-python+is%3Apr&type=pullrequests).
 
 Justera söksträngen så att den visar de PR som är gjorda mot rätt branch och innan en viss tidpunkt.
 
 ```console
-org:bth-webtec is:pr base:bth/submit/kmom03 created:<=2025-09-23
+org:bth-python is:pr base:bth/submit/kmom03 created:<=2025-09-23
 ```
 
 Du kan även filtrera på label, tex "submitted" eller "re-submitted".
 
 ```console
-org:bth-webtec is:pr base:bth/submit/kmom03 created:<=2025-09-23 label:"submitted"
+org:bth-python is:pr base:bth/submit/kmom03 created:<=2025-09-23 label:"submitted" label:"PG"
 ```
 
 Välj hur du vill sortera resultatet, tex Oldest/Newest eller "Recently updated".
@@ -41,32 +46,48 @@ Välj hur du vill sortera resultatet, tex Oldest/Newest eller "Recently updated"
 
 Det första du gör är att lägga till dig själv som "Rewiever" så att studenten kan se vem som har tittat på inlämningen. Man kan vara flera reviewers på en PR.
 
+Kolla igenom koden. Lägg kommentarer på rader som du vill säga något om.
 
+Om du bara vill påpeka något, gör en vanlig kommentar. Om du vill ge komplettering gör en review kommentar och använda warning för att markera att det ska åtgärdas.
+
+```
+> [!WARNING]
+> Vad som ska åtgärdas
+```
+
+Kolla:
+- kod
+- redovisningstext
+- tag (ge inte komplettering om bara den saknas)
+
+
+:::danger
+Resultatet skickas inte automatiskt till Canvas. Vi måste manuellt rapportera det till ladok.
+:::
 
 ### Godkänd
 
+Avsluta din review som `Approved`, skriv en sammanfattnings kommentar i rutan.
+
 Lägg till label "approved".
 
-Gör en kommentar till studenten.
-
-Acceptera PR och låt den mergas och stäng den.
+Merge:a PR.
 
 
 
 ### Komplettering 
 
-Lägg till label "needs improvement".
+Avsluta din review som `Request change`, skriv en sammanfattnings kommentar i rutan.
 
-Gör en kommentar till studenten.
-
-
-
-## Betyg till Canvas
-
-Se till att studenten får sitt betyg på rätt uppgift i Canvas.
+Lägg till label "Needs improvement".
 
 
+### Rätta komplettering
 
-## Betyg till Ladok
+Om det är en `Re-submitted` inlämning du rättar och den blir godkänd, gör som under [Godkänd](#godkänd).
 
-För över betyget från Canvas till Ladok.
+Om det däremot blir underkänt ska avsluta din review som `comment` och skriva en sammanfattningskommentar.
+
+Lägg till label `Submission not approved`.
+
+Stäng PR.
