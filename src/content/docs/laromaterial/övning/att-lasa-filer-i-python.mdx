@@ -54,7 +54,7 @@ print(items_as_list)
 # skriver ut: ['cookie', 'cake', 'tea', '']
 ```
 
-Vi har nu en lista som innehåller fyra element som vi har läst in från filen `items.txt`. Notera `""` i sista elementet, den får vi med för att sista raden har en `\n`, radbrytning, och egentligen inget vi vill ha med i listan. Så vi kan använda funktionen `strip()` för att ta bort så kallat whitespace (mellanrum, radbrytning osv.) från änderna av strängen.
+Vi har nu en lista som innehåller fyra element som vi har läst in från filen `items.txt`. Notera `""` i sista elementet, den får vi med för att sista raden har en `\n`, radbrytning, och egentligen inget vi vill ha med i listan. Så vi kan använda funktionen `strip()` för att ta bort så kallat whitespace (mellanrum, radbrytning osv.) från ändarna av strängen.
 
 ```python
 # the name of the file
@@ -76,7 +76,7 @@ Vi får nu utskriften `['cookie', 'cake', 'tea']` som vi hade förväntat från 
 
 #### readlines()
 
-Istället för att själva dela upp strängen och ta bort sista tomma raden kan vi använda den inbyggda funktionen `readlines()` istället. Som läser upp hela filens innehåll och returnerar den som en lista där alla rader blir ett eget element. 
+Istället för att själva dela upp strängen och ta bort sista tomma raden kan vi använda den inbyggda funktionen `readlines()`. Denna läser upp hela filens innehåll och returnerar den som en lista där alla rader blir ett eget element. 
 
 ```python
 # the name of the file
