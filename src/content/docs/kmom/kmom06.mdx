@@ -8,17 +8,18 @@ import { YouTube } from 'astro-embed';
 import { Steps } from '@astrojs/starlight/components';
 import { Icon } from '@astrojs/starlight/components';
 import { Badge } from '@astrojs/starlight/components';
-
-:::danger
-Denna del är under arbete och är inte klar.
-:::
+import Figure from '@components/CustomFigure.astro';
 
 Som vi jobbat i tidigare kursmoment försvinner all data när vi stänger av programmet, vi har ingen permanent data. Genom att skriva ner data i filer under exekvering kan vi uppnå ett permanent minne åt våra program. I detta kursmomentet kommer ni lära er läsa data från fil och hur man skriver ner data till fil.
 
 Vi skapar ett nytt program där vi får öva mycket på dictionaries och listor för att bygga ett verktyg för textanalys.
 
-[Bild från Wikimedia](https://en.wikipedia.org/wiki/Letter_frequency#mediaviewer/File:English_letter_frequency_(frequency).svg)
+import lf from '@assets/img/letter_fequency.jpg';
 
+<Figure 
+    src={lf}
+    caption="Bokstävers frekvens i engelska språket."
+/>
 
 
 :::note
@@ -141,13 +142,14 @@ Gör uppgiften [Analysera text och ord](/website/laromaterial/uppgift/analysera-
 
 Läs [instruktionen om hur du skall redovisa](/website/laromaterial/instruktion/resultat-och-redovisning).
 
+:::note
+Vi har sänkt antalet meningar som ska skrivas från 15-20 till 5-8.
+:::
+
 Se till att följande frågor besvaras i din redovisningstext i din rapportsida.
 
-- Vad är skillnaden mellan att läsa från en fil och att skriva till en fil?
-- Vad menas med att öppna en fil i "skrivläge" kontra "läs-läge"?
 - Varför är det viktigt att man stänger en fil när man är klar?
 - Var det svårt att hantera läsning från och skrivning till fil i python?
-- Hur gick det att lösa uppgiften? 
 - Vilken är din TIL för detta kmom?
 
 TIL är en akronym för “Today I Learned” vilket leksamt anspelar på att det finns alltid nya saker att lära sig, varje dag. Man brukar lyfta upp saker man lärt sig och där man kanske hajade till lite extra över dess nyttighet eller enkelhet, eller så var det bara en ny lärdom för dagen som man vill notera.
