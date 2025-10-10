@@ -16,13 +16,13 @@ with open(filename, "w") as file_handler:
     file_handler.write(friends)
 
 ```
-Filen namngiven `"my_friends.txt"` skapas då i den katalog som är arbetskatalog (current working directory). Om vi t.ex har startat `VS code` i katalogen `python`, som därmed blir arbetskatalogen, kommer filen med namnet `"my_friends.txt"` att placeras i denna katalog.   
+Filen namngiven `"my_friends.txt"` skapas då i den katalog som är arbetskatalog (current working directory). Om vi t.ex har startat `VS code` i katalogen `kmom06`, som därmed blir arbetskatalogen, kommer filen med namnet `"my_friends.txt"` att placeras i denna katalog.   
 
 
-Om vi i stället vill placera en fil i katalogen `tester`, som finns en nivå ner, kan vi göra det genom att ange den **relativa sökvägen** eller den **absoluta sökvägen**. 
+Om vi i stället vill placera en fil i katalogen `tester`, som är en underkatalog till `kmom06`, kan vi göra det genom att antingen ange den **relativa sökvägen** eller den **absoluta sökvägen**. 
 
 
-Vi börjar med den **relativa sökvägen**, vilken motsvaras av att den utgår från aktuella katalog. Som i detta fall är `python` och skriver filen i `tester`som är en underkatalog 
+Vi börjar med den **relativa sökvägen**, vilken motsvaras av att den utgår från aktuella katalog. Som i detta fall är `kmom06` och skriver filen i `tester`som är underkatalog 
 
 ```python
 filename = "tester/my_friends.txt" 
@@ -121,7 +121,7 @@ def writeBookInfoOnFile(filename, book_info : list):
 writeBookInfoOnFile("Emil.txt", ['Astrid Lindgren', 'ISBN: 9789129729887', '229 SEK'])
 ```
 Detta ger (i mitt fall) utskriften 
-'\\wsl.localhost\Ubuntu\home\Folder\MainDirectory'
+'\home\Folder\MainDirectory'
 Det är alltså hela sökvägen från roten, dvs den absoluta sökvägen.
 
 Nu vill vi se till att filen hamnar i katalogen `Books` som är underkatalog till `Articles`.
@@ -143,7 +143,7 @@ def writeBookInfoOnFile(filename, book_info : list):
 writeBookInfoOnFile("Emil.txt", ['Astrid Lindgren', 'ISBN: 9789129729887', '229 SEK'])
 ```
 Detta ger (i mitt fall) utskriften 
-'\\wsl.localhost\Ubuntu\home\Folder\MainDirectory\Articles\Books'
+'\home\Folder\MainDirectory\Articles\Books'
 
 Det finns bl.a en möjlighet att kontrollera om en sökväg existerar genom att anropas funktionen `exist()` som returnerar 'True' eller 'False'. Den kan vi använda här.
 
