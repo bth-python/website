@@ -34,7 +34,7 @@ with open(filename, "w") as file_handler:
 Och fortsätter med den **absoluta sökvägen**, vilken motsvaras av att den utgår från rot-katalog och innehåller hela vägen avseende katalogstrukturen.
 
 ```python
-filename = "/home/bbe/dbwebb-kurser/python-bbestud/kmom06my_friends.txt"
+filename = "/home/bbe/dbwebb-kurser/python-bbestud/kmom06/my_friends.txt"
 friends = "Anna\nSven\nPia\nLinda\nKaj\n"
 with open(filename, "w") as file_handler:
     file_handler.write(friends)
@@ -42,7 +42,7 @@ with open(filename, "w") as file_handler:
 
 ### Path
 
-I python finns det en datatyp (som är en sk. klass) namngiven `Path`. Genom att använda `Path` kan man bl.a skapa kataloger, ta reda sökvägen till en fil etc. För att få tillgång till Path behöver vi `importer Path från pathlib`
+I python finns det en datatyp (som är en sk. klass) namngiven `Path`. Genom att använda `Path` kan man bl.a skapa kataloger, ta reda sökvägen till en fil etc. För att få tillgång till Path behöver vi **importera Path från pathlib**
 
 ```python
 from pathlib import Path
