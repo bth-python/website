@@ -19,12 +19,12 @@ Vi ska i denna övning läsa data från filer, lägga till data och ta bort data
 
 Vi gör ett simpelt program för att skapa en inköpslista. Vi har redan tre produkter i filen "items.txt" i exempel mappen som behöver inhandlas, i vårt program ska vi kunna lägga till, ta bort och visa upp innehållet i filen. Vi vill inte ha några tomma rader i filen.
 
-Kopiera "items.txt" från exempel mappen.
+Skapa "items.txt" i `practice` mappen och lägg i följande text i den.
 
-```bash
-# Ställ dig i kurskatalogen
-cp -i example/file/string/items.txt src/kmom06/practice
-cd src/kmom06/practice
+```
+cookie
+cake
+tea
 ```
 
 I programmet ska vi kunna göra val för om vi vill läsa vad filen innehåller, lägga till en produkt i filen, skriva över innehållet i filen och att ta bort en produkt från filen. Vi börjar med en klassisk while-loop med meny och input.
