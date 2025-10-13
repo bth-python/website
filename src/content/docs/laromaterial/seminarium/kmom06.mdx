@@ -1,0 +1,119 @@
+---
+title: "kmom06"
+description: "Handlar om att läsa och skriva till filer"
+sidebar:
+  order: 0510
+---
+
+import { YouTube } from 'astro-embed';
+import Figure from '@components/CustomFigure.astro';
+import { Icon } from '@astrojs/starlight/components';
+
+Detta seminarium tar upp följande områden: Dictionaries och tupler
+
+## Förberedelser
+
+Läs [Om seminarier](../).
+
+
+## <Icon name="open-book" class="inline-icon" label="Interpret code" /> Teori
+
+1. Vad innebär det att man "öppnar en fil"?
+
+2. Förklara **absolut sökväg** respektive **relativ sökväg**.
+
+3. Vad är skillnaden mellan att öppna en fil i läsläge ('r') och i skrivläge ('w')?  
+
+4. Vad händer om man försöker öppna en fil som inte finns i läsläge?
+
+5. Vad händer om man öppnar en existerande fil i skrivläge?
+
+6. Vad är syftet med `with open(...) as f:` istället för att öppna och stänga filen manuellt?
+
+7. Vad är skillnaden mellan read(), readline() och readlines()?
+
+8. Ge minst två exempel på program i verkliga livet behöver läsa från eller skriva till filer?
+
+9. Varför är det viktigt att stänga en fil efter att koden har jobbat med den?
+
+
+### Hur kod funkar
+
+1. Vad gör följande kod? Finns det några potentiella problem?
+
+    ```python
+        f = open("data.txt", "r")
+        lines = f.readlines()
+
+    ```
+
+2. Vad kan vara fel i koden nedan och hur kan det åtgärdas?
+
+    ```python
+        #lines är en lista med strängar 
+        with open("output.txt", "w") as file:
+            file.write(lines)
+
+    ```
+
+### <Icon name="open-book" class="inline-icon" label="Interpret code" /> Tolka kod
+
+1. Vad blir det för utskrift om koden nedan körs?
+
+    ```python
+    with open("exempel.txt", "w") as f:
+        f.write("I am happy!\n")
+        f.write("You are happy!\n")
+
+    with open("exempel.txt", "a") as f:
+        f.write("We are happy!\n")
+
+    with open("exempel.txt", "r") as f:
+        innehåll = f.read()
+        print(innehåll)
+
+    ```
+
+## <Icon name="seti:python" class="inline-icon" label="Write code" /> Praktiska uppgifter
+
+Skapa ett program som har följande funktionalitet:
+
+    - Läser in frågor och svar från en textfil.
+    - Slumpar fram frågor givet antalet.
+    - Skapar och kör ett quiz.
+    - kontrollerar 
+    - Räknar poäng.
+    - Hanterar att spara de 3 bästa resultatet för respektive quiz baserat på antalet frågor.
+    
+De funktioner som ska finnas är: 
+
+`load_questions_from_file(nr_of, filename)`: läser alla frågor inklusive svar från filen namngiven filename till en lista och returnerar listan  
+`shuffle_questions(question_list)`: blandar frågorna i listan question_list  
+`create_quiz(nr_of_questions, question_list)`: skapar en dictionary där nycken är frågan och värdet är svaret, denna returneras  
+`quiz(quiz_dict)`: användaren ser en fråga i taget och matar in sitt svar efter hand. När all frågor besvarats skrivs poängen ut (antalet rätta svar) och användaren matar in sitt namn. Antalet poäng sparas på fil tillsammans med frågor, rätt svar och användarens svar. Filen namnges  `<användarensnamn>_<antalet frågor>.txt`  
+`show_result(filename)`: namnet på användaren, antalet frågor och poäng visas följt av att varje fråga tillsammans med användarens svar och korrekt svar visas och för varje fråga som inte är korrekt skrivs även texten FEL.  
+`update_highscore(name: str, user_points: int, nr_of_questions: int)`: uppdaterar filen med highscore som endast innehåller de 3 bästa resultaten sorterade så att bästa är överst. Filerna med highscore är namngivna `highscore_<antalet frågor>.txt`.  
+
+Börja med att skapa textfilen namngiven questions.txt och klistra in dessa frågor inklusive rätt svar och placera dem i en undermapp namngiven data:
+    ```bash
+    Vad heter huvudstaden i Sverige?|Stockholm
+    Hur många landskap finns det i Sverige?|25
+    Vad är 5 * 7?|35
+    Vilket år blev Sverige medlem i EU?|1995
+    Vad heter världens största hav?|Stilla havet
+    Vad kallas programmeringsspråket som börjar med 'P' och används ofta i undervisning?|Python
+    Vad är huvudstaden i Norge?|Oslo
+    Hur många ben har en insekt?|6
+    Vad är summan av vinklarna i en triangel?|180
+    Vilket land kommer pizzan ursprungligen från?|Italien
+    Vad heter världens högsta berg?|Mount Everest
+    Hur många kontinenter finns det?|7
+    Vad är det kemiska tecknet för vatten?|H2O
+    Vem skrev Harry Potter-böckerna (efternamnet efterfrågas)?|Rowling
+    Vilken planet är närmast solen?|Merkurius
+    Hur många sekunder är det på en minut?|60
+    Vad heter färgen man får om man blandar blått och gult?|Grön
+    Hur många strängar har en gitarr?|6
+    Vilket språk talas i Brasilien?|Portugisiska
+    Vad är 12 delat med 4?|3
+    ```
