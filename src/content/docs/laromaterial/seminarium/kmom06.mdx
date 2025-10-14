@@ -69,8 +69,8 @@ Läs [Om seminarier](../).
         f.write("We are happy!\n")
 
     with open("exempel.txt", "r") as f:
-        innehåll = f.read()
-        print(innehåll)
+        content = f.read()
+        print(content)
 
     ```
 
@@ -84,7 +84,7 @@ Skapa ett program som har följande funktionalitet:
     - kontrollerar 
     - Räknar poäng.
     - Hanterar att spara de 3 bästa resultatet för respektive quiz baserat på antalet frågor.
-    
+
 De funktioner som ska finnas är: 
 
 `load_questions_from_file(nr_of, filename)`: läser alla frågor inklusive svar från filen namngiven filename till en lista och returnerar listan  
@@ -117,3 +117,9 @@ Börja med att skapa textfilen namngiven questions.txt och klistra in dessa frå
     Vilket språk talas i Brasilien?|Portugisiska
     Vad är 12 delat med 4?|3
     ```
+
+
+***Extra***:
+- skriv ut en sammanfattning efter quizet är klart. Skriv ut spelarens namn, hur många frågor som svarades på, hur många rätt spelaren fick och alla frågor med det rätta svaret, spelarens svar och om svaret var rätt eller fel.
+- hålla highscore sorterad efter poäng
+- begränsa till ett viss antal resultat på highscore-filer
