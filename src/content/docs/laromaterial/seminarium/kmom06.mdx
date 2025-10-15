@@ -87,7 +87,7 @@ Skapa ett program som har följande funktionalitet:
 
 De funktioner som ska finnas är: 
 
-`load_questions_from_file(nr_of, filename)`: läser alla frågor inklusive svar från filen namngiven filename till en lista och returnerar listan  
+`load_questions_from_file(filename)`: läser alla frågor inklusive svar från filen namngiven filename till en lista och returnerar listan  
 `shuffle_questions(question_list)`: blandar frågorna i listan question_list  
 `create_quiz(nr_of_questions, question_list)`: skapar en dictionary där nycken är frågan och värdet är svaret, denna returneras  
 `quiz(quiz_dict)`: användaren ser en fråga i taget och matar in sitt svar efter hand. När all frågor besvarats skrivs poängen ut (antalet rätta svar) och användaren matar in sitt namn. Antalet poäng sparas på fil tillsammans med frågor, rätt svar och användarens svar. Filen namnges  `<användarensnamn>_<antalet frågor>.txt`  
