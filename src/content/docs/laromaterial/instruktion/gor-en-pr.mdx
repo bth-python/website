@@ -1,6 +1,6 @@
 ---
-title: "Gör en PR (kmom03)" 
-description: Instruktion om hur du gör en pull request (PR) för att lämna in kmom03.
+title: "Gör en PR (kmom03 och kmom06)" 
+description: Instruktion om hur du gör en pull request (PR) för att lämna in.
 sidebar:
     order: 035
     # hidden: true
@@ -9,13 +9,15 @@ sidebar:
 import Figure from '@components/CustomFigure.astro';
 import YouTube from '@components/YouTube.astro';
 
-Följ denna instruktionen för att göra en pull request (PR) för att lämna in uppgiften i kmom03.
+Följ denna instruktionen för att göra en pull request (PR) för att lämna in uppgiften i kmom03 och kmom06.
 
-
+:::note
+Bilderna visar inlämning för kmom03. Flödet är likadant för kmom06. I instruktionerna när det står `<X>`, ersätt det med `3` om du lämnar in kmom03 och `6` om du lämnar in kmom06.
+:::
 
 ## Förutsättning
 
-Du har uppfyllt kraven i uppgiften kmom03 och har gjort en vanlig inlämning enligt [Resultat och redovisning](/website/laromaterial/instruktion/resultat-och-redovisning).
+Du har uppfyllt kraven i uppgiften kmom03/kmom06 och har gjort en vanlig inlämning enligt [Resultat och redovisning](/website/laromaterial/instruktion/resultat-och-redovisning).
 
 
 
@@ -45,7 +47,11 @@ I samband med att du gör din PR så intygar du att arbetet är ditt eget och up
 
 Du skall nu göra din inlämning som en PR mot följande branch.
 
+### kmom03
 * `bth/submit/kmom03`
+
+### kmom06
+* `bth/submit/kmom06`
 
 Följ stegen nedan för att skapa en PR.
 
@@ -94,11 +100,11 @@ import pr3 from '@assets/pr/pr3.png';
 
 Nu skall du välja vilken branch du vill skapa en PR mot. 
 
-Din "base" skall vara `bth/submit/kmom03` (1 i bilden).
+Din "base" skall vara `bth/submit/kmom0<X>` (3 för kmom03 och 6 för kmom06) (1 i bilden).
 
 Din "compare" skall vara `main` (2 i bilden).
 
-Det betyder att du vill merga `main` in till `bth/submit/kmom03`.
+Det betyder att du vill merga `main` in till `bth/submit/kmom0X`.
 
 import pr4 from '@assets/pr/pr4.png';
 
@@ -122,7 +128,7 @@ import pr5 from '@assets/pr/pr5.png';
 
 Nu skall du fylla i detaljer om din PR (se de gröna runda markeringarna i bilden ovan).
 
-Som **titel** skriver du "Inlämning av kmom03"
+Som **titel** skriver du "Inlämning av kmom0\<X\>"
 
 Som **assignees** lägger du in dig själv. Lägg **inte** mig eller någon anna lärare.
 
@@ -156,7 +162,7 @@ import pr7 from '@assets/pr/pr7.png';
 />
 
 
-På bilden ovanför kan du se hur det ser ut när allt är OK. Testerna har lyckats och din inlämning är registrerad i Canvas. På din Canvas ska du har fått betyg `PG` på kmom03 inlämningen.
+På bilden ovanför kan du se hur det ser ut när allt är OK. Testerna har lyckats och din inlämning är registrerad i Canvas. På din Canvas ska du har fått betyg `PG` på kmom0\<X\> inlämningen.
 
 
 
