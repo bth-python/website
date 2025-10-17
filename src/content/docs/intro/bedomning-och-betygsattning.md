@@ -50,9 +50,8 @@ Följande tabell används vid bedömning av projektet.
 | Krav 1 är implementerat och fungerar felfritt. | 10    |           |
 | Krav 2 är implementerat och fungerar felfritt. | 10    |           |
 | Krav 3 är implementerat och fungerar felfritt. | 10    |           |
-| Krav 4 är implementerat och fungerar felfritt. | 10    |           |
+| Krav 4 är implementerat och fungerar felfritt. | 20    |           |
 | Krav 5 är implementerat och fungerar felfritt. | 10    |           |
-| Krav 6 är implementerat och fungerar felfritt. | 10    |           |
 | TOTALT                                         | 60    |           |
 
 ### Slutbetyg

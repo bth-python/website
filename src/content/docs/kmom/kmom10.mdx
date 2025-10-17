@@ -3,35 +3,527 @@ title: "Kmom10: Projekt och examination"
 description: No description.
 ---
 
-:::danger
-Denna del är under arbete och är inte klar.
+:::note
+Öppna terminalen och flytta dig till din kursmapp och kör följande kommando för att skapa katalogerna som används i kmom02. Ladda också ner de senaste testerna:
+
+```bash
+cd dbwebb-kurser/python-<akronym> # ersätt <akronym> med din akronym
+uv run task download-taskfile
+uv run task create-src-dirs
+uv run task download-tests
+uv run task download-workflow
+```
+
+**Tips** innan du börjar med projektet, repetera vad du har gjort i tidigare kursmoment. Fräscha upp minnet, tänk på hur långt du har kommit och hur mycket du har lärt er.
+
+Läs först igenom projektet och lägg upp en plan. Vad ska du göra? Hur kan du göra det? Har du gjort något liknande delproblem tidigare? Därefter börjar du koda.
 :::
 
 Detta kursmoment avslutar och examinerar kursen.
 
-Du jobbar enskilt och tar inte hjälp av någon.
+Du jobbar enskilt och tar inte hjälp av någon. Det du lämnar in är ditt eget arbete och du har inte låtit en Ai-bot göra ditt jobb.
 
-Upplägget är enligt följande:
+## Upplägget är enligt följande
 
-* Projektet och redovisning (20-60h)
+* Projektet ska utföras **individuellt**
+* Du ska implementera koden med konstruktioner du har lärt dig i kursen. Alltså ska du t.ex. inte använda klasser.
+    * Du får bara använda moduler som vi har gått igenom i kursen och `time` modulen.
+    * Du får inte använda:
+        * `zip()` funktionen
+        * list/dict comprehension/generators
+        * lambda funktioner
+    * Om du är osäker, fråga kursansvarig!
 
-Totalt omfattar kursmomentet (07/10) ca 20+20+20 studietimmar. Du kan själv styra din arbetsinsats genom att välja vilka optionella delar du utför.
+Du kan själv styra din arbetsinsats genom att välja vilka valfria delar du utför.
 
 
 
 ## Förutsättning
 
+Du har jobbat igenom kmom01-kmom06 (och lämnat in dem). Det finns ingen anledning att påbörja projektet innan du är klar med kmom06.
+
+
+
 ## Bedömning och betygsättning
+
+Det finns ett dokument som beskriver [grunderna för bedömning och betygsättning av projektet och kursen som helhet](/website/intro/bedomning-och-betygsattning/).
+
+
 
 ## Projektidé och upplägg
 
+Du ska utveckla ett program för att öva på att skriva snabbt på ett tangentbord. Det finns många webbsidor som erbjuder det redan, t.ex. [https://www.keybr.com/](https://www.keybr.com/), men vi ska skapa ett program för terminalen.
+
+Det finns optionella delar som du kan välja att göra för att öka dina chanser till ett högre betyg.
+
+**Video kommer senare**
+{/* [YOUTUBE src=D_cOARnYooQ caption="Andreas visar hur projektet kan se ut när det är klart.] */}
+
+
+
 ## Projektspecifikation
 
-### Krav 1: XXX
-### Krav 2: XXX
-### Krav 3: XXX
-### Krav 4: XXX
-### Krav 5: XXX
-### Krav 6: XXX
+Utveckla och leverera projektet enligt följande specifikation. Saknas info i specen så kan du själv välja väg och dokumentera dina val i redovisningstexten.
+
+Du ska implementera ett program för tangentbordsträning. Programmet går ut på att visa användaren en rad åt gången som användaren ska skriva av så snabbt som möjligt. När användaren har skrivit in en rad och efter att alla rader är skrivna då ska du räkna ut hur bra det gick och visa upp det.
+
+I grundkraven ska det finnas 5 menyval:
+
+```
+1. Starta skrivtest med filen `easy.txt`.
+
+2. Starta skrivtest med filen `medium.txt`.
+
+3. Starta skrivtest med filen `hard.txt`.
+
+4. Skriv ut resultatlistan som finns sparad i `scores.txt`.
+
+q. Avsluta programmet.
+```
+
+
+### Generell struktur
+
+Koden ska ligga i `src/kmom10/typing`.
+
+1. Skapa filen `main.py` som ska vara startpunkt för programmet.
+1. Du måste skapa minst en till module att dela upp din kod i.
+1. Skapa mappen `texts` i `typing` mappen.
+1. Ladda ner filerna som finns [här](https://github.com/bth-python/python-abcd25/tree/main/src/kmom10/typing). Lägg dem i mappen `src/kmom10/typing/texts`.
+1. Din kod ska vara [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+1. Endast konstanter får ligga som globala variabler.
+1. Programmet ska köras från `typing` mappen. Med andra ord, programmet ska inte krascha om jag står i `typing` och startar programmet.
+1. Koden ska validera med Ruff.
+1. Testerna som finns ska passera. Det är väldigt få tester som finns. I projektet får ni själva ha koll på att ni gör rätt.
+
+
+
+#### Väl fungerande program
+
+Programmet skall fungera utan brister och inte krascha när man använder det enligt kraven. Programmet ska kunna hantera att användaren råkar skriva fel i menyn.
+
+Det ska gå att skriva in färre och fler tecken och ord än vad som skrivs ut utan att programmet kraschar.
+
+Programmet ska inte krascha om filen som används till precisionshistorik saknas.
+
+
+
+### Krav 1: Skrivtest
+
+- Menyval 1 ska använda filen `easy.txt` för ett skrivtest
+- Menyval 2 filen `medium.txt`
+- Menyval 3 filen `hard.txt`.
+- `scores.txt` ska innehålla information om alla skrivtester som har genomförts.
+
+#### Ett skrivtest
+
+Ett test går ut på att läsa in alla rader från filen, presentera en rad åt gången för användaren. När en rad har presenterats ska användaren skriv av den så snabbt som möjligt. Efter det ska du skriv ut användarens [prestation](#prestation) och gå vidare till nästa rad från filen. Återupprepa tills användaren har skrivit av alla rader. Mellan varje rad ska du skriva ut hur bra användaren har presterat hittills.
+
+Kolla på videon ovanför eller under [exempel](#exempel) om du är osäker på hur det ska gå till.
+
+När testet är klart ska du skriva ut användarens totala prestation och be användaren skriva in sitt namn. Lägg till namnet, användarens ordprecision och svårighetsgraden i filen `scores.txt`.
+
+#### Prestation
+
+Med prestation menas två saker, ordprecision och histogram över vilka ord användaren har skrivit fel.
+
+##### Ordprecision
+
+Ordprecision räknas ut med `((nr_correct_words - extra_words) / total_words_in_text ) * 100`. Skriv ut med procenttecken avrundat till två decimaler.
+
+- `nr_correct_words` är antalet ord användaren har skrivit av korrekt.
+- `extra_words` är ord som användaren har skrivit in för mycket. Om användaren ska skriva av en rad på fem ord och skriver in sju ord blir det två `extra_words`.
+- `total_words_in_text` är hur många ord som finns i texten användaren ska skriva av.
+
+Exempel:  
+Användaren ska skriva av `Hello my name is Andreas`.
+Användaren skriver in `Hellå m name andreas`.
+Det ger ordprecision:
+```
+Ordprecision: 20.0%
+```
+
+Noter:
+- Orden är separerade med mellanslag.
+- Punkttecken har ingen speciell betydelse. T.ex. strängen `hej. p-å dig` innehåller tre ord, `hej.`, `p-å` och `dig`.
+- din lösning ska vara case sensitive, `A!=a`.
+- Skilj på raderna. Om användaren skriver in ett ord för lite eller för mycket på en rad ska det inte påverka orden på raderna efter.
+
+
+
+##### Histogram
+
+Gör ett histogram över hur många gånger användaren skriv av ett ord fel. Spara inte användarens ord, spara ordet användaren skulle skriva av. I histogrammet använd `#` för att markera ett fel.
+
+Histogrammet ska vara sorterat på antalet i första hand och ordet i andrahand. Sortera från högt till lågt.
+
+Exempel där `my` är felstavat 4 gånger, `Hello` 2 gånger och `Andreas` 2 gånger:
+
+```
+my                   : ####
+Hello                : ##
+Andreas              : ##
+```
+
+#### Slututskrift
+
+Utskriften efter ett skrivtest är klart ska innehålla användarens [prestation](#prestation) för hela testet och information om [tidsprestanda](#krav-2-time).
+
+Exempel:
+```
+Ordprecision: 23.08%
+is                   : ###
+name                 : ##
+My                   : #
+Da                   : #
+Andreas              : #
+Det tog 0.0 minuter och 2.505828380584717 sekunder
+Gross WPM: 14.0
+Net WPM: 4.0
+Accuracy: 29%
+Du skriver snabbt som en Sengångare
+```
+
+Du kan se en körning för exemplet ovanför under [exempel](#exempel).
+
+### Krav 2: Time
+
+För menyval 1-3, räkna ut hur lång tid det tar för användaren att skriva in hela texten i sekunder. Mät tiden från precis innan du skriver ut första raden till att användaren har skrivit in sista raden.
+
+Använd dig av modulen [time](https://docs.python.org/3/library/time.html) för att mäta tiden.
+
+Räkna ut [Gross WPM](#gross-WPM), [Net WPM](#nwpm), [Accuracy](#accuracy) och [djurkategori](#category).
+
+I uträkningarna avrunda minuter enligt:
+- avrunda uppåt om det tog X minuter och över eller 30 sekunder. T.ex. 3 minuter och 33 sekunder blir 4 minuter. 
+- Om det är under 30 sekunder avrunda ner. T.ex. 2 minuter och 15 sek blir 2 minuter.
+- Allt under 1 minut avrundas upp till en minut.
+
+
+
+#### Gross WPM
+
+Räkna ut gross words per minute, `antal skrivna ord / minuter`. I `antal skrivna ord` ingår alla ord som användaren har skrivit, även extra ord (om användaren skriver fler än efterfrågat). Avrunda till två decimaler.
+
+
+
+#### Net WPM
+
+Räkna ut net words per minute, `gross wpm - ((felstavade ord + extra ord) / minuter)`. Avrunda till två decimaler.
+
+
+
+#### Accuracy
+
+Räkna ut accuracy, det procentuella förhållande mellan Gross WPM och Net WPM. Uträkningen är `(net / gross) * 100`. Skriv ut med procenttecken och avrunda till två decimaler.
+
+
+
+#### Kategori
+
+Ge användaren ett djur som representerar hur snabbt de skrev, baserat på vilken net WPM den fick. När användaren är färdig med ett test visa vilken djur den är. Nedanför hittar du vilka djur som representerar vilka net WPM. 
+
+| Net wpm | Djur |
+|---------|---------|
+| 0 - 5  | Sloth |
+| 5 - 15 | Snail |
+| 15 - 30| Manatee |
+| 30 - 40| Human |
+| 40 - 50| Gazelle  |
+| 50 - 60| Ostrich |
+| 60 - 70| Cheetah |
+| 70 - 80| Swordfish |
+| 80 - 90| Spur-winged goose |
+| 90 - 100| White-throated needletail |
+| 100 - 120| Golden eagle |
+|  > 120| Peregrine falcon |
+
+
+### Krav 3: Menyval 4
+
+Skriv ut resultaten som är sparade i `scores.txt` filen. Utskriften ska vara grupperad på svårighetsnivå och sorterad baserat på ordprecision i förstahand och namn i andrahand. Sortera från högt till lågt.
+
+Exempel:
+```
+efo     0.98       medium
+klw     0.58       medium
+and     190.65     hard
+and     0.53       hard
+Aa      23.08      easy
+aa      23.08      easy
+```
+
+### Exempel
+
+Om din kod körs med exempeltexten nedanför ska du få samma uträkningar som visas i exemplet. Ett tips är att lägga texten i en fil och köra programmet där du skriver samma input som visas.
+
+Här kan du se ett exempel med input från användaren. Dina utskrifter måste **inte** vara formaterad exakt som min, men din utskrift måste innehålla rätt resultat som min gör.
+
+Text från filen:
+> "Hello my name is Andreas"  
+> "What is your name"  
+> "My name is Da"  
+
+Input från användaren:
+> "Hello my nme os andreas"  
+> "What us your nameaa ko"  
+> ""
+
+På sista raden skriver användaren inte in något utan trycker bara på Enter på tangentbordet.
+
+
+
+Det ger följande utskrift under körning, `>>>` Används för att markera vad användaren skriver in:
+```python
+Skriv in: Hello my name is Andreas  
+>>> Hello my nme os andreas  
+
+Ordprecision: 40.0%
+name                 : #
+is                   : #
+Andreas              : #
+
+Skriv in: What is your name  
+>>> What us your nameaa ko  
+
+Ordprecision: 33.33%
+is                   : ##
+name                 : #
+Andreas              : #
+
+Skriv in: My name is Da  
+>>>  
+Ordprecision: 23.08%
+is                   : ###
+name                 : ##
+My                   : #
+Da                   : #
+Andreas              : #
+
+
+Grattis! Tryck enter för att se resultatet.
+>>> 
+
+Ordprecision: 23.08%
+is                   : ###
+name                 : ##
+My                   : #
+Da                   : #
+Andreas              : #
+Det tog 0.0 minuter och 2.505828380584717 sekunder
+Gross WPM: 14.0
+Net WPM: 4.0
+Accuracy: 29%
+Du skriver snabbt som en Sengångare
+
+Skriv in ditt namn:
+>>> Andreas
+```
+
+
+
+### Krav 4 (optionellt) 20p: Tecken
+
+Lägg till teckenprecision och histogram för tecken i skrivtesterna.
+
+Teckenprecision och tecken histogram ska räknas ut och skrivas ut efter varje rad precis som för [prestation](#prestation)
+
+#### Teckenprecision
+
+Teckenprecision med `((nr_correct_chars - extra_chars) / total_chars_in_text ) * 100`.  Skriv ut med procenttecken avrundat till två decimaler.
+
+- `nr_correct_chars` är antalet tecken användaren har skrivit av korrekt.
+- `extra_chars` är tecken som användaren har skrivit in för mycket.
+- `total_chars_in_text` är hur många ord som finns i texten användaren ska skriva av. Räkna inte med mellanslag.
+
+För att räkna vilka tecken som är rätt; dela först upp texten i ord (dela på mellanslag) och jämför sen tecken för tecken i orden.
+
+Det innebär att mellanslag inte räknas som ett tecken, det är en separator för ord. Om användaren skriver in fler tecken än vad som efterfrågas i ett ord ska du räkna dem som `extra_chars`.
+
+#### Histogram för tecken
+
+Räkna också ut hur många gånger varje korrekt tecken blev felskrivet. **Utgå** från de korrekta tecknen när du du kollar om de är rätt, **inte** användarens input.
+
+Skriv ut ett histogram med resultatet. Likt histogrammet för ord.
+
+
+#### Exempel
+
+
+Om din kod körs med exempeltexten nedanför ska du få samma uträkningar som visas i exemplet. Ett tips är att lägga texten i en fil och köra programmet där du skriver samma input som visas.
+
+Här kan du se ett exempel med input från användaren. Dina utskrifter måste **inte** vara formaterad exakt som min, men din utskrift måste innehålla data som min gör.
+
+Text från filen:
+> "Hello my name is Andreas"  
+> "What is your name"  
+> "My name is Da"  
+
+Input från användaren:
+> "Hello my nme os andreas"  
+> "What us your nameaa ko"  
+> ""
+
+På sista raden skriver användaren inte in något utan trycker bara på Enter på tangentbordet.
+
+
+
+Det ger följande utskrift under körning, `>>>` Används för att markera vad användaren skriver in:
+```python
+Skriv in: Hello my name is Andreas  
+>>> Hello my nme os andreas  
+
+---------Grundkrav-------------
+Ordprecision: 40.0%
+name                 : #
+is                   : #
+Andreas              : #
+---------Extrauppgifter-------------
+Teckenprecision: 75.0%
+Felstavade tecken: 
+m                    : #
+i                    : #
+e                    : #
+a                    : #
+A                    : #
+
+Skriv in: What is your name  
+>>> What us your nameaa ko  
+
+---------Grundkrav-------------
+Ordprecision: 33.33%
+is                   : ##
+name                 : #
+Andreas              : #
+---------Extrauppgifter-------------
+Teckenprecision: 70.59%
+Felstavade tecken: 
+i                    : ##
+m                    : #
+e                    : #
+a                    : #
+A                    : #
+
+Skriv in: My name is Da  
+>>>  
+---------Grundkrav-------------
+Ordprecision: 23.08%
+is                   : ###
+name                 : ##
+My                   : #
+Da                   : #
+Andreas              : #
+---------Extrauppgifter-------------
+Teckenprecision: 54.55%
+Felstavade tecken: 
+i                    : ###
+a                    : ###
+m                    : ##
+e                    : ##
+y                    : #
+s                    : #
+n                    : #
+M                    : #
+D                    : #
+A                    : #
+
+
+Grattis! Tryck enter för att se resultatet.
+>>> 
+---------Grundkrav-------------
+Ordprecision: 23.08%
+is                   : ###
+name                 : ##
+My                   : #
+Da                   : #
+Andreas              : #
+Det tog 0.0 minuter och 59.649884939193726 sekunder
+Gross WPM: 14.0
+Net WPM: 4.0
+Accuracy: 29%
+Du skriver snabbt som en Sengångare
+---------Extrauppgifter-------------
+Teckenprecision: 54.55%
+Felstavade tecken: 
+i                    : ###
+a                    : ###
+m                    : ##
+e                    : ##
+y                    : #
+s                    : #
+n                    : #
+M                    : #
+D                    : #
+A                    : #
+
+Skriv in ditt namn:
+>>> Andreas
+```
+
+
+
+
+
+### Krav 5 (optionellt) 10p: Skrivtest med slumpade tecken
+
+Lägg till menyval 5. I det menyvalet ska användaren välja ett antal sekunder som testet ska pågå. Under så många sekunder ska du slumpa fram ett tecken (bokstäver, siffror och punkter) som användaren ska skriva in så snabbt som möjligt. Inkludera användarens sista input om tiden tar slut under tiden som programmet väntar på att användaren ska skriva.
+
+När tiden har tagit slut ska du skriva ut vilka tecken som blev fel och hur många gånger varje tecken blev fel skrivit. Räkna också ut och skriv ut hur många procent av tecknen som blev fel och antalet tecken per minut som användaren skrev.
+
+Utskriften ska vara sorterad i storleksordning på antalet fel.
+
+Kolla på videon för att se hur det kan se ut.
+
+
+
+### Krav inlämning
+
+1. Skriv all din kod i din branch main.
+1. När du är klar så taggar du ditt repo (v7.0.0 eller högre) och pushar till GitHub.
+1. När allt är klart och fungerar så gör du en pullrequest (PR) mot branchen `bth/submit/kmom10`. Du kan följa instruktionerna i [Pull Request](/website/laromaterial/instruktion/gor-en-pr/) fast använd branch `bth/submit/kmom10`.
+
 
 ## Redovisning
+
+Svara på följande frågor i din redovisningstext för kmom10 i `README.me`.
+
+- För varje krav du implementerat, dvs 1-6, skriver du ett textstycke om ca 5-10 meningar där du beskriver vad du gjort och hur du tänkt. Poängsättningen tar sin start i din text så se till att skriva väl för att undvika poängavdrag. Använd rubriker så din text blir lätt att läsa. Missar du att skriva/dokumentera din lösning så blir det 0 poäng. Du kan inte komplettera en inlämning för att få högre betyg.
+
+1. Skriv ett allmänt stycke om hur projektet gick att genomföra. Problem/lösningar/strul/enkelt/svårt/snabbt/lång tid, etc. Var projektet lätt eller svårt? Tog det lång tid? Vad var svårt och vad gick lätt? Var det ett bra och rimligt projekt för denna kursen?
+
+1. Vilken är din TIL för detta kmom?
+
+1. Vilken är din TIL för kursen som helhet?
+
+1. (Valfritt) Avsluta med ett sista stycke med dina tankar om kursen och vad du anser om materialet och handledningen. Återkoppla till lärarteamet och förslå eventuella förbättringsförslag till kommande kurstillfällen.
+
+1. (Valfritt) Är du nöjd/missnöjd? På en skala 1-10, vilket betyg ger du kursen?
+
+
+### Förhör / redovisningsvideo
+
+#### Du läser ett campusprogram
+
+Du ska boka in tid för muntligt förhör där du ska visa att du har skrivit din kod och förstår den. Det kommer finnas tider under hela v.44 och några i v.45. Förhöret kommer ske individuellt på campus.
+
+Du måste ha gjort en PR för kmom06 och fått `PG` på den för att få boka en tid. Före förhöret ska du har gjort en PR för kmom10 och fått `PG` på den. Om du inte har gjort det avbryter vi förhöret.
+
+Mer info om förhöret kommer senare.
+
+
+
+#### Du läser ett distansprogram
+
+Du ska boka in tid för muntligt förhör där du ska visa att du har skrivit din kod och förstår den. Det kommer finnas tider under hela v.44 och några i v.45. Förhöret kommer ske individuellt via Zoom.
+
+Du måste ha gjort en PR för kmom06 och fått `PG` på den för att få boka en tid. Före förhöret ska du har gjort en PR för kmom10 och fått `PG` på den. Om du inte har gjort det avbryter vi förhöret.
+
+Mer info om förhöret kommer senare.
+
+
+
+#### Du läser ett kurspaket
+
+Du skall förbereda och utföra en slutpresentation av ditt projekt. Du kan läsa hur du kan förbereda dig i dokumentet [“Planera din slutpresentation”](/website/laromaterial/instruktion/planera-din-slutpresentation/).
+
+Spela in en redovisningsvideo och lägg länken till videon som en kommentar i din PR. Detta kan du göra dagen efter projektets deadline. Läs mer om hur du kan [spela in en redovisningsvideo med OBS](/website/laromaterial/instruktion/redovisningsvideo-spela-in/).
