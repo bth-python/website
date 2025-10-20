@@ -87,7 +87,7 @@ q. Avsluta programmet.
 Koden ska ligga i `src/kmom10/typing`.
 
 1. Skapa filen `main.py` som ska vara startpunkt för programmet.
-1. Du måste skapa minst en till module att dela upp din kod i.
+1. Du måste skapa minst en till module att dela upp din kod i. PS! då får inte döpa någon fil till `typing.py`. Om du gör det funkar inte testerna.
 1. Skapa mappen `texts` i `typing` mappen.
 1. Ladda ner filerna som finns [här](https://github.com/bth-python/python-abcd25/tree/main/src/kmom10/typing). Lägg dem i mappen `src/kmom10/typing/texts`.
 1. Din kod ska vara [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
@@ -334,7 +334,7 @@ Teckenprecision med `((nr_correct_chars - extra_chars) / total_chars_in_text ) *
 
 - `nr_correct_chars` är antalet tecken användaren har skrivit av korrekt.
 - `extra_chars` är tecken som användaren har skrivit in för mycket.
-- `total_chars_in_text` är hur många ord som finns i texten användaren ska skriva av. Räkna inte med mellanslag.
+- `total_chars_in_text` är hur många tecken som finns i texten användaren ska skriva av. Räkna inte med mellanslag.
 
 För att räkna vilka tecken som är rätt; dela först upp texten i ord (dela på mellanslag) och jämför sen tecken för tecken i orden.
 
@@ -468,7 +468,7 @@ Skriv in ditt namn:
 
 Lägg till menyval 5. I det menyvalet ska användaren välja ett antal sekunder som testet ska pågå. Under så många sekunder ska du slumpa fram ett tecken (bokstäver, siffror och punkter) som användaren ska skriva in så snabbt som möjligt. Inkludera användarens sista input om tiden tar slut under tiden som programmet väntar på att användaren ska skriva.
 
-När tiden har tagit slut ska du skriva ut vilka tecken som blev fel och hur många gånger varje tecken blev fel skrivit. Räkna också ut och skriv ut hur många procent av tecknen som blev fel och antalet tecken per minut som användaren skrev.
+När tiden har tagit slut ska du skriva ut vilka tecken som blev fel, samt antalet gånger varje felaktigt tecken skrevs. Räkna också ut och skriv ut hur många procent av tecknen som blev fel och antalet tecken per minut som användaren skrev.
 
 Utskriften ska vara sorterad i storleksordning på antalet fel.
 
