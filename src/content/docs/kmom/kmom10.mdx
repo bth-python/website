@@ -201,7 +201,10 @@ Använd dig av modulen [time](https://docs.python.org/3/library/time.html) för 
 
 Räkna ut [Gross WPM](#gross-WPM), [Net WPM](#nwpm), [Accuracy](#accuracy) och [djurkategori](#kategori).
 
-I uträkningarna för WPM, gör om sekunder till minuter. T.ex. 30 sekunder blir 0.5 minuter.
+I uträkningarna för WPM, avrunda minuter enligt:
+- avrunda uppåt om det tog X minuter och över eller 30 sekunder. T.ex. 3 minuter och 33 sekunder blir 4 minuter. 
+- Om det är under 30 sekunder avrunda ner. T.ex. 2 minuter och 15 sek blir 2 minuter.
+- Allt under 1 minut avrundas upp till en minut.
 
 
 
