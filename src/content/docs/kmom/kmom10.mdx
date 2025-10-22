@@ -184,10 +184,10 @@ name                 : ##
 My                   : #
 Da                   : #
 Andreas              : #
-Det tog 0.0 minuter och 2.505828380584717 sekunder
-Gross WPM: 14.0
+Det tog 0.0 minuter och 2.160712718963623 sekunder
+Gross WPM: 10.0
 Net WPM: 4.0
-Accuracy: 29%
+Accuracy: 40%
 Du skriver snabbt som en Sengångare
 ```
 
@@ -201,22 +201,19 @@ Använd dig av modulen [time](https://docs.python.org/3/library/time.html) för 
 
 Räkna ut [Gross WPM](#gross-WPM), [Net WPM](#nwpm), [Accuracy](#accuracy) och [djurkategori](#kategori).
 
-I uträkningarna för WPM, avrunda minuter enligt:
-- avrunda uppåt om det tog X minuter och över eller 30 sekunder. T.ex. 3 minuter och 33 sekunder blir 4 minuter. 
-- Om det är under 30 sekunder avrunda ner. T.ex. 2 minuter och 15 sek blir 2 minuter.
-- Allt under 1 minut avrundas upp till en minut.
+I uträkningarna för WPM, gör om sekunder till minuter. T.ex. 30 sekunder blir 0.5 minuter.
 
 
 
 #### Gross WPM
 
-Räkna ut gross words per minute, `antal skrivna ord / minuter`. I `antal skrivna ord` ingår alla ord som användaren har skrivit, även extra ord (om användaren skriver fler än efterfrågat). Avrunda till två decimaler.
+Räkna ut gross words per minute, `antal skrivna ord / minuter`. I `antal skrivna ord` ingår alla ord som användaren har skrivit, även extra ord (om användaren skriver fler än efterfrågat). Avrunda till två decimaler i utskriften.
 
 
 
 #### Net WPM
 
-Räkna ut net words per minute, `gross wpm - ((felstavade ord + extra ord) / minuter)`. Avrunda till två decimaler.
+Räkna ut net words per minute, `gross wpm - ((felstavade ord + extra ord) / minuter)`. Avrunda till två decimaler i utskriften.
 
 
 
@@ -233,17 +230,17 @@ Ge användaren ett djur som representerar hur snabbt de skrev, baserat på vilke
 | Net wpm | Djur |
 |---------|---------|
 | 0 - 5  | Sloth |
-| 5 - 15 | Snail |
-| 15 - 30| Manatee |
-| 30 - 40| Human |
-| 40 - 50| Gazelle  |
-| 50 - 60| Ostrich |
-| 60 - 70| Cheetah |
-| 70 - 80| Swordfish |
-| 80 - 90| Spur-winged goose |
-| 90 - 100| White-throated needletail |
-| 100 - 120| Golden eagle |
-|  > 120| Peregrine falcon |
+| 6 - 15 | Snail |
+| 16 - 30| Manatee |
+| 31 - 40| Human |
+| 41 - 50| Gazelle  |
+| 51 - 60| Ostrich |
+| 61 - 70| Cheetah |
+| 71 - 80| Swordfish |
+| 81 - 90| Spur-winged goose |
+| 91 - 100| White-throated needletail |
+| 101 - 120| Golden eagle |
+|  > 121| Peregrine falcon |
 
 
 ### Krav 3: Menyval 4
@@ -315,10 +312,10 @@ is                   : ###
 My                   : #
 Da                   : #
 Andreas              : #
-Det tog 0.0 minuter och 48.31201982498169 sekunder
-Gross WPM: 14.0
+Det tog 0.0 minuter och 2.160712718963623 sekunder
+Gross WPM: 10.0
 Net WPM: 4.0
-Accuracy: 29%
+Accuracy: 40%
 Du skriver snabbt som en Sengångare
 
 Skriv in ditt namn:
@@ -435,14 +432,14 @@ is                   : ###
 My                   : #
 Da                   : #
 Andreas              : #
-Det tog 0 minuter och 47.29368233680725 sekunder
-Gross WPM: 14.0
+Det tog 0.0 minuter och 2.160712718963623 sekunder
+Gross WPM: 10.0
 Net WPM: 4.0
-Accuracy: 29%
+Accuracy: 40%
 Du skriver snabbt som en Sengångare
 ---------Extrauppgifter-------------
 Teckenprecision: 54.55%
-Felstavade tecken: 
+Felstavade tecken:
 i                    : ###
 a                    : ###
 m                    : ##
