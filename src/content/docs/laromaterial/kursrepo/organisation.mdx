@@ -36,7 +36,9 @@ import organisation3 from '@assets/kursrepo/organisation3.png';
 :::note
 **Vid SSO-inloggning, loggar du in med din studentmail och dess lösenord.**
 
-Om knappen `Single Sign-On` inte visas, kontrollera att du har genomfört Canvasuppgiften GitHub invite och accepterat inbjudan. Om knappen fortfarande inte visas, [kontakta IT Helpdesk](https://www.bth.se/om-bth/kontakta-oss/it-helpdesk) och ange din studentmejladress (samma adress som du använde i GitHub invite) samt kurskoden DV1670.
+Om knappen `Single Sign-On` inte visas, kontrollera att du har genomfört Canvasuppgiften GitHub invite och accepterat inbjudan.
+
+Om knappen fortfarande inte visas, logga ut från organisationen och in igen. Klicka på din profilbild på GitHub, välj "Single sign-on" och klicka på "Sign out" och därefter "Sign-in" igen.
 :::
 
 När du har accepterat inbjudan till organisationen behöver du aktivera Single Sign-On (SSO) för att kunna arbeta med kursens kod och uppgifter. Klicka på knappen `Single Sign-On` uppe till höger på sidan i organisationen.
@@ -67,3 +69,13 @@ import SSOinloggad from '@assets/kursrepo/SSOinloggad.png';
 />
 
 Nu är du redo att arbeta vidare.
+
+### Fortfarande problem
+
+Om din studentmail saknas i organisationen får du följande felmeddelande:
+
+```text
+ADSTS50105: Your administrator has configured the application GitHub Enterprise Cloud - bth-python ('ae8742ac-c0a2-4ee9-98bc-6a8648eb61f7') to block users unless they are specifically granted ('assigned') access to the application. The signed in user ’xxxx00@student.bth.se’ is blocked because they are not a direct member of a group with access, nor had access directly assigned by an administrator. Please contact your administrator to assign access to this application.
+```
+
+[Kontakta IT Helpdesk](https://www.bth.se/om-bth/kontakta-oss/it-helpdesk) och ange din studentmejladress (samma adress som du använde i GitHub invite) samt kurskoden DV1670.
