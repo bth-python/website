@@ -10,7 +10,8 @@ import { Steps } from '@astrojs/starlight/components';
 import { Icon } from '@astrojs/starlight/components';
 import { Badge } from '@astrojs/starlight/components';
 
-Lär dig mer om datastrukturer i Python, nu handlar det om dictionaries och tupler. Dictionaries sparar data som ett nyckel-värde-par och tupler strukturer vår data i mindre enheter med ett sammanhang. Vi använder våra kunskaper om dictionaries för att utveckla Marvin med verktyg för att analysera koldioxidutsläpp.
+Lär dig mer om datastrukturer i Python, nu handlar det om dictionaries och tupler. Dictionaries sparar data som ett nyckel-värde-par och tupler strukturerar vår data i mindre enheter med värden som på något sätt hör ihop.  
+Vi använder våra kunskaper för att skapa och hantera en highscore-lista.
 
 :::danger
 Materialet är inte klart. Påbörjar inte arbete. 
@@ -29,13 +30,19 @@ uv run task create-src-dirs
 
 ## Förberedelser
 Innan du börjar med kmom05 så behöver du ha jobbat igenom [kmom04](/kmom/kmom04).
+
+## Inspelat material
+
+Här hittar du inspelningar som görs under kursens genomförande.
+
+{/* länk till spellistan på Youtube */}
+[Spellista python-kursen ht26](https://www.youtube.com/playlist?list=PLKtP9l5q3ce-emzn9wMAAW6rsn1uTzDr_)
 <br/>
 
-<details>
-<summary>
-## Måndag
-</summary>
+## Intro till dictionaries och tupler
 
+En dictionary ger oss en möjlighet att lagra/spara information tillsammans med en nyckel på ett sätt som gör att vi snabbt kan hitta det vi sparat genom nyckeln.  
+En tupel är en samling värden som lagras i en bestämd ordning och innehållet kan inte ändras.
 
 :::tip
 När du ska jobba med kursen är det lättast om du öppnar VSCode från terminalen innan du börjar jobba.
@@ -48,8 +55,11 @@ code .
 Använd `practice`-mappen (eller `practice_validation` om du vill validera din kod) i kmom05- katalogen för att skriva övningskod. 
 :::
 
+### Att göra
 
-#### Att göra
+Här kan du på egen hand förbereda dig genom att läsa i kurslitteraturen, jobba med övningar och dessutom lite annat material som är relevant. 
+
+#### Kurslitteratur
 
 Vi fortsätter att läsa i boken [Python for Everybody: Exploring data in Python3](/laromaterial/böcker/).
 
@@ -64,51 +74,25 @@ Vi fortsätter att läsa i boken [Python for Everybody: Exploring data in Python
     :::
     
     De exempelprogram du gör i samband med att du läser i boken och tittar på tillhörande videor kan du spara i ditt kursrepo under `src/kmom05/practice` alternativt `src/kmom05/practice_validate` om du vill validera din kod.
-
-2. Gör övningen [Dictionaries och tupler i Python](/laromaterial/övning/dictionaries-och-tupler-i-python) för att bekanta dig med dictionaries och tupler i Python. De exempelprogram du gör kan du spara i ditt kursrepo under `src/kmom05/practice` alternativt `src/kmom05/practice_validate` om du vill validera din kod.
-
 </Steps>
 
-</details>
-<br/>
-
-
-
-
-<details>
-<summary>
-## Onsdag
-</summary>
-
-Jobba igenom [seminarium kmom05](/laromaterial/seminarium/kmom05). Det görs på onsdagens lektion.
-
-</details>
-<br/>
-
-<details>
-<summary>
-## Torsdag och fredag
-</summary>
-
-### Att göra
+#### Öva 
 
 <Steps>
-
-1. Lös uppgifterna under [Uppgifter](#uppgifter).
+1. Gör övningen [Dictionaries och tupler i Python](/laromaterial/övning/dictionaries-och-tupler-i-python) för att bekanta dig med dictionaries och tupler i Python. De exempelprogram du gör kan du spara i ditt kursrepo under `src/kmom05/practice` alternativt `src/kmom05/practice_validate` om du vill validera din kod.
 
 </Steps>
 
-</details>
 <br/>
 
+### Seminarium
 
-## Lästips
+Inför seminariet bör du ha arbetat igenom artikeln/övningen "Kom igång med datatypen lista i Python" och läst motsvarande i kurslitteraturen. 
 
-Inga lästips än så länge.
-
+Kort före seminariet skickas en länk till de uppgifter och frågor som vi kommer att arbeta med under seminariet.
+{/* Länk till seminariet */}
 
 ## Uppgifter
-
 
 :::danger
 Lösningar som använder konstruktionerna list/dict comprehension eller lambda funktioner godkänns inte i denna kurs.
