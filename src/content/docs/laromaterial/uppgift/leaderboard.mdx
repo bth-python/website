@@ -32,23 +32,24 @@ Lösningar som använder konstruktionerna list/dict comprehension eller lambda f
 
 Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går igenom i kursen.
 
-1. Ditt program ska utgå från filen `main.py` i mappen `src/kmom05/emissions`. I `main.py` ska funktionen `main()` ligga och starta ditt program.
+1. Ditt program ska utgå från filen `main.py` i mappen `src/kmom05/leaderboard`. I `main.py` ska funktionen `main()` ligga och starta ditt program.
     - Strukturera `main.py` på liknande sätt som Marvin fungerar.
     - Ditt program ska inte starta om man importerar filen `main.py`. Man måste anropa `main()` för att starta programmet.
+    - `main.py` ska anropa en modul som heter `leaderboard.py` med hjälpfunktioner.
 
 1. Du ska strukturera din kod i passande moduler. Du måste skapa minst en modul utöver `main.py`.
 
 1. Utgå ifrån följande dataset i din kod. `leaderboard` är en dictionary där spelarens namn är nyckeln och värdet är en dictionary med poäng och nivå.
     ```python
-    leaderboard = {
+    leaderboard_data = {
         "Alice":   {"score": 1500, "level": "Pro"},
         "Bob":     {"score": 800,  "level": "Nybörjare"},
         "Charlie": {"score": 2300, "level": "Elit"},
         "Dana":    {"score": 1200, "level": "Amatör"},
     }
     ```
-    - `leaderboard` får inte vara en global variabel i din kod. Lägg den i din `main()` funktion.
-    - Skicka med `leaderboard` som argument till de funktioner som behöver den.
+    - `leaderboard_data` får inte vara en global variabel i din kod. Lägg den i din `main()` funktion.
+    - Skicka med `leaderboard_data` som argument till de funktioner som behöver den.
 
 1. Programmet ska ha följande menyval. Utförlig förklaring av menyvalen hittar du under [Menyvalen](#menyvalen).
 
@@ -154,4 +155,4 @@ Rätta eventuella fel som dyker upp och ladda upp igen. När det ser grönt ut s
 * Börja med datasetet och menyn, implementera sedan ett menyval i taget.
 * Testa programmet efter varje menyval för att säkerställa att det fungerar.
 * Iterera över dictionaryn med `.items()` för att komma åt både namn och data — du packar upp ett tuple `(namn, data)` i varje iteration.
-* I testerna har varje menyval sin siffra som tag. Använd `uv run task test kmom05 --tags=1` för att bara köra testerna för ett specifikt menyval.
+* I testerna har varje menyval sin siffra som tag. Använd `uv run task test kmom05 --tags 1` för att bara köra testerna för ett specifikt menyval.
