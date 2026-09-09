@@ -81,10 +81,12 @@ Varje uppgift ska lösas med grundläggande Python konstruktioner som vi går ig
 
 1. Testerna som finns ska passera.
     ```bash
-    # om du står i katalogen src/kmom04/marvin3 i ditt repo
-    uv run tester ../../../tests/kmom04/marvin3/
-    # om du står i root katalogen i ditt repo
-    uv run tester tests/kmom04/marvin3/
+    # kör testerna för kmom04 i ditt repo
+    uv run task test -- kmom04
+    # om du bara vill köra testerna för tag `pick`
+    uv run task test -- kmom04 -t pick
+    # flaggan -s visar vilka taggar som är aktuella för kmom04
+    uv run task test -- kmom04 -s
     ```
 
 

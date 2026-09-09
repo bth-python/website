@@ -177,9 +177,7 @@ Nu har du två punkter kvar:
 1. Skapa en branch för nästa inlämning, exempelvis har du precis lämnat in kmom03, skapar du en branch för kmom06.
 
 ```bash title="Skapa en ny branch för nästa inlämning"
-git switch -c bth/submit/kmom06
-git push origin bth/submit/kmom06
-git switch main
+git checkout -b bth/submit/kmom06 && git push origin bth/submit/kmom06
 ````
 
 Om du precis lämnat in kmom06, kör du ovanstående kommandon med **kmom10** istället för kmom06.
