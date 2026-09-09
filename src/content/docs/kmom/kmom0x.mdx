@@ -10,11 +10,175 @@ import { Steps } from '@astrojs/starlight/components';
 import { Icon } from '@astrojs/starlight/components';
 import { Badge } from '@astrojs/starlight/components';
 
-I detta kursmoment ska du repetera allt du lärt har dig i de tre första kursmomenten. Eftersom de kursmoment som inleder kursen är grunder för fortsättningen är det viktigt att du har en god förståelse för dessa. Du kommer att få möjlighet att repetera och befästa dina kunskaper genom olika övningar och uppgifter.
+I detta kursmoment ska du repetera allt du lärt har dig i de tre första kursmomenten. Eftersom de kursmoment som inleder kursen är grunder för fortsättningen är det viktigt att du har en god förståelse för dessa. 
 
 “Repetition är kunskapens moder” är ett ordspråk som betyder att upprepad övning är nödvändig för att lära sig och behärska något. Ordspråket kommer ursprungligen från latinets “Repetitio est mater studiorum” och betonar att kunskap byggs upp och befästs genom att upprepa information, vilket skapar bestående minnen och färdigheter.
-
 
 :::danger
 Materialet är inte klart. Påbörjar inte arbete. 
 :::
+
+För att repetera och befästa dina kunskaper bör du gå igenom de övningar, uppgifter och seminarier som ingått i kmom01, kmom02 och kmom03. Du hittar dessutom några extra implementationsuppgifter här:
+
+Bra att repetera:
+
+Övningsuppgifter och seminarier för km0m01, kmom02 och kmom03.
+
+
+
+#### Inmatning, utmatning, beräkning, selektion, iteration
+
+1. Gör ett program som ber användaren mata in två heltal och avgöra vilket av dessa som är störst. Exempelvis
+
+    ```
+    Mata in två heltal så ska jag presentera dem i storleksordning. Tryck enter efter respektive tal.
+    34
+    65
+    ordningen är 34 65
+    ```
+    ```
+    Mata in två heltal så ska jag presentera dem i storleksordning. Tryck enter efter respektive tal.
+    77
+    65
+    ordningen är 65 77
+    ```
+    ```
+    Mata in två heltal så ska jag presentera dem i storleksordning. Tryck enter efter respektive tal.
+    55
+    55
+    ordningen är 55 55
+    ```
+
+1. Gör ett program som låter användaren mata in en sträng. Programmet ska bestämma antalet förekomster av bokstaven o.
+
+1. Gör ett program som skriver ut multiplikationstabellen för ett heltal som användaren matar in. Exempelvis
+
+    ```
+    Mata in talet: 5
+    Här är multiplikationstabellen för 5:
+    1 * 5 = 1
+    2 * 5 = 10
+    3 * 5 = 15
+    4 * 5 = 20
+    5 * 5 = 25
+    6 * 5 = 30
+    7 * 5 = 35
+    8 * 5 = 40
+    9 * 5 = 45
+    ```
+
+1. Utöka programmet som skriver ut multiplikationstabellen så att användaren får svara på frågan om hen vill skriva ut ytterligare en tabell, vilket ska fortgå tills dess att användaren svara "nej".
+
+1. Gör ett program som låter användaren tävla mot "datorn" genom att välja ett tärningsvärde [1..6] och se om detta värde förkommer fler gånger än "datorns" valda tärningsvärde på 10 kast. Använd "konstant" som håller antalet 10.  
+
+    Exempelvis:  
+    
+    ```
+    Vilket tärningsvärde [1..6] satsar du på? 4
+    Jag satsar på 2
+    Tryck <enter> för att slumpa de 10 kasten.
+
+    4 5 1 2 1 4 6 3 6 4
+
+    Det blev 3 kast med värdet 4 och 1 kast med värdet 2. Du vann!
+    ```
+1. Lägg till kontroller så att användaren får göra om sin inmatning om det inte är ett värde inom [1..6].  
+
+    Exempelvis:   
+    
+    ```
+    Vilket tärningsvärde [1..6] satsar du på? 0
+    Inte inom [1..6]. 
+    Vilket tärningsvärde [1..6] satsar du på? 7
+    Inte inom [1..6]
+    Vilket tärningsvärde [1..6] satsar du på? 4
+    Tryck <enter> för att slumpa de 10 kasten.
+
+    4 5 1 2 1 4 6 3 6 4
+
+    Det blev 3 kast med värdet 4 och 1 kast med värdet 2. Du vann!
+    ```
+
+1. Skriv ett program som frågar hur många rundor som spelats och sedan läser in poängen för varje runda. Slutligen skrivs den totala poängen ut.
+
+    ```
+    Hur många rundor? 3
+    Poäng: 10  
+    Poäng: 7
+    Poäng: 12
+    
+    Total poäng: 29
+    ```
+
+1. Skriv ett program som avgör om en spelare har tillräckligt med guldmynt eller ej. Programmet ska fråga hur många skatter som hittats och läsa in hur mycket guld varje skatt innehåller. Slutligen presenteras hur mycket guld det är total. Om det är minst 100 guld ska "Du är rik" skrivas ut och annars ska "Du behöver mer guld" skrivas ut.
+
+#### Funktioner
+
+1. Skriv en funktion `invitation` som tar ett namn som parameter och skriver ut en inbjudan. Exempelvis om namnet är "Stina Larsson" så ska funktionen skriva ut :  
+    ```
+    Välkommen på festen i kväll Stina Larsson!
+    ```
+    Gör ett anrop med namnet "Kalle" och ett anrop med namnet "Lisa Larsson"  
+
+1. Skriv en funktion `calculate_price` som beräknar och returnerar 15 % rabatt om priset är mellan 100 och 500 kronor. Är priset däremot 500 eller mer ges istället 20 % rabatt. Ingen utskrift eller inmatning får utföras inom funktionen. Funktionen ska ta priset som parameter. 
+
+    Anropa funktionen för de olika priserna 50, 300 och 900 och presentera resultatet med max två decimaler. 
+
+1. Skriv en funktion `ok_password` som kontrollerar att ett lösenord uppfyller kraven:  
+    - är minst 8 tecken långt
+    - innehåller minst ett av tecknen #, ?, &
+    - har inga blanka tecken (mellanslag)
+Funktionen ska returnera sant (True) om kraven är uppfyllda och falskt (False) annars. Ingen utskrift eller inmatning får utföras inom funktionen.
+
+Anropa funktionen och kontrollera att det blir korrekt resultat genom att testa olika varianter av fel lösenord och några varianter som är korrekta.
+
+1. Skriv en funktion `isoceles_right_angle_triangle` som tar emot en sidlängd och presenterar en likbent rätvinklig triangel genom att skriva ut #. Några exempel:
+
+    ``` 
+    längden är här 4
+    #
+    ##
+    ###
+    ####
+    ```
+
+    ``` 
+    längden är här 7
+    #
+    ##
+    ###
+    ####
+    #####
+    ######
+    #######
+    ```
+1. Ändra funktionen så att den har ett default-argument för vilket tecken som ska användas. Defaultvärdet ska vara tecken #. 
+    ``` 
+    längden är här 4 och tecknet är *
+    *
+    **
+    ***
+    ****
+    ```
+
+1. Skriv en funktion som slumpar och returnerar ett spelkort. Ett spelkort har en av färgerna Spader, Ruter, Hjärter och Klöver. Det finns 13 kort i varje färg och dessa 13 kort har värdena 2 till och med 14. 
+
+    Exempel på en körning:
+    ``` 
+    Hur många kort vill du slumpa? 3
+    Spader 4
+    Ruter 11
+    Hjärter 6
+    ```
+    Obs: Det kan bli så att samma kort slumpas flera gånger. Det är ok.
+
+1. Ändra så att kortens värden istället blir 2 t.o.m 10 och dessutom Knekt, Dam, Kung, Ess.
+
+    Exempel på en körning:
+    ``` 
+    Hur många kort vill du slumpa? 4
+    Spader 5
+    Ruter Knekt
+    Hjärter 6
+    Hjärter Ess
+    ```
