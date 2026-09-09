@@ -11,6 +11,8 @@
         "activityBarTop.background": "#b56445",
         "activityBarTop.foreground": "#e7e7e7",
         "activityBarTop.inactiveForeground": "#e7e7e799",
-        "panel.border": "#b56445"
+        "panel.border": "#b56445",
+        "activityBar.activeBorder": "#e7e7e7",
+        "activityBarTop.activeBorder": "#e7e7e7"
     }
 }
